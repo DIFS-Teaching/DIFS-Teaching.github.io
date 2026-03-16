@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* different strategy of box model computation */
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      overflow: hidden;
+    }
+
+    .row::after {
+      content: ' ';
+      clear: both;
+    }
+
+    [class*='col-'] {
+      float: left;
+    }
+
+    .col-1 { width: 25%; } /* 1/4 */
+    .col-2 { width: 50%; } /* 2/4 */
+    .col-3 { width: 75%; } /* 3/4 */
+    .col-4 { width: 100%; } /* 4/4 */
+
+    /* -------------------------------- */
+    /* Demo help styles. */
+
+    p {
+      font-size: 14px;
+      text-align: justify;
+      margin: 0;
+      background-color: white;
+    }
+
+    #form {
+      margin-bottom: .5rem;
+    }
+
+    input {
+      font-size: 24px;
+    }
+
+    .row {
+      /* demo help styles */
+      border: 4px solid blue;
+    }
+    
+    .row > *:nth-child(odd) {
+      color: black;
+    }
+
+    .row > *:nth-child(even) {
+      color: gray;
+    }
+
+    [class*='col-'] {    
+      border: 0px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="form">
+    border: <input id="border-width" type="number" min="0" value="0">
+    padding: <input id="padding" type="number" min="0" value="0">
+  </div>
+
+  <div id="content" class="row">
+    <div class="col-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus faucibus libero, sed ultricies  ectus iaculis ut. Suspendisse tincidunt lorem sed leo tempus, vitae euismod eros dictum. In enim elit,  aucibus et turpis quis, pretium pretium metus. Nulla ornare purus id sollicitudin ornare. Vivamus ac magna in lacus facilisis molestie. Sed dapibus nulla dignissim elit hendrerit viverra. Morbi rhoncus tristique erat ac scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at semper enim. Praesent ac augue non dolor aliquam blandit. Pellentesque ullamcorper diam nec massa luctus, a viverra neque vulputate.
+      </p>
+    </div>
+    <div class="col-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus faucibus libero, sed ultricies  ectus iaculis ut. Suspendisse tincidunt lorem sed leo tempus, vitae euismod eros dictum. In enim elit,  aucibus et turpis quis, pretium pretium metus. Nulla ornare purus id sollicitudin ornare. Vivamus ac magna in lacus facilisis molestie. Sed dapibus nulla dignissim elit hendrerit viverra. Morbi rhoncus tristique erat ac scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at semper enim. Praesent ac augue non dolor aliquam blandit. Pellentesque ullamcorper diam nec massa luctus, a viverra neque vulputate.
+      </p>
+    </div>
+    <div class="col-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus faucibus libero, sed ultricies  ectus iaculis ut. Suspendisse tincidunt lorem sed leo tempus, vitae euismod eros dictum. In enim elit,  aucibus et turpis quis, pretium pretium metus. Nulla ornare purus id sollicitudin ornare. Vivamus ac magna in lacus facilisis molestie. Sed dapibus nulla dignissim elit hendrerit viverra. Morbi rhoncus tristique erat ac scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at semper enim. Praesent ac augue non dolor aliquam blandit. Pellentesque ullamcorper diam nec massa luctus, a viverra neque vulputate.
+      </p>
+    </div>
+    <div class="col-1">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus faucibus libero, sed ultricies  ectus iaculis ut. Suspendisse tincidunt lorem sed leo tempus, vitae euismod eros dictum. In enim elit,  aucibus et turpis quis, pretium pretium metus. Nulla ornare purus id sollicitudin ornare. Vivamus ac magna in lacus facilisis molestie. Sed dapibus nulla dignissim elit hendrerit viverra. Morbi rhoncus tristique erat ac scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at semper enim. Praesent ac augue non dolor aliquam blandit. Pellentesque ullamcorper diam nec massa luctus, a viverra neque vulputate.
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function setListener(type) {
+      let elem = document.getElementById(type);
+      if(elem) {
+        elem.addEventListener("change", (e) => {
+          let cols = document.querySelectorAll("[class*='col-']");
+          for(let i = 0; i < cols.length; i++) {
+            cols[i].style[type] = elem.value + "px";
+          }
+        });
+      }
+    }
+
+    setListener("border-width");
+    setListener("padding");
+  </script>
+</body>
+
+</html>

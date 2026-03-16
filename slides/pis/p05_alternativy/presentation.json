@@ -1,0 +1,21 @@
+{
+    "id": "p05_alternativy",
+    "title": "PIS - Alternativní tehchnologie a architektury",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Alternativní tehchnologie a architektury",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010jsf.md",
+        "c020srov.md",
+        "c030soap.md",
+        "c040mikro.md",
+        "c999final.md"
+    ]
+}

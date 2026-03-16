@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Margin collapsing</title>
+	<style type="text/css">
+		body {
+			font-size: 2em;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		p.a {
+			margin: 2em;
+			background-color: #f99;
+		}
+
+		p.b {
+			margin: 2em;
+			background-color: #99f;
+		}
+	</style>
+</head>
+
+<body>
+
+<h1>Margin collapsing</h1>
+
+<p>This block has no margin. This block has no margin. This block has no margin. This block has no margin.</p>
+
+<p class="a">This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+	This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+	This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+</p>
+<p class="b">This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+	This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+	This is a block with <strong>2em</strong> margin. This is a block with <strong>2em</strong> margin.
+</p>
+
+<p>This block has no margin. This block has no margin. This block has no margin. This block has no margin.</p>
+
+</body>
+
+</html>

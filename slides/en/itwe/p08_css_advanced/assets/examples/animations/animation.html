@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      20% {
+        transform: translateX(200px); 
+        width: 200px;
+      }
+      50% {
+        transform: translate(300px, 100px)
+                  rotate(360deg);
+        width: 400px;
+      }
+    }
+    img {
+      margin: 50px 20px;
+      width: 200px;
+      animation: bounce 5s infinite;
+    }
+  </style>
+</head>
+
+<body>
+  <img src='https://www.fit.vut.cz/study/course/ITW/public/assets/cat-fall-small.jpg' alt='Cat'>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ukázka – stavové pseudotřídy</title>
+  <style>
+    /* :hover */
+    button:hover {
+      background: gold;
+      cursor: pointer;
+    }
+
+    /* :active */
+    button:active {
+      background: orange;
+    }
+
+    /* :focus */
+    input:focus {
+      border: 2px solid blue;
+    }
+
+    /* :focus-visible */
+    input:focus-visible {
+      outline: 3px solid green;
+    }
+
+    /* :target */
+    #sekce1:target {
+      background: lightyellow;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Stavové pseudotřídy</h1>
+
+  <h2>:hover a :active</h2>
+  <button>Tlačítko</button>
+
+  <h2>:focus a :focus-visible</h2>
+  <p>
+    <input type="text" placeholder="Klikni nebo tabni sem">
+  </p>
+
+  <h2>:target</h2>
+  <p><a href="#sekce1">Přejít na sekci 1</a></p>
+  <div id="sekce1" style="padding:1em; margin-top:1em;">
+    Toto je cílová sekce (zvýrazní se po kliknutí na odkaz).
+  </div>
+</body>
+
+</html>

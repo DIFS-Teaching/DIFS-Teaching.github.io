@@ -1,0 +1,19 @@
+{
+    "id": "p05_datove_modelovani",
+    "title": "IIS Datové modelování",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Datové modelování"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020data.md",
+        "c030databazove_modely.md",
+        "c999final.md"
+    ]
+}

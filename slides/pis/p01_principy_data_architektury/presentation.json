@@ -1,0 +1,24 @@
+{
+    "id": "p01_principy_data_architektury",
+    "title": "PIS - Principy, data, modely, architektury",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Principy, data, modely, architektury",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020data.md",
+        "c030system.md",
+        "c040navrh.md",
+        "c050metadata.md",
+        "c060databazove_modely.md",
+        "c070architektury.md",
+        "c999final.md"
+    ]
+}

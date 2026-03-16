@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Margin collapsing</title>
+	<style type="text/css">
+		body {
+			font-size: 2em;
+			margin: 0;
+			padding: 0;
+		}
+
+		header {
+			margin: 0;
+			padding: 0;
+			background-color: #99f;
+		}
+
+		h1 {
+			font-size: 2em;
+			/* Default user-agent style includes margins */
+		}
+
+		p {
+			margin: 1em 0;
+		}
+	</style>
+</head>
+
+<body>
+
+<header>
+<h1>Margin collapsing 2</h1>
+<p>The bottom margin of this paragraph?</p>
+</header>
+
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, facilis! Dolorum, quam fugit exercitationem enim veritatis accusamus saepe voluptate a quia laboriosam in, provident temporibus repellendus, facere voluptatem deserunt similique.</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, facilis! Dolorum, quam fugit exercitationem enim veritatis accusamus saepe voluptate a quia laboriosam in, provident temporibus repellendus, facere voluptatem deserunt similique.</p>
+
+
+</body>
+
+</html>

@@ -1,0 +1,21 @@
+{
+    "id": "p08_css_advanced",
+    "title": "CSS -- Media Queries, Frameworks, Preprocessors, Advanced Concepts",
+    "author": "Jiri Hynek <hynek@vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "ITWe"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010media.md",
+        "c020frameworks.md",
+        "c030preprocessors.md",
+        "c040advanced.md",
+        "c050summary.md",
+        "c999final.md"
+    ]
+}

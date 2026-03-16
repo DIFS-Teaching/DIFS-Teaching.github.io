@@ -1,0 +1,18 @@
+{
+    "id": "p01_informacni_systemy",
+    "title": "IIS Informační systémy",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Pojem informačního systému, data, informace"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020pojem_is.md",
+        "c999final.md"
+    ]
+}

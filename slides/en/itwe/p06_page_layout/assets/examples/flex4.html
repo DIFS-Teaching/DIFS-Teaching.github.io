@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+	body {
+		margin: 0; padding: 0;
+	}
+
+	p {
+		clear: both;
+		font-weight: bold;
+	}
+
+	.cont {
+        display: flex;
+        background-color: #eee;
+        margin: 1em 0;
+	}
+
+	#s1 {
+        align-items: stretch;
+	}
+	#s2 {
+        align-items: flex-start;
+	}
+	#s3 {
+        align-items: flex-end;
+	}
+	#s4 {
+        align-items: center;
+	}
+	#s5 {
+        align-items: baseline;
+	}
+
+	.dalsi {
+		width: 5em;
+		border: 2px solid red;
+		font-size: 2em;
+		text-align: center;
+		line-height: 5em;
+	}
+
+	.high {
+		height: 8em;
+		line-height: 6em;
+	}
+
+    </style>
+</head>
+<body>
+
+<h1><code>display: flex</code></h1>
+(bloky mají <code>height: auto;</code> a <code>line-height: 5em;</code><br>
+vyšší bloky <code>height: 8em;</code> a <code>line-height: 6em;</code>)
+
+<p>align-items: stretch;</p>
+<div id="s1" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>align-items: flex-start;</p>
+<div id="s2" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>align-items: flex-end;</p>
+<div id="s3" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>align-items: center;</p>
+<div id="s4" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>align-items: baseline;</p>
+<div id="s5" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+</body>
+</html>

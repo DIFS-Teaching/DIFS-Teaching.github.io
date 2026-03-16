@@ -1,0 +1,22 @@
+{
+    "id": "p03_css",
+    "title": "ITWe - Introduction to Cascading Style Sheets",
+    "author": "Jiri Hynek <hynek@vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "ITW"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010intro.md",
+        "c020css.md",
+        "c030selectors.md",
+        "c040values.md",
+        "c050properties.md",
+        "c060summary.md",
+        "c999final.md"
+    ]
+}

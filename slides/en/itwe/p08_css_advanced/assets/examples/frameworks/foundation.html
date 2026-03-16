@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Foundation Example</title>
+  <!-- Foundation CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/css/foundation.min.css"
+    crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Responsive Menu -->
+  <div class="title-bar" data-responsive-toggle="main-menu" data-hide-for="medium">
+    <button class="menu-icon" type="button" data-toggle></button>
+    <div class="title-bar-title">Menu</div>
+  </div>
+
+  <div class="top-bar" id="main-menu">
+    <div class="top-bar-left">
+      <ul class="dropdown menu" data-dropdown-menu>
+        <li class="menu-text">MySite</li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="grid-container mt-5">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-6">
+        <h1>Welcome to Foundation</h1>
+        <p>This is a simple responsive layout using Foundation's grid and components.</p>
+        <button class="button">Click Me</button>
+      </div>
+      <div class="cell medium-6">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Sheba1.JPG" class="thumbnail" alt="Example Image">
+      </div>
+    </div>
+  </div>
+
+  <!-- Foundation JS -->
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/foundation-sites@6.9.0/dist/js/foundation.min.js"
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Endless Page</title>
+  <script>
+    // help flag which indicated data loading
+    let fetching = false;
+
+    /**
+     * Async function which returns a list of countries Promise
+     * 
+     * Using: https://restcountries.com/
+     * 
+     * @returns countries
+     */
+    let fetchContent = async function () {
+      const response = await fetch("https://restcountries.com/v3.1/all?fields=name&fields=cca3");
+      const countries = await response.json();
+      //console.log(countries);
+
+      // simulate waiting
+      await new Promise(r => setTimeout(r, 2000));
+
+      return countries;
+    }
+
+    /**
+     * Generate new content
+     */
+    let generateContent = function () {
+      if (!fetching) {
+        console.log("fetching...");
+        fetching = true;
+        document.getElementById("progress").style["display"] = "block";
+
+        fetchContent().then(function (countries) {
+          let contentElement = document.getElementById("content")
+
+          contentElement.innerHTML += "<h2>Countries</h2>";
+
+          let content = ""
+          for (let i = 0; i < countries.length; i++) {
+            // append new row
+            content += `<tr> \
+                                <td>${countries[i].cca3}</td> \
+                                <td>${countries[i].name.common}</td> \
+                            </tr>`
+          }
+          // construct table
+          contentElement.innerHTML += `<table>${content}</table>`;
+
+          document.getElementById("progress").style["display"] = "none";
+          fetching = false;
+
+        }).catch(function (e) {
+          alert("Unable to download countries!");
+
+          document.getElementById("progress").style["display"] = "none";
+          fetching = false;
+        });
+      } else {
+        console.log("Already fetching! Do not fetch more...");
+      }
+    }
+
+    /**
+     * Scroll event listener which generate new content when users reaches the bottom of page.
+     */
+    let onWindowScrolled = function () {
+      let d = document.documentElement;
+      let offset = d.scrollTop + window.innerHeight;
+      let height = d.offsetHeight;
+      if (offset === height) {
+        console.log('At the bottom');
+        window.removeEventListener("scroll", onWindowScrolled);
+        generateContent();
+        window.addEventListener("scroll", onWindowScrolled);
+      }
+
+      //console.log(d.scrollTop, window.innerHeight, d.offsetHeight);
+      console.log('offset = ' + offset, 'height = ' + height);
+    }
+
+    /**
+     * When the content is loaded.
+     */
+    window.addEventListener("DOMContentLoaded", function () {
+      console.log("Content loaded!");
+
+      let progress = document.getElementById("progress");
+      let img = document.createElement("img");
+      img.src = 'https://raw.githubusercontent.com/DIFS-Teaching/slides/main/en/itwe/p09_js/assets/examples/js/progress.gif';
+      img.alt = "Waiting";
+      progress.appendChild(img);
+
+      // generate content
+      generateContent();
+      // bind event handler to scroll event
+      window.addEventListener("scroll", onWindowScrolled);
+    });
+  </script>
+  <style>
+    table {
+      border: 2px solid black;
+      border-collapse: collapse;
+    }
+
+    td,
+    th {
+      border: 2px solid black
+    }
+
+    #progress {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="heading">My endless page</h1>
+  <div id="content">
+  </div>
+  <div id="progress">
+  </div>
+</body>
+
+</html>

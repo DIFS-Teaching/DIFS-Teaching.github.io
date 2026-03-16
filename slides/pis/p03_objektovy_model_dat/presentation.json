@@ -1,0 +1,20 @@
+{
+    "id": "p03_objektovy_model_dat",
+    "title": "PIS - Objektový model dat",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Objektový model dat",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020vztahy.md",
+        "c030javaorm.md",
+        "c999final.md"
+    ]
+}

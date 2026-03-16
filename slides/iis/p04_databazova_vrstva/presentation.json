@@ -1,0 +1,17 @@
+{
+    "id": "p03_databazova_vrstva",
+    "title": "IIS Databázová vrstva",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Databázová vrstva"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010content.md",
+        "c999final.md"
+    ]
+}

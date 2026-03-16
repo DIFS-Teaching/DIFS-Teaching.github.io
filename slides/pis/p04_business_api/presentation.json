@@ -1,0 +1,21 @@
+{
+    "id": "p04_business_api",
+    "title": "PIS - Business vrtstva a API",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Business vrtstva a API",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010business.md",
+        "c020rest.md",
+        "c030graphql.md",
+        "c040identity.md",
+        "c999final.md"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "id": "webscraping",
+    "title": "Data Extraction from the Web",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "Data Extraction from the Web",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020quick.md",
+        "c030modely.md",
+        "c040automat.md",
+        "c050alt.md",
+        "c060vyzkum.md",
+        "c999final.md"
+    ]
+}

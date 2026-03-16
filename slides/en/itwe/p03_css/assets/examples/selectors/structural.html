@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Example – State Pseudo-classes</title>
+  <style>
+    /* :hover */
+    button:hover {
+      background: gold;
+      cursor: pointer;
+    }
+
+    /* :active */
+    button:active {
+      background: orange;
+    }
+
+    /* :focus */
+    input:focus {
+      border: 2px solid blue;
+    }
+
+    /* :focus-visible */
+    input:focus-visible {
+      outline: 3px solid green;
+    }
+
+    /* :target */
+    #section1:target {
+      background: lightyellow;
+      border: 2px solid red;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>State Pseudo-classes</h1>
+
+  <h2>:hover and :active</h2>
+  <button>Button</button>
+
+  <h2>:focus and :focus-visible</h2>
+  <p>
+    <input type="text" placeholder="Click or tab here">
+  </p>
+
+  <h2>:target</h2>
+  <p><a href="#section1">Go to section 1</a></p>
+  <div id="section1" style="padding:1em; margin-top:1em;">
+    This is the target section (it will be highlighted after clicking the link).
+  </div>
+</body>
+
+</html>

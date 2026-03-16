@@ -1,0 +1,33 @@
+body{
+    margin: 0px;
+}
+
+main{
+    display: grid;
+    height:100vh;
+    grid-template-columns: minmax(150px, 1fr) 4fr;
+    grid-template-areas: 
+        "header header"
+        "nav section"
+        "nav footer"
+}
+
+footer{
+    grid-area: footer;
+    background: red;
+}
+
+header{
+    grid-area: header;
+    background: lightcyan;
+}
+
+section{
+    grid-area: section;
+    background: lightgreen;
+}
+
+nav{
+    grid-area: nav;
+    background: lightsalmon;
+}

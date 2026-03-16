@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="cs">
+
+<head>
+  <meta charset="utf-8">
+  <title>Ukázka – logické pseudotřídy</title>
+  <style>
+    /* :not() – vyber všechny li, které nemají třídu .aktivni */
+    li:not(.aktivni) {
+      color: gray;
+    }
+
+    /* :is() – zjednodušení více selektorů */
+    :is(h1, h2, h3) {
+      color: darkblue;
+      margin-bottom: 0.3em;
+    }
+
+    /* :where() – podobné jako :is(), ale se specifitou 0 */
+    :where(section p, article p) {
+      font-style: italic;
+    }
+
+    /* :has() – rodič, který obsahuje určitý selektor */
+    div:has(img) {
+      border: 2px solid green;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Nadpis H1</h1>
+  <h2>Nadpis H2</h2>
+  <h3>Nadpis H3</h3>
+
+  <h2>:not()</h2>
+  <ul>
+    <li class="aktivni">Aktivní položka</li>
+    <li>Položka 2</li>
+    <li>Položka 3</li>
+  </ul>
+
+  <h2>:where()</h2>
+  <section>
+    <p>Odstavec v sekci (kurzíva).</p>
+  </section>
+  <article>
+    <p>Odstavec v článku (kurzíva).</p>
+  </article>
+
+  <h2>:has()</h2>
+  <div>
+    <img src="https://via.placeholder.com/80" alt="Ukázkový obrázek">
+    <p>Tento div obsahuje obrázek, proto má zelený rámeček.</p>
+  </div>
+  <div>
+    <p>Tento div nemá obrázek, proto není orámovaný.</p>
+  </div>
+</body>
+
+</html>

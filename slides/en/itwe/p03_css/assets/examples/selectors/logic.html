@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Example – Logical Pseudo-classes</title>
+  <style>
+    /* :not() – select all li that do not have the .active class */
+    li:not(.active) {
+      color: gray;
+    }
+
+    /* :is() – simplifies multiple selectors */
+    :is(h1, h2, h3) {
+      color: darkblue;
+      margin-bottom: 0.3em;
+    }
+
+    /* :where() – similar to :is(), but with specificity 0 */
+    :where(section p, article p) {
+      font-style: italic;
+    }
+
+    /* :has() – parent that contains a certain selector */
+    div:has(img) {
+      border: 2px solid green;
+      padding: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Heading H1</h1>
+  <h2>Heading H2</h2>
+  <h3>Heading H3</h3>
+
+  <h2>:not()</h2>
+  <ul>
+    <li class="active">Active item</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+  </ul>
+
+  <h2>:where()</h2>
+  <section>
+    <p>Paragraph in section (italic).</p>
+  </section>
+  <article>
+    <p>Paragraph in article (italic).</p>
+  </article>
+
+  <h2>:has()</h2>
+  <div>
+    <img src="https://via.placeholder.com/80" alt="Sample image">
+    <p>This div contains an image, so it has a green border.</p>
+  </div>
+  <div>
+    <p>This div does not have an image, so it is not bordered.</p>
+  </div>
+</body>
+
+</html>

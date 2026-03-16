@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en"></html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sample HTML Document – CSS Selectors</title>
+  <style>
+    /*
+      GOAL: Demonstrate most common CSS selectors in practice.
+      Each selected element is highlighted with a border/background and a small badge via ::after.
+    */
+
+    /* ===== BASIC SELECTORS ===== */
+    /* Type selector */
+    p.demo { border-left: 4px solid #6aa84f; padding-left: .5rem; }
+
+    /* Universal selector – add basic box-sizing to all */
+    * { box-sizing: border-box; }
+
+    /* Class selector */
+    .highlight { background: #fff2cc; }
+
+    /* ID selector */
+    #unique { border: 2px dashed #3d85c6; padding: .5rem; }
+
+    /* ===== COMBINATORS ===== */
+    /* Descendant */
+    .combinators section p { outline: 1px dotted #999; }
+
+    /* Child */
+    .combinators ul > li { background: #f3f3f3; }
+
+    /* Adjacent sibling */
+    .combinators h3 + p { background: #e6f7ff; }
+
+    /* General sibling */
+    .combinators h4 ~ p { border-left: 3px solid #b4a7d6; padding-left: .5rem; }
+
+    /* ===== ATTRIBUTE SELECTORS ===== */
+    a[href] { color: #0b5394; }
+    a[target="_blank"]::after { content: " ↗"; }
+    a[href^="https"] { text-decoration: underline wavy; }
+    a[href$=".pdf"] { font-weight: bold; }
+    [data-role~="tag"] { background: #d9ead3; padding: .2rem .4rem; border-radius: .3rem; }
+    [lang|="en"] { border: 1px solid #93c47d; padding: .2rem .3rem; }
+    [title*="demo"] { background: #fdebd3; }
+
+    /* ===== PSEUDO-CLASSES – STATE AND STRUCTURE ===== */
+    :root { --ok: #6aa84f; --warn: #e69138; --accent: #3d85c6; }
+
+    /* Structural */
+    .structure li:first-child { border-top: 2px solid var(--accent); }
+    .structure li:last-child { border-bottom: 2px solid var(--accent); }
+    .structure li:only-child { background: #d0e0e3; }
+    .structure li:nth-child(2n) { background: #f9f9f9; }
+    .structure li:nth-of-type(3) { color: #cc0000; }
+    .structure p:empty::after { content: "(empty)"; color: #999; }
+    .structure :not(.skip) { outline-offset: 2px; }
+    .structure :not(.skip).mark { outline: 1px dashed #bbb; }
+    .structure :is(section, article) p.mark { background: #e1f0ff; }
+    .structure :where(ul) li { /* zero specificity helper */ }
+    .structure figure:has(img) { border: 2px solid #b6d7a8; padding: .5rem; }
+
+    /* Language and target */
+    p:lang(cs) { font-style: normal; }
+    p:lang(en) { font-style: italic; }
+    #anchor-target:target { background: #c9daf8; }
+
+    /* Links and interaction */
+    a:link { /* default unvisited link */ }
+    a:visited { /* browser may restrict changes for security reasons */ }
+    a:hover { background: #d0e0e3; }
+    a:active { outline: 2px solid #1155cc; }
+    a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .focus-within-demo:focus-within { box-shadow: 0 0 0 3px #cfe2f3; }
+
+    /* Forms and state pseudo-classes */
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    input:disabled { background: #f0f0f0; }
+    input:enabled { /* for demonstration only */ }
+    input:required { border-left: 3px solid var(--warn); }
+    input:optional { border-left: 3px solid #b7b7b7; }
+    input:valid { box-shadow: inset 0 0 0 2px #b6d7a8; }
+    input:invalid { box-shadow: inset 0 0 0 2px #f4cccc; }
+    input[type="checkbox"]:checked + label { background: #d9ead3; }
+    input[type="number"]:in-range { background: #eaf6e9; }
+    input[type="number"]:out-of-range { background: #fde9e9; }
+    input::placeholder { color: #999; }
+
+    /* ===== PSEUDO-ELEMENTS ===== */
+    .badge::before { content: "◆ "; color: var(--warn); }
+    .badge::after  { content: " ◇"; color: var(--warn); }
+    .first-letter-demo::first-letter { font-size: 180%; font-weight: bold; }
+    .first-line-demo::first-line { text-transform: uppercase; }
+    ::selection { background: #ffe599; }
+    ul.marker-demo li::marker { content: "→ "; }
+    input::placeholder { opacity: .8; }
+    input[type="file"]::-webkit-file-upload-button { /* Chrome/Safari */ border: 1px solid #aaa; padding: .2rem .5rem; }
+    input[type="file"]::file-selector-button { /* Standard */ border: 1px solid #aaa; padding: .2rem .5rem; }
+
+    /* Backdrop – visible if <dialog open> */
+    dialog::backdrop { background: rgba(0,0,0,.2); }
+
+    /* Visual helper classes */
+    .demo-block { border: 1px solid #ddd; padding: 1rem; margin: 1rem 0; border-radius: .5rem; }
+    .title { font-weight: 700; margin-bottom: .5rem; }
+    .note { font-size: .9rem; color: #666; }
+    nav a { padding: .15rem .35rem; border-radius: .35rem; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.5; padding: 1rem; }
+    code { background: #f7f7f7; padding: .1rem .3rem; border-radius: .25rem; }
+  </style>
+</head>
+<body>
+  <header class="demo-block">
+    <h1 class="title">CSS Selectors – Sample Document</h1>
+    <p class="demo">This document demonstrates various types of selectors.
+      Some effects appear on mouse hover or when interacting with the form.</p>
+    <nav>
+      <a href="#basic">Basic</a>
+      <a href="#combinators">Combinators</a>
+      <a href="#attributes">Attribute</a>
+      <a href="#pseudo">Pseudo-classes</a>
+      <a href="#elements">Pseudo-elements</a>
+      <a href="#form">Form</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Basic selectors -->
+    <section id="basic" class="demo-block">
+      <h2 class="title badge">Basic Selectors</h2>
+      <p class="demo">Type selector <code>p</code> targets this paragraph.</p>
+      <p id="unique" title="demo-id">ID selector <code>#unique</code>.</p>
+      <p class="highlight" title="demo-class">Class selector <code>.highlight</code>.</p>
+      <p>Universal selector <code>*</code> subtly sets <code>box-sizing</code> here.</p>
+    </section>
+
+    <!-- Combinators -->
+    <section id="combinators" class="demo-block combinators">
+      <h2 class="title badge">Combinators</h2>
+      <h3>Heading H3</h3>
+      <p>Selector <code>h3 + p</code> highlights the following paragraph.</p>
+      <h4>Heading H4</h4>
+      <p>This paragraph and others <code>h4 ~ p</code> have a left border.</p>
+      <div>
+        <p>Selector <code>.combinators section p</code> – descendant inside section.</p>
+      </div>
+      <ul>
+        <li>Item 1</li>
+        <li>Item 2 (selector <code>ul > li</code>)</li>
+        <li>Item 3</li>
+      </ul>
+    </section>
+
+    <!-- Attribute selectors -->
+    <section id="attributes" class="demo-block">
+      <h2 class="title badge">Attribute Selectors</h2>
+      <p>
+        <a href="https://example.com" target="_blank" title="demo-link">HTTPS link</a> ·
+        <a href="/file.pdf">PDF link</a> ·
+        <a href="/local" lang="en-US">English text</a>
+      </p>
+      <p>
+        <span data-role="tag">tag</span>
+        <span data-role="tag badge" title="demo-attr">tag + badge</span>
+      </p>
+    </section>
+
+    <!-- Pseudo-classes -->
+    <section id="pseudo" class="demo-block structure focus-within-demo">
+      <h2 class="title badge">Pseudo‑classes (structure, state, language, target)</h2>
+      <article class="mark">
+        <p class="mark" lang="cs">This paragraph has <code>:lang(cs)</code>.</p>
+        <p class="mark" lang="en">This one has <code>:lang(en)</code> and is italic.</p>
+        <p class="mark skip"></p>
+        <figure>
+          <img alt="demo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90'%3E%3Crect width='100%25' height='100%25' fill='%23e1f0ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='14'%3EIMG%3C/text%3E%3C/svg%3E" />
+          <figcaption>Selector <code>figure:has(img)</code></figcaption>
+        </figure>
+      </article>
+
+      <div class="demo-block">
+        <p class="title">List with structure</p>
+        <ul class="structure">
+          <li>First (first-child)</li>
+          <li>Second (nth-child even)</li>
+          <li>Third (nth-of-type)</li>
+          <li>Fourth</li>
+        </ul>
+      </div>
+
+      <p id="anchor-target" class="demo">This is the <code>:target</code>. Click navigation link #pseudo then #elements and back.</p>
+    </section>
+
+    <!-- Pseudo‑elements -->
+    <section id="elements" class="demo-block">
+      <h2 class="title badge">Pseudo‑elements</h2>
+      <p class="first-letter-demo">The first letter of this paragraph is larger thanks to <code>::first-letter</code>.</p>
+      <p class="first-line-demo">The first line of this paragraph is uppercase (<code>::first-line</code>) and text selection has a custom color (<code>::selection</code>).</p>
+      <ul class="marker-demo">
+        <li>Custom list markers using <code>::marker</code></li>
+        <li>Second item</li>
+      </ul>
+    </section>
+
+    <!-- Forms and UI states -->
+    <section id="form" class="demo-block">
+      <h2 class="title badge">Forms and State Pseudo‑classes</h2>
+      <form>
+        <div>
+          <label for="name">Name (required)</label><br>
+          <input id="name" name="name" type="text" required placeholder="Enter name" />
+        </div>
+        <div>
+          <label for="email">E‑mail (valid/invalid)</label><br>
+          <input id="email" name="email" type="email" placeholder="e.g. user@domain.com" />
+        </div>
+        <div>
+          <input id="agree" type="checkbox" />
+          <label for="agree">I agree – selector <code>:checked + label</code></label>
+        </div>
+        <div>
+          <label for="age">Age 18–65 (<code>:in-range</code> / <code>:out-of-range</code>)</label><br>
+          <input id="age" name="age" type="number" min="18" max="65" value="17" />
+        </div>
+        <div>
+          <label for="file">File (<code>::file-selector-button</code>)</label><br>
+          <input id="file" type="file" />
+        </div>
+        <div>
+          <label for="desc">Description</label><br>
+          <textarea id="desc" name="desc" rows="3" placeholder="Text…"></textarea>
+        </div>
+      </form>
+    </section>
+
+    <!-- Dialog for ::backdrop demo -->
+    <section class="demo-block">
+      <h2 class="title badge">Dialog & ::backdrop</h2>
+      <p class="note">This dialog is open via the <code>open</code> attribute; the surroundings have a semi-transparent background thanks to <code>dialog::backdrop</code>.</p>
+      <dialog open>
+        <p>I am <code>&lt;dialog open&gt;</code>. Closing would require JS – here left open for demonstration.</p>
+      </dialog>
+    </section>
+
+  </main>
+
+  <footer class="demo-block">
+    <p>Done. Try mouse <em>hover</em> on links, fill out the form and watch selector reactions.</p>
+  </footer>
+</body>
+</html>

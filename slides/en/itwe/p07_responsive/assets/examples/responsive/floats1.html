@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .row {
+      overflow: hidden;
+    }
+
+    .row::after {
+      content: '';
+      clear: both;
+    }
+
+    [class*='col-'] {
+      float: left;
+      height: 200px;
+    }
+
+    /**
+      * Grid system: column widths
+      **/
+    .col-1 { width: 25%; } /* 1/4 */
+    .col-2 { width: 50%; } /* 2/4 */
+    .col-3 { width: 75%; } /* 3/4 */
+    .col-4 { width: 100%; } /* 4/4 */
+
+    /* -------------------------------- */
+    /* Demo help styles. */
+
+    .row {
+      border: 4px solid blue;
+    }
+
+    [class*='col-'] {
+      /* text alignment */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    #sidebar {
+      background-color: lightblue;
+    }
+
+    #article {
+      background-color: lightpink;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="content" class="row">
+    <div id="sidebar" class="col-1">
+      sidebar<br>1/4
+    </div>
+    <div id="article" class="col-3">
+      article<br>3/4
+    </div>
+  </div>
+</body>
+
+</html>

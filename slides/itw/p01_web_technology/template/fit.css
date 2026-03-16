@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css');
+
+:root {
+  --colorBg: #EEEEEE;
+  --colorFg: #444444;
+  --colorEmp2: #4136e6;
+  --colorEmp: #bb1e09;
+  --colorEmpA:#7772bc;
+  --echtGold: 0.55;
+  --fontAwesomeFree: "Font Awesome 7 Free";
+}
+
+.reveal * {
+  box-sizing: border-box;
+}
+
+.reveal {
+  color: var(--colorFg);
+  font-family: "Ubuntu", sans-serif;
+}
+
+.reveal:not(.ready)::after {
+  content: "";
+  background: url("./loading.jpg");
+  background-size: 25%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: white;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2rem;
+  color: var(--colorEmp);
+  font-weight: bold;
+  text-align: center;
+  opacity: 1;
+  z-index: 10000;
+}
+
+.reveal .controls {
+  top: 100px;
+  bottom: auto;
+}
+
+.reveal .progress {
+  height: 5px;
+  color: var(--colorEmp);
+}
+
+.reveal .img-right {
+  float: right;
+  margin: 1rem;
+  max-width: 50%;
+  z-index: 900;
+  position: relative;
+}
+
+.reveal .box {
+  /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);*/
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2)
+}
+
+.reveal .codebox {
+  /*box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);*/
+  font-family: monospace;
+  font-size: 80%;
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  padding: 0.3em 0.5em;
+  margin: 0.5em;
+  border: 1px solid black;
+}
+
+.reveal .block-center {
+  display: flex;
+  justify-content: center;
+}
+
+.reveal .code-render {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  width: auto;
+  margin: 1rem 5%;
+  display: flex;
+  position: relative;
+}
+
+.reveal .code-render iframe {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  height: auto;
+  border: 2px dotted lightgray;
+}
+
+.reveal .code-render .resizer {
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  right: 0;
+  bottom: 0;
+  cursor: nwse-resize;
+  background-color: lightgray;
+}
+
+.reveal .code-container pre, .reveal .code-container code {
+  height: 100%;
+}
+
+.reveal .controls .controls-arrow::after, .reveal .controls .controls-arrow::before {
+  left: 10px;
+  width: 2em;
+}
+
+.reveal h1 {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 500;
+}
+
+.reveal a {
+  text-decoration: none;
+  color: var(--colorEmpA);
+}
+
+.reveal em {
+  color: var(--colorEmp);
+  font-style: inherit;
+}
+
+.reveal i {
+  font-style: italic;
+}
+
+.reveal ul p {
+  margin: .8rem 0;
+}
+
+.reveal .center-table td, .reveal .center-table th {
+  text-align: center;
+}
+
+.reveal-viewport {
+  background: #fafafa;
+}
+
+.reveal .matrix-table th {
+  border: none;
+}
+
+.reveal .matrix-table th:nth-child(1) {
+  text-align: right;
+}
+
+.reveal .matrix-table td {
+  background-color: white;
+}
+
+.reveal code.monaco {
+  display: block;
+  height: 100%;
+  width: 100%;
+  min-height: 400px;
+  padding: 0;
+  padding-top: 4px;
+  background-color: white;
+}
+
+html.print-pdf .reveal .slides section .fragment { /* show fragments when printing */
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal ul ul {
+  margin-left: 1.5em;
+}
+
+.reveal pre {
+  box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding: 1rem;
+  background-color: #f8f8f8;
+}
+
+.reveal pre code {
+    font-size: 0.75em;
+    max-height: 800px;
+    line-height: 1.2;
+    background-color: #f8f8f8;
+}
+
+.reveal .large {
+  font-size: 250%;
+}
+
+.reveal .grey {
+  color: #777;
+}
+
+.reveal .minus {
+  color: #a00;
+}
+
+.reveal .plus {
+  color: #0a0;
+}
+
+.reveal table {
+  margin: 0;
+  margin-left: 2rem;
+}
+
+.reveal table th {
+  border-bottom-width: 2px;
+  background-color: var(--colorBg);
+}
+
+.reveal table tr:nth-child(even) {
+  background-color: var(--colorBg);
+}
+
+.reveal table td {
+  border-bottom-width: 0px;
+}
+
+.reveal code {
+  color: var(--fit-blue);
+}
+
+.reveal .cite {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  padding: 0.5em;
+  margin: 1em;
+  font-size: 75%;
+}
+
+.reveal .shadow {
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.9);
+  font-size: 75%;
+}
+
+.reveal .col {
+  width: 45%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.reveal .slides .small {
+  font-size: 85%;
+}
+
+.reveal .slides section pre.small {
+  font-size: 85%; /* small code snippets */
+}
+
+.reveal ol, .reveal dl, .reveal ul {
+  display: block; /* change reveal's inline-block because of floating images */
+}
+
+/* ==== References ====*/
+
+.reveal .r-ref {
+  color: var(--fit-blue);
+  border-bottom: 1px dotted;
+}
+
+.reveal .r-refs {
+  font-size: 60%;
+  overflow: auto;
+  height: 800px;
+  margin: 0;
+  padding-left: 1em;
+}
+
+.reveal .r-refs li {
+  list-style-type: none;
+  list-style-position: inside;
+}
+
+.reveal .r-refs li::before {
+  content: '[' attr(data-index) '] ';
+  margin-left: -1em;
+}
+
+/* ==== Slide ==== */
+
+.reveal .slides section {
+  height: 100%;
+  text-align: left;
+  border: none;
+  padding: 0;
+}
+
+.reveal .slides section header {
+  background-color: var(--colorBg);
+  color: black;
+  padding: 1.5rem 1.5rem;
+}
+
+.reveal .slides section h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: none;
+  margin: 0;
+  line-height: 1;
+  letter-spacing: initial;
+}
+
+.reveal .slides section .content {
+  padding: 1em;
+  line-height: 1.5;
+  font-size: 2.5rem;
+}
+
+.reveal .slides section footer {
+  background-color: var(--colorBg);
+  color: var(--colorFg);
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 1rem 1.5rem;
+  font-size: 75%;
+  display: flex;
+}
+
+.reveal .slides section.stack > section:first-of-type footer {
+  background-color: #FFE3E3;
+}
+
+.reveal .slides section footer .label {
+  margin-right: 1rem;
+  border-right: 2px solid var(--colorFg);
+  padding-right: 1rem;
+}
+
+.reveal .slides section footer .notes {
+  width: 100%;
+  display: flex;
+  gap: .5rem;
+}
+
+.reveal .slides section footer .slideno {
+  text-wrap: nowrap;
+  margin-left: 1rem;
+}
+
+.reveal .slides section pre {
+  font-size: 100%;
+}
+
+/* ==== Title slide ====*/
+
+.reveal .slides section.title header {
+  height: calc(100vh * var(--echtGold));
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  text-align: center;;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+  background-color: var(--colorBg);
+  color: var(--fit-blue);
+}
+
+.reveal .slides section.title header h1 {
+  font-weight: 700;
+  font-size: 5rem;
+  margin: 1rem 0 0 0;
+  color: black;
+}
+
+.reveal .slides section.title header .subtitle {
+  font-size: 3rem;
+  margin: 2rem 0 0 0;
+  padding: 0;
+}
+
+.reveal .slides section.title header .subsubtitle {
+  font-size: 2rem;
+  margin: .5rem 0 0 0;
+  padding: 0;
+}
+
+.reveal .slides section.title footer {
+  display: none;
+}
+
+.reveal .slides section.title .logo {
+  background: var(--colorFg) url('fit-logo-inv.svg') no-repeat;
+  background-size: 100% 100%;
+  height: 10vh;
+  aspect-ratio: calc(1/0.4);
+  margin: auto; /* center the logo */
+}
+
+.reveal .slides section.title .authors {
+  margin-top: 2rem;
+  font-size: 2rem;
+}
+
+.reveal .slides section.title .authors dl {
+  margin: 0;
+  text-align: center;
+}
+
+.reveal .slides section.title .authors dt {
+  margin: 0;
+}
+
+.reveal .slides section.title .authors dd {
+  margin: 0;
+}
+
+/* ==== Quote slide ====*/
+
+.reveal .slides section.quote {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.reveal .slides section.quote .content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 4rem;
+}
+
+.reveal .slides section.quote .content blockquote {
+  box-shadow: none;
+}
+
+.reveal .slides section.quote footer {
+  position: relative;
+}
+
+/* ==== Editor slide ==== */
+
+.reveal .slides section.editor {
+  display: flex !important;
+  flex-direction: column;
+}
+
+.reveal .slides section.editor .content {
+  height: 100%;
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: 0;
+}
+
+.reveal .slides section.editor .content .reveal-include {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: start;
+  position: relative;
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items:center;
+  padding: 1rem;
+  position: absolute;
+  right: -5.5rem;
+  top: 0;
+  height: 100%;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--colorBg);
+  opacity: .8;
+  z-index: 1001;
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls.active {
+  right: 0rem;
+  opacity: 1;
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div {
+  padding: 1rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0;
+  border-top: 1px solid var(--colorFg);
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div:first-of-type {
+  border-top: none;
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div.active {
+  color: var(--colorEmpA);
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div:hover {
+  color: var(--colorEmp);
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div::after {
+  font-family: var(--fontAwesomeFree);
+  font-weight: 600;
+  content: "\f02d";
+  font-size: 3rem;
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div.btn-code::after {
+  content: "\f121";
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div.btn-view::after {
+  content: "\e163";
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div.btn-editor::after {
+  content: "\f5fc";
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-controls > div.btn-full::after {
+  content: "\f065";
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-editor {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  gap: .5rem
+}
+
+.reveal .slides section.editor .content .reveal-include .reveal-include-editor > div {
+  height: 100%;
+  flex: 1;
+  display: none;
+  border: 2px solid lightgray;
+}
+
+.reveal .slides section.editor .content .reveal-include.editor .reveal-include-editor > div.code,
+.reveal .slides section.editor .content .reveal-include.code .reveal-include-editor > div.code {
+  display: block;
+  padding-right: .5rem
+}
+
+.reveal .slides section.editor .content .reveal-include.editor .reveal-include-editor > div.view,
+.reveal .slides section.editor .content .reveal-include.view .reveal-include-editor > div.view,
+.reveal .slides section.editor .content .reveal-include.full .reveal-include-editor > div.view {
+  display: block;
+}
+
+.reveal .reveal-include code {
+    font-size: 2rem;
+    max-height: none;
+    line-height: 1.2;
+    width: 100%;
+    height: 100%;
+}
+
+.reveal .slides section.editor .content .reveal-include.full .reveal-include-editor > div.view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 1rem;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+}
+
+.reveal .slides section.editor .content .reveal-include.full .reveal-include-controls {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  z-index: 1001;
+}
+
+.reveal .slides section.editor .content iframe {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.reveal .slides section.editor footer {
+  position: relative;
+}
+
+/* ==== Section slide ====*/
+
+.reveal .slides section.section {
+  color: black;
+  display: flex !important;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: end;
+}
+
+.reveal .slides section.section header {
+  background: var(--colorBg);
+  color: black;
+  margin: 0em;
+  padding: 2rem 8rem;
+  margin-bottom: 20vh;
+}
+
+.reveal .slides section.section header h1 {
+  color: var(--fit-blue);
+}
+
+.reveal .slides section.section header p {
+  margin: 1rem 0 0 0;
+}
+
+.reveal .slides section.section footer {
+  display: none;
+}
+
+/* ==== Centered slide ====*/
+
+.reveal .slides section.centered .content {
+  text-align: center;
+}
+
+.reveal .slides section.fullspace .content {
+  padding: 0;
+}

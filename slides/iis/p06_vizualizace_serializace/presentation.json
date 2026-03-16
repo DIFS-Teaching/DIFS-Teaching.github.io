@@ -1,0 +1,18 @@
+{
+    "id": "p06_vizualizace_serializace",
+    "title": "IIS Vizualizace a serializace",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Vizualizace a serializace"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020serializace.md",
+        "c999final.md"
+    ]
+}

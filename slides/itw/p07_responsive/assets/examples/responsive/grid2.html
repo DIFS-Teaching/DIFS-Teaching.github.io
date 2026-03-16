@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-areas: 'header header header header'
+                          'sidebar content content content';
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container > header {
+      grid-area: header;
+    }
+
+    .container > nav {
+      grid-area: sidebar;
+    }
+
+    .container > article {
+      grid-area: content;
+    }
+
+    /* -------------------------------- */
+    /* Demo help styles. */
+
+    .container > * {
+      height: 100px;
+      border: 2px solid lightgray;
+      color: lightgray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .container > div:nth-child(1) { grid-area: 1 / 1 / 2 / 2; }
+    .container > div:nth-child(2) { grid-area: 1 / 2 / 2 / 3; }
+    .container > div:nth-child(3) { grid-area: 1 / 3 / 2 / 4; }
+    .container > div:nth-child(4) { grid-area: 1 / 4 / 2 / 5; }
+    .container > div:nth-child(5) { grid-area: 2 / 1 / 3 / 2; }
+    .container > div:nth-child(6) { grid-area: 2 / 2 / 3 / 3; }
+    .container > div:nth-child(7) { grid-area: 2 / 3 / 3 / 4; }
+    .container > div:nth-child(8) { grid-area: 2 / 4 / 3 / 5; }
+
+    .container > header {
+      color: blue;
+      border: 4px solid blue;
+      background-color: #0000FF22;
+      justify-content: left;
+      padding: .2rem;
+    }
+
+    .container > nav {
+      color: green;
+      border: 4px solid green;
+      background-color: #00FF0022;
+      justify-content: left;
+      padding: .2rem;
+    }
+
+    .container > article {
+      color: red;
+      border: 4px solid red;
+      background-color: #FF000022;
+      justify-content: left;
+      padding: .2rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">header</div>
+    <div class="header">header</div>
+    <div class="header">header</div>
+    <div class="header">header</div>
+    <div class="aside">aside</div>
+    <div class="article">article</div>
+    <div class="article">article</div>
+    <div class="article">article</div>
+
+    <header>header</header>
+    <nav>nav</nav>
+    <article>article</article>
+  </div>
+
+</body>
+
+</html>

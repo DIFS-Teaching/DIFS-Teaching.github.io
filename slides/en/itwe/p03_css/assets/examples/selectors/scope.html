@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Example: :scope</title>
+  <style>
+    section {
+      border: 2px solid gray;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .highlight {
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="first">
+    <h2>First section</h2>
+    <p>Paragraph 1</p>
+    <div>
+      <p>Nested paragraph A</p>
+    </div>
+  </section>
+
+  <section id="second">
+    <h2>Second section</h2>
+    <p>Paragraph 2</p>
+    <div>
+      <p>Nested paragraph B</p>
+    </div>
+  </section>
+
+  <script>
+    const section = document.querySelector("#first");
+
+    // Without :scope → selects all p including nested ones
+    const allPs = section.querySelectorAll("p");
+    allPs.forEach(p => p.classList.add("highlight"));
+
+    // With :scope → selects only p that are direct children of the section
+    const directPs = section.querySelectorAll(":scope > p");
+    directPs.forEach(p => p.textContent += " (direct child only)");
+  </script>
+</body>
+
+</html>

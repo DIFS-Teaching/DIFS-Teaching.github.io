@@ -1,0 +1,21 @@
+{
+    "id": "semanticky_web",
+    "title": "UPA - Sémantický web, ontologie",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "UPA -- Sémantický web, ontologie",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020semweb.md",
+        "c030ontologie.md",
+        "c040web.md",
+        "c999final.md"
+    ]
+}

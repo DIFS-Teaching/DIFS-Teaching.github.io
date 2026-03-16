@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Robot in Canvas</title>
+    <style>
+        body {
+            background: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        canvas {
+            background: #e1f5fe;
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="robotCanvas" width="400" height="400"></canvas>
+
+    <script>
+        const canvas = document.getElementById('robotCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Body
+        ctx.fillStyle = '#8bc34a';
+        ctx.strokeStyle = '#558b2f';
+        ctx.lineWidth = 4;
+        ctx.roundRect = function (x, y, w, h, r) {
+            if (w < 2 * r) r = w / 2;
+            if (h < 2 * r) r = h / 2;
+            this.beginPath();
+            this.moveTo(x + r, y);
+            this.arcTo(x + w, y, x + w, y + h, r);
+            this.arcTo(x + w, y + h, x, y + h, r);
+            this.arcTo(x, y + h, x, y, r);
+            this.arcTo(x, y, x + w, y, r);
+            this.closePath();
+            return this;
+        };
+
+        // Draw rounded rectangle helper
+        ctx.roundRect(120, 150, 160, 180, 20).fill();
+        ctx.roundRect(120, 150, 160, 180, 20).stroke();
+
+        // Head
+        ctx.fillStyle = '#c5e1a5';
+        ctx.roundRect(140, 70, 120, 100, 15).fill();
+        ctx.roundRect(140, 70, 120, 100, 15).stroke();
+
+        // Eyes (rectangles)
+        ctx.fillStyle = 'white';
+        ctx.fillRect(165, 105, 30, 30);
+        ctx.fillRect(205, 105, 30, 30);
+        ctx.fillStyle = 'black';
+        ctx.fillRect(175, 115, 15, 15);
+        ctx.fillRect(215, 115, 15, 15);
+
+        // Mouth (rectangle)
+        ctx.fillStyle = '#4caf50';
+        ctx.roundRect(170, 160, 60, 10, 5).fill();
+
+        // Antennas (lines and circles)
+        ctx.strokeStyle = '#558b2f';
+        ctx.lineWidth = 4;
+
+        // Left antenna
+        ctx.beginPath();
+        ctx.moveTo(180, 70);
+        ctx.lineTo(160, 40);
+        ctx.stroke();
+        ctx.fillStyle = '#cddc39';
+        ctx.beginPath();
+        ctx.arc(160, 40, 8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Right antenna
+        ctx.beginPath();
+        ctx.moveTo(220, 70);
+        ctx.lineTo(240, 40);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.arc(240, 40, 8, 0, Math.PI * 2);
+        ctx.fill();
+
+        // Arms
+        ctx.fillStyle = '#aed581';
+        ctx.strokeStyle = '#558b2f';
+        ctx.lineWidth = 3;
+        ctx.roundRect(80, 180, 40, 20, 10).fill();
+        ctx.roundRect(80, 180, 40, 20, 10).stroke();
+        ctx.roundRect(280, 180, 40, 20, 10).fill();
+        ctx.roundRect(280, 180, 40, 20, 10).stroke();
+
+        // Legs
+        ctx.roundRect(150, 330, 40, 50, 10).fill();
+        ctx.roundRect(150, 330, 40, 50, 10).stroke();
+        ctx.roundRect(210, 330, 40, 50, 10).fill();
+        ctx.roundRect(210, 330, 40, 50, 10).stroke();
+
+        // Buttons (circles)
+        ctx.fillStyle = '#c5e1a5';
+        ctx.strokeStyle = '#558b2f';
+        ctx.lineWidth = 2;
+
+        [220, 250, 280].forEach(y => {
+            ctx.beginPath();
+            ctx.arc(200, y, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.stroke();
+        });
+
+        // Text
+        ctx.fillStyle = '#33691e';
+        ctx.font = '24px Verdana';
+        ctx.textAlign = 'center';
+        ctx.fillText('Beep Boop! 🤖', 200, 390);
+    </script>
+</body>
+
+</html>

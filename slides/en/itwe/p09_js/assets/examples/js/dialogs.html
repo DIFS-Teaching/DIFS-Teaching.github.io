@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialogs</title>
+  <style>
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 32px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    function showDialogs() {
+      console.log("Dialogs are about to be shown.");
+      window.alert("Winter is coming!");
+
+      let ready = confirm("Are you ready to enter Westeros?");
+      if (ready) {
+        let name = prompt("What is your name?");
+        alert(`Welcome, ${name}!`);
+      } else {
+        alert("Come back later!");
+      }
+    }
+  </script>
+
+  <button onclick="showDialogs()">Start</button>
+
+</body>
+</html>

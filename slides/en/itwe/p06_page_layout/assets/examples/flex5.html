@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+	body {
+		margin: 0; padding: 0;
+	}
+
+	p {
+		clear: both;
+		font-weight: bold;
+	}
+
+	.cont {
+        display: flex;
+        background-color: #eee;
+        margin: 1em 0;
+	}
+
+	#s1 .dalsi {
+        flex: none;
+	}
+	#s2 .dalsi {
+        flex: 0 0 5em;
+	}
+	#s3 .dalsi {
+        flex: 1 0 5em;
+	}
+	#s3 .dalsi.high {
+        flex-grow: 2;
+	}
+	#s4 .dalsi {
+        flex: 0 1 5em;
+	}
+	#s4 .dalsi.high {
+        flex-shrink: 2;
+	}
+
+	.dalsi {
+		border: 2px solid red;
+		font-size: 2em;
+		text-align: center;
+		line-height: 5em;
+		white-space: nowrap;
+	}
+
+	.high {
+		height: 8em;
+		line-height: 6em;
+	}
+
+    </style>
+</head>
+<body>
+
+<h1><code>display: flex</code></h1>
+
+<p>flex: none; (~ 0 0 auto)</p>
+<div id="s1" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>flex: 0 0 5em;</p>
+<div id="s2" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>flex: 1 0 5em;</p>
+<div id="s3" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	flex-grow:2
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>flex: 0 1 5em;</p>
+<div id="s4" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	flex-shrink:2
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+</body>
+</html>

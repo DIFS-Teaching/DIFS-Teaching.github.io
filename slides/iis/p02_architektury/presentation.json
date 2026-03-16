@@ -1,0 +1,19 @@
+{
+    "id": "p02_architektury",
+    "title": "IIS Architektury informačních systémů",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Architektury informačních systémů"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010arch.md",
+        "c020shrnuti.md",
+        "c030vyvoj.md",
+        "c999final.md"
+    ]
+}

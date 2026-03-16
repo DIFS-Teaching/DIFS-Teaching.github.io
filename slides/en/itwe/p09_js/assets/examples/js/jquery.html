@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Basic jQuery Example</title>
+  <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous">
+  </script>
+  <script>
+    $(document).ready(function () {
+      $("#myButton").click(function () {
+        $("ul > li").css("color", "blue");
+      });
+    });
+  </script>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 32px;
+    }
+    
+    .item {
+      font-size: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <button id="myButton">Winter is Coming</button>
+
+  <ul>
+    <li class="item">Jon Snow</li>
+    <li class="item">Arya Stark</li>
+    <li class="item">Tyrion Lannister</li>
+  </ul>
+</body>
+
+</html>

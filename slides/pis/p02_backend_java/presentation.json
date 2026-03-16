@@ -1,0 +1,23 @@
+{
+    "id": "p02_backend_java",
+    "title": "PIS - Backend a platforma Jakarta EE",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Backend a platforma Jakarta EE",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020java.md",
+        "c025vyvoj.md",
+        "c030rest.md",
+        "c035data.md",
+        "c040business.md",
+        "c999final.md"
+    ]
+}

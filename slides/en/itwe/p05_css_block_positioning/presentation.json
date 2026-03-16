@@ -1,0 +1,20 @@
+{
+    "id": "p05_css_block_positioning",
+    "title": "ITWe - CSS - Block Positioning",
+    "author": "Radek Burget <burget@fit.vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "ITW"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010intro.md",
+        "c020float.md",
+        "c030position.md",
+        "c040properties.md",
+        "c999final.md"
+    ]
+}

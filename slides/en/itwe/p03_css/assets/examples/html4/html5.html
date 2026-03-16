@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>HTML5 + CSS Example</title>
+  <style>
+    body {
+      background-color: #ffffcc;
+      color: #000;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      color: red;
+      text-align: center;
+    }
+
+    p.centered {
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    hr {
+      width: 80%;
+      border: none;
+      border-top: 2px solid blue;
+      margin: 20px auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      margin: 0 auto;
+      background-color: #eeeeee;
+    }
+
+    th,
+    td {
+      border: 1px solid #000;
+      padding: 10px;
+    }
+
+    th {
+      background-color: #cccccc;
+      font-size: 1.1em;
+    }
+
+    td.name u {
+      text-decoration: underline;
+    }
+
+    td.age.big {
+      font-size: 1.3em;
+    }
+
+    td.age.small {
+      font-size: 0.9em;
+    }
+
+    .scrolling-text {
+      overflow: hidden;
+      white-space: nowrap;
+      box-sizing: border-box;
+      animation: marquee 10s linear infinite;
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <h1>Welcome to my page</h1>
+
+  <p class="centered">This paragraph is centered and has custom font and size.</p>
+
+  <hr>
+
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Age</th>
+    </tr>
+    <tr>
+      <td class="name">Jan Novak</td>
+      <td class="age big">25</td>
+    </tr>
+    <tr>
+      <td>Eva Mala</td>
+      <td class="age small">22</td>
+    </tr>
+  </table>
+
+  <p class="scrolling-text">This is a scrolling text (marquee effect using CSS animation).</p>
+
+</body>
+
+</html>

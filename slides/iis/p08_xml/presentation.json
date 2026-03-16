@@ -1,0 +1,20 @@
+{
+    "id": "p08_xml",
+    "title": "IIS Technologie XML",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Technologie XML"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020schema.md",
+        "c030dom.md",
+        "c040xsl.md",
+        "c999final.md"
+    ]
+}

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ukázka HTML5 elementů</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      background-color: #fafafa;
+    }
+
+    section {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    header,
+    nav,
+    main,
+    article,
+    aside,
+    footer {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+
+    header {
+      background-color: #eef6ff;
+    }
+
+    nav {
+      background-color: #e8f8f5;
+    }
+
+    main {
+      background-color: #fef9e7;
+    }
+
+    article {
+      background-color: #fff0f0;
+    }
+
+    aside {
+      background-color: #f4f0ff;
+    }
+
+    footer {
+      background-color: #e0e0e0;
+    }
+
+    .metadata {
+      background-color: #eef6ff;
+    }
+
+    .text {
+      background-color: #fef9e7;
+    }
+
+    .lists {
+      background-color: #f5f9ef;
+    }
+
+    .tables {
+      background-color: #fff0f0;
+    }
+
+    .media {
+      background-color: #f4f0ff;
+    }
+
+    .forms {
+      background-color: #e8f8f5;
+    }
+
+    .interactive {
+      background-color: #f0f8ff;
+    }
+
+    .programming {
+      background-color: #fffaf0;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Ukázka HTML5 elementů</h1>
+    <p>Toto je hlavička dokumentu.</p>
+  </header>
+
+  <nav>
+    <p>Toto je navigační panel s odkazy.</p>
+    <a href="#">Domů</a> | <a href="#">O nás</a> | <a href="#">Kontakt</a>
+  </nav>
+
+  <main>
+
+    <section class="text">
+      <h2>Textový obsah</h2>
+      <p><strong>Tučné</strong>, <em>kurzíva</em>, <u>podtržené</u>, <s>přeškrtnuté</s>.</p>
+      <p><mark>Zvýrazněný text</mark> a <small>malý text</small>.</p>
+      <p>H<sub>2</sub>O a X<sup>2</sup>.</p>
+      <blockquote>Toto je blokový citát.</blockquote>
+      <pre><code>Předformátovaný text</code></pre>
+      <abbr title="World Wide Web">WWW</abbr>
+    </section>
+
+    <section class="lists">
+      <h2>Seznamy</h2>
+      <ul>
+        <li>Neřazená položka</li>
+        <li>Další položka</li>
+      </ul>
+      <ol>
+        <li>První</li>
+        <li>Druhý</li>
+      </ol>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Značkovací jazyk</dd>
+      </dl>
+    </section>
+
+    <section class="tables">
+      <h2>Tabulky</h2>
+      <table border="1">
+        <caption>Ukázková tabulka</caption>
+        <thead>
+          <tr>
+            <th>Záhlaví 1</th>
+            <th>Záhlaví 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Buňka A</td>
+            <td>Buňka B</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="media">
+      <h2>Média</h2>
+      <figure>
+        <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Domy Trulli v Itálii" width="400" />
+        <figcaption>Tradiční domy Trulli v Alberobello, Itálie.</figcaption>
+      </figure>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      </audio>
+      <video controls width="200">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="forms">
+      <h2>Formuláře</h2>
+      <form>
+        <input type="text" placeholder="Textové pole">
+        <input type="checkbox"> Zaškrtávací pole
+        <input type="radio" name="r"> Přepínač
+        <select>
+          <option>Možnost</option>
+        </select>
+        <textarea>Textová oblast</textarea>
+        <button>Odeslat</button>
+      </form>
+    </section>
+
+    <article>
+      <h2>Příklad článku</h2>
+      <p>Toto je nezávislý obsah, jako příspěvek na blogu.</p>
+    </article>
+
+    <aside>
+      <p>Toto je boční panel se souvisejícími informacemi.</p>
+    </aside>
+
+    <!-- zkrácené sekce pro stručnost -->
+    <section class="interactive">
+      <h2>Interaktivní prvky</h2>
+      <details>
+        <summary>Klikni na mě</summary>Skrytý obsah
+      </details>
+      <button id="openDialogBtn">Otevřít dialog</button>
+      <dialog id="myDialog">
+        <h3>JavaScript + Dialog ukázka</h3>
+        <p>Tento dialog je ovládán JavaScriptem.</p>
+        <button id="closeDialogBtn">Zavřít</button>
+      </dialog>
+    </section>
+
+    <section class="programming">
+      <h2>Programování a skripty</h2>
+      <p>Příklad JavaScript kódu ovládajícího dialog:</p>
+      <pre><code>
+const dialog = document.getElementById('myDialog');
+document.getElementById('openDialogBtn').onclick = () => dialog.showModal();
+document.getElementById('closeDialogBtn').onclick = () => dialog.close();
+      </code></pre>
+      <script>
+        const dialog = document.getElementById('myDialog');
+        document.getElementById('openDialogBtn').onclick = () => dialog.showModal();
+        document.getElementById('closeDialogBtn').onclick = () => dialog.close();
+      </script>
+    </section>
+
+    <section class="media" id="svg-canvas-demo"
+      style="background:#f4f7fb;padding:12px;border:1px solid #e0e6ee;border-radius:6px;">
+      <h2>Ukázka SVG a Canvas</h2>
+
+      <!-- SVG demo -->
+      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="min-width:260px;">
+          <h3>Inline SVG (vektory)</h3>
+          <p class="small">SVG je škálovatelný a přístupný — text zůstane čitelný při zvětšení.</p>
+
+          <!-- jednoduché inline SVG -->
+          <svg id="demoSvg" width="240" height="160" viewBox="0 0 240 160" role="img" aria-label="Ukázkové SVG">
+            <!-- pozadí -->
+            <rect x="0" y="0" width="240" height="160" fill="#fff" />
+            <!-- gradient -->
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#6fb3ff" />
+                <stop offset="1" stop-color="#a78bff" />
+              </linearGradient>
+            </defs>
+            <!-- tvary -->
+            <rect x="12" y="12" width="80" height="50" rx="8" fill="url(#g1)" stroke="#567" />
+            <circle id="svgCircle" cx="160" cy="45" r="28" fill="#ffd166" stroke="#b87500" />
+            <path d="M30 100 C60 70, 120 130, 180 100" fill="none" stroke="#3aa76d" stroke-width="3" />
+            <text x="20" y="150" font-family="Arial" font-size="12" fill="#333">Vektorový text (SVG)</text>
+          </svg>
+
+          <p style="margin-top:8px;">
+            <button id="svgColorBtn" type="button">Změnit barvu kruhu</button>
+            <button id="svgResetBtn" type="button">Obnovit</button>
+          </p>
+        </div>
+
+        <!-- Canvas demo -->
+        <div style="min-width:300px;">
+          <h3>Canvas (bitmapové kreslení)</h3>
+          <p class="small">Canvas kreslí pixely — vhodné pro animace a dynamické grafiky.</p>
+
+          <canvas id="demoCanvas" width="320" height="160"
+            style="border:1px solid #ddd;display:block;background:#fff;"></canvas>
+
+          <p style="margin-top:8px;">
+            <button id="drawBtn" type="button">Překreslit</button>
+            <button id="clearBtn" type="button">Vyčistit</button>
+            <button id="downloadBtn" type="button">Stáhnout PNG</button>
+          </p>
+        </div>
+      </div>
+
+      <script>
+        // --- SVG interakce ---
+        const svgCircle = document.getElementById('svgCircle');
+        const svgColorBtn = document.getElementById('svgColorBtn');
+        const svgResetBtn = document.getElementById('svgResetBtn');
+        const originalFill = svgCircle.getAttribute('fill');
+
+        svgColorBtn.addEventListener('click', () => {
+          // náhodná barva pro demonstraci
+          const rnd = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+          svgCircle.setAttribute('fill', rnd);
+          svgCircle.setAttribute('r', 32); // vizuální změna
+        });
+
+        svgResetBtn.addEventListener('click', () => {
+          svgCircle.setAttribute('fill', originalFill);
+          svgCircle.setAttribute('r', 28);
+        });
+
+        // --- Canvas kreslení ---
+        const canvas = document.getElementById('demoCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawCanvasSample() {
+          // pozadí
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#f7fbff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // gradient
+          const g = ctx.createLinearGradient(0, 0, canvas.width, 0);
+          g.addColorStop(0, '#6fb3ff');
+          g.addColorStop(1, '#a78bff');
+          ctx.fillStyle = g;
+          ctx.fillRect(8, 8, 120, 60);
+
+          // kruh s glazurou
+          ctx.beginPath();
+          ctx.arc(220, 40, 30, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffd166';
+          ctx.fill();
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#b87500';
+          ctx.stroke();
+
+          // křivka (bezier)
+          ctx.beginPath();
+          ctx.moveTo(20, 110);
+          ctx.bezierCurveTo(60, 80, 140, 140, 260, 110);
+          ctx.strokeStyle = '#3aa76d';
+          ctx.lineWidth = 3;
+          ctx.stroke();
+
+          // text
+          ctx.fillStyle = '#333';
+          ctx.font = '14px Arial';
+          ctx.fillText('Canvas kreslení (bitmap)', 10, 155);
+
+          // malý pixelový vzorek
+          for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+              ctx.fillStyle = `rgba(${40 + i * 30}, ${120 + j * 20}, ${180 + i * 10}, 0.9)`;
+              ctx.fillRect(160 + i * 8, 90 + j * 8, 6, 6);
+            }
+          }
+        }
+
+        document.getElementById('drawBtn').addEventListener('click', drawCanvasSample);
+        document.getElementById('clearBtn').addEventListener('click', () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+          const link = document.createElement('a');
+          link.download = 'canvas-ukázka.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        });
+
+        // vykreslí hned při načtení
+        drawCanvasSample();
+      </script>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Toto je patička dokumentu.</p>
+  </footer>
+
+</body>
+
+</html>

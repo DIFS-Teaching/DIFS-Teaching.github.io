@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Propagation</title>
+  <style>
+    #log {
+      white-space: pre-line; border:1px solid gray; padding:5px; height:550px; overflow:auto;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="outer" style="padding:30px; background:lightblue; margin-bottom:10px;">
+    Outer
+    <div id="inner" style="padding:20px; background:lightgreen; margin-top:5px;">
+      Inner
+      <button id="btn">Click me</button>
+    </div>
+  </div>
+
+  <h3>Event log:</h3>
+  <div id="log"></div>
+
+  <script>
+    const outer = document.getElementById("outer");
+    const inner = document.getElementById("inner");
+    const btn = document.getElementById("btn");
+    const log = document.getElementById("log");
+
+    // Capturing listener on outer
+    outer.addEventListener("click", () => {
+      log.textContent += "Outer capturing\n";
+    }, true);
+
+    // Bubbling listener on inner
+    inner.addEventListener("click", () => {
+      log.textContent += "Inner bubbled\n";
+    });
+
+    // Button listener with stopPropagation
+    btn.addEventListener("click", (e) => {
+      log.textContent += "Button clicked (propagation stopped)\n";
+      e.stopPropagation();
+    });
+  </script>
+
+</body>
+
+</html>

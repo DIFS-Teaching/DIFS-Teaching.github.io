@@ -1,0 +1,17 @@
+{
+    "id": "p00_intro_cs",
+    "title": "ITWe - Web Design for English Students",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "itw",
+        "properties": {
+            "footer": "ITW"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010intro.md",
+        "c999final.md"
+    ]
+}

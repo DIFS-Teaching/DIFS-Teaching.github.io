@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flexbox</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+	body {
+		margin: 0; padding: 0;
+	}
+
+	p {
+		clear: both;
+		font-weight: bold;
+	}
+
+	.cont {
+        display: flex;
+        background-color: #eee;
+        margin: 1em 0;
+	}
+
+	#s1 {
+        flex-direction: row;
+	}
+	#s2 {
+        flex-direction: row-reverse;
+	}
+	#s3 {
+        flex-direction: column;
+	}
+
+	.dalsi {
+		width: 5em;
+		border: 2px solid red;
+		height: 5em;
+		font-size: 2em;
+		text-align: center;
+		line-height: 5em;
+	}
+
+	.high {
+		height: 8em;
+	}
+
+    </style>
+</head>
+<body>
+
+<h1><code>display: flex</code></h1>
+
+<p>flex-direction: row;</p>
+<div id="s1" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>flex-direction: row-reverse;</p>
+<div id="s2" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+<p>flex-direction: column;</p>
+<div id="s3" class="cont">
+
+	<div class="dalsi">
+	První
+	</div>
+
+	<div class="dalsi">
+	Druhý
+	</div>
+
+	<div class="dalsi high">
+	a možná
+	</div>
+
+	<div class="dalsi">
+	Několik
+	</div>
+
+	<div class="dalsi">
+	dalších
+	</div>
+
+	<div class="dalsi">
+	bloků
+	</div>
+
+</div>
+<p>Následující odstavec</p>
+
+</body>
+</html>

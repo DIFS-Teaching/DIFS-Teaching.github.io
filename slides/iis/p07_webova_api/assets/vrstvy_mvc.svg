@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="134.59831mm"
+   height="170.91885mm"
+   viewBox="0 0 134.59831 170.91885"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="vrstvy_mvc.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="-38.678427"
+     inkscape:cy="291.80449"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Vrstva 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-30.201456,-23.048735)">
+    <g
+       id="g827">
+      <rect
+         rx="5.0781207"
+         ry="5.0781212"
+         y="23.048735"
+         x="41.694046"
+         height="34.477768"
+         width="55.057522"
+         id="rect815"
+         style="fill:#69cfff;fill-opacity:0.52941165;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text819"
+         y="38.197136"
+         x="69.124969"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332px"
+           y="38.197136"
+           x="69.124969"
+           id="tspan817"
+           sodipodi:role="line">Presentation tier</tspan><tspan
+           id="tspan821"
+           style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;writing-mode:lr-tb;text-anchor:middle;stroke-width:0.26458332px"
+           y="45.252693"
+           x="69.124969"
+           sodipodi:role="line">(browser)</tspan></text>
+    </g>
+    <g
+       transform="translate(0,136.44109)"
+       id="g827-21">
+      <rect
+         rx="5.0781207"
+         ry="5.0781212"
+         y="23.048735"
+         x="41.694046"
+         height="34.477768"
+         width="55.057522"
+         id="rect815-5"
+         style="fill:#69ff73;fill-opacity:0.52941165;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text819-9"
+         y="38.197136"
+         x="69.124969"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           sodipodi:role="line"
+           id="tspan911"
+           x="69.124969"
+           y="38.197136">Database tier</tspan><tspan
+           sodipodi:role="line"
+           id="tspan913"
+           x="69.124969"
+           y="45.252693">(DB server)</tspan></text>
+    </g>
+    <g
+       id="g1051"
+       transform="translate(0,2.1381562)">
+      <rect
+         rx="5.0781207"
+         ry="5.0781212"
+         y="64.609146"
+         x="30.201456"
+         height="85.258972"
+         width="78.042702"
+         id="rect815-7"
+         style="fill:#ff69aa;fill-opacity:0.52941165;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         ry="0"
+         rx="0"
+         y="94.944237"
+         x="37.417732"
+         height="23.252449"
+         width="63.610149"
+         id="rect919-7"
+         style="fill:#ffffff;fill-opacity:0.94117647;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <rect
+         ry="0"
+         rx="0"
+         y="77.838989"
+         x="37.417732"
+         height="11.22532"
+         width="63.610146"
+         id="rect919"
+         style="fill:#ffffff;fill-opacity:0.94117647;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="69.188354"
+         y="71.739456"
+         id="text819-1"><tspan
+           y="71.739456"
+           x="69.188354"
+           id="tspan980"
+           sodipodi:role="line">Application tier</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:center;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         x="68.966492"
+         y="84.92202"
+         id="text819-1-5"><tspan
+           id="tspan1000"
+           sodipodi:role="line"
+           x="68.966492"
+           y="84.92202"
+           style="stroke-width:0.26458332px">Presentation layer</tspan></text>
+      <text
+         id="text1006"
+         y="107.99673"
+         x="51.002384"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           id="tspan1008"
+           style="stroke-width:0.26458332px"
+           y="107.99673"
+           x="51.002384"
+           sodipodi:role="line">Business logic</tspan></text>
+      <rect
+         ry="0"
+         rx="0"
+         y="125.85758"
+         x="37.417732"
+         height="11.22532"
+         width="63.610149"
+         id="rect919-0"
+         style="fill:#ffffff;fill-opacity:0.94117647;stroke:none;stroke-width:0.60404372;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+      <text
+         id="text1016"
+         y="132.89651"
+         x="49.984016"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:5.64444447px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="stroke-width:0.26458332px"
+           y="132.89651"
+           x="49.984016"
+           id="tspan1014"
+           sodipodi:role="line">Database layer</tspan></text>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:23.83030701px;line-height:125%;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.09547253px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="54.841141"
+       y="185.20151"
+       id="text1055"
+       transform="scale(2.1013886,0.4758758)"><tspan
+         sodipodi:role="line"
+         id="tspan1053"
+         x="54.841141"
+         y="185.20151"
+         style="stroke-width:0.09547253px">}</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:5.64444444px;line-height:125%;font-family:Arial;-inkscape-font-specification:'Arial, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-feature-settings:normal;text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="136.30745"
+       y="83.718918"
+       id="text1059"><tspan
+         sodipodi:role="line"
+         id="tspan862">MVC</tspan><tspan
+         sodipodi:role="line"
+         id="tspan864">framework</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ukázkový HTML dokument – CSS selektory</title>
+  <style>
+    /*
+      CÍL: Ukázat většinu běžných CSS selektorů v praxi.
+      Každý vybraný prvek zvýrazníme rámečkem/pozadím a přidáme malý odznak přes ::after.
+    */
+
+    /* ===== ZÁKLADNÍ SELEKTORY ===== */
+    /* Typový selektor */
+    p.demo { border-left: 4px solid #6aa84f; padding-left: .5rem; }
+
+    /* Univerzální selektor – přidáme základní box-sizing všem */
+    * { box-sizing: border-box; }
+
+    /* Třídní selektor */
+    .highlight { background: #fff2cc; }
+
+    /* ID selektor */
+    #unikat { border: 2px dashed #3d85c6; padding: .5rem; }
+
+    /* ===== KOMBINÁTORY ===== */
+    /* Potomek */
+    .kombinatory section p { outline: 1px dotted #999; }
+
+    /* Dítě */
+    .kombinatory ul > li { background: #f3f3f3; }
+
+    /* Soused (adjacent sibling) */
+    .kombinatory h3 + p { background: #e6f7ff; }
+
+    /* Obecný sourozenec */
+    .kombinatory h4 ~ p { border-left: 3px solid #b4a7d6; padding-left: .5rem; }
+
+    /* ===== ATRIBUTOVÉ SELEKTORY ===== */
+    a[href] { color: #0b5394; }
+    a[target="_blank"]::after { content: " ↗"; }
+    a[href^="https"] { text-decoration: underline wavy; }
+    a[href$=".pdf"] { font-weight: bold; }
+    [data-role~="tag"] { background: #d9ead3; padding: .2rem .4rem; border-radius: .3rem; }
+    [lang|="en"] { border: 1px solid #93c47d; padding: .2rem .3rem; }
+    [title*="demo"] { background: #fdebd3; }
+
+    /* ===== PSEUDO-TŘÍDY – STAV A STRUKTURA ===== */
+    :root { --ok: #6aa84f; --warn: #e69138; --accent: #3d85c6; }
+
+    /* Strukturní */
+    .struktura li:first-child { border-top: 2px solid var(--accent); }
+    .struktura li:last-child { border-bottom: 2px solid var(--accent); }
+    .struktura li:only-child { background: #d0e0e3; }
+    .struktura li:nth-child(2n) { background: #f9f9f9; }
+    .struktura li:nth-of-type(3) { color: #cc0000; }
+    .struktura p:empty::after { content: "(prázdný)"; color: #999; }
+    .struktura :not(.skip) { outline-offset: 2px; }
+    .struktura :not(.skip).mark { outline: 1px dashed #bbb; }
+    .struktura :is(section, article) p.mark { background: #e1f0ff; }
+    .struktura :where(ul) li { /* zero specificity helper */ }
+    .struktura figure:has(img) { border: 2px solid #b6d7a8; padding: .5rem; }
+
+    /* Jazyk a cíl */
+    p:lang(cs) { font-style: normal; }
+    p:lang(en) { font-style: italic; }
+    #kotva-cil:target { background: #c9daf8; }
+
+    /* Odkazy a interakce */
+    a:link { /* výchozí nenaštěvovaný link */ }
+    a:visited { /* prohlížeč může omezit změny z bezpečnostních důvodů */ }
+    a:hover { background: #d0e0e3; }
+    a:active { outline: 2px solid #1155cc; }
+    a:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .focus-within-demo:focus-within { box-shadow: 0 0 0 3px #cfe2f3; }
+
+    /* Formuláře a stavové pseudo-třídy */
+    input:focus, select:focus, textarea:focus { border-color: var(--accent); }
+    input:disabled { background: #f0f0f0; }
+    input:enabled { /* jen pro ukázku */ }
+    input:required { border-left: 3px solid var(--warn); }
+    input:optional { border-left: 3px solid #b7b7b7; }
+    input:valid { box-shadow: inset 0 0 0 2px #b6d7a8; }
+    input:invalid { box-shadow: inset 0 0 0 2px #f4cccc; }
+    input[type="checkbox"]:checked + label { background: #d9ead3; }
+    input[type="number"]:in-range { background: #eaf6e9; }
+    input[type="number"]:out-of-range { background: #fde9e9; }
+    input::placeholder { color: #999; }
+
+    /* ===== PSEUDO-ELEMENTY ===== */
+    .badge::before { content: "◆ "; color: var(--warn); }
+    .badge::after  { content: " ◇"; color: var(--warn); }
+    .first-letter-demo::first-letter { font-size: 180%; font-weight: bold; }
+    .first-line-demo::first-line { text-transform: uppercase; }
+    ::selection { background: #ffe599; }
+    ul.marker-demo li::marker { content: "→ "; }
+    input::placeholder { opacity: .8; }
+    input[type="file"]::-webkit-file-upload-button { /* Chrome/Safari */ border: 1px solid #aaa; padding: .2rem .5rem; }
+    input[type="file"]::file-selector-button { /* Standard */ border: 1px solid #aaa; padding: .2rem .5rem; }
+
+    /* Backdrop – viditelné, pokud je <dialog open> */
+    dialog::backdrop { background: rgba(0,0,0,.2); }
+
+    /* Vizuální pomocné třídy */
+    .demo-block { border: 1px solid #ddd; padding: 1rem; margin: 1rem 0; border-radius: .5rem; }
+    .title { font-weight: 700; margin-bottom: .5rem; }
+    .note { font-size: .9rem; color: #666; }
+    nav a { padding: .15rem .35rem; border-radius: .35rem; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji"; line-height: 1.5; padding: 1rem; }
+    code { background: #f7f7f7; padding: .1rem .3rem; border-radius: .25rem; }
+  </style>
+</head>
+<body>
+  <header class="demo-block">
+    <h1 class="title">CSS selektory – ukázkový dokument</h1>
+    <p class="demo">Tento dokument demonstruje různé typy selektorů.
+      Některé efekty uvidíte při najetí myší nebo při interakci s formulářem.</p>
+    <nav>
+      <a href="#zakladni">Základní</a>
+      <a href="#kombinatory">Kombinátory</a>
+      <a href="#atributy">Atributové</a>
+      <a href="#pseudo">Pseudo-třídy</a>
+      <a href="#elements">Pseudo-elementy</a>
+      <a href="#form">Formulář</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Základní selektory -->
+    <section id="zakladni" class="demo-block">
+      <h2 class="title badge">Základní selektory</h2>
+      <p class="demo">Typový selektor <code>p</code> cílí tento odstavec.</p>
+      <p id="unikat" title="demo-id">ID selektor <code>#unikat</code>.</p>
+      <p class="highlight" title="demo-class">Třídní selektor <code>.highlight</code>.</p>
+      <p>Univerzální selektor <code>*</code> zde nenápadně nastavuje <code>box-sizing</code>.</p>
+    </section>
+
+    <!-- Kombinátory -->
+    <section id="kombinatory" class="demo-block kombinatory">
+      <h2 class="title badge">Kombinátory</h2>
+      <h3>Nadpis H3</h3>
+      <p>Selektor <code>h3 + p</code> zvýrazní následující odstavec.</p>
+      <h4>Nadpis H4</h4>
+      <p>Tento odstavec a další <code>h4 ~ p</code> mají levou linku.</p>
+      <div>
+        <p>Selektor <code>.kombinatory section p</code> – potomek uvnitř sekce.</p>
+      </div>
+      <ul>
+        <li>Položka 1</li>
+        <li>Položka 2 (selektor <code>ul > li</code>)</li>
+        <li>Položka 3</li>
+      </ul>
+    </section>
+
+    <!-- Atributové selektory -->
+    <section id="atributy" class="demo-block">
+      <h2 class="title badge">Atributové selektory</h2>
+      <p>
+        <a href="https://example.com" target="_blank" title="demo-link">HTTPS odkaz</a> ·
+        <a href="/soubor.pdf">PDF odkaz</a> ·
+        <a href="/lokalni" lang="en-US">Anglický text</a>
+      </p>
+      <p>
+        <span data-role="tag">tag</span>
+        <span data-role="tag badge" title="demo-attr">tag + badge</span>
+      </p>
+    </section>
+
+    <!-- Pseudo-třídy -->
+    <section id="pseudo" class="demo-block struktura focus-within-demo">
+      <h2 class="title badge">Pseudo‑třídy (struktura, stav, jazyk, cíl)</h2>
+      <article class="mark">
+        <p class="mark" lang="cs">Tento odstavec má <code>:lang(cs)</code>.</p>
+        <p class="mark" lang="en">This one has <code>:lang(en)</code> and is italic.</p>
+        <p class="mark skip"></p>
+        <figure>
+          <img alt="demo" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='90'%3E%3Crect width='100%25' height='100%25' fill='%23e1f0ff'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-size='14'%3EIMG%3C/text%3E%3C/svg%3E" />
+          <figcaption>Selektor <code>figure:has(img)</code></figcaption>
+        </figure>
+      </article>
+
+      <div class="demo-block">
+        <p class="title">Seznam se strukturou</p>
+        <ul class="struktura">
+          <li>První (first-child)</li>
+          <li>Druhý (nth-child even)</li>
+          <li>Třetí (nth-of-type)</li>
+          <li>Čtvrtý</li>
+        </ul>
+      </div>
+
+      <p id="kotva-cil" class="demo">Toto je cíl <code>:target</code>. Klikni v navigaci na odkaz #pseudo a pak na #elements a zpět.</p>
+    </section>
+
+    <!-- Pseudo‑elementy -->
+    <section id="elements" class="demo-block">
+      <h2 class="title badge">Pseudo‑elementy</h2>
+      <p class="first-letter-demo">První písmeno tohoto odstavce je větší díky <code>::first-letter</code>.</p>
+      <p class="first-line-demo">První řádek tohoto odstavce je kapitálkami (<code>::first-line</code>) a výběr textu má vlastní barvu (<code>::selection</code>).</p>
+      <ul class="marker-demo">
+        <li>Vlastní značky seznamu pomocí <code>::marker</code></li>
+        <li>Druhá položka</li>
+      </ul>
+    </section>
+
+    <!-- Formuláře a UI stavy -->
+    <section id="form" class="demo-block">
+      <h2 class="title badge">Formuláře a stavové pseudo‑třídy</h2>
+      <form>
+        <div>
+          <label for="jmeno">Jméno (required)</label><br>
+          <input id="jmeno" name="jmeno" type="text" required placeholder="Zadej jméno" />
+        </div>
+        <div>
+          <label for="email">E‑mail (valid/invalid)</label><br>
+          <input id="email" name="email" type="email" placeholder="např. uzivatel@domena.cz" />
+        </div>
+        <div>
+          <input id="souhlas" type="checkbox" />
+          <label for="souhlas">Souhlasím – selektor <code>:checked + label</code></label>
+        </div>
+        <div>
+          <label for="vek">Věk 18–65 (<code>:in-range</code> / <code>:out-of-range</code>)</label><br>
+          <input id="vek" name="vek" type="number" min="18" max="65" value="17" />
+        </div>
+        <div>
+          <label for="file">Soubor (<code>::file-selector-button</code>)</label><br>
+          <input id="file" type="file" />
+        </div>
+        <div>
+          <label for="popis">Popis</label><br>
+          <textarea id="popis" name="popis" rows="3" placeholder="Text…"></textarea>
+        </div>
+      </form>
+    </section>
+
+    <!-- Dialog pro ukázku ::backdrop -->
+    <section class="demo-block">
+      <h2 class="title badge">Dialog & ::backdrop</h2>
+      <p class="note">Tento dialog je otevřený atributem <code>open</code>; okolí má poloprůhledné pozadí díky <code>dialog::backdrop</code>.</p>
+      <dialog open>
+        <p>Jsem <code>&lt;dialog open&gt;</code>. Zavírání by vyžadovalo JS – zde ponecháno stále otevřené pro ukázku.</p>
+      </dialog>
+    </section>
+
+  </main>
+
+  <footer class="demo-block">
+    <p>Hotovo. Vyzkoušej myší <em>hover</em> na odkazech, vyplň formulář a sleduj reakce selektorů.</p>
+  </footer>
+</body>
+</html>

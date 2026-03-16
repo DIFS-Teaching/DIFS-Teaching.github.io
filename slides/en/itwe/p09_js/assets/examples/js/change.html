@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Change Elements</title>
+  <style>
+    .container {
+      width: 300px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      margin: 20px auto;
+      text-align: center;
+    }
+
+    .text {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    .highlight {
+      border-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box" class="container">
+    <p class="text">Winter is coming!</p>
+    <button id="btn">Change</button>
+  </div>
+
+  <script>
+    const box = document.getElementById("box");
+    const para = box.querySelector(".text");
+    const btn = document.getElementById("btn");
+
+    btn.addEventListener("click", () => {
+      para.textContent = "Brace yourselves!"; // Change text content
+
+      box.innerHTML += "<p>The North remembers.</p>"; // Change HTML
+
+      box.style.backgroundColor = "lightblue"; // Change style
+      para.style.color = "darkred";
+
+      box.classList.add("highlight"); // Change classes
+      para.classList.remove("text");
+    });
+  </script>
+</body>
+
+</html>

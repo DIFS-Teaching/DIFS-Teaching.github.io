@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .row {
+      overflow: hidden;
+    }
+
+    .row::after {
+      content: ' ';
+      clear: both;
+    }
+
+    [class*='col-'] {
+      float: left;
+    }
+
+    .col-1 { width: 25%; } /* 1/4 */
+    .col-2 { width: 50%; } /* 2/4 */
+    .col-3 { width: 75%; } /* 3/4 */
+    .col-4 { width: 100%; } /* 4/4 */
+
+    /* -------------------------------- */
+    /* Demo help styles. */
+    
+    body {
+      background-color: lightyellow;
+    }
+
+    header {
+      text-align: center;
+    }
+
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      font-size: 20px;
+      text-align: justify;
+      margin: 0;
+      background-color: white;
+    }
+
+    ul {
+      margin: 0;
+      font-size: 30px;
+    }
+
+    .row {
+      border: 4px solid blue;
+      max-width: 1400px;
+      margin: auto;
+      background: white;
+    }
+
+    [class*='col-'] {
+      border: 2px solid red;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+  body
+  <header id="content" class="row">
+  <h2 class="col-4">
+    Tworba webových stránek
+  </h2>
+  </header>
+  <main id="content" class="row">
+    <nav class="col-1">
+      <ul>
+        <li>O předmětu</li>
+        <li>Rozvrh</li>
+        <li>Přednášky</li>
+        <li>Cvičení</li>
+        <li>Projekt</li>
+      </ul>
+    </nav>
+    <article class="col-3">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tempus faucibus libero, sed ultricies  ectus iaculis ut. Suspendisse tincidunt lorem sed leo tempus, vitae euismod eros dictum. In enim elit,  aucibus et turpis quis, pretium pretium metus. Nulla ornare purus id sollicitudin ornare. Vivamus ac magna in lacus facilisis molestie. Sed dapibus nulla dignissim elit hendrerit viverra. Morbi rhoncus tristique erat ac scelerisque. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at semper enim. Praesent ac augue non dolor aliquam blandit. Pellentesque ullamcorper diam nec massa luctus, a viverra neque vulputate.
+      </p>
+    </article>
+  </main>
+</body>
+
+</html>

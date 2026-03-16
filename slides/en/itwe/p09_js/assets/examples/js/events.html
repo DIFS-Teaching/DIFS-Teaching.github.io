@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Events</title>
+  <style>
+    body {
+      font-size: 2rem;
+    }
+
+    #box {
+      width: 400px;
+      height: 400px;
+      background: lightgray;
+      text-align: center;
+      line-height: 400px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="box">
+    Interact here
+  </div>
+
+  <p id="mouseInfo">Mouse event: -</p>
+  <p id="keyInfo">Key: -</p>
+
+  <script>
+    const box = document.getElementById("box");
+    const mouseInfo = document.getElementById("mouseInfo");
+    const keyInfo = document.getElementById("keyInfo");
+
+    // 🖱️ Mouse events
+    box.addEventListener("mousedown", () => {
+      mouseInfo.textContent = "Mouse down";
+      box.style.backgroundColor = "lightcoral";
+    });
+
+    box.addEventListener("mouseup", () => {
+      mouseInfo.textContent = "Mouse up";
+      box.style.backgroundColor = "lightgray";
+    });
+
+    box.addEventListener("click", () => {
+      mouseInfo.textContent = "Mouse click";
+      box.style.backgroundColor = "lightgreen";
+    });
+
+    // ⌨️ Keyboard event
+    document.addEventListener("keydown", (e) => {
+      keyInfo.textContent = `Key down: ${e.key}`;
+      box.style.backgroundColor = "lightblue";
+    });
+
+    document.addEventListener("keyup", (e) => {
+      keyInfo.textContent = `Key up: ${e.key}`;
+      box.style.backgroundColor = "lightgray";
+    });
+  </script>
+
+
+</body>
+
+</html>

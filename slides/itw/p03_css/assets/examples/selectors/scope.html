@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="cs">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Ukázka :scope</title>
+  <style>
+    section {
+      border: 2px solid gray;
+      padding: 10px;
+      margin: 10px;
+    }
+
+    .highlight {
+      background: yellow;
+    }
+  </style>
+</head>
+
+<body>
+  <section id="first">
+    <h2>První sekce</h2>
+    <p>Odstavec 1</p>
+    <div>
+      <p>Vnořený odstavec A</p>
+    </div>
+  </section>
+
+  <section id="second">
+    <h2>Druhá sekce</h2>
+    <p>Odstavec 2</p>
+    <div>
+      <p>Vnořený odstavec B</p>
+    </div>
+  </section>
+
+  <script>
+    const section = document.querySelector("#first");
+
+    // Bez :scope → vybere všechny p včetně vnořených
+    const allPs = section.querySelectorAll("p");
+    allPs.forEach(p => p.classList.add("highlight"));
+
+    // Se :scope → vybere jen P, které jsou přímé děti sekce
+    const directPs = section.querySelectorAll(":scope > p");
+    directPs.forEach(p => p.textContent += " (jen přímý potomek)");
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Append and Remove Elements</title>
+  <style>
+    body {
+      font-size: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+
+    img {
+      width: 400px;
+      margin: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h2 id="message">Winter is coming</h2>
+  <button id="btn">Toggle prophecy</button>
+
+  <script>
+    const msg = document.getElementById("message");
+    const btn = document.getElementById("btn");
+
+    let img = null;
+
+    btn.addEventListener("click", () => {
+      if (!img) {
+        // change text
+        msg.textContent = "Brace yourself";
+
+        // create + add element
+        img = document.createElement("img");
+        img.src = "https://static.wikia.nocookie.net/gameofthrones/images/0/03/GOT101.jpg";
+        img.width = 200;
+
+        document.body.appendChild(img);
+      } else {
+        // restore text
+        msg.textContent = "Winter is coming";
+
+        // remove element
+        img.remove();
+        img = null;
+      }
+    });
+  </script>
+
+</body>
+
+</html>

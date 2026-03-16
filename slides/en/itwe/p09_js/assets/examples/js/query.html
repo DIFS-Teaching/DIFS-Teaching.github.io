@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Query Elements</title>
+  <style>
+    body {
+      font-size: 24px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1 id="mainTitle">Game of Thrones</h1>
+  <ul>
+    <li class="item">Tyrion</li>
+    <li class="item">Arya</li>
+    <li class="item">Sansa</li>
+  </ul>
+
+  <button id="btn">Query</button>
+
+  <script>
+
+    document.getElementById("btn").addEventListener("click", () => {
+      const header = document.getElementById("mainTitle");
+      const itemsByClass = document.getElementsByClassName("item");
+      const paragraphs = document.getElementsByTagName("p");
+      const firstItem = document.querySelector(".item");
+      const allItems = document.querySelectorAll(".item");
+
+      console.log(header, itemsByClass, paragraphs, firstItem, allItems);
+
+      document.body.appendChild(document.createElement("p")).textContent = "See the console for results!";
+    });
+  </script>
+</body>
+
+</html>

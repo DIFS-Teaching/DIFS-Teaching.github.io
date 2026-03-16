@@ -1,0 +1,19 @@
+{
+    "id": "p01_web_technology",
+    "title": "ITWe - Introduction to WWW and Web Design",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "itwe",
+        "properties": {
+            "footer": "ITWe"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010intro.md",
+        "c020webdesign.md",
+        "c030www.md",
+        "c999final.md"
+    ]
+}

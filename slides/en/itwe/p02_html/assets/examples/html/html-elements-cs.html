@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en"></html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML5 Elements Demo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.5;
+      margin: 20px;
+      background-color: #fafafa;
+    }
+
+    section {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+    }
+
+    section h2 {
+      margin-top: 0;
+    }
+
+    header,
+    nav,
+    main,
+    article,
+    aside,
+    footer {
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+    }
+
+    header {
+      background-color: #eef6ff;
+    }
+
+    nav {
+      background-color: #e8f8f5;
+    }
+
+    main {
+      background-color: #fef9e7;
+    }
+
+    article {
+      background-color: #fff0f0;
+    }
+
+    aside {
+      background-color: #f4f0ff;
+    }
+
+    footer {
+      background-color: #e0e0e0;
+    }
+
+    .metadata {
+      background-color: #eef6ff;
+    }
+
+    .text {
+      background-color: #fef9e7;
+    }
+
+    .lists {
+      background-color: #f5f9ef;
+    }
+
+    .tables {
+      background-color: #fff0f0;
+    }
+
+    .media {
+      background-color: #f4f0ff;
+    }
+
+    .forms {
+      background-color: #e8f8f5;
+    }
+
+    .interactive {
+      background-color: #f0f8ff;
+    }
+
+    .programming {
+      background-color: #fffaf0;
+    }
+
+    code {
+      background: #eee;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>HTML5 Elements Demo</h1>
+    <p>This is the document header.</p>
+  </header>
+
+  <nav>
+    <p>This is a navigation panel with links.</p>
+    <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="text">
+      <h2>Text Content</h2>
+      <p><strong>Bold</strong>, <em>italic</em>, <u>underlined</u>, <s>strikethrough</s>.</p>
+      <p><mark>Highlighted text</mark> and <small>small text</small>.</p>
+      <p>H<sub>2</sub>O and X<sup>2</sup>.</p>
+      <blockquote>This is a block quote.</blockquote>
+      <pre><code>Preformatted text</code></pre>
+      <abbr title="World Wide Web">WWW</abbr>
+    </section>
+
+    <section class="lists">
+      <h2>Lists</h2>
+      <ul>
+        <li>Unordered item</li>
+        <li>Another item</li>
+      </ul>
+      <ol>
+        <li>First</li>
+        <li>Second</li>
+      </ol>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Markup language</dd>
+      </dl>
+    </section>
+
+    <section class="tables">
+      <h2>Tables</h2>
+      <table border="1">
+        <caption>Sample Table</caption>
+        <thead>
+          <tr>
+            <th>Header 1</th>
+            <th>Header 2</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Cell A</td>
+            <td>Cell B</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="media">
+      <h2>Media</h2>
+      <figure>
+        <img src="https://www.w3schools.com/html/pic_trulli.jpg" alt="Trulli houses in Italy" width="400" />
+        <figcaption>Traditional Trulli houses in Alberobello, Italy.</figcaption>
+      </figure>
+      <audio controls>
+        <source src="https://www.w3schools.com/html/horse.ogg" type="audio/ogg">
+        <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+      </audio>
+      <video controls width="200">
+        <source src="https://www.w3schools.com/html/mov_bbb.ogg" type="video/ogg">
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+      </video>
+    </section>
+
+    <section class="forms">
+      <h2>Forms</h2>
+      <form>
+        <input type="text" placeholder="Text field">
+        <input type="checkbox"> Checkbox
+        <input type="radio" name="r"> Radio
+        <select>
+          <option>Option</option>
+        </select>
+        <textarea>Textarea</textarea>
+        <button>Submit</button>
+      </form>
+    </section>
+
+    <article>
+      <h2>Article Example</h2>
+      <p>This is independent content, like a blog post.</p>
+    </article>
+
+    <aside>
+      <p>This is a sidebar with related information.</p>
+    </aside>
+
+    <!-- shortened sections for brevity -->
+    <section class="interactive">
+      <h2>Interactive Elements</h2>
+      <details>
+        <summary>Click me</summary>Hidden content
+      </details>
+      <button id="openDialogBtn">Open dialog</button>
+      <dialog id="myDialog">
+        <h3>JavaScript + Dialog Demo</h3>
+        <p>This dialog is controlled by JavaScript.</p>
+        <button id="closeDialogBtn">Close</button>
+      </dialog>
+    </section>
+
+    <section class="programming">
+      <h2>Programming and Scripts</h2>
+      <p>Example JavaScript code controlling the dialog:</p>
+      <pre><code>
+const dialog = document.getElementById('myDialog');
+document.getElementById('openDialogBtn').onclick = () => dialog.showModal();
+document.getElementById('closeDialogBtn').onclick = () => dialog.close();
+      </code></pre>
+      <script>
+        const dialog = document.getElementById('myDialog');
+        document.getElementById('openDialogBtn').onclick = () => dialog.showModal();
+        document.getElementById('closeDialogBtn').onclick = () => dialog.close();
+      </script>
+    </section>
+
+    <section class="media" id="svg-canvas-demo"
+      style="background:#f4f7fb;padding:12px;border:1px solid #e0e6ee;border-radius:6px;">
+      <h2>SVG and Canvas Demo</h2>
+
+      <!-- SVG demo -->
+      <div style="display:flex;gap:18px;align-items:flex-start;flex-wrap:wrap;">
+        <div style="min-width:260px;">
+          <h3>Inline SVG (vectors)</h3>
+          <p class="small">SVG is scalable and accessible — text remains readable when zoomed.</p>
+
+          <!-- simple inline SVG -->
+          <svg id="demoSvg" width="240" height="160" viewBox="0 0 240 160" role="img" aria-label="Sample SVG">
+            <!-- background -->
+            <rect x="0" y="0" width="240" height="160" fill="#fff" />
+            <!-- gradient -->
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#6fb3ff" />
+                <stop offset="1" stop-color="#a78bff" />
+              </linearGradient>
+            </defs>
+            <!-- shapes -->
+            <rect x="12" y="12" width="80" height="50" rx="8" fill="url(#g1)" stroke="#567" />
+            <circle id="svgCircle" cx="160" cy="45" r="28" fill="#ffd166" stroke="#b87500" />
+            <path d="M30 100 C60 70, 120 130, 180 100" fill="none" stroke="#3aa76d" stroke-width="3" />
+            <text x="20" y="150" font-family="Arial" font-size="12" fill="#333">Vector text (SVG)</text>
+          </svg>
+
+          <p style="margin-top:8px;">
+            <button id="svgColorBtn" type="button">Change circle color</button>
+            <button id="svgResetBtn" type="button">Reset</button>
+          </p>
+        </div>
+
+        <!-- Canvas demo -->
+        <div style="min-width:300px;">
+          <h3>Canvas (bitmap drawing)</h3>
+          <p class="small">Canvas draws pixels — suitable for animations and dynamic graphics.</p>
+
+          <canvas id="demoCanvas" width="320" height="160"
+            style="border:1px solid #ddd;display:block;background:#fff;"></canvas>
+
+          <p style="margin-top:8px;">
+            <button id="drawBtn" type="button">Redraw</button>
+            <button id="clearBtn" type="button">Clear</button>
+            <button id="downloadBtn" type="button">Download PNG</button>
+          </p>
+        </div>
+      </div>
+
+      <script>
+        // --- SVG interaction ---
+        const svgCircle = document.getElementById('svgCircle');
+        const svgColorBtn = document.getElementById('svgColorBtn');
+        const svgResetBtn = document.getElementById('svgResetBtn');
+        const originalFill = svgCircle.getAttribute('fill');
+
+        svgColorBtn.addEventListener('click', () => {
+          // random color for demonstration
+          const rnd = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+          svgCircle.setAttribute('fill', rnd);
+          svgCircle.setAttribute('r', 32); // visual change
+        });
+
+        svgResetBtn.addEventListener('click', () => {
+          svgCircle.setAttribute('fill', originalFill);
+          svgCircle.setAttribute('r', 28);
+        });
+
+        // --- Canvas drawing ---
+        const canvas = document.getElementById('demoCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawCanvasSample() {
+          // background
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          ctx.fillStyle = '#f7fbff';
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+          // gradient
+          const g = ctx.createLinearGradient(0, 0, canvas.width, 0);
+          g.addColorStop(0, '#6fb3ff');
+          g.addColorStop(1, '#a78bff');
+          ctx.fillStyle = g;
+          ctx.fillRect(8, 8, 120, 60);
+
+          // circle with glaze
+          ctx.beginPath();
+          ctx.arc(220, 40, 30, 0, Math.PI * 2);
+          ctx.fillStyle = '#ffd166';
+          ctx.fill();
+          ctx.lineWidth = 2;
+          ctx.strokeStyle = '#b87500';
+          ctx.stroke();
+
+          // curve (bezier)
+          ctx.beginPath();
+          ctx.moveTo(20, 110);
+          ctx.bezierCurveTo(60, 80, 140, 140, 260, 110);
+          ctx.strokeStyle = '#3aa76d';
+          ctx.lineWidth = 3;
+          ctx.stroke();
+
+          // text
+          ctx.fillStyle = '#333';
+          ctx.font = '14px Arial';
+          ctx.fillText('Canvas drawing (bitmap)', 10, 155);
+
+          // small pixel sample
+          for (let i = 0; i < 5; i++) {
+            for (let j = 0; j < 5; j++) {
+              ctx.fillStyle = `rgba(${40 + i * 30}, ${120 + j * 20}, ${180 + i * 10}, 0.9)`;
+              ctx.fillRect(160 + i * 8, 90 + j * 8, 6, 6);
+            }
+          }
+        }
+
+        document.getElementById('drawBtn').addEventListener('click', drawCanvasSample);
+        document.getElementById('clearBtn').addEventListener('click', () => {
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+        });
+
+        document.getElementById('downloadBtn').addEventListener('click', () => {
+          const link = document.createElement('a');
+          link.download = 'canvas-demo.png';
+          link.href = canvas.toDataURL('image/png');
+          link.click();
+        });
+
+        // draw immediately on load
+        drawCanvasSample();
+      </script>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>This is the document footer.</p>
+  </footer>
+
+</body>
+
+</html>

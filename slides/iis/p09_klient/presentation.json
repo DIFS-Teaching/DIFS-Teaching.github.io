@@ -1,0 +1,19 @@
+{
+    "id": "p09_klient",
+    "title": "IIS JavaScript a REST",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; JavaScript a REST"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020js.md",
+        "c030client.md",
+        "c999final.md"
+    ]
+}

@@ -1,0 +1,23 @@
+{
+    "id": "p02_html",
+    "title": "ITW Tvorba webových stránek",
+    "author": "Jiri Hynek <hynek@vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "ITW"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010intro.md",
+        "c020html.md",
+        "c030body.md",
+        "c040block.md",
+        "c050inline.md",
+        "c060inline-block.md",
+        "c070summary.md",
+        "c999final.md"
+    ]
+}
