@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 598.63135 487"
+   width="598.63135"
+   height="487"
+   font-family="sans-serif"
+   font-size="14px"
+   fill="#1f2937"
+   version="1.1"
+   id="svg97"
+   sodipodi:docname="otel-compose.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview99"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.1012533"
+     inkscape:cx="425.42436"
+     inkscape:cy="229.28421"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg97" />
+  <defs
+     id="defs5">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Background -->
+  <!-- ── Services ─────────────────────────────────────────────── -->
+  <!-- math-service -->
+  <!-- order-service -->
+  <!-- OTLP arrow: math-service → Collector -->
+  <!-- OTLP arrow: order-service → Collector -->
+  <g
+     id="g405"
+     transform="translate(-14,-56.5)">
+    <rect
+       x="15"
+       y="65"
+       width="180"
+       height="105"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="2"
+       rx="6"
+       id="rect9" />
+    <text
+       x="105"
+       y="91"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#1e40af"
+       font-size="15px"
+       id="text11">math-service</text>
+    <text
+       x="105"
+       y="112"
+       text-anchor="middle"
+       fill="#374151"
+       font-size="13px"
+       id="text13">Open Liberty</text>
+    <text
+       x="105"
+       y="131"
+       text-anchor="middle"
+       fill="#374151"
+       font-size="13px"
+       id="text15">mpTelemetry</text>
+    <rect
+       x="15"
+       y="245"
+       width="180"
+       height="90"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="2"
+       rx="6"
+       id="rect17" />
+    <text
+       x="105"
+       y="272"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#1e40af"
+       font-size="15px"
+       id="text19">order-service</text>
+    <text
+       x="105"
+       y="293"
+       text-anchor="middle"
+       fill="#374151"
+       font-size="13px"
+       id="text21">Open Liberty</text>
+    <line
+       x1="195"
+       y1="118"
+       x2="248"
+       y2="118"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line23" />
+    <text
+       x="221"
+       y="111"
+       text-anchor="middle"
+       fill="#6b7280"
+       font-size="12px"
+       id="text25">OTLP</text>
+    <line
+       x1="195"
+       y1="290"
+       x2="248"
+       y2="290"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line27" />
+    <text
+       x="221"
+       y="283"
+       text-anchor="middle"
+       fill="#6b7280"
+       font-size="12px"
+       id="text29">OTLP</text>
+  </g>
+  <!-- ── OTel Collector ──────────────────────────────────────── -->
+  <rect
+     x="236"
+     y="1"
+     width="250"
+     height="285"
+     fill="#fffbeb"
+     stroke="#d97706"
+     stroke-width="2"
+     rx="6"
+     id="rect31" />
+  <text
+     x="361"
+     y="28"
+     text-anchor="middle"
+     font-weight="bold"
+     fill="#92400e"
+     font-size="16px"
+     id="text33">OTel Collector</text>
+  <line
+     x1="256"
+     y1="39"
+     x2="466"
+     y2="39"
+     stroke="#d97706"
+     stroke-width="1"
+     id="line35" />
+  <!-- Receivers box -->
+  <rect
+     x="251"
+     y="46"
+     width="220"
+     height="68"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="1"
+     rx="4"
+     id="rect37" />
+  <text
+     x="261"
+     y="66"
+     fill="#713f12"
+     font-size="13px"
+     font-weight="bold"
+     id="text39">Receivers</text>
+  <text
+     x="271"
+     y="84"
+     fill="#374151"
+     font-size="12px"
+     id="text41">OTLP (gRPC / HTTP)</text>
+  <text
+     x="271"
+     y="103"
+     fill="#374151"
+     font-size="12px"
+     id="text43">Prometheus scrape</text>
+  <!-- Processors box -->
+  <rect
+     x="251"
+     y="124"
+     width="220"
+     height="68"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="1"
+     rx="4"
+     id="rect45" />
+  <text
+     x="261"
+     y="144"
+     fill="#713f12"
+     font-size="13px"
+     font-weight="bold"
+     id="text47">Processors</text>
+  <text
+     x="271"
+     y="162"
+     fill="#374151"
+     font-size="12px"
+     id="text49">batch, filter</text>
+  <text
+     x="271"
+     y="181"
+     fill="#374151"
+     font-size="12px"
+     id="text51">attributes, transform</text>
+  <!-- Exporters box -->
+  <rect
+     x="251"
+     y="202"
+     width="220"
+     height="68"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="1"
+     rx="4"
+     id="rect53" />
+  <text
+     x="261"
+     y="222"
+     fill="#713f12"
+     font-size="13px"
+     font-weight="bold"
+     id="text55">Exporters</text>
+  <text
+     x="271"
+     y="240"
+     fill="#374151"
+     font-size="12px"
+     id="text57">Prometheus, Loki</text>
+  <text
+     x="271"
+     y="259"
+     fill="#374151"
+     font-size="12px"
+     id="text59">Jaeger / Tempo, OTLP</text>
+  <!-- ── Connector: Collector → horizontal bus ───────────────── -->
+  <!-- trunk from collector bottom center (375, 330) down to bus y=352 -->
+  <line
+     x1="361"
+     y1="286"
+     x2="361"
+     y2="308"
+     stroke="#4b5563"
+     stroke-width="2"
+     id="line61" />
+  <!-- horizontal bus: Prometheus center (280) to Loki center (622) -->
+  <!-- drops to backends -->
+  <!-- ── Backends ─────────────────────────────────────────────── -->
+  <!-- Prometheus  center-x = 200 + 80 = 280 -->
+  <!-- Jaeger  center-x = 376 + 75 = 451 -->
+  <!-- Loki  center-x = 557 + 65 = 622 -->
+  <!-- ── Backends → Grafana bus ──────────────────────────────── -->
+  <!-- lines from backend bottoms down to bus at y=458 -->
+  <!-- horizontal bus -->
+  <!-- arrow from center of bus down to Grafana -->
+  <!-- ── Grafana ───────────────────────────────────────────────── -->
+  <g
+     id="g454"
+     transform="translate(-89.36867,-44)">
+    <line
+       x1="280"
+       y1="352"
+       x2="622"
+       y2="352"
+       stroke="#4b5563"
+       stroke-width="2"
+       id="line63" />
+    <line
+       x1="280"
+       y1="352"
+       x2="280"
+       y2="383"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line65" />
+    <line
+       x1="451"
+       y1="352"
+       x2="451"
+       y2="383"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line67" />
+    <line
+       x1="622"
+       y1="352"
+       x2="622"
+       y2="383"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line69" />
+    <rect
+       x="200"
+       y="385"
+       width="160"
+       height="50"
+       fill="#dcfce7"
+       stroke="#16a34a"
+       stroke-width="2"
+       rx="6"
+       id="rect71" />
+    <text
+       x="280"
+       y="415"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#14532d"
+       font-size="14px"
+       id="text73">Prometheus</text>
+    <rect
+       x="376"
+       y="385"
+       width="150"
+       height="50"
+       fill="#dcfce7"
+       stroke="#16a34a"
+       stroke-width="2"
+       rx="6"
+       id="rect75" />
+    <text
+       x="451"
+       y="415"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#14532d"
+       font-size="14px"
+       id="text77">Jaeger</text>
+    <rect
+       x="557"
+       y="385"
+       width="130"
+       height="50"
+       fill="#dcfce7"
+       stroke="#16a34a"
+       stroke-width="2"
+       rx="6"
+       id="rect79" />
+    <text
+       x="622"
+       y="415"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#14532d"
+       font-size="14px"
+       id="text81">Loki</text>
+    <line
+       x1="280"
+       y1="435"
+       x2="280"
+       y2="458"
+       stroke="#4b5563"
+       stroke-width="2"
+       id="line83" />
+    <line
+       x1="451"
+       y1="435"
+       x2="451"
+       y2="458"
+       stroke="#4b5563"
+       stroke-width="2"
+       id="line85" />
+    <line
+       x1="622"
+       y1="435"
+       x2="622"
+       y2="458"
+       stroke="#4b5563"
+       stroke-width="2"
+       id="line87" />
+    <line
+       x1="280"
+       y1="458"
+       x2="622"
+       y2="458"
+       stroke="#4b5563"
+       stroke-width="2"
+       id="line89" />
+    <line
+       x1="451"
+       y1="458"
+       x2="451"
+       y2="478"
+       stroke="#4b5563"
+       stroke-width="2"
+       marker-end="url(#arr)"
+       id="line91" />
+    <rect
+       x="351"
+       y="480"
+       width="200"
+       height="50"
+       fill="#f3e8ff"
+       stroke="#9333ea"
+       stroke-width="2"
+       rx="6"
+       id="rect93" />
+    <text
+       x="451"
+       y="511"
+       text-anchor="middle"
+       font-weight="bold"
+       fill="#6b21a8"
+       font-size="16px"
+       id="text95">Grafana</text>
+  </g>
+</svg>

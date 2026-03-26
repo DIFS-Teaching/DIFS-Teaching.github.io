@@ -134,7 +134,15 @@ https://github.com/payara/Payara-Examples/tree/master/microprofile
 	- `@Counted`, `@Timed`, `@Metered` (viz [OpenLiberty](https://openliberty.io/docs/latest/microservice-observability-metrics.html))
 - Centrální API pro sběr metrik
 	- Data sbírá a zpřístupňuje server: `/metrics`, `/metrics?scope=application`
-- Předpokládá využití řešení pro sběr metrik (např. [Prometheus](https://prometheus.io/)) a případně vizualizaci (např. [Grafana](https://prometheus.io/docs/visualization/grafana/))
+
+---
+
+# Sběr metrik
+- Řešení pro sběr a vizualizaci metrik
+	- [Prometheus](https://prometheus.io/) – sběr a ukládání metrik (pull model)
+	- [Grafana](https://grafana.com/) – vizualizace a dashboardy
+	- [VictoriaMetrics](https://victoriametrics.com/) – výkonná Prometheus-kompatibilní alternativa
+	- [OpenTelemetry](https://opentelemetry.io/) – otevřený standard pro sběr metrik, logů i traces
 	
 ---
 
@@ -152,13 +160,13 @@ https://github.com/payara/Payara-Examples/tree/master/microprofile
 # Distribuované logování
 
 - Nástroje pro centralizovaný sběr logů
-	- Např. ELK stack:
-		- Elastic Search -- ukládání, prohledávání a analýza dat (JSON)
-		- Logstash -- sběr logů z různých zdrojů
-		- Kibana -- vizualizace a procházení
+	- **ELK stack** – [Elasticsearch](https://www.elastic.co/elasticsearch) (ukládání a analýza) + [Logstash](https://www.elastic.co/logstash) (sběr) + [Kibana](https://www.elastic.co/kibana) (vizualizace)
+	- **[OpenSearch](https://opensearch.org/)** – open-source fork Elasticsearch + Kibana (AWS)
+	- **[Grafana Loki](https://grafana.com/oss/loki/)** – lehčí alternativa k ELK, indexuje pouze metadata logů
+	- **[Fluent Bit](https://fluentbit.io/)** / **[Fluentd](https://www.fluentd.org/)** – populární alternativy k Logstash (projekty CNCF)
 - Podpora v aplikacích
-	- Nutný výstup ve vhodném formátu (např. pro logstash)
-	- V Javě např. log4j, logback.
+	- Nutný výstup ve vhodném formátu (JSON, strukturované logy)
+	- V Javě např. log4j, logback
 
 ---
 
@@ -169,6 +177,76 @@ https://github.com/payara/Payara-Examples/tree/master/microprofile
 - Podpora v aplikacích
 	- Např. [Open Telemetry](https://opentelemetry.io/), [Microprofile Open Tracing](https://download.eclipse.org/microprofile/microprofile-opentracing-2.0/microprofile-opentracing-spec-2.0.html), [Spring Cloud Sleuth](http://spring.io/projects/spring-cloud-sleuth)
 	- [Open Liberty guides](https://openliberty.io/guides/microprofile-telemetry-jaeger.html).
+
+---
+
+# OpenTelemetry
+- Otevřený standard pro observabilitu mikroslužeb – projekt [CNCF](https://www.cncf.io/)
+- Sjednocuje sběr všech tří pilířů telemetrie pod jedno API a SDK
+- Vendor-neutral – data lze odesílat do libovolného backendu (Prometheus, Jaeger, Grafana, Datadog, …)
+- Skládá se z
+	- **API** – rozhraní pro instrumentaci aplikace
+	- **SDK** – implementace API pro konkrétní jazyk
+	- **Collector** – přijímá, transformuje a přeposílá telemetrii
+- Standardní protokol přenosu: **OTLP** (OpenTelemetry Protocol)
+
+---
+
+# OpenTelemetry – tři pilíře
+
+| Pilíř | Co měří | Typický backend |
+|---|---|---|
+| **Metrics** | Hodnoty v čase (countery, gauge, …) | Prometheus, VictoriaMetrics |
+| **Logs** | Strukturované záznamy událostí | Loki, Elasticsearch |
+| **Traces** | Průběh požadavku přes více služeb | Jaeger, Zipkin |
+
+- Korelace – trace ID propojuje log záznamy s konkrétním tracem
+- Typická kombinace: **OTel Collector → Prometheus + Loki + Jaeger → Grafana**
+
+---
+
+# OTel Collector – pipeline
+- Samostatný proces mezi aplikacemi a backends
+- Pipeline: **Receivers → Processors → Exporters**
+
+| Fáze | Příklady |
+|---|---|
+| **Receivers** | OTLP (gRPC/HTTP), Prometheus scrape, Jaeger, Zipkin, Kafka |
+| **Processors** | `batch`, `filter`, `attributes`, `tail_sampling`, `transform` |
+| **Exporters** | Prometheus, OTLP→Jaeger/Tempo, Loki, Datadog |
+
+---
+
+# Backend
+
+- **Backend** = cílový systém pro ukládání a dotazování telemetrických dat
+	- Samostatná služba (Prometheus, Jaeger, Loki, …), obvykle s vlastním UI nebo napojením na Grafana
+	- Aplikace ani collector backend neznají – vystaví data přes standardní rozhraní, backend si je přebírá
+- Jeden collector → více backendů zároveň
+- Aplikace vždy mluví OTLP; backend lze změnit bez redeploymentu aplikace
+
+---
+
+# MicroProfile Telemetry a OTel
+- MP Telemetry je CDI wrapper nad OTel Java SDK – nevytváří nový formát
+- **Traces/Spany:** `@WithSpan`, `@SpanAttribute`, automatická instrumentace JAX-RS
+- **Metriky:** přímo OTel Metrics API (`Counter`, `Histogram`, `Gauge`) – `@Counted`/`@Timed` z MP Metrics jsou od MP 7.0 *deprecated*
+- **Logy:** strukturované logy přes OTel Logs Bridge API
+- Konfigurace přes MicroProfile Config:
+
+```properties
+otel.service.name=math-service
+otel.exporter.otlp.endpoint=http://collector:4317
+```
+
+- Open Liberty: feature `mpTelemetry-2.0`
+
+---
+
+# OTel – ukázka nasazení (Docker Compose)
+
+![OTel Docker Compose nasazení](assets/otel-compose.svg) <!-- .element: style="height:750px;margin:0.5em auto;display:block" -->
+
 
 ---
 

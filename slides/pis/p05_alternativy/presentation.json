@@ -15,6 +15,9 @@
         "c010jsf.md",
         "c020srov.md",
         "c030soap.md",
+        "c035jsonrpc.md",
+        "c036grpc.md",
+        "c037mcp.md",
         "c040mikro.md",
         "c999final.md"
     ]

@@ -11,8 +11,8 @@
   - Multiple style sheets may be used
   
 ```html
-<link ="" rel="stylesheet" src="common.css" type="text/css"/>
-<link ="" rel="stylesheet" src="section.css" type="text/css"/>
+<link rel="stylesheet" src="common.css" type="text/css"/>
+<link rel="stylesheet" src="section.css" type="text/css"/>
 ```
 
 ---

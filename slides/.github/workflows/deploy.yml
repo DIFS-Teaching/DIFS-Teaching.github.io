@@ -1,0 +1,37 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout slides repo
+        uses: actions/checkout@v4
+        with:
+          path: slides-src
+
+      - name: Checkout pages repo
+        uses: actions/checkout@v4
+        with:
+          repository: DIFS-Teaching/DIFS-Teaching.github.io
+          token: ${{ secrets.PAGES_DEPLOY_TOKEN }}
+          path: pages-repo
+
+      - name: Sync slides to pages repo
+        run: |
+          mkdir -p pages-repo/slides
+          rsync -av --delete \
+            --exclude='.git' \
+            slides-src/ pages-repo/slides/
+
+      - name: Commit and push
+        working-directory: pages-repo
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add slides/
+          git diff --staged --quiet || git commit -m "Sync slides from DIFS-Teaching/slides@${{ github.sha }}"
+          git push

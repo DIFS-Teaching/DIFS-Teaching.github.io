@@ -80,8 +80,8 @@ body {
 
 <div data-iframe="assets/examples/page_w_rel.html"></div>
 
-<span class="note"><a href="assets/examples/page_w_rel.html">source:flexible</a></span>
-<span class="note"><a href="assets/examples/page_w_abs.html">source:fixed</a></span>
+<span class="note"><a href="https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/page_w_rel.html">source:flexible</a></span>
+<span class="note"><a href="https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/page_w_abs.html">source:fixed</a></span>
 
 ---
 
@@ -595,7 +595,7 @@ body {
 
 <div data-iframe="assets/examples/col_floats.html"></div>
 
-<span class="note"><a href="assets/examples/col_floats.html">source</a></span>
+<span class="note"><a href="https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/col_floats.html">source</a></span>
 
 ---
 
@@ -615,4 +615,4 @@ body {
 
 <div data-iframe="assets/examples/col_display.html"></div>
 
-<span class="note"><a href="assets/examples/col_display.html">source</a></span>
+<span class="note"><a href="https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/col_display.html">source</a></span>
