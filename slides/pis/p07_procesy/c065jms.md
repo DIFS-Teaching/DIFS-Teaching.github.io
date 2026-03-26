@@ -32,6 +32,40 @@
 
 ---
 
+# JMS XA transakce — příklad producenta
+
+```java
+@Stateless
+public class ObjednavkaService {
+
+    @PersistenceContext
+    EntityManager em;
+
+    @Resource(lookup = "java:app/jms/ConnectionFactory")
+    ConnectionFactory cf;
+
+    @Resource(lookup = "java:app/jms/ExpediceQueue")
+    Queue expediceQueue;
+
+    @Transactional                          // JTA transakce — koordinuje 2PC
+    public void vytvorObjednavku(Objednavka o) {
+        em.persist(o);                      // zápis do DB (XA resource #1)
+
+        try (JMSContext ctx = cf.createContext()) {
+            ctx.createProducer()
+               .send(expediceQueue, o.getId());  // vložení do fronty (XA resource #2)
+        }
+        // commit → DB záznam i zpráva jsou potvrzeny atomicky
+        // výjimka → rollback → ani DB záznam, ani zpráva se neodešle
+    }
+}
+```
+
+- `ConnectionFactory` musí být **XA-aware** (např. `ArtemisXAConnectionFactory`)
+- JTA koordinátor provede 2PC: `xa_prepare()` na DB i brokeru, pak `xa_commit()`
+
+---
+
 # @MessageDriven — EJB konzument
 
 ```java

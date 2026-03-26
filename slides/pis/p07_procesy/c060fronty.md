@@ -10,7 +10,7 @@
 # Motivace: zotavitelné fronty
 - Aplikace nevyžaduje úzké semknutí akcí do jedné izolované transakce
 - Stačí zaručit, že po dokončení jedné akce **bude někdy provedena další**
-- Na rozdíl od zřetězených transakcí může být mezi akcemi **podstatná časová proluka**
+- Na rozdíl od zřetězených transakcí může být mezi akcemi **podstatná časová prodleva**
 - Příklad: objednávka → expedice → fakturace
 	- Fakturace a expedice mohou proběhnout kdykoli po úspěšné objednávce
 

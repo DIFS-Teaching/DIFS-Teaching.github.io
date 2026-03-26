@@ -22,7 +22,7 @@
 
 ![Dvoufázový commit](assets/2pc-protocol.svg) <!-- .element: style="height:600px;margin:0.3em auto;display:block" -->
 
-- Před hlasováním každý účastní provede svoji část až po event. `commit()`
+- Před hlasováním každý účastník provede svoji část až po event. `commit()`
 
 ---
 
