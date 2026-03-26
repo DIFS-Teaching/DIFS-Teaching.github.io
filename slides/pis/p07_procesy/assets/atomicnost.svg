@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 720 280" width="720" height="280"
+     font-family="sans-serif" font-size="13" fill="#1f2937"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <!-- Scénář 1: commit -->
+  <text x="10" y="30" font-weight="bold" font-size="14" fill="#16a34a">Úspěšné dokončení (commit)</text>
+  <!-- časová osa -->
+  <line x1="10" y1="70" x2="690" y2="70" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- fáze -->
+  <rect x="60" y="45" width="120" height="30" rx="4" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="120" y="65" text-anchor="middle" font-size="12">před transakcí</text>
+  <line x1="180" y1="45" x2="180" y2="85" stroke="#ca8a04" stroke-dasharray="4,3"/>
+  <text x="180" y="100" text-anchor="middle" font-size="11" fill="#6b7280">begin</text>
+
+  <rect x="200" y="45" width="200" height="30" rx="4" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="300" y="65" text-anchor="middle" font-size="12">tělo transakce</text>
+  <line x1="400" y1="45" x2="400" y2="85" stroke="#3b82f6" stroke-dasharray="4,3"/>
+  <text x="400" y="100" text-anchor="middle" font-size="11" fill="#6b7280">commit</text>
+
+  <rect x="420" y="45" width="120" height="30" rx="4" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="480" y="65" text-anchor="middle" font-size="12">po transakci</text>
+  <text x="300" y="120" text-anchor="middle" font-size="12" fill="#16a34a">→ změny trvale uloženy</text>
+
+  <!-- Scénář 2: rollback -->
+  <text x="10" y="165" font-weight="bold" font-size="14" fill="#dc2626">Zrušení (rollback / abort)</text>
+  <line x1="10" y1="200" x2="690" y2="200" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+  <rect x="60" y="175" width="120" height="30" rx="4" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="120" y="195" text-anchor="middle" font-size="12">před transakcí</text>
+  <line x1="180" y1="175" x2="180" y2="215" stroke="#ca8a04" stroke-dasharray="4,3"/>
+  <text x="180" y="230" text-anchor="middle" font-size="11" fill="#6b7280">begin</text>
+
+  <rect x="200" y="175" width="140" height="30" rx="4" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="270" y="195" text-anchor="middle" font-size="12">tělo (část)</text>
+  <line x1="340" y1="175" x2="340" y2="215" stroke="#dc2626" stroke-dasharray="4,3"/>
+  <text x="340" y="230" text-anchor="middle" font-size="11" fill="#6b7280">abort</text>
+
+  <rect x="360" y="175" width="120" height="30" rx="4" fill="#fef9c3" stroke="#ca8a04"/>
+  <text x="420" y="195" text-anchor="middle" font-size="12">původní stav</text>
+  <!-- rollback šipka zpět -->
+  <path d="M 340 160 Q 270 140 200 160" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arr)"/>
+  <text x="270" y="148" text-anchor="middle" font-size="11" fill="#dc2626">návrat (rollback)</text>
+  <text x="300" y="255" text-anchor="middle" font-size="12" fill="#dc2626">→ databáze vrácena do původního stavu</text>
+</svg>

@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 215"
+   width="700"
+   height="215"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg39"
+   sodipodi:docname="sekvencni-procesy.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview41"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.0976744"
+     inkscape:cx="350.28602"
+     inkscape:cy="107.95551"
+     inkscape:window-width="2560"
+     inkscape:window-height="1383"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg39" />
+  <defs
+     id="defs5">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Počáteční stav (plný kruh) -->
+  <circle
+     cx="55"
+     cy="88"
+     r="16"
+     fill="#1f2937"
+     id="circle7" />
+  <!-- Šipka počáteční → stavA -->
+  <line
+     x1="71"
+     y1="88"
+     x2="96"
+     y2="88"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line9" />
+  <!-- stavA box -->
+  <rect
+     x="100"
+     y="58"
+     width="135"
+     height="60"
+     rx="8"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2"
+     id="rect11" />
+  <text
+     x="167"
+     y="94"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="15"
+     fill="#1e3a8a"
+     id="text13">stavA</text>
+  <!-- Šipka stavA → stavB (pravidlo A → b B) -->
+  <line
+     x1="235"
+     y1="88"
+     x2="327.13852"
+     y2="88"
+     stroke="#4b5563"
+     stroke-width="2.00001"
+     marker-end="url(#arr)"
+     id="line15" />
+  <text
+     x="271.55508"
+     y="78"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#374151"
+     id="text17">[vstup b]</text>
+  <!-- Poznámka pravidla -->
+  <text
+     x="270.64407"
+     y="56"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#9ca3af"
+     font-style="italic"
+     id="text19">A → b B</text>
+  <!-- stavB box -->
+  <g
+     id="g935"
+     transform="translate(27.330508)">
+    <rect
+       x="302"
+       y="58"
+       width="135"
+       height="60"
+       rx="8"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="2"
+       id="rect21"
+       ry="8" />
+    <text
+       x="369"
+       y="94"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="15px"
+       fill="#1e3a8a"
+       id="text23">stavB</text>
+  </g>
+  <!-- Šipka stavB → koncový stav -->
+  <line
+     x1="466.15253"
+     y1="88"
+     x2="583.36719"
+     y2="88"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line25" />
+  <text
+     x="510"
+     y="78"
+     text-anchor="middle"
+     font-size="12"
+     fill="#374151"
+     id="text27">[vstup c]</text>
+  <!-- Koncový stav (kruh s tečkou) -->
+  <circle
+     cx="610"
+     cy="88"
+     r="21"
+     fill="none"
+     stroke="#1f2937"
+     stroke-width="2.5"
+     id="circle29" />
+  <circle
+     cx="610"
+     cy="88"
+     r="13"
+     fill="#1f2937"
+     id="circle31" />
+  <!-- Oblouk stavA → koncový stav (pravidlo A → c, konec) -->
+  <!-- Poznámka pravidla -->
+</svg>

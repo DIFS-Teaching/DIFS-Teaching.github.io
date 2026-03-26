@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 760 300" width="760" height="300"
+     font-family="sans-serif" font-size="14" fill="#1f2937"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <!-- Fyzický systém -->
+  <rect x="30" y="60" width="200" height="180" rx="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="130" y="50" text-anchor="middle" font-weight="bold" font-size="15">Fyzický systém</text>
+  <text x="130" y="100" text-anchor="middle" font-size="13">(podsystém)</text>
+  <rect x="60" y="115" width="140" height="40" rx="6" fill="#93c5fd" stroke="#3b82f6"/>
+  <text x="130" y="140" text-anchor="middle" font-size="13">fyzické zdroje</text>
+  <rect x="60" y="170" width="140" height="40" rx="6" fill="#93c5fd" stroke="#3b82f6"/>
+  <text x="130" y="195" text-anchor="middle" font-size="13">fyzické funkce</text>
+
+  <!-- Informační systém (OLTP) -->
+  <rect x="530" y="60" width="200" height="180" rx="12" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="630" y="50" text-anchor="middle" font-weight="bold" font-size="15">Informační systém</text>
+  <text x="630" y="100" text-anchor="middle" font-size="13">(OLTP)</text>
+  <rect x="560" y="115" width="140" height="40" rx="6" fill="#86efac" stroke="#16a34a"/>
+  <text x="630" y="140" text-anchor="middle" font-size="13">konceptuální zdroje</text>
+  <rect x="560" y="170" width="140" height="40" rx="6" fill="#86efac" stroke="#16a34a"/>
+  <text x="630" y="195" text-anchor="middle" font-size="13">obrazy funkcí</text>
+
+  <!-- Izomorfismus šipka -->
+  <line x1="240" y1="150" x2="520" y2="150" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="520" y1="170" x2="240" y2="170" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="380" y="145" text-anchor="middle" font-size="13" fill="#4b5563">transformační funkce</text>
+  <text x="380" y="195" text-anchor="middle" font-size="13" fill="#4b5563">izomorfismus <tspan font-style="italic">j</tspan></text>
+
+  <!-- Vstup/výstup -->
+  <line x1="380" y1="60" x2="380" y2="20" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="380" y="15" text-anchor="middle" font-size="12" fill="#6b7280">vstup / výstup</text>
+  <line x1="380" y1="240" x2="380" y2="280" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="380" y="295" text-anchor="middle" font-size="12" fill="#6b7280">abstrakce</text>
+</svg>

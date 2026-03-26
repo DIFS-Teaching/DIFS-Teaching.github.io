@@ -1,0 +1,26 @@
+{
+    "id": "p07_procesy",
+    "title": "PIS - Procesy, pokročilé modely procesů, cesta k workflow",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Procesy, pokročilé modely procesů, cesta k workflow",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010integrita.md",
+        "c020procesy.md",
+        "c030transakce.md",
+        "c040modely.md",
+        "c045jakarta_transakce.md",
+        "c050zretezene.md",
+        "c055distribuce.md",
+        "c060fronty.md",
+        "c065jms.md",
+        "c999final.md"
+    ]
+}

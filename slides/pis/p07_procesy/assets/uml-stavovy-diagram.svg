@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 280"
+   width="700"
+   height="280"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg51"
+   sodipodi:docname="uml-stavovy-diagram.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview53"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.38396"
+     inkscape:cx="345.64338"
+     inkscape:cy="141.57117"
+     inkscape:window-width="2560"
+     inkscape:window-height="1383"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg51" />
+  <defs
+     id="defs5">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Nadpisy sekcí -->
+  <text
+     x="140.2511"
+     y="20"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14px"
+     id="text7">Počáteční stav</text>
+  <text
+     x="343.83984"
+     y="20"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14px"
+     id="text9">Stav</text>
+  <text
+     x="550.04926"
+     y="20"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14px"
+     id="text11">Koncový stav</text>
+  <!-- Počáteční stav (plný kruh) -->
+  <circle
+     cx="140.6886"
+     cy="70"
+     r="18"
+     fill="#1f2937"
+     id="circle13" />
+  <line
+     x1="158.6886"
+     y1="70"
+     x2="200.6886"
+     y2="70"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line15" />
+  <!-- Stav box -->
+  <rect
+     x="204.01073"
+     y="40"
+     width="280"
+     height="100"
+     rx="8"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2"
+     id="rect17"
+     ry="8" />
+  <text
+     x="344.01071"
+     y="70"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14px"
+     id="text19">název stavu</text>
+  <line
+     x1="204.01073"
+     y1="78"
+     x2="484.01071"
+     y2="78"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="line21" />
+  <text
+     x="344.01071"
+     y="98"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#4b5563"
+     id="text23">stavové proměnné</text>
+  <line
+     x1="204.01073"
+     y1="108"
+     x2="484.01071"
+     y2="108"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="line25" />
+  <text
+     x="344.01071"
+     y="128"
+     text-anchor="middle"
+     font-size="12px"
+     fill="#4b5563"
+     id="text27">činnosti (entry/do/exit)</text>
+  <!-- Šipka přechodu -->
+  <line
+     x1="484.01071"
+     y1="70"
+     x2="529.01074"
+     y2="70"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line29" />
+  <text
+     x="515.23907"
+     y="48.576958"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text31">[podmínka]</text>
+  <!-- Koncový stav (kruh s tečkou) -->
+  <circle
+     cx="550.48676"
+     cy="70"
+     r="18"
+     fill="none"
+     stroke="#1f2937"
+     stroke-width="2.5"
+     id="circle33" />
+  <circle
+     cx="550.48676"
+     cy="70"
+     r="11"
+     fill="#1f2937"
+     id="circle35" />
+  <!-- Strážní podmínky sekce -->
+  <text
+     x="350"
+     y="190"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="13"
+     fill="#374151"
+     id="text37">Strážní podmínka (guard)</text>
+  <rect
+     x="170"
+     y="205"
+     width="110"
+     height="45"
+     rx="8"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2"
+     id="rect39" />
+  <text
+     x="225"
+     y="233"
+     text-anchor="middle"
+     id="text41">stavA</text>
+  <rect
+     x="420"
+     y="205"
+     width="110"
+     height="45"
+     rx="8"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2"
+     id="rect43" />
+  <text
+     x="475"
+     y="233"
+     text-anchor="middle"
+     id="text45">stavB</text>
+  <line
+     x1="280"
+     y1="228"
+     x2="418"
+     y2="228"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line47" />
+  <text
+     x="350"
+     y="220"
+     text-anchor="middle"
+     font-size="12"
+     fill="#4b5563"
+     id="text49">[podmínka (vstup)]</text>
+</svg>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 260"
+   width="700"
+   height="260"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg94"
+   sodipodi:docname="zotavitelna-fronta.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview96"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7344319"
+     inkscape:cx="374.4742"
+     inkscape:cy="131.74342"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg94" />
+  <defs
+     id="defs8">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+    <marker
+       id="arr-red"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#dc2626"
+         id="polygon5" />
+    </marker>
+    <marker
+       id="arr-3"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,0 10,3.5 0,7 "
+         fill="#4b5563"
+         id="polygon2-6" />
+    </marker>
+  </defs>
+  <!-- Pipeline -->
+  <text
+     x="350"
+     y="20"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14"
+     id="text10">Řetěz s pevným uspořádáním (pipeline)</text>
+  <!-- T1: Objednávková -->
+  <g
+     id="g479"
+     transform="translate(-9.2249225)">
+    <rect
+       x="20"
+       y="50"
+       width="150"
+       height="55"
+       rx="8"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="2"
+       id="rect12" />
+    <text
+       x="95"
+       y="74"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="12px"
+       id="text14">Objednávková</text>
+    <text
+       x="95"
+       y="92"
+       text-anchor="middle"
+       font-size="12px"
+       id="text16">transakce</text>
+  </g>
+  <!-- Fronta 1 -->
+  <g
+     id="g445"
+     transform="translate(-9.2249225)">
+    <rect
+       x="200"
+       y="60"
+       width="100"
+       height="35"
+       rx="6"
+       fill="#fef9c3"
+       stroke="#ca8a04"
+       stroke-width="2"
+       id="rect18" />
+    <g
+       id="g393"
+       transform="translate(0,-7.1357422)">
+      <text
+         x="250"
+         y="82"
+         text-anchor="middle"
+         font-size="12px"
+         id="text20">Expediční</text>
+      <text
+         x="250"
+         y="96"
+         text-anchor="middle"
+         font-size="11px"
+         fill="#6b7280"
+         id="text22">fronta</text>
+    </g>
+  </g>
+  <!-- T2: Expediční -->
+  <g
+     id="g462"
+     transform="translate(-9.2249225)">
+    <rect
+       x="330"
+       y="50"
+       width="140"
+       height="55"
+       rx="8"
+       fill="#dcfce7"
+       stroke="#16a34a"
+       stroke-width="2"
+       id="rect24" />
+    <text
+       x="400"
+       y="74"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="12px"
+       id="text26">Expediční</text>
+    <text
+       x="400"
+       y="92"
+       text-anchor="middle"
+       font-size="12px"
+       id="text28">transakce</text>
+  </g>
+  <!-- Fronta 2 -->
+  <g
+     id="g427"
+     transform="translate(-9.2249225,-7.1357422)">
+    <rect
+       x="500"
+       y="67.135742"
+       width="100"
+       height="35"
+       rx="6"
+       fill="#fef9c3"
+       stroke="#ca8a04"
+       stroke-width="2"
+       id="rect30" />
+    <g
+       id="g409">
+      <text
+         x="550"
+         y="82"
+         text-anchor="middle"
+         font-size="12px"
+         id="text32">Fakturační</text>
+      <text
+         x="550"
+         y="96"
+         text-anchor="middle"
+         font-size="11px"
+         fill="#6b7280"
+         id="text34">fronta</text>
+    </g>
+  </g>
+  <!-- T3: Fakturační -->
+  <g
+     id="g496"
+     transform="translate(4.0359036)">
+    <rect
+       x="620"
+       y="50"
+       width="60"
+       height="55"
+       rx="8"
+       fill="#f3e8ff"
+       stroke="#9333ea"
+       stroke-width="2"
+       id="rect36" />
+    <text
+       x="650"
+       y="74"
+       text-anchor="middle"
+       font-size="11px"
+       id="text38">Fakturační</text>
+    <text
+       x="650"
+       y="90"
+       text-anchor="middle"
+       font-size="11px"
+       id="text40">transakce</text>
+  </g>
+  <!-- Šipky pipeline -->
+  <line
+     x1="160.77507"
+     y1="77.5"
+     x2="188.77507"
+     y2="77.5"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line42" />
+  <text
+     x="174.77507"
+     y="64.234421"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#ca8a04"
+     id="text44">vlož</text>
+  <line
+     x1="290.77509"
+     y1="77.5"
+     x2="318.77509"
+     y2="77.5"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line46" />
+  <text
+     x="304.77509"
+     y="64.234421"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#16a34a"
+     id="text48">vyber</text>
+  <line
+     x1="460.77509"
+     y1="77.5"
+     x2="488.77509"
+     y2="77.5"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line50" />
+  <line
+     x1="592.69177"
+     y1="77.5"
+     x2="620.69177"
+     y2="77.5"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr-3)"
+     id="line50-7"
+     style="marker-end:url(#arr-3)" />
+  <text
+     x="474.77509"
+     y="64.234421"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#ca8a04"
+     id="text52">vlož</text>
+  <text
+     x="607.27032"
+     y="64.234421"
+     text-anchor="middle"
+     font-size="10px"
+     fill="#9333ea"
+     id="text56">vyber</text>
+  <!-- Paralelní varianta -->
+  <text
+     x="340.77509"
+     y="150"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14px"
+     id="text58">Podpora paralelismu</text>
+  <rect
+     x="10.775078"
+     y="170"
+     width="150"
+     height="55"
+     rx="8"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2"
+     id="rect60" />
+  <text
+     x="85.775078"
+     y="194"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="12px"
+     id="text62">Objednávková</text>
+  <text
+     x="85.775078"
+     y="212"
+     text-anchor="middle"
+     font-size="12px"
+     id="text64">transakce</text>
+  <!-- Fronta pro exp -->
+  <rect
+     x="190.77507"
+     y="165"
+     width="110"
+     height="30"
+     rx="6"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="1.5"
+     id="rect66" />
+  <text
+     x="245.77507"
+     y="184"
+     text-anchor="middle"
+     font-size="11px"
+     id="text68">Exp. fronta</text>
+  <!-- Fronta pro fakt -->
+  <rect
+     x="190.77507"
+     y="205"
+     width="110"
+     height="30"
+     rx="6"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="1.5"
+     id="rect70" />
+  <text
+     x="245.77507"
+     y="224"
+     text-anchor="middle"
+     font-size="11px"
+     id="text72">Fakt. fronta</text>
+  <rect
+     x="330.77509"
+     y="165"
+     width="120"
+     height="30"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="1.5"
+     id="rect74" />
+  <text
+     x="390.77509"
+     y="184"
+     text-anchor="middle"
+     font-size="12px"
+     id="text76">Expediční T</text>
+  <rect
+     x="330.77509"
+     y="205"
+     width="120"
+     height="30"
+     rx="8"
+     fill="#f3e8ff"
+     stroke="#9333ea"
+     stroke-width="1.5"
+     id="rect78" />
+  <text
+     x="390.77509"
+     y="224"
+     text-anchor="middle"
+     font-size="12px"
+     id="text80">Fakturační T</text>
+  <line
+     x1="160.77507"
+     y1="190"
+     x2="188.77507"
+     y2="180"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line82" />
+  <line
+     x1="160.77507"
+     y1="200"
+     x2="188.77507"
+     y2="218"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line84" />
+  <line
+     x1="300.77509"
+     y1="180"
+     x2="328.77509"
+     y2="180"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line86" />
+  <line
+     x1="300.77509"
+     y1="220"
+     x2="328.77509"
+     y2="220"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line88" />
+  <text
+     x="500.77509"
+     y="184"
+     font-size="12px"
+     fill="#16a34a"
+     id="text90">⟵ paralelně</text>
+  <text
+     x="500.77509"
+     y="222"
+     font-size="12px"
+     fill="#9333ea"
+     id="text92">⟵ paralelně</text>
+</svg>

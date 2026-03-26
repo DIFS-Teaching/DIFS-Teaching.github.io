@@ -1,0 +1,22 @@
+{
+    "id": "p08_workflow",
+    "title": "PIS - Workflow systémy",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "PIS &ndash; Workflow systémy",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010vyvoj.md",
+        "c020wfmc.md",
+        "c030bpmn.md",
+        "c040patterns.md",
+        "c050technologie.md",
+        "c999final.md"
+    ]
+}

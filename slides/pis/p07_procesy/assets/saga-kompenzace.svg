@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 760 360"
+   width="760"
+   height="360"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg145"
+   sodipodi:docname="saga-kompenzace.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview147"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="3.1950062"
+     inkscape:cx="598.27741"
+     inkscape:cy="182.31577"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg145" />
+  <defs
+     id="defs11">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0,7 0,0 10,3.5 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+    <marker
+       id="arr-g"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#16a34a"
+         id="polygon5" />
+    </marker>
+    <marker
+       id="arr-r"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#dc2626"
+         id="polygon8" />
+    </marker>
+  </defs>
+  <!-- === Scénář A: úspěch === -->
+  <text
+     x="185"
+     y="22"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14"
+     fill="#16a34a"
+     id="text13">A) Úspěšné provedení</text>
+  <!-- T1 -->
+  <rect
+     x="20"
+     y="35"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect15" />
+  <text
+     x="80"
+     y="57"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text17">T₁</text>
+  <text
+     x="80"
+     y="73"
+     text-anchor="middle"
+     font-size="11"
+     id="text19">commit</text>
+  <!-- T2 -->
+  <rect
+     x="165"
+     y="35"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect21" />
+  <text
+     x="225"
+     y="57"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text23">T₂</text>
+  <text
+     x="225"
+     y="73"
+     text-anchor="middle"
+     font-size="11"
+     id="text25">commit</text>
+  <!-- T3 -->
+  <rect
+     x="310"
+     y="35"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect27" />
+  <text
+     x="370"
+     y="57"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text29">T₃</text>
+  <text
+     x="370"
+     y="73"
+     text-anchor="middle"
+     font-size="11"
+     id="text31">commit</text>
+  <!-- arrows success -->
+  <line
+     x1="140"
+     y1="57"
+     x2="163"
+     y2="57"
+     stroke="#16a34a"
+     stroke-width="2"
+     marker-end="url(#arr-g)"
+     id="line33" />
+  <line
+     x1="285"
+     y1="57"
+     x2="308"
+     y2="57"
+     stroke="#16a64a"
+     stroke-width="2"
+     marker-end="url(#arr-g)"
+     id="line35" />
+  <line
+     x1="430"
+     y1="57"
+     x2="455"
+     y2="57"
+     stroke="#16a34a"
+     stroke-width="2"
+     marker-end="url(#arr-g)"
+     id="line37" />
+  <circle
+     cx="465"
+     cy="57"
+     r="10"
+     fill="white"
+     stroke="#16a34a"
+     stroke-width="3"
+     id="circle39" />
+  <text
+     x="465"
+     y="61"
+     text-anchor="middle"
+     font-size="10"
+     fill="#16a34a"
+     id="text41">✓</text>
+  <text
+     x="385"
+     y="100"
+     text-anchor="middle"
+     font-size="11"
+     fill="#16a34a"
+     id="text43">→ celá SAGA úspěšně dokončena</text>
+  <!-- === Scénář B: selhání === -->
+  <text
+     x="185"
+     y="140"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14"
+     fill="#dc2626"
+     id="text45">B) Selhání T₃ → kompenzace</text>
+  <!-- T1 OK -->
+  <rect
+     x="20"
+     y="155"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect47" />
+  <text
+     x="80"
+     y="177"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text49">T₁</text>
+  <text
+     x="80"
+     y="193"
+     text-anchor="middle"
+     font-size="11"
+     id="text51">commit ✓</text>
+  <!-- T2 OK -->
+  <rect
+     x="165"
+     y="155"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect53" />
+  <text
+     x="225"
+     y="177"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text55">T₂</text>
+  <text
+     x="225"
+     y="193"
+     text-anchor="middle"
+     font-size="11"
+     id="text57">commit ✓</text>
+  <!-- T3 FAIL -->
+  <rect
+     x="310"
+     y="155"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#fee2e2"
+     stroke="#dc2626"
+     stroke-width="2"
+     id="rect59" />
+  <text
+     x="370"
+     y="177"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text61">T₃</text>
+  <text
+     x="370"
+     y="193"
+     text-anchor="middle"
+     font-size="11"
+     id="text63">selhání ✗</text>
+  <!-- arrows to T3 -->
+  <line
+     x1="140"
+     y1="177"
+     x2="163"
+     y2="177"
+     stroke="#16a34a"
+     stroke-width="2"
+     marker-end="url(#arr-g)"
+     id="line65" />
+  <line
+     x1="285"
+     y1="177"
+     x2="308"
+     y2="177"
+     stroke="#16a34a"
+     stroke-width="2"
+     marker-end="url(#arr-g)"
+     id="line67" />
+  <!-- kompenzace C2, C1 (dole) -->
+  <text
+     x="185"
+     y="224"
+     text-anchor="middle"
+     font-size="12"
+     fill="#dc2626"
+     font-weight="bold"
+     id="text69">→ spustí se kompenzace v opačném pořadí:</text>
+  <!-- C2 -->
+  <rect
+     x="165"
+     y="238"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="2"
+     stroke-dasharray="6,3"
+     id="rect71" />
+  <text
+     x="225"
+     y="260"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text73">C₂</text>
+  <text
+     x="225"
+     y="276"
+     text-anchor="middle"
+     font-size="11"
+     id="text75">kompenzuje T₂</text>
+  <!-- C1 -->
+  <rect
+     x="20"
+     y="238"
+     width="120"
+     height="45"
+     rx="8"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="2"
+     stroke-dasharray="6,3"
+     id="rect77" />
+  <text
+     x="80"
+     y="260"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text79">C₁</text>
+  <text
+     x="80"
+     y="276"
+     text-anchor="middle"
+     font-size="11"
+     id="text81">kompenzuje T₁</text>
+  <!-- Compensation arrows (right to left) -->
+  <line
+     x1="332.78741"
+     y1="209.47583"
+     x2="312.78741"
+     y2="259.47583"
+     stroke="#dc2626"
+     stroke-width="2"
+     marker-end="url(#arr-r)"
+     id="line83" />
+  <line
+     x1="163"
+     y1="260"
+     x2="142"
+     y2="260"
+     stroke="#dc2626"
+     stroke-width="2"
+     marker-end="url(#arr-r)"
+     id="line85" />
+  <text
+     x="241"
+     y="257"
+     text-anchor="middle"
+     font-size="11"
+     fill="#dc2626"
+     id="text87">←</text>
+  <!-- Legenda orchestrace -->
+  <rect
+     x="505.08801"
+     y="34.939487"
+     width="244.9725"
+     height="248.12102"
+     rx="6.7578621"
+     fill="#f9fafb"
+     stroke="#e5e7eb"
+     stroke-width="1.37898"
+     id="rect89" />
+  <text
+     x="627.72345"
+     y="58"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="13px"
+     id="text91">Typy orchestrace</text>
+  <text
+     x="525.46008"
+     y="82"
+     font-weight="bold"
+     font-size="12px"
+     id="text93">Choreografie (události)</text>
+  <text
+     x="525.46008"
+     y="100"
+     font-size="11px"
+     fill="#6b7280"
+     id="text95">Každá služba naslouchá událostem</text>
+  <text
+     x="525.46008"
+     y="116"
+     font-size="11px"
+     fill="#6b7280"
+     id="text97">a samostatně rozhoduje o své akci.</text>
+  <text
+     x="525.46008"
+     y="132"
+     font-size="11px"
+     fill="#6b7280"
+     id="text99">Žádný centrální koordinátor.</text>
+  <!-- Choreography mini-diagram -->
+  <rect
+     x="525.46008"
+     y="140"
+     width="55"
+     height="22"
+     rx="4"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="rect101" />
+  <text
+     x="553.46008"
+     y="155"
+     text-anchor="middle"
+     font-size="10px"
+     id="text103">Služba A</text>
+  <line
+     x1="580.46008"
+     y1="151"
+     x2="598.46008"
+     y2="151"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line105" />
+  <text
+     x="591.07825"
+     y="170.35207"
+     text-anchor="middle"
+     font-size="9px"
+     fill="#6b7280"
+     id="text107">event</text>
+  <rect
+     x="600.46008"
+     y="140"
+     width="55"
+     height="22"
+     rx="4"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="rect109" />
+  <text
+     x="628.46008"
+     y="155"
+     text-anchor="middle"
+     font-size="10px"
+     id="text111">Služba B</text>
+  <line
+     x1="655.46008"
+     y1="151"
+     x2="673.46008"
+     y2="151"
+     stroke="#4b5563"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line113" />
+  <rect
+     x="675.46008"
+     y="140"
+     width="55"
+     height="22"
+     rx="4"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="rect115" />
+  <text
+     x="703.46008"
+     y="155"
+     text-anchor="middle"
+     font-size="10px"
+     id="text117">Služba C</text>
+  <line
+     x1="655.46008"
+     y1="170"
+     x2="655.46008"
+     y2="180"
+     stroke="#e5e7eb"
+     stroke-width="1"
+     id="line119" />
+  <text
+     x="525.46008"
+     y="197"
+     font-weight="bold"
+     font-size="12px"
+     id="text121">Orchestrátor</text>
+  <text
+     x="525.46008"
+     y="215"
+     font-size="11px"
+     fill="#6b7280"
+     id="text123">Centrální orchestrátor vydává</text>
+  <text
+     x="525.46008"
+     y="231"
+     font-size="11px"
+     fill="#6b7280"
+     id="text125">příkazy a sleduje výsledky.</text>
+  <!-- Orchestrator mini-diagram -->
+  <rect
+     x="630.46008"
+     y="238"
+     width="60"
+     height="22"
+     rx="4"
+     fill="#f3e8ff"
+     stroke="#9333ea"
+     stroke-width="1.5"
+     id="rect127" />
+  <text
+     x="660.46008"
+     y="253"
+     text-anchor="middle"
+     font-size="10px"
+     font-weight="bold"
+     id="text129">Orchestrátor</text>
+  <line
+     x1="629.52112"
+     y1="243.36621"
+     x2="597.52112"
+     y2="243.36621"
+     stroke="#9333ea"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line131" />
+  <rect
+     x="525.46008"
+     y="238"
+     width="70"
+     height="22"
+     rx="4"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="1"
+     id="rect133" />
+  <text
+     x="560.46008"
+     y="253"
+     text-anchor="middle"
+     font-size="10px"
+     id="text135">Mikroslužba</text>
+  <line
+     x1="597.52112"
+     y1="255.36621"
+     x2="629.52112"
+     y2="255.36621"
+     stroke="#9333ea"
+     stroke-width="1.5"
+     marker-end="url(#arr)"
+     id="line137" />
+  <!-- Trade-off -->
+  <rect
+     x="0"
+     y="300"
+     width="760"
+     height="52"
+     rx="6"
+     fill="#eff6ff"
+     stroke="#bfdbfe"
+     stroke-width="1.5"
+     id="rect139" />
+  <text
+     x="380"
+     y="320"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="13"
+     id="text141"
+     style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:13px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle"><tspan
+       sodipodi:role="line"
+       id="tspan538">SAGA vs. 2PC</tspan></text>
+  <text
+     x="380"
+     y="342"
+     text-anchor="middle"
+     font-size="12"
+     fill="#374151"
+     id="text143">SAGA = škálovatelnost + eventual consistency | 2PC = silná konzistence + blokování + horší škálovatelnost</text>
+</svg>

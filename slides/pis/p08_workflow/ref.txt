@@ -1,0 +1,7 @@
+3 nová SVG schémata (zbytek obrázků přesunut do assets/):                                                   
+  - wfmc-model.svg – čistá vektorová rekonstrukce referenčního modelu WfMC (namísto image4.png)             
+  - bpmn-elementy.svg – přehledná tabulka BPMN elementů (události, aktivity, brány, spojovací objekty,        
+  swimlanes) – chybělo zcela                                                                                
+  - workflow-patterns.svg – všech 7 workflow patterns v jednom čistém diagramu (namísto image11–17.png z      
+  workflowpatterns.com)  
+  

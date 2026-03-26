@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 700 380"
+   width="700"
+   height="380"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg86"
+   sodipodi:docname="wfmc-model.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview88"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.564939"
+     inkscape:cx="341.54687"
+     inkscape:cy="191.38127"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg86" />
+  <defs
+     id="defs8">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+    <marker
+       id="arr2"
+       markerWidth="10"
+       markerHeight="7"
+       refX="1"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="10,0 0,3.5 10,7 "
+         fill="#4b5563"
+         id="polygon5" />
+    </marker>
+  </defs>
+  <!-- Nástroje pro definici procesů – nahoře -->
+  <rect
+     x="240"
+     y="10"
+     width="220"
+     height="55"
+     rx="8"
+     fill="#f3e8ff"
+     stroke="#9333ea"
+     stroke-width="2"
+     id="rect10" />
+  <text
+     x="350"
+     y="35"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text12">Nástroje pro definici</text>
+  <text
+     x="350"
+     y="53"
+     text-anchor="middle"
+     id="text14">procesů</text>
+  <text
+     x="388.97916"
+     y="88.863045"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text16">Rozhraní 1</text>
+  <!-- WES – střed -->
+  <rect
+     x="175.05328"
+     y="110.05328"
+     width="349.89343"
+     height="157.67348"
+     rx="9.9969549"
+     fill="#dbeafe"
+     stroke="#3b82f6"
+     stroke-width="2.60657"
+     id="rect18" />
+  <text
+     x="350"
+     y="133"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="14"
+     id="text20">WES</text>
+  <text
+     x="350"
+     y="151"
+     text-anchor="middle"
+     font-size="11"
+     fill="#4b5563"
+     id="text22">(Workflow Enactment Service)</text>
+  <!-- Workflow engine vrstvy -->
+  <g
+     id="g388"
+     transform="translate(58.149233)">
+    <rect
+       x="215"
+       y="158"
+       width="120"
+       height="75"
+       rx="6"
+       fill="#ffffff"
+       stroke="#3b82f6"
+       stroke-width="1.5"
+       id="rect24" />
+    <rect
+       x="230"
+       y="168"
+       width="120"
+       height="75"
+       rx="6"
+       fill="#ffffff"
+       stroke="#3b82f6"
+       stroke-width="1.5"
+       id="rect26" />
+    <rect
+       x="245.04909"
+       y="178.04909"
+       width="119.90182"
+       height="73.847855"
+       rx="5.995091"
+       fill="#bfdbfe"
+       stroke="#3b82f6"
+       stroke-width="1.59818"
+       id="rect28" />
+    <text
+       x="305"
+       y="212"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="13px"
+       id="text30">Workflow</text>
+    <text
+       x="305"
+       y="230"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="13px"
+       id="text32">engine</text>
+  </g>
+  <!-- Šipka Rozhraní 1 -->
+  <line
+     x1="350"
+     y1="65"
+     x2="350"
+     y2="108"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line34" />
+  <!-- Administrativní – vlevo -->
+  <rect
+     x="10"
+     y="145"
+     width="150"
+     height="75"
+     rx="8"
+     fill="#dcfce7"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="rect38" />
+  <text
+     x="85"
+     y="175"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text40">Administrativní</text>
+  <text
+     x="85"
+     y="193"
+     text-anchor="middle"
+     id="text42">a monitorovací</text>
+  <text
+     x="85"
+     y="211"
+     text-anchor="middle"
+     id="text44">nástroje</text>
+  <text
+     x="141.87123"
+     y="237.19501"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text46">Rozhraní 5</text>
+  <!-- Šipka Rozhraní 5 -->
+  <line
+     x1="160"
+     y1="182"
+     x2="173"
+     y2="182"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line48" />
+  <line
+     x1="173"
+     y1="195"
+     x2="160"
+     y2="195"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line50" />
+  <!-- Další WES – vpravo -->
+  <rect
+     x="540"
+     y="145"
+     width="150"
+     height="75"
+     rx="8"
+     fill="#fef9c3"
+     stroke="#ca8a04"
+     stroke-width="2"
+     id="rect52" />
+  <text
+     x="615"
+     y="183"
+     text-anchor="middle"
+     font-weight="bold"
+     id="text54">Další WES</text>
+  <text
+     x="557.48975"
+     y="234.63901"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text56">Rozhraní 4</text>
+  <!-- Šipka Rozhraní 4 -->
+  <line
+     x1="527"
+     y1="182"
+     x2="538"
+     y2="182"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line58" />
+  <line
+     x1="538"
+     y1="195"
+     x2="527"
+     y2="195"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line60" />
+  <!-- Klientské aplikace – dole vlevo -->
+  <g
+     id="g465">
+    <rect
+       x="110"
+       y="300"
+       width="160"
+       height="65"
+       rx="8"
+       fill="#fee2e2"
+       stroke="#ef4444"
+       stroke-width="2"
+       id="rect62" />
+    <text
+       x="190"
+       y="325"
+       text-anchor="middle"
+       font-weight="bold"
+       id="text64">Klientská aplikace</text>
+    <text
+       x="190"
+       y="343"
+       text-anchor="middle"
+       id="text66">workflow</text>
+  </g>
+  <text
+     x="283.93338"
+     y="287.17865"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text68">Rozhraní 2</text>
+  <!-- Šipka Rozhraní 2 -->
+  <line
+     x1="250.14259"
+     y1="268.5144"
+     x2="229.85741"
+     y2="298.35748"
+     stroke="#4b5563"
+     stroke-width="1.71844"
+     marker-end="url(#arr)"
+     id="line70" />
+  <line
+     x1="212.83376"
+     y1="297.65829"
+     x2="233.1082"
+     y2="268.18765"
+     stroke="#4b5563"
+     stroke-width="1.72844"
+     marker-end="url(#arr)"
+     id="line72" />
+  <!-- Vyvolaná aplikace – dole vpravo -->
+  <g
+     id="g482">
+    <rect
+       x="430"
+       y="300"
+       width="160"
+       height="65"
+       rx="8"
+       fill="#f3e8ff"
+       stroke="#9333ea"
+       stroke-width="2"
+       id="rect74" />
+    <text
+       x="510"
+       y="325"
+       text-anchor="middle"
+       font-weight="bold"
+       id="text76">Vyvolaná</text>
+    <text
+       x="510"
+       y="343"
+       text-anchor="middle"
+       id="text78">aplikace</text>
+  </g>
+  <text
+     x="511.91699"
+     y="287.17865"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#6b7280"
+     id="text80">Rozhraní 3</text>
+  <!-- Šipka Rozhraní 3 -->
+  <line
+     x1="419.81549"
+     y1="268.97189"
+     x2="470.17822"
+     y2="298.26022"
+     stroke="#4b5563"
+     stroke-width="1.65658"
+     marker-end="url(#arr)"
+     id="line82" />
+  <line
+     x1="494.29483"
+     y1="298.36505"
+     x2="444.04968"
+     y2="265.71811"
+     stroke="#4b5563"
+     stroke-width="1.76762"
+     marker-end="url(#arr)"
+     id="line84" />
+</svg>

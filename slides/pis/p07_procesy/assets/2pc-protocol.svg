@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 760 400" width="760" height="400"
+     font-family="sans-serif" font-size="13" fill="#1f2937"
+     xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Actors -->
+  <!-- Koordinátor -->
+  <rect x="290" y="10" width="180" height="40" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="380" y="35" text-anchor="middle" font-weight="bold" font-size="14">Koordinátor</text>
+  <!-- Participant 1 -->
+  <rect x="20" y="10" width="160" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="100" y="35" text-anchor="middle" font-weight="bold" font-size="14">Účastník 1</text>
+  <!-- Participant 2 -->
+  <rect x="580" y="10" width="160" height="40" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="660" y="35" text-anchor="middle" font-weight="bold" font-size="14">Účastník 2</text>
+
+  <!-- Lifelines -->
+  <line x1="100" y1="50" x2="100" y2="390" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="380" y1="50" x2="380" y2="390" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="660" y1="50" x2="660" y2="390" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- FAZE 1 label -->
+  <rect x="0" y="60" width="760" height="22" fill="#eff6ff"/>
+  <text x="380" y="76" text-anchor="middle" font-weight="bold" font-size="13" fill="#1d4ed8">FÁZE 1 — Prepare (hlasování)</text>
+
+  <!-- Prepare → P1 -->
+  <line x1="378" y1="100" x2="108" y2="100" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="240" y="94" text-anchor="middle" font-size="11" fill="#4b5563">PREPARE</text>
+  <!-- Prepare → P2 -->
+  <line x1="382" y1="112" x2="652" y2="112" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="520" y="106" text-anchor="middle" font-size="11" fill="#4b5563">PREPARE</text>
+
+  <!-- P1 logs vote -->
+  <rect x="30" y="128" width="140" height="24" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="1"/>
+  <text x="100" y="144" text-anchor="middle" font-size="11">log: READY (trvanlivě)</text>
+  <!-- P2 logs vote -->
+  <rect x="590" y="128" width="140" height="24" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="1"/>
+  <text x="660" y="144" text-anchor="middle" font-size="11">log: READY (trvanlivě)</text>
+
+  <!-- Vote YES ← P1 -->
+  <line x1="102" y1="165" x2="372" y2="165" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="240" y="159" text-anchor="middle" font-size="11" fill="#16a34a">VOTE YES</text>
+  <!-- Vote YES ← P2 -->
+  <line x1="658" y1="177" x2="388" y2="177" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="520" y="171" text-anchor="middle" font-size="11" fill="#16a34a">VOTE YES</text>
+
+  <!-- Coordinator decision -->
+  <rect x="300" y="192" width="160" height="24" rx="4" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+  <text x="380" y="208" text-anchor="middle" font-size="11" fill="#1d4ed8">všichni YES → COMMIT</text>
+
+  <!-- FAZE 2 label -->
+  <rect x="0" y="224" width="760" height="22" fill="#f0fdf4"/>
+  <text x="380" y="240" text-anchor="middle" font-weight="bold" font-size="13" fill="#16a34a">FÁZE 2 — Commit (rozhodnutí)</text>
+
+  <!-- COMMIT → P1 -->
+  <line x1="378" y1="264" x2="108" y2="264" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="240" y="258" text-anchor="middle" font-size="11" fill="#16a34a">COMMIT</text>
+  <!-- COMMIT → P2 -->
+  <line x1="382" y1="276" x2="652" y2="276" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-g)"/>
+  <text x="520" y="270" text-anchor="middle" font-size="11" fill="#16a34a">COMMIT</text>
+
+  <!-- ACK ← P1 -->
+  <line x1="102" y1="300" x2="372" y2="300" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="240" y="294" text-anchor="middle" font-size="11" fill="#4b5563">ACK</text>
+  <!-- ACK ← P2 -->
+  <line x1="658" y1="312" x2="388" y2="312" stroke="#4b5563" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="520" y="306" text-anchor="middle" font-size="11" fill="#4b5563">ACK</text>
+
+  <!-- Omezení nota -->
+  <rect x="10" y="335" width="740" height="52" rx="6" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="380" y="354" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="bold">Omezení: selhání koordinátoru po PREPARE, ale před COMMIT</text>
+  <text x="380" y="374" text-anchor="middle" font-size="12" fill="#991b1b">→ účastníci čekají na rozhodnutí a nemohou pokračovat (blocking protokol)</text>
+</svg>

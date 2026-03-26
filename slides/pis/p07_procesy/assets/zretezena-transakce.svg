@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 720 220"
+   width="720"
+   height="220"
+   font-family="sans-serif"
+   font-size="13"
+   fill="#1f2937"
+   version="1.1"
+   id="svg53"
+   sodipodi:docname="zretezena-transakce.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview55"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.6862533"
+     inkscape:cx="341.28919"
+     inkscape:cy="111.19326"
+     inkscape:window-width="1920"
+     inkscape:window-height="1028"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg53" />
+  <defs
+     id="defs5">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="10,3.5 0,7 0,0 "
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Časová osa -->
+  <line
+     x1="98.791565"
+     y1="72.5"
+     x2="620.67822"
+     y2="72.5"
+     stroke="#9ca3af"
+     stroke-width="1.32386"
+     marker-end="url(#arr)"
+     id="line7" />
+  <text
+     x="582.5423"
+     y="86.09668"
+     font-size="12px"
+     fill="#6b7280"
+     id="text9">čas</text>
+  <!-- begin -->
+  <line
+     x1="128.79156"
+     y1="55"
+     x2="128.79156"
+     y2="90"
+     stroke="#1f2937"
+     stroke-width="2"
+     id="line11" />
+  <text
+     x="128.79156"
+     y="110"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#374151"
+     id="text13">begin</text>
+  <!-- ST1 -->
+  <g
+     id="g358"
+     transform="translate(68.791565,5)">
+    <rect
+       x="65"
+       y="50"
+       width="140"
+       height="35"
+       rx="5"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="1.5"
+       id="rect15" />
+    <text
+       x="135"
+       y="72"
+       text-anchor="middle"
+       font-weight="bold"
+       id="text17">ST₁</text>
+  </g>
+  <!-- commit1 -->
+  <line
+     x1="273.79156"
+     y1="50"
+     x2="273.79156"
+     y2="95"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="line19" />
+  <text
+     x="273.79156"
+     y="110"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#16a34a"
+     id="text21">commit</text>
+  <text
+     x="203.79156"
+     y="40"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#16a34a"
+     id="text23">→ trvanlivé</text>
+  <!-- ST2 -->
+  <g
+     id="g368"
+     transform="translate(68.791565,5)">
+    <rect
+       x="210"
+       y="50"
+       width="140"
+       height="35"
+       rx="5"
+       fill="#dbeafe"
+       stroke="#3b82f6"
+       stroke-width="1.5"
+       id="rect25" />
+    <text
+       x="280"
+       y="72"
+       text-anchor="middle"
+       font-weight="bold"
+       id="text27">ST₂</text>
+  </g>
+  <line
+     x1="419.21091"
+     y1="50"
+     x2="419.21091"
+     y2="95"
+     stroke="#16a34a"
+     stroke-width="2"
+     id="line29" />
+  <text
+     x="418.79156"
+     y="110"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#16a34a"
+     id="text31">commit</text>
+  <text
+     x="348.79156"
+     y="40"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#16a34a"
+     id="text33">→ trvanlivé</text>
+  <!-- ST3 s havárií -->
+  <g
+     id="g378"
+     transform="translate(68.791565,4.9981474)">
+    <rect
+       x="355"
+       y="50"
+       width="100"
+       height="35"
+       rx="5"
+       fill="#fee2e2"
+       stroke="#dc2626"
+       stroke-width="1.5"
+       stroke-dasharray="5, 3"
+       id="rect35" />
+    <text
+       x="405"
+       y="72"
+       text-anchor="middle"
+       font-weight="bold"
+       id="text37">ST₃</text>
+  </g>
+  <line
+     x1="523.79156"
+     y1="50"
+     x2="523.79156"
+     y2="95"
+     stroke="#dc2626"
+     stroke-width="2"
+     id="line39" />
+  <text
+     x="523.79156"
+     y="110"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#dc2626"
+     id="text41">havárie</text>
+  <text
+     x="473.79156"
+     y="40"
+     text-anchor="middle"
+     font-size="11px"
+     fill="#dc2626"
+     id="text43">rollback</text>
+  <!-- Popis -->
+  <text
+     x="360"
+     y="145"
+     text-anchor="middle"
+     font-size="13"
+     fill="#374151"
+     id="text45">
+    Po havárii: ST₁ a ST₂ zachovány, ST₃ odvolána
+  </text>
+  <text
+     x="360"
+     y="168"
+     text-anchor="middle"
+     font-size="12"
+     fill="#6b7280"
+     id="text49">
+    Celá zřetězená transakce <tspan
+   font-weight="bold"
+   fill="#dc2626"
+   id="tspan47">není atomická</tspan> – podtransakce jsou trvanlivé samostatně
+  </text>
+  <!-- Legenda pipeline -->
+</svg>
