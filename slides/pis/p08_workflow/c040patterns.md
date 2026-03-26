@@ -104,4 +104,31 @@
 	- *Migrace na ad-hoc schéma*
 - **Verifikace výsledku** – bude WF stále dělat to, co má?
 	- Analýza cest, dosažitelnost stavů
-	- **Petriho sítě** 
+	- **Petriho sítě**
+
+---
+
+# Concurrent to completion
+- Existující instance pokračují podle **původního schématu** až do svého přirozeného konce
+- Nové instance se spouštějí podle **nového schématu**
+- Nejjednodušší a nejbezpečnější přístup
+- Nevýhoda: po dobu přechodu existují v systému instance **různých verzí**
+	- Komplikuje monitoring a reporting
+
+---
+
+# Migrace na finální schéma
+- Existující instance jsou **převedeny přímo na nové schéma**
+- Podmínky proveditelnosti migrace:
+	- Instance musí být v **kompatibilním stavu** – nesmí být uprostřed aktivity, která zanikla nebo se zásadně změnila
+	- Stav instance musí být jednoznačně namapovatelný na stav v novém schématu
+- Zachovává konzistenci – všechny instance běží podle **jedné verze** schématu
+
+---
+
+# Migrace na ad-hoc schéma
+- Existující instance jsou převedeny na **dočasné přechodové schéma**
+	- „Most" mezi starým a novým schématem
+- Použití: přímá migrace na finální schéma není možná (nekompatibilní stavy)
+- Ad-hoc schéma definuje, jak instance „uprostřed" starého procesu dojde do stavu kompatibilního s novým schématem
+- Nejflexibilnější, ale nejsložitější na **implementaci a verifikaci**

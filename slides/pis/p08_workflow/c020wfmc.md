@@ -47,6 +47,12 @@
 
 ---
 
+# 3D pohled na workflow
+
+![3D pohled na workflow](assets/image7.png) <!-- .element: style="height:750px;margin:0.5em auto;display:block" -->
+
+---
+
 # 3D pohled na workflow – dimenze
 
 - **Případ (case)** – konkrétní řešený problém (žádost o půjčku)
@@ -92,3 +98,9 @@
 3. **Spuštění instancí** – vytváření a řízení běžících případů
 4. **Monitorování** – sledování stavu, SLA, využití zdrojů
 5. **Analýza a optimalizace** – identifikace úzkých míst, úprava modelu
+
+---
+
+# Struktura činnosti
+
+![Struktura činnosti](assets/image8.png) <!-- .element: style="height:750px;margin:0.5em auto;display:block" -->
