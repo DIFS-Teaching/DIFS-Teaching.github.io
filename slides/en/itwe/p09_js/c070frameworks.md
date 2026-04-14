@@ -281,4 +281,4 @@ let result2: number = add("5", "3");
   <img src="assets/ts.png" alt="TypeScript" class="box" style="width: 55%;">
 </div>
 
-<span class="note">See the <a href="https://www.fit.vut.cz/study/course/PIS/.en">[Angular Lecture](https://video1.fit.vutbr.cz/av/records.php?id=75716&categ_id=2218)</a></span>
+<span class="note">See the <a href="https://www.fit.vut.cz/study/course/PIS/.en">[Angular Lecture](https://video1.fit.vutbr.cz/av/records.php?id=75716&categ_id=2218), [2026](https://www.youtube.com/watch?v=PZlnc311MEg)</a></span>
