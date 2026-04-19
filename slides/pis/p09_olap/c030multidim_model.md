@@ -18,35 +18,24 @@
 
 ---
 
-# Hierarchická dimenze
+<!-- .slide: class="normal centered" -->
 
-- Jednorozměrná dimenze: flat seznam hodnot (Praha, Brno, Ostrava, …)
-- **Hierarchická dimenze**: hodnoty organizované do stromu úrovní
+# Příklady dimenzí
 
-```
-Kontinent
-  └── Země
-        └── Územní celek
-              └── Město
-```
-
-```
-Rok
-  └── Kvartál
-        └── Měsíc
-              └── Týden
-```
+![Příklady dimenzí](assets/slide_23.svg) <!-- .element: style="height: 750px" -->
 
 ---
 
 # Definice multidimenzionální kostky
 
-- Nechť existuje uspořádaná množina **n dimenzí** $\{D_1, D_2, D_3, \dots, D_n\}$
+- Nechť existuje **uspořádaná** množina **n dimenzí** $\{D_1, D_2, D_3, \dots, D_n\}$
+  - Celkem $n!$ uspořádání (pro 3 dimenze $3! = 6$)
 - **Multidimenzionální kostka** je funkce:
 
   $$g_m(A_1 \times A_2 \times A_3 \times \dots \times A_m) = F$$
 
-  kde $\{A_1, A_2, \dots, A_m\}$ je **uspořádaná podmnožina aktivních dimenzí** ($m \leq n$)
+  kde $\{A_1, A_2, \dots, A_m\}$ je uspořádaná podmnožina **aktivních dimenzí** ($m \leq n$),
+  uspořádání zůstává zachováno.
 
 - Prvky $F$ nazýváme **fakty (míry, _measures_)**
 
@@ -69,17 +58,7 @@ Rok
 - Dimenze: **čas** × **produkt** × **region**
 - Na každém průsečíku je uložen (nebo vypočten) **fakt** – např. objem prodejů
 
-```
-                    ┌──────────────────┐
-                   /                  /│
-                  /     Produkt       / │
-                 /                  /  │
-                └──────────────────┘   │
-        Region  │                  │   │
-                │     fakt         │  /
-                │                  │ /   Čas
-                └──────────────────┘
-```
+![Fakt](assets/slide_36.svg) <!-- .element: style="height: 600px" -->
 
 ---
 
@@ -98,20 +77,16 @@ Rok
 # Kostka jako svaz kuboidů
 
 - Množina všech podkostek jedné kostky tvoří **svaz** (lattice)
-- **Vrcholový kuboid** (0D): jediný agregovaný fakt přes _všechny_ dimenze (`all`)
-- **Základní kuboid** (nD): fakta pro _všechny_ aktivní dimenze
+- **Vrcholový kuboid** (0-D): jediný agregovaný fakt přes _všechny_ dimenze (`all`)
+- **Základní kuboid** (*n*-D): fakta pro _všechny_ aktivní dimenze
 
-Příklad pro 4 dimenze (time, item, location, supplier):
+---
 
-```
-               all
-          /  |  |  \
-       time item loc sup       ← 1D kuboidy
-        / \ / \ / \ / \
-    time,item  time,loc  ...   ← 2D kuboidy
-           ...
-    time, item, location, supplier ← základní 4D kuboid
-```
+<!-- .slide: class="normal centered" -->
+
+# Kostka jako svaz kuboidů
+
+![Svaz kuboidů](assets/kuboidy.svg) <!-- .element: style="height: 800px" -->
 
 ---
 
@@ -122,6 +97,10 @@ Příklad pro 4 dimenze (time, item, location, supplier):
     - Ne všechny průsečíky dimenzí mají definovanou hodnotu faktu
 - Příklad: ne pro každou kombinaci (den, produkt, obchod) existuje prodej
 
-<!-- POZNÁMKA: Následující slajdy s formálním matematickým aparátem (Hasseův diagram,
-     definice svazu, průsek, spojení) jsou z původní přednášky. Zvažte jejich
-     vypuštění nebo přesunutí do přílohy – pro praktické pochopení BI nejsou nutné. -->
+---
+
+# 3D kostka - příklad 3! otočení
+
+![3D kostka](assets/slide_63.svg) <!-- .element: style="height: 600px" -->
+
+Je možný i produkt, čas, region - čas, produkt, region a region, čas, produkt.
