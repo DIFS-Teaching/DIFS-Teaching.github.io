@@ -196,3 +196,58 @@
 ```
 
   - After this date, the page should be removed from cache
+
+---
+
+# Script Loading: `defer` and `async`
+
+  - By default `<script>` **blocks** HTML parsing until the script is downloaded and executed
+  - `defer` — download in parallel, execute **after** the document is parsed
+  - `async` — download in parallel, execute **immediately** when ready (order not guaranteed)
+
+```html
+<script src="app.js" defer></script>
+<script src="analytics.js" async></script>
+```
+
+  - Use **`defer`** for scripts that need the DOM (most application scripts)
+  - Use **`async`** for independent scripts (analytics, ads)
+  - Both attributes have no effect on inline scripts
+
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/script">MDN: &lt;script&gt;</a></span>
+
+---
+
+# Resource Hints
+
+  - Instruct the browser to load or prepare resources early
+  - Declared via `<link>` in `<head>`
+
+  - **`preload`** — fetch a critical resource immediately, before it is discovered in the page
+```html
+<link rel="preload" href="hero.jpg" as="image">
+<link rel="preload" href="font.woff2" as="font" crossorigin>
+```
+
+  - **`prefetch`** — fetch a resource likely needed for the *next* navigation (low priority)
+```html
+<link rel="prefetch" href="next-page.js">
+```
+
+---
+
+# Resource Hints (II)
+
+  - **`preconnect`** — open the TCP/TLS connection to an origin early
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+```
+
+  - **`lazy loading`** — defer loading of off-screen images and iframes
+```html
+<img src="photo.jpg" loading="lazy" alt="...">
+<iframe src="map.html" loading="lazy"></iframe>
+```
+
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/rel/preload">MDN: preload</a>,</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/Performance/Lazy_loading">MDN: Lazy loading</a></span>

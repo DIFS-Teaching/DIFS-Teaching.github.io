@@ -97,10 +97,68 @@ Inline frames are not supported.
 
 ---
 
+# ARIA
+
+  - **Accessible Rich Internet Applications** — W3C standard
+  - Adds accessibility semantics for assistive technologies (screen readers, etc.)
+  - Does not change visual appearance — purely for programmatic exposure
+
+  - **`role`** — declares the element's purpose
+```html
+<div role="navigation">...</div>
+<div role="dialog" aria-modal="true">...</div>
+```
+  - **`aria-*` state and property attributes**
+```html
+<button aria-expanded="false" aria-controls="menu">Menu</button>
+<input aria-required="true" aria-describedby="hint">
+<span id="hint">Must be a valid email</span>
+```
+
+<span class="note"><a href="https://www.w3.org/TR/wai-aria/">WAI-ARIA specification</a>,</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA">MDN ARIA</a></span>
+
+---
+
+# ARIA: Landmark Roles
+
+  - Landmarks divide the page into navigable regions — screen readers let users jump between them
+
+| Role | Equivalent element | Purpose |
+|---|---|---|
+| `banner` | `<header>` | Site-wide header |
+| `navigation` | `<nav>` | Navigation links |
+| `main` | `<main>` | Primary content |
+| `complementary` | `<aside>` | Supporting content |
+| `contentinfo` | `<footer>` | Site-wide footer |
+| `search` | `<search>` | Search widget |
+| `form` | `<form>` | Form region |
+
+  - Prefer **semantic HTML elements** — they carry the role implicitly; use `role` only when semantics can't be expressed otherwise
+
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles">ARIA Roles on MDN</a></span>
+
+---
+
+# Structured Data & the Semantic Web
+
+  - Goal: embed **machine-readable semantics** into HTML pages
+  - Based on **RDF** (Resource Description Framework) — W3C standard
+    - Data model: *subject – predicate – object* triples
+    - Resources identified by URIs
+  - **[Schema.org](https://schema.org)** — shared vocabulary of types and properties
+    - Maintained by Google, Microsoft, Apple, Yandex
+    - Covers: people, organizations, products, events, reviews, ...
+    - Used as the standard `itemtype` / `@type` vocabulary
+
+<span class="note"><a href="https://www.w3.org/RDF/">W3C RDF</a>,</span>
+<span class="note"><a href="https://schema.org">Schema.org</a></span>
+
+---
+
 # Microdata
 
-  - A possible way of adding semantics to the elements
-  - For futher automated processing
+  - Add semantics to HTML elements using specific attributes
   - Attributes: 
     - **itemscope** – item set container
     - **itemprop** – a property
@@ -108,16 +166,75 @@ Inline frames are not supported.
     - **itemid** – a global identifier (e.g. ISBN for books)
     - **itemref** – global identifier reference
 
----
-
-# Microdata (II)
-
-  - Example
+  - Example using [Schema.org](https://schema.org) vocabulary
   
 ```html
-<div itemscope="" itemtype="http://example.org/person">
- <p>My name is <span itemprop="name">John</span>.</p>
- <p>My surname is <span itemprop="surname">Smith</span>.</p>
- <p>I was born in <span itemprop="born-city">Brně</span>.</p>
+<div itemscope="" itemtype="https://schema.org/Person">
+ <p>My name is <span itemprop="givenName">John</span>.</p>
+ <p>My surname is <span itemprop="familyName">Smith</span>.</p>
+ <p>I was born in <span itemprop="birthPlace">Brno</span>.</p>
 </div>
 ```
+
+---
+
+# JSON-LD
+
+  - **JSON for Linking Data** — W3C recommendation, preferred by Google
+  - Embedded in a `<script>` tag — **no need to annotate HTML markup**
+  - Cleaner separation of data and presentation
+
+```html
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "givenName": "John",
+  "familyName": "Smith",
+  "birthPlace": "Brno",
+  "url": "https://example.org/john"
+}
+</script>
+```
+
+  - `@context` — declares the vocabulary (Schema.org)
+  - `@type` — the type of the described entity
+  - Other keys are Schema.org property names
+
+<span class="note"><a href="https://json-ld.org/">JSON-LD</a>,</span>
+<span class="note"><a href="https://schema.org">Schema.org</a></span>
+
+---
+
+# RDFa
+
+  - **RDF in Attributes** — W3C recommendation, extends HTML with RDF attributes
+  - More expressive than Microdata (full RDF support), but more complex syntax
+  - Key attributes: `vocab`, `typeof`, `property`, `resource`, `prefix`
+
+```html
+<div vocab="https://schema.org/" typeof="Person">
+  <p>My name is
+    <span property="givenName">John</span>
+    <span property="familyName">Smith</span>.
+  </p>
+  <p>I was born in
+    <span property="birthPlace">Brno</span>.
+  </p>
+</div>
+```
+
+<span class="note"><a href="https://www.w3.org/TR/rdfa-primer/">W3C RDFa Primer</a></span>
+
+---
+
+# Structured Data Consumers
+
+  - **[Google Search](https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data)** — *rich results*: star ratings, FAQs, breadcrumbs, events, products, recipes
+    - Supports JSON-LD (preferred), Microdata, RDFa
+    - [Google Rich Results Test](https://search.google.com/test/rich-results)
+  - **[Bing](https://www.bing.com/webmasters/help/marking-up-your-site-with-structured-data-3a93e731)** — similar rich results in search
+  - **Social media** — related concept using `<meta>` tags:
+    - *Open Graph* (Facebook, LinkedIn) — `og:title`, `og:image`, ...
+    - *Twitter Cards* — `twitter:card`, `twitter:title`, ...
+  - **Knowledge graphs** — Wikidata, DBpedia use linked data principles
