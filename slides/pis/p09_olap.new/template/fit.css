@@ -225,12 +225,6 @@ html.print-pdf .reveal .slides section .fragment { /* show fragments when printi
   padding: 0;
 }
 
-/* ==== Slide with left-aligned equations ====*/
-
-.reveal .slides section.lefteq .content .MathJax_Display {
-  text-align: left !important;
-  margin-left: 2em;
-}
 
 /*
 Rewrite:

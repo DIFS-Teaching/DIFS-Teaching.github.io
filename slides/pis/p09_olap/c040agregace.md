@@ -25,7 +25,11 @@
 # Detailní hodnoty
 
 - **Detail** (základní fakt) je existující hodnota na průsečíku hodnot všech dimenzí $(d_1, d_2, \dots, d_n)$
-- Příklad tabulky detailních prodejů (time × item × location):
+- Pro stejné hodnoty dimenzí může existovat více faktů (např. více transakcí).
+
+---
+
+# Detailní hodnoty: Příklad
 
 | time | item   | location | fakt |
 |------|--------|----------|------|
@@ -37,25 +41,50 @@
 | 23.6 | rohlík | Brno     | 5    |
 | 23.6 | rohlík | Praha    | 14   |
 | …    | …      | …        | …    |
-
-Pro stejné hodnoty dimenzí může existovat více faktů (např. více transakcí).
+<!-- .element: style="font-size:80%" -->
 
 ---
 
-# Výpočet podkostky – 1. krok
+<!-- .slide: class="normal lefteq" -->
 
-- Nejprve agregujeme detailní hodnoty se **stejnými hodnotami dimenzí**
+# První krok agregace detailů
 
-| time | item   | location | fakt (součet) |
-|------|--------|----------|---------------|
-| 22.6 | rohlík | Praha    | 22            |
-| 22.6 | rohlík | Brno     | **19**        |
-| 22.6 | párek  | Brno     | **13**        |
-| 22.6 | párek  | Praha    | 21            |
-| 23.6 | rohlík | Praha    | 14            |
-| 23.6 | rohlík | Brno     | 5             |
+- Pro dané uspořádání dimenzí $\\{D_1, D_2, \dots, D_n\\}$ platí pro podkostky $\textbf{součet}_n$, $\textbf{počet}_n$, $\textbf{průměr}_n$ a detailní hodnoty $\textit{detail}(d_1, d_2, \dots, d_n)$:
 
-Celkový součet: **94** (nemění se)
+$$\textbf{součet}_n(d_1, \dots, d_n) = \sum \textit{detail}(d_1, d_2, \dots, d_n)$$
+
+$$\textbf{počet}_n(d_1, \dots, d_n) = \sum\_{detail(d_1,\dots,d_n)} 1$$
+
+$$\textbf{průměr}_n(d_1, \dots, d_n) = \frac{\textbf{součet}_n(d_1, \dots, d_n)}{\textbf{počet}_n(d_1, \dots, d_n)}$$
+
+---
+
+# Příklad detailních hodnot
+
+![Detaily](assets/fig_68.svg) <!-- .element: style="height: 800px; display: block; margin: auto; margin-top: -1em" -->
+
+---
+
+# První krok pro kostku *součet*
+
+![Součet detailů](assets/fig_69.svg) <!-- .element: style="height: 650px; display: block; margin: auto; margin-top: -1em" -->
+
+- není více hodnot  faktů pro stejné hodnoty dimenzí
+- neubylo dimenzí
+
+---
+
+<!-- .slide: class="normal lefteq" -->
+
+# Podkostky
+
+- Pro $n > m \geq 0$ dimenzí $\\{A_1, A_2, \dots, A_m\\}$ platí pro podkostky $\textbf{součet}_m$, $\textbf{počet}_m$, $\textbf{průměr}_m$ a jejich přímé následníky $(m+1)$ v částečném uspořádání $\\{A_1, \dots, A_i, \dots, A_m\\}$:
+
+$$\textbf{součet}_m(d_1, \dots, d_m) = \sum\_{d_i \in D_i} \textbf{součet}\_{m+1}(d_1, \dots, d_i, \dots, d_m)$$
+
+$$\textbf{počet}_m(d_1, \dots, d_m) = \sum\_{d_i \in D_i} \textbf{počet}\_{m+1}(d_1, \dots, d_i, \dots, d_m)$$
+
+$$\textbf{průměr}_m(d_1, \dots, d_m) = \frac{\textbf{součet}_m(d_1, \dots, d_m)}{\textbf{počet}_m(d_1, \dots, d_m)}$$
 
 ---
 
@@ -63,24 +92,13 @@ Celkový součet: **94** (nemění se)
 
 - Agregujeme přes dimenzi _location_:
 
-| time | item   | fakt (součet) |
-|------|--------|---------------|
-| 22.6 | rohlík | **41**        |
-| 22.6 | párek  | **34**        |
-| 23.6 | rohlík | **19**        |
-
-Celkový součet: **94**
+![Součet](assets/fig_70.svg) <!-- .element: style="height: 500px; display: block; margin: auto" -->
 
 ---
 
 # Podkostka bez dimenze item
 
-| time | fakt (součet) |
-|------|---------------|
-| 22.6 | **75**        |
-| 23.6 | **19**        |
-
-Celkový součet: **94**
+![Součet](assets/fig_71.svg) <!-- .element: style="height: 400px; display: block; margin: auto" -->
 
 ---
 
@@ -88,24 +106,18 @@ Celkový součet: **94**
 
 - Agregace přes _všechny_ dimenze:
 
-| fakt |
-|------|
-| **94** |
+![Součet](assets/fig_72.svg) <!-- .element: style="height: 400px; display: block; margin: auto" -->
 
 - Jediný agregovaný fakt – celkový součet přes vše.
 
 ---
 
-# Formální definice podkostek
+# Jiné pořadí dimenzí v prvním kroku
 
-- Pro dané uspořádání $n$ dimenzí $\{D_1, D_2, \dots, D_n\}$ platí pro podkostky
-  $\textbf{součet}_m$, $\textbf{počet}_m$, $\textbf{průměr}_m$ a jejich přímé předchůdce $(m+1)$:
+![Součet](assets/fig_73.svg) <!-- .element: style="height: 750px; display: block; margin: auto; margin-top: -1em" -->
 
-$$\textbf{součet}_m(d_1, \dots, d_m) = \sum_{d_i \in D_i} \textbf{součet}_{m+1}(d_1, \dots, d_i, \dots, d_m)$$
+---
 
-$$\textbf{počet}_m(d_1, \dots, d_m) = \sum_{d_i \in D_i} \textbf{počet}_{m+1}(d_1, \dots, d_i, \dots, d_m)$$
+# Podkostka *součet* bez dimenze item
 
-$$\textbf{průměr}_m = \textbf{součet}_m \,/\, \textbf{počet}_m$$
-
-<!-- POZNÁMKA: Tato sekce je poměrně formální. Záleží na cílové skupině, zda ji
-     zachovat nebo nahradit jednoduchým slovním popisem a příkladem. -->
+![Součet](assets/fig_74.svg) <!-- .element: style="height: 500px; display: block; margin: auto; margin-top: -1em" -->

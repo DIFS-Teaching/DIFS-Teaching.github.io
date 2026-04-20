@@ -44,7 +44,7 @@
 # Operace Roll-up
 
 - **Posun o jednu úroveň výše** v uspořádání kuboidů – _vzrůst agregace_
-- Vstup: $m$ aktivních dimenzí $\{A_1, A_2, \dots, A_i, \dots, A_m\}$
+- Vstup: $m$ aktivních dimenzí $\\{A_1, A_2, \dots, A_i, \dots, A_m\\}$
 - Výstup: $m-1$ aktivních dimenzí ($A_i$ bylo deaktivováno)
 - Nejčastěji se deaktivuje **nejmenší dimenze** $A_m$
 
@@ -55,7 +55,7 @@ Příklad: (time × item × location) → roll-up → (time × item)
 # Operace Drill-down
 
 - **Posun o jednu úroveň níže** v uspořádání kuboidů – _zvýšení detailu_
-- Vstup: $m$ aktivních dimenzí $\{A_1, A_2, \dots, A_m\}$, kde $m \leq n$
+- Vstup: $m$ aktivních dimenzí $\\{A_1, A_2, \dots, A_m\\}$, kde $m \leq n$
 - Výstup: $m+1$ aktivních dimenzí (přidána neaktivní dimenze $A_i$)
 - Nejčastěji se přidá **nejmenší neaktivní dimenze** na konec
 - Pro $m = n$ je výsledkem **detail** všech hodnot
@@ -73,8 +73,8 @@ Příklad: (time × item × location) → roll-up → (time × item)
 # Operace Pivoting
 
 - **Změna uspořádání dimenzí** (změna relace $R$) nad stejnou množinou dimenzí
-- Vstup: uspořádání $\{D_1, D_2, \dots, D_n\}$
-- Výstup: jiné uspořádání $\{D_{x_1}, D_{x_2}, \dots, D_{x_n}\}$ – jedna z $n!$ permutací
+- Vstup: uspořádání $\\{D_1, D_2, \dots, D_n\\}$
+- Výstup: jiné uspořádání $\\{D\_{x_1}, D\_{x_2}, \dots, D\_{x_n}\\}$ – jedna z $n!$ permutací
 - Jde o **otočení jedné ze stěn kostky k sobě**
 
 Příklad: (time × item × supplier) → pivoting → (supplier × item × time)
@@ -102,7 +102,7 @@ Příklad: (time × item × supplier) → pivoting → (supplier × item × time
 # Operace Slicing & Dicing
 
 - **Změna skutečné kardinality** jedné nebo více dimenzí
-- Vstup: dimenze $\{D_1, \dots, D_n\}$ s kardinalitami $k_1, \dots, k_n$
+- Vstup: dimenze $\\{D_1, \dots, D_n\\}$ s kardinalitami $k_1, \dots, k_n$
 - Výstup: stejné dimenze, ale změněná kardinalita $k_i \to l_i$ vybrané dimenze
 - Provádí se nastavením **filtru ve tvaru predikátu**
     - Např. „zobraz jen region = Praha" nebo „čas $\in$ Q1 2024"

@@ -26,18 +26,41 @@
 
 ---
 
+# Množina dimenzí
+
+- Nechť existuje **uspořádaná** množina $n$ dimenzí $ \\{D_1, D_2, D_3, \dots, D_n\\} $
+    - tj. existuje **relace uspořádání** $R$ ($<$) nad množinou dimenzí
+- Počet různých uspořádání je $n!$ (počet **permutací** nad $n$ prvky).
+    - Je to také počet stěn *n*-dimenzionální kostky. Například *3D* kostka má 6 stěn, ale *2D* čtverec má 4 stěny (strany).
+
+![Uspořádání dimenzí](assets/fig_25.svg) <!-- .element: style="width: 1500px; margin: 1em auto; display: block;" -->
+
+---
+
+# Aktivní dimenze
+
+- Nechť existuje uspořádaná podmnožina **aktivních dimenzí**  $\\{A_1, A_2, \dots, A_m\\}$ ($m \leq n$)
+- Aktivní dimenze budou uspořádány stejně jako v původní množině všech dimenzí
+
+![Uspořádání dimenzí](assets/fig_27.svg) <!-- .element: style="width: 1500px; margin: 1em auto; display: block;" -->
+
+
+
+---
+
 # Definice multidimenzionální kostky
 
-- Nechť existuje **uspořádaná** množina **n dimenzí** $\{D_1, D_2, D_3, \dots, D_n\}$
-  - Celkem $n!$ uspořádání (pro 3 dimenze $3! = 6$)
 - **Multidimenzionální kostka** je funkce:
 
-  $$g_m(A_1 \times A_2 \times A_3 \times \dots \times A_m) = F$$
+  $$g_m : (A_1 \times A_2 \times A_3 \times \dots \times A_m) \rightarrow F$$
 
-  kde $\{A_1, A_2, \dots, A_m\}$ je uspořádaná podmnožina **aktivních dimenzí** ($m \leq n$),
-  uspořádání zůstává zachováno.
+  kde $\\{A_1, A_2, \dots, A_m\\}$ je uspořádaná podmnožina **aktivních dimenzí** a $F$ je množina faktů.
 
 - Prvky $F$ nazýváme **fakty (míry, _measures_)**
+
+  $$g_m​(a_1​,a_2​,…,a_m​) ∈ F$$ 
+  
+  kde $a_i ​\in A_i$
 
 ---
 
@@ -68,7 +91,7 @@
 - Podkostka vznikne **agregací** přes jednu nebo více dimenzí (roll-up)
 - Podkostky tvoří **částečně uspořádanou množinu (poset)**:
 
-  $$g(A_1 \times \dots \times A_i \times \dots \times A_m) \leq g(A_1 \times \dots \times A_{m-1})$$
+  $$g(A_1 \times \dots \times A_i \times \dots \times A_m) \leq g(A_1 \times \dots \times A\_{m-1})$$
 
   Podkostka je „větší", pokud má o jednu dimenzi méně
 
@@ -86,7 +109,7 @@
 
 # Kostka jako svaz kuboidů
 
-![Svaz kuboidů](assets/kuboidy.svg) <!-- .element: style="height: 800px" -->
+![Svaz kuboidů](assets/kuboidy.svg) <!-- .element: style="height: 850px; margin: auto; margin-top: -1em; display: block;" -->
 
 ---
 
@@ -97,10 +120,12 @@
     - Ne všechny průsečíky dimenzí mají definovanou hodnotu faktu
 - Příklad: ne pro každou kombinaci (den, produkt, obchod) existuje prodej
 
+![Řídká kostka](assets/sparse_cube.png) <!-- .element: style="height: 500px; display: block; margin: auto" -->
+
 ---
 
 # 3D kostka - příklad 3! otočení
 
-![3D kostka](assets/slide_63.svg) <!-- .element: style="height: 600px" -->
+![3D kostka](assets/slide_63.svg) <!-- .element: style="height: 600px; display: block; margin: auto" -->
 
 Je možný i produkt, čas, region - čas, produkt, region a region, čas, produkt.
