@@ -16,3 +16,4 @@ Jiří Hynek hynek@vut.cz
 8. [CSS - Advanced Concepts](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p08_css_advanced)
 9. [JavaScript - Basic Concepts of Dynamic Pages](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p09_js)
 10. [Advanced HTML, XHTML and XML](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p10_xhtml_xml)
+11. [Web Information Architecture, Usability and Accessibility](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p11_usability)

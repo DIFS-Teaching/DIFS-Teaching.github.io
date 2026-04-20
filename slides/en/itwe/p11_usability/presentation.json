@@ -1,0 +1,19 @@
+{
+    "id": "p11_usability",
+    "title": "Web Information Architecture, Usability and Accessibility",
+    "author": "Radek Burget <burget@fit.vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "ITW"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010ia.md",
+        "c020usability.md",
+        "c030accessibility.md",
+        "c999final.md"
+    ]
+}
