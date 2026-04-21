@@ -81,24 +81,6 @@ Příklad: (time × item × supplier) → pivoting → (supplier × item × time
 
 ---
 
-# Příklad otáčení kostky
-
-<!-- .slide: class="normal centered" -->
-
-![Příklad pivoting](assets/image4.jpeg) <!-- .element: style="height:500px;" -->
-
----
-
-# Pivoting – vizualizace
-
-<!-- .slide: class="normal centered" -->
-
-![Pivoting](assets/image5.png) <!-- .element: style="height:550px;" -->
-
-<small>Zdroj: Wikipedia: OLAP cube</small>
-
----
-
 # Operace Slicing & Dicing
 
 - **Změna skutečné kardinality** jedné nebo více dimenzí
@@ -119,6 +101,14 @@ Příklad: (time × item × supplier) → pivoting → (supplier × item × time
 | **Pivoting** | Jiné pořadí dimenzí | čas×produkt → produkt×čas |
 | **Slice** | Fixuje hodnotu jedné dimenze | region = Praha |
 | **Dice** | Filtr přes více dimenzí | Praha + Q1 + elektro |
+
+---
+
+<!-- .slide: class="normal centered" -->
+
+# Přehled operací nad kostkou
+
+![OLAP operace](assets/fig_110.svg) <!-- .element: style="height:800px; margin-top: -1em" -->
 
 ---
 
