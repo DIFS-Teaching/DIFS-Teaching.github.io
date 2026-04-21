@@ -297,7 +297,7 @@ Hello!
   - browser provides *default appearance* for known HTML elements (`<h2>`, `<b>`, `<p>`, ...)
   - can be overridden *with custom style rules* (e.g. `<span style="color: red">`, ***...***)
 
-<span class="note">More in the next lecture: [CSS -- Introduction to Cascading Style Sheets](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p03_css)</span>
+<span class="note">More in the next lecture: [CSS -- Introduction to Cascading Style Sheets](https://gitshow.net/https/difs-teaching.github.io/slides/en/itwe/p03_css)</span>
 
 ---
 

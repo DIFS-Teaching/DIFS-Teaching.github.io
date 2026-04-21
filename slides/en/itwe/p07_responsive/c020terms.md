@@ -157,4 +157,4 @@ is relative (usually 100% – full width, possibly with some padding/margin)
 - it is ***recommended to combine*** approaches depending on the specific problem
   - positioning elements in a single row vs. into a grid, etc.
 
-<span class="note">The principles of different block positioning methods were covered in the lecture: [CSS -- Page Layout](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p06_page_layout)</span>
+<span class="note">The principles of different block positioning methods were covered in the lecture: [CSS -- Page Layout](https://gitshow.net/https/difs-teaching.github.io/slides/en/itwe/p06_page_layout)</span>

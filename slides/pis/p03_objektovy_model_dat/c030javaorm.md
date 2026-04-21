@@ -15,7 +15,7 @@
 - Primárně počítá s mapováním do relačních tabulek
 	- Využívá JDBC
 	- Mnoho ovladačů pro různé databáze
-	- Viz [konfigurace databáze](https://gitshow.net/gh/DIFS-Teaching/slides/pis/p02_backend_java#/46)
+	- Viz [konfigurace databáze](https://gitshow.net/https/difs-teaching.github.io/slides/pis/p02_backend_java#/46)
 - Demo
 	- https://github.com/DIFS-Teaching/jakartaee-basic
  

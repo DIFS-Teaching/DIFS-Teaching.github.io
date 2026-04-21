@@ -74,7 +74,7 @@ https://docs.python.org/3/library/html.parser.html
 # Document Object Model
 
 - HTML kód reprezentovaný jako **strom objektů**
-- Různé typy objektů (viz [přednášky IIS](https://gitshow.net/gh/DIFS-Teaching/slides/iis/p08_xml#/24))
+- Různé typy objektů (viz [přednášky IIS](https://gitshow.net/https/difs-teaching.github.io/slides/iis/p08_xml#/24))
 
 ![Typy DOM objektů](assets/domclasses.svg) <!-- .element: height="600px" -->
 

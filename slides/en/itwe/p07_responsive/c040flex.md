@@ -9,7 +9,7 @@
 # Flexbox
 
 - a tool for arranging elements in one dimension (row/column)
-  - covered in lecture [CSS -- Page Layout](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p06_page_layout)
+  - covered in lecture [CSS -- Page Layout](https://gitshow.net/https/difs-teaching.github.io/slides/en/itwe/p06_page_layout)
 
 <br>
 

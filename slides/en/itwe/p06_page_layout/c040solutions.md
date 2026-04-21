@@ -19,7 +19,7 @@ a {
 ``` 
 
 <p style="padding: 1em;">
-<a href="#" style="background: #eeeeff url('https://raw.githubusercontent.com/DIFS-Teaching/slides/refs/heads/main/en/itwe/p06_page_layout/assets/newwin32.png') top right no-repeat; padding-right: 35px; padding-top: 30px;">Click me</a>
+<a href="#" style="background: #eeeeff url('assets/newwin32.png') top right no-repeat; padding-right: 35px; padding-top: 30px;">Click me</a>
 </p>
 
 ---

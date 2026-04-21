@@ -1,3 +1,3 @@
 # ITWe - Introduction to Cascading Style Sheets
 
-[Show online](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p03_css) - [PDF version](https://raw.githubusercontent.com/DIFS-Teaching/slides/main/en/itwe/p03_css/p03_css.pdf)
+[Show online](https://gitshow.net/https/difs-teaching.github.io/slides/en/itwe/p03_css) - [PDF version](https://difs-teaching.github.io/slides/en/itwe/p03_css/p03_css.pdf)

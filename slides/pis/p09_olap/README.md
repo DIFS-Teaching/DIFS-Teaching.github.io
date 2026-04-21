@@ -1,3 +1,3 @@
 # PIS - Business Intelligence a OLAP
 
-[Zobrazit online](https://gitshow.net/gh/DIFS-Teaching/slides/pis/p09_olap)
+[Zobrazit online](https://gitshow.net/https/difs-teaching.github.io/slides/pis/p09_olap)

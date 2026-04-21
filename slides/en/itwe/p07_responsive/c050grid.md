@@ -9,7 +9,7 @@
 # CSS Grid
 
 - a tool for arranging elements in two dimensions (rows + columns)
-  - covered in lecture [CSS -- Page Layout](https://gitshow.net/gh/DIFS-Teaching/slides@main/en/itwe/p06_page_layout)
+  - covered in lecture [CSS -- Page Layout](https://gitshow.net/https/difs-teaching.github.io/slides/en/itwe/p06_page_layout)
 - the most advanced tool for arranging elements in CSS so far
 - allows easy definition of a Grid system without modifying the HTML document
 
