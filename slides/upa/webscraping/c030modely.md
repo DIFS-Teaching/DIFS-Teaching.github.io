@@ -29,7 +29,7 @@
 	- **H**ead -- podřetězec před datovým blokem
 	- **L**eft -- levý oddělovač (pro každé datové pole)
 	- **R**ight -- pravý oddělovač (pro každé datové pole)
-	- **T**tail -- podřetězec za datovým blokem
+	- **T**ail -- podřetězec za datovým blokem
 
 $$wrapper = (h, t, l_1, r_1, l_2, r_2, \dots, l_n, r_n )$$
 
@@ -100,7 +100,7 @@ Obsah elementu<br> Další obsah elementu.
 
 # DOM strom
 
-- Kořenový element je typu `Document`
+- Kořenový uzel je typu `Document`
 - Má jednoho potomka typu `Element` ~ Document element (root)
 - Element může mít potomky typu
 	- `Element` -- vnořené prvky
@@ -120,7 +120,8 @@ https://www.w3schools.com/whatis/whatis_htmldom.asp
 # Navigace v DOM stromu
 
 - Standardní metody DOM tříd `Document` a `Element`
-	- Vyhledání elementů: `getElementById()`, `getElementsByTagName()`
+	- Vyhledání elementů: `querySelector()`, `querySelectorAll()`
+	- Starší varianty: `getElementById()`, `getElementsByTagName()`
 	- Navigace ve stromu: `parentNode`, `childNodes`, ...
 	- Přístup k obsahu: `textContent`
 - CSS selektory
@@ -137,8 +138,8 @@ https://www.w3schools.com/whatis/whatis_htmldom.asp
 - Původně pro XML dokumenty, ale podporováno i některými knihovnami pro HTML
 - Oproti CSS složitější syntaxe, ale více možností:
 	- Obecný výraz pro vlastnosti elementu v `[]` zahrnující hodnoty atributů, pořadí elementu a další
-	- Navigace různýmy směry (``osy'')
-- Viz např. [Dokumentace na MDN](https://developer.mozilla.org/en-US/docs/Web/XPath/Introduction_to_using_XPath_in_JavaScript)
+	- Navigace různými směry (``osy'')
+- Viz např. [Dokumentace na MDN](https://developer.mozilla.org/en-US/docs/Web/XML/XPath/Guides/Introduction_to_using_XPath_in_JavaScript)
 
 ```javascript
 var res = document.evaluate('//head/title', document.documentElement,
@@ -151,9 +152,12 @@ console.log(res.iterateNext().textContent);
 
 # Praktické použití DOM
 
-- Plnohodnotný HTML 5 DOM parser je obtížné najít
-	- Prakticky jen ve webovém prohlížeči
-- V praxi často zjednodušené parsery s vlastním rozhraním
+- Parserů podle specifikace HTML 5 je dnes dost
+	- Python: `lxml.html`, `html5lib`; JavaScript: `parse5`, `jsdom`, `linkedom`
+- Volba je **kompromis mezi přesností a rychlostí**
+	- `html5lib` chybné HTML opraví přesně jako prohlížeč, ale je pomalý
+	- `lxml`, `selectolax` jsou řádově rychlejší za cenu odchylek u rozbitého kódu
+- V praxi nejčastěji knihovny s pohodlným vlastním rozhraním
 	- Python: [BeautifulSoup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
 	- Java: [jSoup](https://jsoup.org/)
 	- JavaScript: [cheerio](https://cheerio.js.org/)
@@ -163,12 +167,11 @@ console.log(res.iterateNext().textContent);
 # BeautifulSoup
 
 ```python
+import requests
 from bs4 import BeautifulSoup
-from urllib.request import urlopen
 
-page = urlopen("https://www.fit.vut.cz/study/courses/")
-html = page.read().decode("utf-8")
-soup = BeautifulSoup(html, "html.parser")
+html = requests.get("https://www.fit.vut.cz/study/courses/").text
+soup = BeautifulSoup(html, "lxml")
 rows = soup.select("#list")[0].find_all("tr")
 for row in rows:
     cells = row.find_all('td')
@@ -199,22 +202,16 @@ for (Element headline : newsHeadlines) {
 # cheerio
 
 ```javascript
-const cheerio = require('cheerio');
-const request = require('request');
+import * as cheerio from 'cheerio';
 
-request({
-    method: 'GET',
-    url: 'https://www.fit.vut.cz/study/courses/'
-}, (err, res, body) => {
-    let $ = cheerio.load(body);
+const res = await fetch('https://www.fit.vut.cz/study/courses/');
+const $ = cheerio.load(await res.text());
 
-    let rows = $('#list tr');
-    rows.each(function(i, tr) {
-        let line = '';
-        $(this).children().each(function(j, td) {
-            line += $(this).text() + ';';
-        })
-        console.log(line);
+$('#list tr').each((i, tr) => {
+    let line = "";
+    $(tr).children().each((j, td) => {
+        line += $(td).text() + ';';
     });
+    console.log(line);
 });
 ```

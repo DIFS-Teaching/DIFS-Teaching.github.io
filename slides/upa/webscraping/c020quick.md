@@ -15,6 +15,7 @@ Co se hodí, než začneme programovat:
 - `wget`, `curl`
 - `cat`, `grep`, `sed`, `cut`
 - `awk` (jen pro fajnšmekry :-)
+- `jq`, když zdroj vrací JSON &ndash; viz předchozí sekce
 
 ```bash
 wget https://www.fit.vut.cz/study/courses/ -O out.html
@@ -48,38 +49,29 @@ for line in webpage.split('\n'):
 # Java
 
 ```java
-import java.io.*;
-import java.net.*;
+import java.net.URI;
+import java.net.http.HttpClient;
+import java.net.http.HttpRequest;
+import java.net.http.HttpResponse;
 
 public class Courses {
-	
-	public static void main(String[] args) {
-		try {
-			URI url = new URI("https://www.fit.vut.cz/study/courses/");
-			HttpURLConnection con = (HttpURLConnection) url.toURL().openConnection();
-			
-			BufferedReader in = new BufferedReader(
-					  new InputStreamReader(con.getInputStream()));
-			
-			String line;
-			while ((line = in.readLine()) != null) {
-			    if (line.contains("list-links__link")) {
-			    	line = line.replaceAll("<[^<>]*>", ";");
-			    	line = line.replaceAll(";;*", ";");
-			    	System.out.println(line);
-			    }
-			}
-			in.close();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+
+    public static void main(String[] args) throws Exception {
+        var client = HttpClient.newHttpClient();
+        var req = HttpRequest.newBuilder(
+                URI.create("https://www.fit.vut.cz/study/courses/")).build();
+
+        client.send(req, HttpResponse.BodyHandlers.ofString()).body().lines()
+            .filter(l -> l.contains("list-links__link"))
+            .map(l -> l.replaceAll("<[^<>]*>", ";").replaceAll(";;*", ";"))
+            .forEach(System.out::println);
+    }
 }
 ```
 
 ---
 
-# Omezení jednoduchého přístupu
+# Omezení: složitá struktura stránky
 
 ![opice](assets/imdb.png) <!-- .element: style="height:600px" -->
 
@@ -87,23 +79,23 @@ public class Courses {
 
 ---
 
-# Omezení jednoduchého přístupu
+# Omezení: data nejsou v HTML
 
 ![UCI rankings](assets/uci.png) <!-- .element height="60%" width="60%" -->
 
-[https://www.uci.org/mountain-bike/rankings](https://www.uci.org/mountain-bike/rankings) -- kde jsou data?
+[Světový žebříček UCI MTB](https://www.uci.org/discipline/mountain-bike/4LArSj7CKcytMrGEDtKwkb?tab=rankings&discipline=MTB) -- kde jsou data?
 
 ---
 
-# Omezení jednoduchého přístupu
+# Omezení: stejné URL, jiný obsah
 
 ![UCI rankings](assets/uci_individual.png) <!-- .element height="60%" width="60%" -->
 
-[https://www.uci.org/mountain-bike/rankings](https://www.uci.org/mountain-bike/rankings) -- stejné URL
+[Tentýž žebříček, jiný závodník](https://www.uci.org/discipline/mountain-bike/4LArSj7CKcytMrGEDtKwkb?tab=rankings&discipline=MTB) -- stejné URL
 
 ---
 
-# Omezení jednoduchého přístupu
+# Omezení: přihlášení a přesměrování
 
 ![opice](assets/login.png) <!-- .element: style="display: block; margin: auto" -->
 

@@ -66,11 +66,8 @@
 	- e-shopy||, realitní servery||||, letenky||||, sportovní výsledky||||, sledování konkurence||
 - ?? Výsledky vyhledávání
 	- Např. hlídání pozice
-- ?? Veřejné rejstříky
-	- jízdní řády
-	- živnostenský rejstřík
-	- statistický úřad
-	- weby zastupitelstev
+- ?? Veřejné rejstříky a instituce
+	- jízdní řády, obchodní rejstřík, statistický úřad, weby zastupitelstev
 - ?? Kontrola reklamy
 - ?? @@span class="large" style="line-height:0.5; vertical-align:top;" @@ &#8734; @@/span@@ dalších
 
@@ -83,8 +80,9 @@
 	- Paralelizace
 - **Nalezení a extrakce dat**
 	- Identifikace požadovaných údajů ve stránce
-- Uložení výsledků <!-- .element: class="grey" -->
-	- Může jich být **opravdu mnoho** 
+- Uložení výsledků
+	- Může jich být **opravdu mnoho**
+	- ??A mají nepravidelnou strukturu &ndash; přednášky 9 a 11
 
 ---
 

@@ -12,12 +12,17 @@
     },
     "contents": [
         "c000title.md",
+        "c005motivace.md",
         "c010uvod.md",
+        "c015zdroje.md",
         "c020quick.md",
         "c030modely.md",
         "c040automat.md",
+        "c045pravo.md",
         "c050alt.md",
-        "c060vyzkum.md",
+        "c060llm.md",
+        "c070vyzkum.md",
+        "c080priste.md",
         "c999final.md"
     ]
 }
