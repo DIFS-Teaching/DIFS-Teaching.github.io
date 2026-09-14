@@ -1,0 +1,23 @@
+{
+    "id": "uvod",
+    "title": "UPA - Úvod do předmětu",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "UPA -- Úvod do předmětu",
+            "highlight": "googlecode"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010proc.md",
+        "c020priprava.md",
+        "c030zlom.md",
+        "c040ulozeni.md",
+        "c050nit.md",
+        "c070zaver.md",
+        "c999final.md"
+    ]
+}
