@@ -25,3 +25,30 @@ Tři propojení napříč semestrem &ndash; rezerva, když zbude čas nebo přij
    Čtyři přednášky z různých částí semestru, jedna souvislá linka.
    Obrázek k tomu je v `assets/grafy.svg`.
 
+---
+
+# Volba technologií
+
+<p class="cite" style="font-size: 100%; margin-top: 1em;">
+``Nechápu obsesi na této fakultě s XML. Nadával jsem na to už v IIS, vyhodíte to dvěrmi, vleze to zase zpátky oknem. Nevím, co v praxi dělám špatně, ale na XML jsem zatím nenarazil ani omylem.''
+</p>
+
+- ??[data.gov.cz](https://data.gov.cz/datov%C3%A9-sady), katalog českých otevřených dat
+   - ??XML: 11 tis. datových sad, CSV: 5 tis., JSON < 2 tis.
+   - ??JSON-LD, Turtle, SPARQL endpoint
+- ??[volby.cz](https://www.volby.cz/opendata/opendata.htm) (XML)
+- ??[data.europa.eu](https://data.europa.eu/data)
+   - ??CSV: 270 tis., JSON 87 tis., XML 82 tis.
+
+---
+
+# Volba technologií (II)
+
+Chceme učit přenositelné principy, konkrétním technologiím se ale vyhnout nelze.
+
+1. Pragmatická volba
+   - Znalost určitých standardů (vč. XML) se od absolventa FIT očekává
+   - Technologie (byť překonaná) je široce používána
+2. Ideologická volba
+   - Existující problém má **elegantní** a **v praxi ověřené** řešení, jen o něm ``řadoví ajťáci`` neví
+   - Absolvent FIT má přicházet s lepšími řešeními.
