@@ -82,7 +82,7 @@
 	- Identifikace požadovaných údajů ve stránce
 - Uložení výsledků
 	- Může jich být **opravdu mnoho**
-	- ??A mají nepravidelnou strukturu &ndash; přednášky 9 a 11
+	- A mají nepravidelnou strukturu &ndash; viz přednášky o ukládání dat
 
 ---
 

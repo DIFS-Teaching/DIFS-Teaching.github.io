@@ -35,8 +35,7 @@ Allow: /
 ```
 <!-- .element: class="col" -->
 
-- ??**Rozlišuje, kdo jste, ne co děláte** &ndash; Googlebot smí, vy ne
-- ??Opačná strana téže mince: `sitemap.xml` vám sám řekne, co stáhnout
+- **Rozlišuje, kdo jste, ne co děláte** &ndash; Googlebot smí, vy ne
 
 Note:
 Komentář &bdquo;neplecha ukončena&ldquo; v robots.txt Srealit je autentický.
@@ -59,16 +58,12 @@ using automated means is prohibited without prior written permission from IMDb.
 
 - **Podmínky užití** jsou smlouva; `robots.txt` je konvence, ne zákon
 - **Autorské právo** k obsahu &ndash; texty, fotografie, popisy produktů
-- **Zvláštní právo pořizovatele databáze** &ndash; chrání i obsah, který sám autorský není
-- ??**Výjimka pro vytěžování textů a dat** (TDM), směrnice 2019/790:
-	- `§ 39c` &ndash; obecná, ale nositel práv si ji může **strojově čitelně vyhradit**
-	- `§ 39d` &ndash; pro vědecký výzkum na VŠ, tuhle vyloučit nelze
 - **Osobní údaje** &ndash; GDPR platí i na údaje veřejně dostupné
+- Směrnice EU 2019/790
 
 </div>
 
-- ??Kde se ta výhrada podle `§ 39c` dělá? ||**V robots.txt.**||
-- ??**Veřejně dostupné &ne; volně použitelné**
+- **Veřejně dostupné &ne; volně použitelné**
 
 Note:
 Nejsem právník a tenhle slajd není právní rada, je to orientace v tom,
@@ -91,9 +86,8 @@ Pro školní projekt je situace mírnější než pro komerční využití, ale
 - **Nestahujte totéž dvakrát** &ndash; cache, podmíněné požadavky (`If-Modified-Since`)
 - **Berte jen to, co potřebujete** &ndash; ne celý web kvůli jedné tabulce
 - **Paralelizujte napříč doménami**, ne uvnitř jedné
-- ??Malý web nemá vaši kapacitu &ndash; jde ho scraperem položit úplnou náhodou
 
-<p class="fragment">
-Anti-bot obrana (Cloudflare, CAPTCHA, fingerprinting) je srozumitelný vzkaz:
+<p>
+Anti-bot obrana (Cloudflare, CAPTCHA, fingerprinting) je jasný vzkaz:
 <strong>tady vás nechceme</strong>. Její obcházení je technicky i právně jiná liga.
 </p>

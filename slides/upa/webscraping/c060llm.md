@@ -2,12 +2,12 @@
 
 <header>
 	<h1>Když za nás pracuje model</h1>
-	<p>Tohle už není výhled. Takhle se to dnes dělá.</p>
+	<p>Současná realita ve zpracování webu</p>
 </header>
 
 ---
 
-# Současný stav
+# Nedávný stav
 
 ![Manufaktura](assets/openspace.jpg) <!-- .element: style="float:right;height:700px" -->
 
@@ -23,10 +23,10 @@
 
 Tzn. bez ``ruční práce'' v podobě hledání elementů, regulárních výrazů, CSS selektorů, XPath výrazů, apod.
 
-1. **Strojové učení**
-	- ``Naučení'' extraktoru na anotovaných příkladech
-2. **Jazykové modely**
+1. **Jazykové modely**
 	- Text dokumentu nebo kód jako součást promptu
+2. **Strojové učení**
+	- ``Naučení'' extraktoru na anotovaných příkladech
 3. **Modelem řízená extrakce**
 	- Specifikace předpokládané struktury dat (ER diagram?, *ontologie*, ...)
 	- Nalezení výskytu požadovaných skupin dat ve zdrojové stránce
@@ -72,8 +72,8 @@ Tzn. bez ``ruční práce'' v podobě hledání elementů, regulárních výraz�
 }
 ```
 
-- ??Odpadá parsování odpovědi a ošetřování ``skoro JSONu''
-- ??**Pozor:** schéma zaručí *tvar* odpovědi, ne její *pravdivost*
+- Odpadá parsování odpovědi a ošetřování ``skoro JSONu''
+- **Pozor:** schéma zaručí *tvar* odpovědi, ne její *pravdivost*
 
 ---
 
@@ -83,8 +83,7 @@ Tzn. bez ``ruční práce'' v podobě hledání elementů, regulárních výraz�
 	- **Předzpracování** &ndash; zahodit `<script>`, `<style>`, navigaci, převést na text
 	- Poslat jen **relevantní podstrom**, nalezený lacino selektorem
 	- Cache a dávkové zpracování
-- ??Ceny za token klesly řádově &ndash; **hlavní problém dnes není cena**
-- ??Hlavní problém je **nedeterminismus a ověřitelnost**
+- Hlavní problém je **nedeterminismus a ověřitelnost**
 	- Dva běhy nad stejnou stránkou, dva různé výsledky
 	- Jak poznáte, že model tiše vynechal tři řádky tabulky?
 
@@ -106,11 +105,6 @@ U LLM extrakce se porucha tváří jako platná odpověď.
 - Model zavoláme znovu, **teprve až scraper přestane fungovat**
 	- Změna webu je událost, ne každodenní stav
 
-<p class="fragment">
-Robustnost jazykového modelu za cenu jednoho volání,
-provoz za cenu obyčejného kódu. <strong>Tohle se dnes staví.</strong>
-</p>
-
 ---
 
 # AI agenti a MCP
@@ -123,4 +117,4 @@ provoz za cenu obyčejného kódu. <strong>Tohle se dnes staví.</strong>
 	- Existuje **Playwright MCP** &ndash; prohlížeč jako nástroj modelu
 - Agenti typu *browser-use* / *computer-use* &ndash; model stránku vidí a klikáním se proklikává
 - Knihovny pro slepení, např. [LangChain](https://www.langchain.com/)
-- ??Nedeterminismus z předchozího slajdu tu platí dvojnásob
+- Nedeterminismus z předchozího slajdu tu platí dvojnásob

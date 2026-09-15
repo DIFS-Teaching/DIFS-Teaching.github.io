@@ -16,7 +16,7 @@
 	- Útržky HTML kódu
 	- *Serializovaná strukturovaná data* -- JSON, XML, ...
 
-Opět např. [žebříček UCI](https://www.uci.org/discipline/road/6TBjsDD8902tud440iv1Cu?tab=rankings&discipline=ROA) &ndash; podívejte se do záložky **Network**
+Opět např. [žebříček UCI](https://www.uci.org/discipline/road/6TBjsDD8902tud440iv1Cu?tab=rankings&discipline=ROA) &ndash; podívejte se do záložky **Network** v developer tools
 
 ---
 
@@ -62,8 +62,7 @@ Data pro stroje **přímo ve stránce**, vedle dat pro člověka.
 - Identifikace objektů a vlastností pomocí **URI**
 	- Celá řada slovníků (*ontologií*) pro různé domény, např. [schema.org](https://schema.org/)
 - Umožňuje transformaci HTML na *linked data* reprezentovaná pomocí RDF
-- ??Kdo to publikuje? Každý, kdo chce vypadat dobře ve výsledcích vyhledávání
-- ??Jsme na **horním konci žebříku** z úvodu přednášky
+- Kdo to publikuje? Každý, kdo chce vypadat dobře ve výsledcích vyhledávání
 
 <p class="fragment">
 Co ty URI znamenají, odkud se berou slovníky a jak se v takových datech dotazuje

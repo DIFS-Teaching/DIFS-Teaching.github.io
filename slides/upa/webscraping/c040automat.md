@@ -7,7 +7,7 @@
 
 ---
 
-# Nejdřív levnější mezistupeň
+# Levnější mezistupeň
 
 - Spousta ``dynamických'' stránek celý prohlížeč nepotřebuje
 - **HTTP relace** &ndash; `requests.Session()` nebo `httpx` v pythonu
@@ -16,7 +16,6 @@
 	- ``Klikání na odkazy'' &ndash; zjištění cíle a generování GET požadavku
 	- ``Vyplnění formulářů'' &ndash; zjištění `action` a `method`, odeslání hodnot
 - JavaScript ale nespustí ani jedno
-	- ??Napřed se podívejte do **Network** v nástrojích prohlížeče &ndash; často se dá volat rovnou to API
 
 ---
 
@@ -52,7 +51,7 @@ with sync_playwright() as p:
     browser.close()
 ```
 
-- ??`playwright codegen <adresa>` &ndash; naklikáte postup v prohlížeči a vypadne z toho kód
+- `playwright codegen <adresa>` &ndash; rovnou generuje kód
 	- Nejrychlejší cesta od ``tohle potřebuju'' k funkčnímu scraperu
 
 ---
@@ -64,9 +63,6 @@ with sync_playwright() as p:
 - Velmi podobné API a možnosti
 	- Ale jen Chrome/Chromium a jen JavaScript
 	- Playwright založil původní vývojový tým Puppeteeru
-- ??Pozor při čtení starších návodů
-	- `page.$x()` pro XPath **už neexistuje**
-	- Dnes se XPath píše jako selektor: `::-p-xpath(//h2)`
 
 ---
 
@@ -92,7 +88,7 @@ Vraťme se k prvnímu dílčímu problému: **jak vůbec ty dokumenty získat?**
 - **Deduplikace** &ndash; tatáž stránka pod různými URL (`?utm_source=`, řazení, stránkování)
 - Zdvořilostní prodleva mezi požadavky na tentýž server
 - Cache a podmíněné požadavky, ať nestahujete totéž znovu
-- Paralelizace **napříč doménami**, ne uvnitř jedné
-- ??`sitemap.xml` &ndash; web vám sám nabídne seznam stránek
-- ??Hotové rámce: [Scrapy](https://scrapy.org/) (Python), [Crawlee](https://crawlee.dev/) (Node.js, Python)
-	- Frontu, opakování, rate limiting i export dat řeší za vás
+- Paralelizace **napříč doménami** (ne uvnitř jedné)
+- `sitemap.xml` &ndash; web sám může poskytnout seznam stránek
+- Hotové rámce: [Scrapy](https://scrapy.org/) (Python), [Crawlee](https://crawlee.dev/) (Node.js, Python)
+	- Řeší frontu, opakování, rate limiting i export dat

@@ -42,7 +42,7 @@
 	- Mapování na databázi
 - Nalezení datových záznamů
 	- Využití pravidelnosti, opakující se vzory
-- ??Cíl: **garantovat**, že výsledek sedí na schéma a že se nic neztratilo
+- Cíl: **garantovat**, že výsledek sedí na schéma a že se nic neztratilo
 
 Note:
 Tohle je přesně ta vlastnost, kterou jazykový model sám o sobě nedává.

@@ -2,7 +2,7 @@
 
 <header>
 	<h1>Kde vzít data</h1>
-	<p>Scraping je až čtvrtá možnost v pořadí. Napřed se vyplatí zkusit ty tři nad ním.</p>
+	<p>Scraping je jedna z možností. Vyplatí se zkusit i ostatní.</p>
 </header>
 
 ---
@@ -10,8 +10,6 @@
 # Než začnete scrapovat
 
 ![Žebřík obtížnosti získání dat](assets/zebrik.svg) <!-- .element: style="height:640px;margin:0 auto;display:block" -->
-
-- Dnešní přednáška jde po tomhle žebříku **zdola nahoru**
 
 Note:
 Pointa slajdu: každá příčka směrem dolů znamená víc kódu, víc údržby
@@ -29,8 +27,8 @@ o dvě příčky výš jako hotový CSV soubor.
 - **ARES** &ndash; ekonomické subjekty, REST API vracející JSON ([dokumentace](https://ares.gov.cz/stranky/vyvojar-info))
 - **ČNB** &ndash; denní kurzy devizového trhu jako prostý textový soubor
 - **NKOD** &ndash; [data.gov.cz](https://data.gov.cz/), katalog českých otevřených dat
-	- ??Má i [SPARQL endpoint](https://data.gov.cz/sparql) &ndash; příští týden pochopíte proč
-- **ČSÚ** ([vdb.czso.cz](https://vdb.czso.cz/)), [volby.cz](https://www.volby.cz/opendata/opendata.htm) (XML), [Registr smluv](https://smlouvy.gov.cz/stranka/otevrena-data)
+	- Má i [SPARQL endpoint](https://data.gov.cz/sparql) &ndash; příští týden pochopíte, co to je
+- **ČSÚ** ([vdb.czso.cz](https://vdb.czso.cz/)), [volby.cz](https://www.volby.cz/opendata/opendata.htm) (XML), [Registr smluv](https://smlouvy.gov.cz/stranka/otevrena-data) (XML, XSD)
 - [Hlídač státu](https://api.hlidacstatu.cz/swagger/index.html), [Golemio](https://api.golemio.cz/v2/pid/docs/openapi/) (PID a data Prahy), [ČHMÚ](https://opendata.chmi.cz/), [data.europa.eu](https://data.europa.eu/)
 
 </div>
@@ -49,7 +47,7 @@ curl -s $ARES/00216305 | jq '.obchodniJmeno, .sidlo.textovaAdresa'
 "Antonínská 548/1, Veveří, 60200 Brno"
 ```
 
-- ??Nebo ještě jednodušeji &ndash; **ani to nemusí být HTML nebo JSON**
+- Nebo ještě jednodušeji &ndash; **ani to nemusí být HTML nebo JSON**
 
 ```bash
 curl -s https://www.cnb.cz/cs/financni-trhy/devizovy-trh/\
@@ -65,9 +63,9 @@ Brazílie|real|1|BRL|4,078
 
 ---
 
-# Co si vzít na projekt UPA
+# Pokrytí v UPA
 
-Zdroje seřazené ne podle tématu, ale podle **databázové otázky**, kterou otevírají:
+Zdroje a související problematika v UPA
 
 <div style="font-size: 70%">
 
@@ -82,7 +80,7 @@ Zdroje seřazené ne podle tématu, ale podle **databázové otázky**, kterou o
 
 </div>
 
-- ??Poslední řádek je jediný, kde se scrapingu opravdu nevyhnete
+- Poslední řádek -- projekty 1 a 2
 
 Note:
 Tenhle slajd má studentům ušetřit týden bloudění při volbě tématu projektu.
@@ -96,13 +94,13 @@ nebo Wikidata, obojí je zároveň grafové i prostorové.
 
 # A když nic z toho nestačí
 
-- ??**Zdroj žádné API nemá**
+- **Zdroj žádné API nemá**
 	- Typicky menší weby, obecní úřady, jídelníčky, rozvrhy
-- ??**API existuje, ale nevrací to, co potřebujete**
+- **API existuje, ale nevrací to, co potřebujete**
 	- Jiná granularita, chybějící atributy, limit na počet záznamů
-- ??**Potřebujete spojit víc zdrojů dohromady**
+- **Potřebujete spojit víc zdrojů dohromady**
 	- A aspoň jeden z nich je obyčejná webová stránka
 
 <p class="fragment" style="font-size: 140%; text-align: center; margin-top: 1em;">
-<strong>Takže: jak se dobýt do HTML?</strong>
+<strong>Můžeme to zjistit přímo z HTML?</strong>
 </p>
