@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 760 345"
+   width="760"
+   height="345"
+   font-family="sans-serif"
+   font-size="14"
+   fill="#1f2937"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563" />
+    </marker>
+  </defs>
+  <!-- ── What the user enters ───────────────────────────────────── -->
+  <text x="20" y="40" text-anchor="start" font-size="12" font-style="italic" fill="#6b7280">The user enters an address</text>
+  <text x="20" y="62" text-anchor="start" font-size="12" font-family="monospace" fill="#374151">https://www.example.com/page.html</text>
+  <path d="M 25,74 V 240 H 64" fill="none" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <!-- ── Client ─────────────────────────────────────────────────── -->
+  <rect x="70" y="210" width="180" height="85" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8" />
+  <text x="160" y="248" text-anchor="middle" font-weight="bold" font-size="16" fill="#0c4a6e">Client</text>
+  <text x="160" y="270" text-anchor="middle" font-size="13" fill="#0369a1">(web browser)</text>
+  <!-- ── DNS server ─────────────────────────────────────────────── -->
+  <rect x="330" y="25" width="150" height="70" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="8" />
+  <text x="405" y="57" text-anchor="middle" font-weight="bold" font-size="16" fill="#92400e">DNS server</text>
+  <text x="405" y="78" text-anchor="middle" font-size="13" fill="#b45309">(name → IP address)</text>
+  <!-- ── Web server ─────────────────────────────────────────────── -->
+  <rect x="530" y="210" width="200" height="85" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8" />
+  <text x="630" y="248" text-anchor="middle" font-weight="bold" font-size="16" fill="#14532d">Web server</text>
+  <text x="630" y="270" text-anchor="middle" font-size="12" font-family="monospace" fill="#166534">www.example.com</text>
+  <!-- ── Name resolution ────────────────────────────────────────── -->
+  <line x1="195" y1="208" x2="350" y2="97" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="230" y="150" text-anchor="end" font-size="13" fill="#374151">1. www.example.com</text>
+  <line x1="405" y1="97" x2="245" y2="208" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="350" y="172" text-anchor="start" font-size="13" fill="#374151">2. 93.184.216.34</text>
+  <!-- ── HTTP request and response ──────────────────────────────── -->
+  <line x1="252" y1="245" x2="528" y2="245" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="390" y="237" text-anchor="middle" font-size="13" fill="#374151">3. GET /page.html HTTP/1.1</text>
+  <line x1="528" y1="285" x2="252" y2="285" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="390" y="305" text-anchor="middle" font-size="13" fill="#374151">4. 200 OK + the document</text>
+  <!-- ── Note ───────────────────────────────────────────────────── -->
+  <text x="390" y="330" text-anchor="middle" font-size="12" font-style="italic" fill="#6b7280">Steps 3 and 4 run inside a TLS-encrypted connection (https:)</text>
+</svg>
