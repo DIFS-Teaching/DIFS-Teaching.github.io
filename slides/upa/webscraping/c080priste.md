@@ -16,7 +16,7 @@ Největší česká města i s počtem obyvatel &ndash; **bez scrapování**:
 
 ```sparql
 SELECT ?mestoLabel ?obyvatel WHERE {
-  ?mesto wdt:P31 wd:Q5153359 ;       # je statutární město
+  ?mesto wdt:P31 wd:Q5153359 ;       # je obec v Česku
          wdt:P1082 ?obyvatel .       # má počet obyvatel
   SERVICE wikibase:label { bd:serviceParam wikibase:language "cs". }
 }
