@@ -12,9 +12,10 @@
 # Předmět IIS – Témata
 - Data, informace, znalosti, informační systém
 - Architektury IS
+- Strukturovaná data, modely, reprezentace
 - Serverová část IS
 	- Technologie pro implementaci aplikační logiky
-	- Serverová část webového rozhraní
+	- Serverová část webového rozhraní, API
 - Databázová vrstva
 	- Analýza domény a návrh relační databáze
 	- Databázová integrita a konzistence
@@ -28,8 +29,8 @@
 - Praktické ukázky (a projekt) budou využívat zejména
 	- Webové klient-server technologie
 		- HTTP, HTML, CSS, JavaScript, XML, JSON, REST, …
-	- Relační databáze: MySQL
-	- Programování na straně serveru: PHP
+	- Relační databáze: MySQL / MariaDB
+	- Programování na straně serveru: PHP (včetně aplikačních frameworků)
 
 ---
 

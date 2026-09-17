@@ -30,7 +30,7 @@
 ---
 
 # Informace z hlediska přírodních věd
-- Energetická veličina, jejíž hodnota je úměrná _zmenšení entropie_ systému 
+- Veličina úměrná _zmenšení entropie_ (neuspořádanosti) systému 
 - Poznatek, který omezuje nebo _odstraňuje nejistotu_ týkající se výskytu určitého jevu z dané množiny možných jevů 
 - Teorie informace – Claude Shannon
 	- $H = -\sum p_i \log_2 p_i $
@@ -40,18 +40,18 @@
 ---
 
 # Příklad: hod kostkou
-- Padne jakékoliv číslo:
-	- $p_i = 0,1666$
-	- $H = -6 \times (0,1666 \times \log_2 0,1666) = 2,58$ bitu
+- _Výchozí stav_ -- může padnout libovolné z 6 čísel:
+	- $p_i = 1/6 \doteq 0,167$
+	- $H = -6 \times (0,167 \times \log_2 0,167) = 2,58$ bitu
 	- (tzn. tři bity nám bohatě stačí na zakódování informace o výsledku hodu)
-- Padne číslo dělitelné třemi:
+- _Cílový stav_ -- víme, že padlo číslo dělitelné třemi (zbývají možnosti 3 a 6):
 	- $p_i = 0,5$
 	- $H = -2 \times (0,5 \times \log_2 0,5) = 1$ bit
-- Informace $I = 2,58 - 1 = 1,58$ bitu
+- Získaná informace $I = 2,58 - 1 = 1,58$ bitu
 
 ---
 
-# Graf funkce -log2(x)
+# Graf funkce $-\log_2 x$
 <!-- .slide: class="normal centered fullspace" -->
 ![Graf funkce](assets/informace.svg) <!-- .element: style="height:800px;margin:0;" -->
 
@@ -98,12 +98,13 @@
 
 - Pro totožná data vznikne _rozdílná informace_ jinou _interpretací_ dat
 - Podobně např. jméno a příjmení
+- Řešením je dohodnutá konvence, např. ISO 8601: `2005-12-10`
 
 ---
 
 # Znalost
 - Informace zařazená do souvislostí
-- Jejich interpretace je však ještě hůře definovatelná, neboť může jít o celé shluky informací
+- Její interpretace je však ještě hůře definovatelná, neboť může jít o celé shluky informací
 - Znalosti chápeme často jako _sekundární odvozené_ _informace_ 
 - Některé informační systémy se zabývají pouze _informacemi (transakční)_, některé pracují se _znalostmi (pro podporu rozhodování a plánování)_
 - Problematika _získávání znalostí z dat_ (knowledge discovery, data mining)
@@ -114,7 +115,7 @@
 # Příklad: jízdní řád
 
 <!-- .slide: class="normal centered fullspace" -->
-![Graf funkce](assets/jr.png) <!-- .element: style="height:800px;margin:0;" -->
+![Jízdní řád](assets/jr.png) <!-- .element: style="height:800px;margin:0;" -->
 
 ---
 
@@ -128,7 +129,7 @@
 
 # Systém
 - _Systém_ lze chápat jako množinu prvků a vazeb mezi nimi, které jsou definovány na nějakém _nosiči_
-- Nosičem je tedy _množina_ _prvků_ _systému_ ve vzájemných vztazích 
+- Nosičem je tedy _množina_ _prvků_, na nichž jsou vztahy definovány 
 - Prvky nosiče nazýváme _zdroje_
 
 ---
@@ -147,10 +148,10 @@
 
 # Typické nosiče
 - _Fyzické_ (materiální)
-	- osoby (HR- Human Resources),
+	- osoby (HR -- Human Resources),
 	- materiál,
 	- stroje včetně zařízení a energie,
-	- finance a
+	- finance
 - _Konceptuální_ (pojmové)
 	- _informace_
 
@@ -250,11 +251,11 @@
 
 # Podle podobnosti nosičů
 - Existuje více podobných modelovaných fyzických nosičů, tj. existují podobné informační systémy. To vede k vzniku _typových projektů_:
-	- **_geografie a zeměměřičství_** (spojení s počítačovou grafikou),
+	- geografie a zeměměřičství (spojení s počítačovou grafikou),
 	- knihovna,
-	- účetnictví zejména podvojné,
-	- banka pokladna a platby,
-	- mzdy a správa lidských zdrojů
+	- účetnictví, zejména podvojné,
+	- banka -- pokladna a platby,
+	- mzdy a správa lidských zdrojů,
 	- majetek a odpisy,
 	- pacienti a styk se zdravotními pojišťovnami.
 - Takto členěné typové projekty bývají často i předmětem odděleného prodeje ve formě _modulů_ dodávaných jako části většího informačního systému
@@ -263,14 +264,14 @@
 
 # Podle režimu činnosti
 - Zpracování požadavků _v reálném čase_:
-	- **_transakční zpracování_** (dnes nejobvyklejší, rezervace letenek, knihovny, pokladní systémy s platbou kartami),
+	- _transakční zpracování_ (dnes nejobvyklejší, rezervace letenek, knihovny, pokladní systémy s platbou kartami),
 	- technologické procesy (řízení výroby, diagnostika),
-- _Dávkové_ zpracování dat (tradiční na střediskových počítačích, v bankovním sektoru tradičně přetrvávalo nejdéle) nyní spíše ustupuje.
+- _Dávkové_ zpracování dat (tradičně na střediskových počítačích, nejdéle přetrvávalo v bankovním sektoru) -- dnes zejména v podobě ETL úloh a zpracování velkých objemů dat.
 
 ---
 
 # Podle datového typu dat
-- _Číselné a textové_ (většina ekonomických i technologických informačních systémů, postupně se přidávají i multimediální údaje),
+- _Číselné a textové_ (většina ekonomických i technologických informačních systémů, běžně i multimediální údaje),
 - _Speciální_ údaje – např. _geografické informační systémy_
 
 ---
@@ -278,10 +279,10 @@
 # Podle úrovně rozhodování
 - Klasické _pyramidové schéma_
 - Odráží hierarchii úrovně rozhodování v organizaci:
-	- Systém pro zpracování transakcí
-	- Management information systems
-	- Decision support systems
-	- Executive information systems
+	- Systémy pro zpracování transakcí (TPS)
+	- Informační systémy pro podporu řízení (MIS)
+	- Systémy pro podporu rozhodování (DSS)
+	- Informační systémy pro exekutivu (EIS)
 
 ---
 
@@ -304,13 +305,13 @@
 # MIS - Management Information Systems
 - Překládáme _Informační systémy pro podporu řízení_
 - Poskytují informace, které jsou potřebné pro efektivní řízení organizace
-- MIS je obecně užívány pro skupinu metod zpracování informací určených k automatizaci a podpoře rozhodování
+- Termín MIS je obecně užíván pro skupinu metod zpracování informací určených k automatizaci a podpoře rozhodování
 - Nemusejí nutně pracovat nad aktuálním modelem fyzického systému (povoleno zpoždění)
-- Nejčastěji jde o:
+- V širším pojetí se pod pojem MIS řadí i navazující kategorie:
 	- Systémy pro podporu rozhodování (DSS)
 	- Expertní systémy (ES)
 	- Informační systémy pro exekutivu (EIS)
-	- OLAP (Online Analytical Procesing)
+	- OLAP (On-Line Analytical Processing)
 
 ---
 
