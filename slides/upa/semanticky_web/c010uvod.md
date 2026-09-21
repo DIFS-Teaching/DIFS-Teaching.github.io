@@ -11,39 +11,49 @@
 
 ---
 
-# Technické řešení
-- Vývoj technologií pro vhodnou reprezentaci dat
-	- Možnost sdílení dat i s jejich sémantikou
-	- Použitelné technologie jsou již dlouho k dispozici
-- Integrace s existujícím webem
-	- Anotace ve webových stránkách
-	- Poněkud vázne, ale zlepšuje se
+# 25 let poté
+
+- **Nepřišlo:** autonomní agenti vyjednávající mezi sebou, důkazy, vrstva důvěry
+	- **Místo toho:** agenti založení na LLM
+- **Přišlo:** RDF, SPARQL, JSON-LD, ontologie (schema.org, apod.)
+- **Přežilo pod jiným jménem:** *znalostní graf* (Google 2012, dnes každý větší podnik)
+- **Reálně rostoucí využití:**
+	- E-commerce, vyhledávače
+	- Otevřené datové sady (linked open data)
 
 ---
 
-# Web a sémantický web
-- World Wide Web (web)
-	- Základní jednotkou je dokument
-	- „Web of documents“
-- Semantic Web (sémantický web)
-	- Základními jednotkami jsou data
-	- „Web of Data“, „Linked data“
+# Web dokumentů vs. web dat
+
+<div class="col small">
+
+**World Wide Web**
+
+- Základní jednotkou je dokument
+- Odkaz vede z dokumentu na dokument
+- Význam obsahu je implicitní, v textu, pro člověka
+- Technologie: HTTP, URI, HTML
+
+</div>
+<div class="col small">
+
+**Sémantický web**
+
+- Základní jednotkou je **tvrzení o zdroji**
+- Odkaz vede z věci na věc
+- Význam je sdílený, zapsaný explicitně, pro stroj
+- Technologie: HTTP, IRI, RDF, ontologie
+
+</div>
 
 ---
 
-# Technologie sémantického webu
-- Technologie standardního webu
-	- HTTP, URI
-- Nástroje pro reprezentaci znalostí
-	- Reprezentace dat (faktů)
-		- XML, RDF, …
-	- Sémantika
-		- Ontologie
-		- Technologie pro reprezentaci ontologie
-
----
-
-# Semantic Web Stack
+# Základní technologie
 
 <!-- .slide: class="normal centered fullspace" -->
-![Semantic web stack](assets/techstack.svg) <!-- .element: style="height:750px;margin:0;" -->
+![Zásobník technologií](assets/stack.svg) <!-- .element: style="height:700px;margin:0;" -->
+
+Note:
+Původní ``layer cake'' z prvních let W3C měl nahoře ještě Unifying Logic,
+Proof a Trust. Ty vrstvy nikdy nedostaly standard ani nasazení -- proto jsou
+tady čárkovaně stranou. Zbytek zásobníku je dnes běžná praxe.

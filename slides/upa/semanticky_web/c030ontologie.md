@@ -2,333 +2,161 @@
 
 <header>
 	<h1>Ontologie</h1>
-	<p>Slovníky pro sémantický web</p>
+	<p>Odkud se berou ty slovníky</p>
 </header>
 
 ---
 
-# Pojem ontologie
-- Původně obecnější význam (filozofie)
-- Nástroj pro sdílení významu pojmů, které se vyskytují v cílové oblasti
-- _„Formální, explicitní specifikace sdílené konceptualizace“_
-- Definují základní pojmy modelovaného světa a vztahy mezi nimi
-- **Sdílené** a **opakovatelně použitelné**
+# Ontologie: k čemu to je
+
+_„Formální, explicitní specifikace sdílené konceptualizace“_
+
+<div class="col small">
+
+**K čemu nám je**
+
+- **Dodává význam jednotlivým IRI** -- bez ní je `wdt:P1082` jen řetězec
+- **Umožňuje integraci dat z různých zdrojů** -- společný slovník místo párování názvů
+
+</div>
+<div class="col small">
+
+**Z čeho se skládá**
+
+- **Třídy** (`foaf:Person`), **individua** (`wd:Q14960`), **vlastnosti** (`foaf:knows`)
+- *Objektové* vlastnosti míří na zdroj, *datatypové* na literál
+
+</div>
+
+@@div style="clear:both"@@@@/div@@
+
+<p class="cite" style="font-size: 70%">Gruber, T. R.: A translation approach to portable ontology specifications. <em>Knowledge Acquisition</em> 5(2), 1993. Ve znění, které upřesnil Studer et al. (1998).</p>
+
+Note:
+Vrátit se sem k motivační části: tohle je ta druhá polovina odpovědi. Globální
+identifikátor říká *která věc to je*, ontologie říká *co o ní tvrdím*.
 
 ---
 
-# Účel ontologií
-- Porozumění mezi lidmi (experty)
-- **Porozumění mezi počítačovými aplikacemi**
-	- **Dodání významu jednotlivým URI v sémantickém webu**
-	- Možnost **integrace** dat z různých zdrojů
-- Návrh znalostních aplikací
+# RDF Schema a OWL
 
----
-
-# Typy ontologií
-- Terminologické (lexikální)
-	- Pojmy a jejich vzájemné vztahy (taxonomie)
-	- Např. _WordNet_
-- Generické ontologie
-	- Zákonitosti a vztahy mezi obecnými pojmy
-	- „Upper ontology“, např. SUMO
-- Doménové ontologie
-	- Konkrétní oblast (např. podnikové, lékařství, …)
-- Aplikační ontologie
-	- Pro konkrétní aplikaci
-
----
-
-# Prvky ontologií
-- **Třídy (koncepty)**
-- **Individua (objekty, instance)**
-- **Vlastnosti (role, atributy)**
-- Meta-sloty (facety)
-- Primitivní datové typy
-- Axiomy (pravidla)
-
-Definované prvky můžeme využít v RDF tvrzeních. Ontologie tedy definuje <!-- .element: class="cite" -->
-*slovní zásobu* (*vocabulary*) pro RDF. 
-
----
-
-# Koncepty – třídy
-- Množiny konkrétních objektů
-- Žádné procedurální metody
-- Třídy _definované_ a _primitivní_
-	- Podle definice příslušnosti individua
-- Dědičnost tříd (často vícenásobná)
-
----
-
-# Individua – objekty – instance
-- Konkrétní objekty reálného světa
-- Individuum nemusí být nutně instancí třídy
-- Vzhledem k určení ontologií se často nepoužívají
-	- Reprezentují konkrétní data
-
----
-
-# Relace – atributy – sloty – vlastnosti
-- Pojetí vlastnosti je jiné, než u OO modelování
-- Vlastnost = relace
-	- Samostatně definovaný prvek
-	- Obvykle binární relace
-- Možná dědičnost relací (má otce, má předka)
-	- Nadřazená relace obsahuje všechny prvky podřazené relace
-- Funkce – speciální relace
-	- Hodnota argumentu _n_ jednoznačně určena předchozími _n-1_ argumenty
-
----
-
-# Primitivní hodnoty, datové typy
-- Argumentem relace může být _primitivní hodnota_ (ne objekt)
-	- Číslo, řetězec, výčtová hodnota, …
-	- *Datatypová vlastnost* vs. *objektová vlastnost*
-- Můžeme uvažovat dato-typové třídy (datové typy) a dato-typové instance (hodnoty)
-- Dato-typové vlastnosti obvykle deklarujeme  jako funkční (mají pouze jednu hodnotu)
-
----
-
-<!-- .slide: class="section" -->
-
-<header>
-	<h1>Ontologické jazyky</h1>
-	<p>RDF Schema, OWL</p>
-</header>
-
----
-
-# RDF Schema
-- Sémantické rozšíření RDF
-	- V podstatě (meta) **ontologie**
-- Umožňuje definici
-	- Tříd
-	- Binární relace (definiční obor, obor hodnot)
-	- Hierarchie nad třídami i relacemi
-- Definice opět pomocí RDF tvrzení (trojic)
-	- S použitím konceptů a vlastností z RDFS
-- Namespace (prefix obvykle **rdfs**)\
-`http://www.w3.org/2000/01/rdf-schema#` 
-
----
-
-# Třídy
-- Třída je přiřazena ke zdroji pomocí rdf:type
-	- `skola:Osoba rdf:type rdfs:Class`
-- Odvozené třídy
-	- Např. `skola:Student rdfs:subClassOf skola:Osoba`
-
----
-
-# Vlastnosti v RDFS
-- Vlastnosti jsou instance `rdfs:Property`
-	- `skola:maZapsano rdf:type rdfs:Property`
-- **rdfs:Range** – typ objektů (obor hodnot)
-	- `skola:maZapsano rdfs:range skola:Predmet`
-- **rdfs:Domain** – typ subjektů (def. obor)
-	- `skola:maZapsano rdfs:domain skola:Student`
-- `rdfs:subPropertyOf`
-	- Vlastnost je „podvlastností“ jiné vlastnosti
-
----
-
-# OWL
-- Rozšíření RDFS o pokročilé vlastnosti
-- Definice kompletní ontologie
-- Namespace `http://www.w3.org/2002/07/owl#` 
-
----
-
-# Definice tříd v OWL
-- Kombinace s RDFS
-- Třídu lze definovat pomocí logických podmínek
-	- Identifikátorem třídy (žádné prvky)
-	- Výčtem prvků (instancí)
-	- Omezením vlastností
-	- Sjednocením nebo průnikem dvou a více tříd
-	- Doplňkem
-
----
-
-# Definice třídy identifikátorem
-
-Turtle
-```turtle
-foaf:Person rdf:type owl:Class .
-```
-
-XML
-```xml
-<owl:Class rdf:about="&foaf;Person"/>
-```
-
-nebo
-```xml
-<rdf:Description rdf:ID=“Person”>
-	<rdf:type resource=“&owl;Class” />
-</rdf:Description>
-```
-
----
-
-# V Turtle s prefixy
+<div class="small">
 
 ```turtle
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix foaf:<http://xmlns.com/foaf/0.1/>.
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skola: <https://upa.fit.vut.cz/skola#> .
 
-foaf:Person rdf:type owl:Class .
-foaf:Person a owl:Class .
+skola:Osoba    a rdfs:Class .
+skola:Student  a rdfs:Class ;
+               rdfs:subClassOf skola:Osoba .
+
+skola:maZapsano  a rdf:Property ;
+                 rdfs:domain skola:Student ;   # subjekt je Student
+                 rdfs:range  skola:Predmet .   # objekt je Předmět
 ```
 
----
+- **RDFS** -- třídy, hierarchie, `rdfs:domain` / `rdfs:range`, `rdfs:label`, `rdfs:comment`
+- **OWL 2** (W3C Rec 2009, 2. vydání 2012) -- výrazně bohatší: ekvivalence, disjunktnost, kardinality, inverzní vlastnosti
+</div>
 
-# Definice doplňkem
-
-```xml
-<owl:Class>
-  <owl:complementOf>
-    <owl:Class rdf:about="#Student"/>
-  <owl:complementOf/>
-</owl:Class>
-```
+Note:
+`rdfs:domain` a `rdfs:range` nejsou kontrola! Neříkají &bdquo;sem smí jen Student&ldquo;,
+ale &bdquo;co sem dáš, to je Student&ldquo;. Je to pravidlo pro odvozování, ne pro
+validaci. Na to navazuje slajd o otevřeném světě.
 
 ---
 
-# Ostatní operátory nad třídami
-- `owl:equivalentClass`
-	- Stejná třída (např. z jiné ontologie)
-- `owl:disjointWith`
-	- Disjunktní třída
+# Propojování entit: owl:sameAs
 
----
-
-# Definice vlastností
-- RDFS konstruktory
-	
-```xml
-<owl:ObjectProperty rdf:ID="studuje">
-  <rdfs:domain rdf:resource="#Student"/>
-  <rdfs:range rdf:resource="#Obor"/>
-</owl:ObjectProperty>
-```
-
-- Vztahy mezi vlastnostmi
-	- `owl:equivalentProperty` – stejné hodnoty
-	- `owl:inverseOf` – inverzní vlastnost
-
-```xml
-<owl:ObjectProperty rdf:ID="maStudenta">
-	<owl:inverseOf rdf:resource="#studuje"/>
-</owl:ObjectProperty>
-```
-
----
-
-# Data-typové vlastnosti
-- RDF Literály
-- XSD datové typy
-	- Namespace `http://www.w3.org/2001/XMLSchema` 
-
-- `xsd:string`, `xsd:normalizedString`, `xsd:boolean`, `xsd:decimal`,  `xsd:float`, `xsd:double`, `xsd:integer`, `xsd:nonNegativeInteger`  `xsd:positiveInteger`, `xsd:nonPositiveInteger`, `xsd:negativeInteger`, `xsd:long`, `xsd:int`, `xsd:short`, `xsd:byte`,   `xsd:unsignedLong`, `xsd:unsignedInt`, `xsd:unsignedShort`, `xsd:unsignedByte`, `xsd:hexBinary`, `xsd:base64Binary`, `xsd:dateTime`, `xsd:time`, `xsd:date`, `xsd:gYearMonth`, `xsd:gYear`, `xsd:gMonthDay`, `xsd:gDay`, `xsd:gMonth`, `xsd:anyURI`, `xsd:token`, `xsd:language`, `xsd:NMTOKEN`, `xsd:Name`, `xsd:NCName`
-<!-- .element style="font-size: 80%"  -->
-
-
----
-
-# Editor Protegé
-	
-http://protege.stanford.edu/
-
-
-![Protege](assets/protege.jpg)
-
----
-
-# Existující ontologie
-- Důraz na maximální využití existujících ontologií
-	- Je možno kombinovat koncepty a vlastnosti z různých ontologií
-- Přehled
-	- https://lov.linkeddata.es/dataset/lov/
-
----
-
-# Dublin core
-- Metadata dokumentů
-- Použití zejména v knihovnictví
-- Definuje vlastnosti dokumentů:
-
-```xml
-<rdf:Description rdf:about="http://www.w3schools.com">
-   <dc:description>W3Schools</dc:description>
-   <dc:publisher>Refsnes Data as</dc:publisher>
-   <dc:date>2008-09-01</dc:date>
-   <dc:type>Web Development</dc:type>
-   <dc:format>text/html</dc:format>
-   <dc:language>en</dc:language>
- </rdf:Description>
-```
-
----
-
-# Friend-of-a-friend (FOAF)
-- Ontologie pro popis osob a jejich vzájemných vztahů http://www.foaf-project.org/
-- Třídy pro popis osob
-	- `foaf:Agent`, `foaf:Person`, …
-- Vlastnosti
-	- `foaf:name`, `foaf:knows`, …
-
----
-
-# FOAF příklad
+<div class="small">
 
 ```turtle
-@prefix foaf:<http://xmlns.com/foaf/0.1/>.
-@prefix dbr:<http://dbpedia.org/resource>.
-
-dbr:Luke_Skywalker foaf:knows dbr:Han_Solo .
-dbr:Luke_Skywalker foaf:name "Luke Skywalker" .
+dbr:Brno  owl:sameAs  wd:Q14960 ,
+          <http://sws.geonames.org/3078610/> ,
+          <http://viaf.org/viaf/144231825> .
 ```
 
----
+- `owl:sameAs` -- **tytéž entity** popsané v různých datasetech
+- `owl:differentFrom` -- explicitně různé; různá IRI sama o sobě nestačí
+</div>
 
-# SKOS
-- Simple Knowledge Organization System
-- Umožňuje organizaci pojmů v nějaké doméně
-	- Koncepty: Concept
-	- Vztahy mezi nimi: broader, narrower, related, …
-	- …
-
----
-
-# Schema.org
-- Primárně pro anotování webových stránek
-	- https://schema.org
-- Základní slovníky pro různé obecné domény
-	- https://schema.org/docs/gs.html#schemaorg
+Note:
+Tohle je nejpraktičtější konstrukt z celého OWL a zároveň nejvíc zneužívaný.
+Za chvíli si ho vytáhneme z DBpedie a uvidíme, že mezi správnými odkazy je
+i jeden špatný.
 
 ---
 
-# Další ontologie
-- Music ontology
-	- http://musicontology.com/
-- Event ontology
-	- http://motools.sourceforge.net/event/event.html 
-- Time ontology
-	- http://www.w3.org/TR/2006/WD-owl-time-20060927/ 
-- Geo ontology
-	- http://www.w3.org/2003/01/geo/
+# Otevřený svět a SHACL
+
+<div class="col small">
+
+**Předpoklad otevřeného světa**
+
+Chybějící tvrzení ≠ nepravda. &bdquo;O tomto produktu nevím cenu&ldquo; není
+&bdquo;tento produkt nemá cenu&ldquo;.
+
+V OWL proto **nejde** říct ``každý produkt musí mít cenu''.
+`owl:minCardinality` *odvozuje*, že ta cena někde existuje --
+nevaliduje, že je v datech.
+
+</div>
+<div class="col small">
+
+**SHACL** (W3C Rec 2017)
+
+Uzavřený svět, **schéma pro RDF**:
+
+```turtle
+ex:ProduktShape a sh:NodeShape ;
+  sh:targetClass schema:Product ;
+  sh:property [
+    sh:path schema:price ;
+    sh:minCount 1 ;
+    sh:datatype xsd:decimal ] .
+```
+
+Výstupem je *validation report*: co v datech chybí.
+
+</div>
 
 ---
 
-# Ontologie a RDF znalostní báze
-- DBPedia.org
-	- Vlastní ontologie + použití existujících
-	- http://dbpedia.org/resource/Berlin
-	- http://dbpedia.org/page/Novak_Djokovic 
-- Např.
-	- [Vlastnost Birth place](http://dbpedia.org/ontology/birthPlace)
-	- [Podobně Wikidata](https://www.wikidata.org/wiki/Property:P19) 
+# Reálně používané slovníky (ontologie)
 
+<div style="font-size: 88%">
+
+<div class="col small">
+
+- **[schema.org](https://schema.org/)** -- de facto slovník webu
+	- Google, Microsoft, Yahoo, Yandex
+	- `Product`, `Offer`, `Organization`, `Event`
+	- Uvidíme za chvíli v JSON-LD
+- **[DCAT / DCAT-AP-CZ](https://ofn.gov.cz/dcat-ap-cz-rozhran%C3%AD-katalog%C5%AF-otev%C5%99en%C3%BDch-dat/)** -- katalogy datových sad
+	- Slovník za `data.gov.cz`, použitelný v projektu
+- **[SKOS](https://www.w3.org/TR/skos-reference/)** -- taxonomie, číselníky, tezaury
+
+</div>
+<div class="col small">
+
+- **[PROV-O](https://www.w3.org/TR/prov-o/)** -- provenience
+	- Odkud data jsou, kdo je vytvořil, čím
+- **[GeoSPARQL](https://www.ogc.org/standards/geosparql)** -- geometrie a prostorové dotazy (přednáška 12)
+- **[Dublin Core (DCMI Terms)](https://www.dublincore.org/specifications/dublin-core/dcmi-terms/)** -- metadata dokumentů
+- **[OWL-Time](https://www.w3.org/TR/owl-time/)** -- časové intervaly
+
+</div>
+
+@@div style="clear:both"@@@@/div@@
+
+
+<div class="small">
+
+- Rejstřík slovníků: **[Linked Open Vocabularies](https://lov.linkeddata.es/dataset/lov/)** &middot; editor: [Protégé](https://protege.stanford.edu/) &middot; historické, ale pořád v datech: **FOAF**
+
+</div>
+
+<p style="text-align: center; font-size: 115%; margin-top: 0.2em;">Vlastní ontologii tvořte až <strong>když není vyhnutí</strong>. Napřed hledejte existující.</p>
+
+</div>

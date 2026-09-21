@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 330"
+   width="1000"
+   height="330"
+   font-family="sans-serif"
+   font-size="14"
+   fill="#1f2937"
+   version="1.1"
+   id="svg96"
+   sodipodi:docname="pipeline-2.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview98"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.0227539"
+     inkscape:cx="499.07207"
+     inkscape:cy="166.85173"
+     inkscape:window-width="2560"
+     inkscape:window-height="1383"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg96" />
+  <defs
+     id="defs8">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+    <marker
+       id="arrg"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#16a34a"
+         id="polygon5" />
+    </marker>
+  </defs>
+  <!-- 1. Získání dat - zvýrazněno, dnešní přednáška -->
+  <text
+     x="112"
+     y="34"
+     text-anchor="middle"
+     font-size="15"
+     font-weight="bold"
+     fill="#0284c7"
+     id="text10">dnes jsme tady</text>
+  <g
+     id="g22">
+    <rect
+       x="30"
+       y="50"
+       width="165"
+       height="100"
+       rx="8"
+       fill="#e0f2fe"
+       stroke="#0284c7"
+       stroke-width="4"
+       id="rect12" />
+    <text
+       x="112"
+       y="78"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#0c4a6e"
+       id="text14">Získání dat</text>
+    <text
+       x="112"
+       y="101"
+       text-anchor="middle"
+       font-size="12"
+       fill="#0369a1"
+       id="text16">web scraping,</text>
+    <text
+       x="112"
+       y="118"
+       text-anchor="middle"
+       font-size="12"
+       fill="#0369a1"
+       id="text18">propojená data (RDF)</text>
+    <text
+       x="112"
+       y="140"
+       text-anchor="middle"
+       font-size="12"
+       font-weight="bold"
+       fill="#0284c7"
+       id="text20">přednášky 1, 2</text>
+  </g>
+  <line
+     x1="197"
+     y1="100"
+     x2="217"
+     y2="100"
+     stroke="#4b5563"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line24" />
+  <!-- 2. Porozumění datům -->
+  <g
+     id="g36">
+    <rect
+       x="219"
+       y="50"
+       width="165"
+       height="100"
+       rx="8"
+       fill="#f1f5f9"
+       stroke="#cbd5e1"
+       stroke-width="2"
+       id="rect26" />
+    <text
+       x="301"
+       y="78"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#64748b"
+       id="text28">Porozumění datům</text>
+    <text
+       x="301"
+       y="101"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text30">popisné charakteristiky,</text>
+    <text
+       x="301"
+       y="118"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text32">vizualizace, korelace</text>
+    <text
+       x="301"
+       y="140"
+       text-anchor="middle"
+       font-size="12"
+       font-weight="bold"
+       fill="#94a3b8"
+       id="text34">přednáška 3</text>
+  </g>
+  <line
+     x1="386"
+     y1="100"
+     x2="406"
+     y2="100"
+     stroke="#9ca3af"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line38" />
+  <!-- 3. Čištění a integrace - cíl zpětné šipky -->
+  <g
+     id="g50">
+    <rect
+       x="408"
+       y="50"
+       width="165"
+       height="100"
+       rx="8"
+       fill="#f1f5f9"
+       stroke="#cbd5e1"
+       stroke-width="2"
+       id="rect40" />
+    <text
+       x="490"
+       y="78"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#64748b"
+       id="text42">Čištění a integrace</text>
+    <text
+       x="490"
+       y="101"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text44">chybějící hodnoty,</text>
+    <text
+       x="490"
+       y="118"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text46">duplicity, více zdrojů</text>
+    <text
+       x="490"
+       y="140"
+       text-anchor="middle"
+       font-size="12"
+       font-weight="bold"
+       fill="#94a3b8"
+       id="text48">přednáška 4</text>
+  </g>
+  <line
+     x1="575"
+     y1="100"
+     x2="595"
+     y2="100"
+     stroke="#9ca3af"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line52" />
+  <!-- 4. Redukce a transformace -->
+  <g
+     id="g66">
+    <rect
+       x="597"
+       y="50"
+       width="165"
+       height="100"
+       rx="8"
+       fill="#f1f5f9"
+       stroke="#cbd5e1"
+       stroke-width="2"
+       id="rect54" />
+    <text
+       x="679"
+       y="72"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#64748b"
+       id="text56">Redukce a</text>
+    <text
+       x="679"
+       y="91"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#64748b"
+       id="text58">transformace</text>
+    <text
+       x="679"
+       y="113"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text60">dimenze, nevyváženost,</text>
+    <text
+       x="679"
+       y="128"
+       text-anchor="middle"
+       font-size="12"
+       fill="#94a3b8"
+       id="text62">kódování hodnot</text>
+    <text
+       x="679"
+       y="145"
+       text-anchor="middle"
+       font-size="12"
+       font-weight="bold"
+       fill="#94a3b8"
+       id="text64">přednáška 5</text>
+  </g>
+  <line
+     x1="764"
+     y1="100"
+     x2="784"
+     y2="100"
+     stroke="#9ca3af"
+     stroke-width="2"
+     marker-end="url(#arr)"
+     id="line68" />
+  <!-- Mimo UPA: modelování -->
+  <g
+     id="g80">
+    <rect
+       x="786"
+       y="50"
+       width="165"
+       height="100"
+       rx="8"
+       fill="#f3f4f6"
+       stroke="#9ca3af"
+       stroke-width="2"
+       stroke-dasharray="6 4"
+       id="rect70" />
+    <text
+       x="868"
+       y="78"
+       text-anchor="middle"
+       font-weight="bold"
+       font-size="16"
+       fill="#6b7280"
+       id="text72">Modelování</text>
+    <text
+       x="868"
+       y="101"
+       text-anchor="middle"
+       font-size="12"
+       fill="#6b7280"
+       id="text74">získávání znalostí,</text>
+    <text
+       x="868"
+       y="118"
+       text-anchor="middle"
+       font-size="12"
+       fill="#6b7280"
+       id="text76">strojové učení</text>
+    <text
+       x="868"
+       y="140"
+       text-anchor="middle"
+       font-size="12"
+       font-style="italic"
+       fill="#9ca3af"
+       id="text78">ZZN, SFC, SUI</text>
+  </g>
+  <!-- Zpětná (čárkovaná) šipka: co uděláme dnes, ušetří práci ve 4. přednášce -->
+  <path
+     d="M 112 152 L 112 198 L 490 198 L 490 154"
+     fill="none"
+     stroke="#16a34a"
+     stroke-width="2"
+     stroke-dasharray="7 5"
+     marker-end="url(#arrg)"
+     id="path82" />
+  <text
+     x="301"
+     y="218"
+     text-anchor="middle"
+     font-size="14"
+     font-weight="bold"
+     fill="#16a34a"
+     id="text84"
+     style="-inkscape-font-specification:'sans-serif, Bold';font-family:sans-serif;font-weight:bold;font-style:normal;font-stretch:normal;font-variant:normal;font-size:14px;font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-anchor:middle;fill:#16a34a"><tspan
+       sodipodi:role="line"
+       id="tspan961">globální identifikátory usnadňující integraci dat</tspan></text>
+  <!-- Rozsah UPA -->
+  <path
+     d="M 30 236 L 30 248 L 762 248 L 762 236"
+     fill="none"
+     stroke="#0284c7"
+     stroke-width="2"
+     id="path86" />
+  <text
+     x="396"
+     y="272"
+     text-anchor="middle"
+     font-weight="bold"
+     font-size="17"
+     fill="#0c4a6e"
+     id="text88">první polovina UPA</text>
+  <text
+     x="396"
+     y="294"
+     text-anchor="middle"
+     font-size="14"
+     fill="#0369a1"
+     id="text90">60 až 80 % reálného času práce s daty</text>
+  <path
+     d="M 786 236 L 786 248 L 951 248 L 951 236"
+     fill="none"
+     stroke="#9ca3af"
+     stroke-width="2"
+     id="path92" />
+  <text
+     x="868"
+     y="270"
+     text-anchor="middle"
+     font-size="14"
+     font-style="italic"
+     fill="#6b7280"
+     id="text94">jiné předměty</text>
+</svg>

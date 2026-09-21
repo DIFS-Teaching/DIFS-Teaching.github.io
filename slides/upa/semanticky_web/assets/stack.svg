@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 1000 430" width="1000" height="430"
+     font-family="sans-serif" font-size="14" fill="#1f2937"
+     version="1.1" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Co se ujalo -->
+  <text x="60" y="28" font-size="16" font-weight="bold" fill="#0c4a6e">Co se ujalo</text>
+
+  <g>
+    <rect x="60" y="42" width="640" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="80" y="64" font-weight="bold" font-size="16" fill="#0c4a6e">IRI / URI</text>
+    <text x="80" y="82" font-size="13" fill="#0369a1">globální identifikátor čehokoli</text>
+  </g>
+  <g>
+    <rect x="60" y="94" width="640" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="80" y="116" font-weight="bold" font-size="16" fill="#0c4a6e">RDF &#8211; datový model</text>
+    <text x="80" y="134" font-size="13" fill="#0369a1">trojice, grafy, pojmenované grafy</text>
+  </g>
+  <g>
+    <rect x="60" y="146" width="640" height="46" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="80" y="168" font-weight="bold" font-size="16" fill="#0c4a6e">Serializace</text>
+    <text x="80" y="186" font-size="13" fill="#0369a1">Turtle &#183; JSON-LD &#183; N-Triples &#183; TriG &#183; RDF/XML</text>
+  </g>
+  <g>
+    <rect x="60" y="198" width="640" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="80" y="220" font-weight="bold" font-size="16" fill="#14532d">Slovníky a ontologie</text>
+    <text x="80" y="238" font-size="13" fill="#166534">RDFS &#183; OWL &#183; SKOS &#183; schema.org &#183; DCAT</text>
+  </g>
+  <g>
+    <rect x="60" y="250" width="640" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="80" y="272" font-weight="bold" font-size="16" fill="#14532d">Validace</text>
+    <text x="80" y="290" font-size="13" fill="#166534">SHACL &#183; ShEx</text>
+  </g>
+  <g>
+    <rect x="60" y="302" width="640" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="80" y="324" font-weight="bold" font-size="16" fill="#14532d">Dotazování</text>
+    <text x="80" y="342" font-size="13" fill="#166534">SPARQL 1.1 &#183; federace přes SERVICE</text>
+  </g>
+  <g>
+    <rect x="60" y="354" width="640" height="46" rx="6" fill="#f5f3ff" stroke="#7c3aed" stroke-width="2"/>
+    <text x="80" y="376" font-weight="bold" font-size="16" fill="#4c1d95">Aplikace</text>
+    <text x="80" y="394" font-size="13" fill="#6d28d9">znalostní grafy, propojená otevřená data</text>
+  </g>
+
+  <!-- Co se neujalo -->
+  <text x="730" y="28" font-size="16" font-weight="bold" fill="#94a3b8">Co se neujalo</text>
+
+  <g>
+    <rect x="730" y="42" width="210" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="835" y="71" text-anchor="middle" font-size="15" fill="#94a3b8">Unifying Logic</text>
+  </g>
+  <g>
+    <rect x="730" y="94" width="210" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="835" y="123" text-anchor="middle" font-size="15" fill="#94a3b8">Proof</text>
+  </g>
+  <g>
+    <rect x="730" y="146" width="210" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="835" y="175" text-anchor="middle" font-size="15" fill="#94a3b8">Trust</text>
+  </g>
+  <g>
+    <rect x="730" y="198" width="210" height="46" rx="6" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="835" y="227" text-anchor="middle" font-size="15" fill="#94a3b8">Autonomní agenti</text>
+  </g>
+
+  <text x="835" y="282" text-anchor="middle" font-size="13" font-style="italic" fill="#94a3b8">Horní patra původního</text>
+  <text x="835" y="302" text-anchor="middle" font-size="13" font-style="italic" fill="#94a3b8">&#8222;layer cake&#8220; nikdy</text>
+  <text x="835" y="322" text-anchor="middle" font-size="13" font-style="italic" fill="#94a3b8">nedostala standard</text>
+  <text x="835" y="342" text-anchor="middle" font-size="13" font-style="italic" fill="#94a3b8">ani nasazení.</text>
+</svg>

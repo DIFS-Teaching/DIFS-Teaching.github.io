@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 250"
+   width="1000"
+   height="250"
+   font-family="sans-serif"
+   font-size="14"
+   fill="#1f2937"
+   version="1.1"
+   id="svg43"
+   sodipodi:docname="triple.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview45"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.888"
+     inkscape:cx="501.32415"
+     inkscape:cy="126.32415"
+     inkscape:window-width="2560"
+     inkscape:window-height="1383"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg43" />
+  <defs
+     id="defs5">
+    <marker
+       id="arr"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         fill="#4b5563"
+         id="polygon2" />
+    </marker>
+  </defs>
+  <!-- Subjekt -->
+  <g
+     id="g13">
+    <ellipse
+       cx="170"
+       cy="110"
+       rx="140"
+       ry="46"
+       fill="#e0f2fe"
+       stroke="#0284c7"
+       stroke-width="2"
+       id="ellipse7" />
+    <text
+       x="170"
+       y="102"
+       text-anchor="middle"
+       font-family="monospace"
+       font-size="14"
+       fill="#0c4a6e"
+       id="text9">https://dokumenty.cz/</text>
+    <text
+       x="170"
+       y="122"
+       text-anchor="middle"
+       font-family="monospace"
+       font-size="14"
+       fill="#0c4a6e"
+       id="text11">clanek42</text>
+  </g>
+  <text
+     x="170"
+     y="184"
+     text-anchor="middle"
+     font-size="16"
+     font-weight="bold"
+     fill="#0284c7"
+     id="text15">subjekt</text>
+  <text
+     x="170"
+     y="206"
+     text-anchor="middle"
+     font-size="13"
+     font-style="italic"
+     fill="#0369a1"
+     id="text17">o čem mluvím</text>
+  <!-- Predikát -->
+  <line
+     x1="315"
+     y1="110"
+     x2="675"
+     y2="110"
+     stroke="#4b5563"
+     stroke-width="2.5"
+     marker-end="url(#arr)"
+     id="line19" />
+  <text
+     x="495"
+     y="105"
+     text-anchor="middle"
+     font-family="monospace"
+     font-size="15"
+     fill="#374151"
+     id="text23">dcterms:creator</text>
+  <text
+     x="495"
+     y="184"
+     text-anchor="middle"
+     font-size="16"
+     font-weight="bold"
+     fill="#4b5563"
+     id="text25">predikát</text>
+  <text
+     x="495"
+     y="206"
+     text-anchor="middle"
+     font-size="13"
+     font-style="italic"
+     fill="#6b7280"
+     id="text27">co o tom tvrdím</text>
+  <!-- Objekt -->
+  <g
+     id="g35">
+    <ellipse
+       cx="820"
+       cy="110"
+       rx="140"
+       ry="46"
+       fill="#dcfce7"
+       stroke="#16a34a"
+       stroke-width="2"
+       id="ellipse29" />
+    <text
+       x="820"
+       y="102"
+       text-anchor="middle"
+       font-family="monospace"
+       font-size="14"
+       fill="#14532d"
+       id="text31">https://lide.cz/</text>
+    <text
+       x="820"
+       y="122"
+       text-anchor="middle"
+       font-family="monospace"
+       font-size="14"
+       fill="#14532d"
+       id="text33">jan-novak</text>
+  </g>
+  <text
+     x="820"
+     y="184"
+     text-anchor="middle"
+     font-size="16"
+     font-weight="bold"
+     fill="#16a34a"
+     id="text37">objekt</text>
+  <text
+     x="820"
+     y="206"
+     text-anchor="middle"
+     font-size="13"
+     font-style="italic"
+     fill="#166534"
+     id="text39">hodnota nebo jiný zdroj</text>
+  <text
+     x="500"
+     y="42"
+     text-anchor="middle"
+     font-size="17"
+     font-weight="bold"
+     fill="#374151"
+     id="text41">„Článek 42 má autora Jana Nováka.“</text>
+</svg>

@@ -12,10 +12,13 @@
     },
     "contents": [
         "c000title.md",
+        "c005motivace.md",
         "c010uvod.md",
         "c020semweb.md",
+        "c025sparql.md",
         "c030ontologie.md",
         "c040web.md",
+        "c050aplikace.md",
         "c999final.md"
     ]
 }
