@@ -106,10 +106,10 @@
 # Kde vzít IRI?
 
 - Vlastní data -- vlastní IRI
-	- Např. `https://www.fit.vut.cz/student/938272`
+	- Např. `http://www.fit.vut.cz/student/938272`
 	- Obvykle společný *prefix*
 - Existující data -- veřejné znalostní báze
-	- `https://dbpedia.org/resource/Berlin`, `http://www.wikidata.org/entity/Q42`
+	- `http://dbpedia.org/resource/Berlin`, `http://www.wikidata.org/entity/Q42`
 - Ontologie -- strukturované slovníky
 	- IRI pro **predikáty** a pro **typy** (třídy) objektů
 - Zabudované: `rdf:type`
