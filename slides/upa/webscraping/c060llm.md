@@ -85,7 +85,9 @@ Tzn. bez ``ruční práce'' v podobě hledání elementů, regulárních výraz�
 	- Cache a dávkové zpracování
 - Hlavní problém je **nedeterminismus a ověřitelnost**
 	- Dva běhy nad stejnou stránkou, dva různé výsledky
-	- Jak poznáte, že model tiše vynechal tři řádky tabulky?
+	- Jak poznáme, že model tiše vynechal tři řádky tabulky?
+- Hromadné zpracování: LLM je pomalý
+	- Pro 5 stránek v pořádku, pro 500 práce na celou noc
 
 Note:
 Tohle je návrat ke &bdquo;Chci / Platím&ldquo; ze začátku přednášky.
@@ -102,8 +104,9 @@ U LLM extrakce se porucha tváří jako platná odpověď.
 - Zeptáme se modelu **jednou**: *vygeneruj selektory pro tuhle stránku*
 - Pak běží obyčejný **deterministický scraper**
 	- Levný, rychlý, opakovatelný, snadno testovatelný
-- Model zavoláme znovu, **teprve až scraper přestane fungovat**
-	- Změna webu je událost, ne každodenní stav
+- Přetrvávají problémy scraperů
+	- Scraper je křehký (*brittle*), změna ve zdroji jej může rozbít
+	- **Jak poznáme, že scraper přestal fungovat?**
 
 ---
 

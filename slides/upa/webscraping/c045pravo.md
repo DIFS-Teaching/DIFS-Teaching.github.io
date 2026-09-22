@@ -51,7 +51,7 @@ a blokuje GPTBot &ndash; k tomu se vrátíme na dalším slajdu, není to náhod
 <p class="cite" style="font-size: 85%">
 Use of any device, tool, or process designed to data mine or scrape the content
 using automated means is prohibited without prior written permission from IMDb.
-<br><em>&ndash; imdb.com/robots.txt, a tahle přednáška IMDb používá jako příklad</em>
+<br><em>&ndash; imdb.com/robots.txt</em>
 </p>
 
 <div class="small">
