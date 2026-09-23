@@ -26,7 +26,7 @@
 - Doménový model – E-R diagram nebo diagram tříd
 	- Identifikace entit – vlastnosti, jejich typ
 	- Identifikace vztahů – kardinalita 
-- Transformace na schéma databáze – _viz IDS, také v další přednášce_
+- Transformace na schéma databáze – viz IDS, také v další přednášce
 	- Entity na tabulky, vlastnosti na sloupce
 	- Vztahy: vazba primární – cizí klíč, příp. vazební tabulky
 - Primární klíč, indexy
@@ -94,8 +94,8 @@ ENGINE = InnoDB;
 3. Zaslání SQL dotazu
 	- Získáme výsledek dotazu
 4. Převzetí a zpracování výsledků
-	- _(případně zpět k bodu 3)_
-5. Ukončení spojení _(často na pozadí)_
+	- (případně zpět k bodu 3)
+5. Ukončení spojení (často na pozadí)
 
 ---
 

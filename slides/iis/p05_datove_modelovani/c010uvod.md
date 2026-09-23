@@ -6,4 +6,4 @@
 	- Uživatelské rozhraní -- **vizualizace**
 - Způsob reprezentace dat vychází z **modelování**
 	- Abstrakce modelované reality
-- Jak lze *obecně popsat* a následně *reprezentovat* strukturovaná data?
+- Jak lze _obecně popsat_ a následně _reprezentovat_ strukturovaná data?

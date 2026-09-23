@@ -9,12 +9,12 @@
 # Typová kontrola
 
 - Pro konkrétní aplikaci je možno definovat konkrétní jména značek, atributů, atd.
-- Zavedením možnosti **_typového určení a kontroly_** (text, čísla, enumerace apod.) obsahu značek umožňuje 
-	- **_definovat_**
-	- **_kontrolovat_**
-	- **_přenášet_**
+- Zavedením možnosti **typového určení a kontroly** (text, čísla, enumerace apod.) obsahu značek umožňuje 
+	- definovat
+	- kontrolovat
+	- přenášet
 	obecné datové struktury.
-- Tím se ze značkovacích jazyků stává **_obecný prostředek pro_** **_serializaci_** **_strukturovaných dat_**
+- Tím se ze značkovacích jazyků stává obecný prostředek pro **serializaci strukturovaných dat**
 
 ---
 
@@ -155,14 +155,14 @@ Užívá se notace známá z **regulárních výrazů**
 - `ENTITIES`	seznam entit
 - `ID`			unikátní identifikátor
 - `IDREF`, `IDREFS` 		odkaz na identifikátor
-- *výčet*		výčet hodnot `(hodnota|hodnota|…)`
+- _výčet_		výčet hodnot `(hodnota|hodnota|…)`
 
 ---
 
 # Standardní hodnota, resp. druh atributu
 - není nezbytná
 - `#REQUIRED`	povinný atribut
-- *hodnota*		udává implicitní hodnotu atributu
+- _hodnota_		udává implicitní hodnotu atributu
 - `#IMPLIED`	     (před hodnotou) nepovinný atribut
 - `#FIXED`		     (před hodnotou) je to jediná možná hodnota
 

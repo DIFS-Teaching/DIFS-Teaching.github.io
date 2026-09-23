@@ -9,7 +9,7 @@
 
 # REST
 
-- Předpokládá CRUD (Create-Retrieve-Update-Delete) operace s *entitami*
+- Předpokládá CRUD (Create-Retrieve-Update-Delete) operace s _entitami_
 	- Ale ve skutečnosti přistupujeme k business vrstvě, ne přímo k datům!
 	- Tzn. voláme aplikační logiku
 - Úzká vazba na HTTP

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg viewBox="0 0 800 370" width="800" height="370" font-family="sans-serif" font-size="14" fill="#1f2937" version="1.1" xmlns="http://www.w3.org/2000/svg">
+  <line x1="400" y1="150" x2="115" y2="232" stroke="#4b5563" stroke-width="2"/>
+  <line x1="400" y1="150" x2="305" y2="232" stroke="#4b5563" stroke-width="2"/>
+  <line x1="400" y1="150" x2="495" y2="232" stroke="#4b5563" stroke-width="2"/>
+  <line x1="400" y1="150" x2="685" y2="232" stroke="#4b5563" stroke-width="2"/>
+  <rect x="339.6" y="176" width="120.80000000000001" height="24" rx="12" fill="#ffffff" stroke="#9ca3af"/>
+  <text x="400" y="193" text-anchor="middle" font-size="13" font-style="italic" fill="#374151">celé soubory</text>
+  <rect x="210" y="10" width="380" height="140" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8"/>
+  <text x="400" y="34" text-anchor="middle" font-weight="bold" fill="#0c4a6e" font-size="17">Souborový server</text>
+  <text x="400" y="52" text-anchor="middle" fill="#0369a1" font-size="13">(file-server)</text>
+  <rect x="235" y="68" width="175" height="62" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="6"/>
+  <text x="322" y="103" text-anchor="middle" font-weight="bold" fill="#475569" font-size="15">sdílené soubory</text>
+  <path d="M 470 72 L 470 124 A 45 10 0 0 0 560 124 L 560 72" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <ellipse cx="515" cy="72" rx="45" ry="10" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="515" y="96" text-anchor="middle" font-weight="bold" fill="#78350f" font-size="13">Databáze</text>
+  <text x="515" y="112" text-anchor="middle" font-weight="bold" fill="#78350f" font-size="13">(soubory)</text>
+  <rect x="45" y="232" width="140" height="78" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <rect x="107" y="310" width="16" height="10" fill="#3b82f6"/>
+  <rect x="75" y="320" width="80" height="6" fill="#3b82f6" rx="3"/>
+  <text x="115" y="276" text-anchor="middle" font-weight="bold" fill="#1e3a8a" font-size="15">SŘBD + IS</text>
+  <rect x="235" y="232" width="140" height="78" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <rect x="297" y="310" width="16" height="10" fill="#3b82f6"/>
+  <rect x="265" y="320" width="80" height="6" fill="#3b82f6" rx="3"/>
+  <text x="305" y="276" text-anchor="middle" font-weight="bold" fill="#1e3a8a" font-size="15">SŘBD + IS</text>
+  <rect x="425" y="232" width="140" height="78" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <rect x="487" y="310" width="16" height="10" fill="#3b82f6"/>
+  <rect x="455" y="320" width="80" height="6" fill="#3b82f6" rx="3"/>
+  <text x="495" y="276" text-anchor="middle" font-weight="bold" fill="#1e3a8a" font-size="15">SŘBD + IS</text>
+  <rect x="615" y="232" width="140" height="78" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <rect x="677" y="310" width="16" height="10" fill="#3b82f6"/>
+  <rect x="645" y="320" width="80" height="6" fill="#3b82f6" rx="3"/>
+  <text x="685" y="276" text-anchor="middle" font-weight="bold" fill="#1e3a8a" font-size="15">SŘBD + IS</text>
+  <text x="400" y="355" text-anchor="middle" fill="#374151" font-size="15">osobní počítače (PC)</text>
+</svg>

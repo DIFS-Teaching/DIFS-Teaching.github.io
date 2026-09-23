@@ -25,7 +25,7 @@
 	- `index.php`, `bootstrap.php`, ...
 	- Zařízeno nejčasteji konfigurací HTTP serveru (apache, nginx, ...)
 - Vstupní skript
-	- Nastartuje framework (vlastní *bootstraping*)
+	- Nastartuje framework (vlastní _bootstrapping_)
 		- Přečte konfiguraci, vytvoří instance služeb, spojení s databází, atd.
 	- Dekóduje požadavek, aktivuje logiku frameworku a vrátí výsledek (HTTP odpověď)
 

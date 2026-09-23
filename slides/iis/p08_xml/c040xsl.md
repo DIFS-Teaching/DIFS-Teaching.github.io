@@ -144,8 +144,8 @@ address[attribute::city='Brno']
 
 # Transformace
 - XSLT vytváří z jednoho dokumentu obecně jiný dokument (např. XML, který může odpovídat jinému DTD)
-- transformace jsou popsány šablonami – **_templates_**
-- šablony jsou přiřazeny elementům zdroje pomocí výrazů **_XPath_**
+- transformace jsou popsány šablonami – _templates_
+- šablony jsou přiřazeny elementům zdroje pomocí výrazů _XPath_
 
 ---
 

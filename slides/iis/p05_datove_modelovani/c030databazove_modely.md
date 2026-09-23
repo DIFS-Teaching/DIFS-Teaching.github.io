@@ -10,7 +10,7 @@
 # Data, metadata, atd.
 
 - **Data**
-	- Konkrétní hodnota (*výskyt*)
+	- Konkrétní hodnota (_výskyt_)
 	- Např. "Jan Novák", "1250 Kč", ... (i strukturované hodnoty)
 - **Metadata** = jak vypadají data
 	- Formální popis struktury dat
@@ -38,7 +38,7 @@
 	- Zjednodušení reality pro potřeby návrhu IS -- abstrakce
 	- Konzultace s odborníky na cílovou doménu -- spolupráce
 - Vytvořit popis pomocí prostředků příslušného datového modelu
-	- Vytvořit **metadata** -- implementace
+	- Vytvořit metadata -- implementace
 	- Různé prostředky podle způsobu použití
 
 ---
@@ -46,8 +46,8 @@
 # Databázové modely
 - Modely, které je schopen interpretovat systém pro řízení databázového systému SŘBD
 - Jinak též zvané **produkční modely**
-- V jejich definičním jazyku musejí být zapsána **metadata** pro všechny datové struktury uložené v databázi
-- Prozatím budeme uvažovat jako produkční **relační a objektový datový model**.
+- V jejich definičním jazyku musejí být zapsána metadata pro všechny datové struktury uložené v databázi
+- Prozatím budeme uvažovat jako produkční _relační a objektový datový model_.
 
 ---
 
@@ -76,12 +76,12 @@
 # Entity-relationship (E-R) diagram
 - Hlavní komponenty E-R diagramu jsou:
 	- **entita** a 
-	- **vztah** (**_relationship_** nikoliv **_relation_**).
-- **Entity** modelují objekty, které se vyskytují v modelovaném fyzickém systému
+	- **vztah** (_relationship_ nikoliv _relation_).
+- Entity modelují objekty, které se vyskytují v modelovaném fyzickém systému
 	- např. studenti, profesoři, předměty na vysoké škole
 	- a jejich **atributy**
-- **Vztahy** modelují spojení mezi entitami -- například profesoři _učí_ předměty. 
-- Navíc tvoří důležitou část E-R specifikace **integritních omezení** na entitách a vztazích, např. profesor učí **pouze jeden předmět** v daném čase.
+- Vztahy modelují spojení mezi entitami -- například profesoři _učí_ předměty. 
+- Navíc tvoří důležitou část E-R specifikace _integritních omezení_ na entitách a vztazích, např. profesor učí pouze jeden předmět v daném čase.
 
 ---
 
@@ -96,7 +96,7 @@
 # Diagram tříd
 
 - **Třídy**
-	- Jejich **vlastnosti** (jméno a datový typ)
+	- Jejich vlastnosti (jméno a datový typ)
 - **Vztahy**
 	- S různou kardinalitou
 - **Dědičnost**
@@ -120,7 +120,7 @@
 ---
 
 # Relační model dat
-- Tabulka (= **relace**) v relačním modelu je _kolekcí struktur_, přičemž datové typy vlastností jsou _jednoduché_ (tedy především _ne odkazy/vztahy_)
+- Tabulka (= **relace**) v relačním modelu je **kolekcí struktur**, přičemž datové typy vlastností jsou _jednoduché_ (tedy především ne odkazy/vztahy)
 - Srovnej: _Podmnožina kartézského součinu_
 
 ```vbnet
@@ -138,7 +138,7 @@ collection of
 
 # Vztahy
 - Umožňují odkazovat z jedné (strukturované) hodnoty (vlastníka) jinou (člen)
-- Musí existovat datový typ _jednoznačné identifikující (odkazující) strukturovanou hodnotu_ (např. OID)
+- Musí existovat datový typ jednoznačně identifikující (odkazující) strukturovanou hodnotu (např. OID)
 - Vztah je definován prvkem vlastníka typu odkaz (reference) a členem, který je hodnotou odkazu identifikován. 
 
 ---
@@ -160,7 +160,7 @@ collection of
 	- Kolekce (někdy omezení pouze na kolekce prostých struktur a OID)
 	- Prosté struktury (ostatní)
 - Další vlastnosti zde neřešené (dědičnost apod.)
-- **Odpadá nutnost transformace objektového modelu na schéma relační databáze**
+- **Odpadá nutnost transformace** objektového modelu na schéma relační databáze
 
 ---
 
@@ -218,8 +218,8 @@ end object
 
 # Transformace modelů
 
-- Mezi modely mohou existovat transformace, zejména, pokud jsou si *sémanticky blízké*
-- Velmi častou je transformace **E-R diagramu na relační datový model**
+- Mezi modely mohou existovat transformace, zejména, pokud jsou si _sémanticky blízké_
+- Velmi častou je transformace E-R diagramu na relační datový model
 	- viz. postup z IDS
 
 ---
@@ -237,7 +237,7 @@ end object
 ---
 
 # Závěr
-- **Ze struktur, kolekcí a základních typů můžeme vytvořit známé produkční i konceptuální modely**
+- Ze struktur, kolekcí a základních typů můžeme vytvořit známé produkční i konceptuální modely
 - Reprezentace kolekcí a struktur:
 	- Textová reprezentace ve formálních jazycích -- **serializace** (1D) -- komunikace mezi složkami systému
 	- Grafická reprezentace - **vizualizace** (2D) -- vstup a výstup systému

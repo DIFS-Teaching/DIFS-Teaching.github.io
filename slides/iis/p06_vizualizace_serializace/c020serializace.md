@@ -9,11 +9,11 @@
 
 # Serializace
 
-- _Serizalizace_ (_marshalling_) je proces konvertování datových struktur nebo stavů objektů do formátu, který může být 
+- **Serializace** (_marshalling_) je proces konvertování datových struktur nebo stavů objektů do formátu, který může být 
 	- uložen (např. textový soubor) nebo 
 	- přenášen síťovým přenosem
-- _Deserializace_ (_unmarshalling_) – rekonstrukce hodnoty na tentýž nebo jiný použitelný i netextový formát (vytvoření sémanticky ekvivalentního klonu původní datové struktury)
-- Tento proces je složitý zejména v případě použití referujících hodnot (_vztahů_) a u objektů také u _metod_.
+- **Deserializace** (_unmarshalling_) – rekonstrukce hodnoty na tentýž nebo jiný použitelný i netextový formát (vytvoření sémanticky ekvivalentního klonu původní datové struktury)
+- Tento proces je složitý zejména v případě použití referujících hodnot (vztahů) a u objektů také u metod.
 
 ---
 
@@ -139,7 +139,7 @@ comments: >
 
 ![Zástupný symbol pro obsah 12](assets/image7.gif) <!-- .element: style="width:80%" -->
 
-Je serializací **_neuspořádané struktury_**
+Je serializací **neuspořádané struktury**
 
 ---
 
@@ -147,7 +147,7 @@ Je serializací **_neuspořádané struktury_**
 
 ![Obrázek 4](assets/image8.gif) <!-- .element: style="width:80%" -->
 
-Je serializací **_uspořádané kolekce – seznamu_**
+Je serializací **uspořádané kolekce** – seznamu
 
 ---
 
@@ -408,6 +408,6 @@ Je serializací **_uspořádané kolekce – seznamu_**
 - **XML**
    - Dokumenty spíše orientované na text
    - Často veřejně sdílená data
-   - Celý ekosystém navazujících technologií -- *v dalších přednáškách*
+   - Celý ekosystém navazujících technologií -- v dalších přednáškách
       - Adresování, transformace, vizualizace, ...
 - Často je volba zbytečně subjektivní :-)

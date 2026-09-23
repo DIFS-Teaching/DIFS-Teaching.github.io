@@ -7,24 +7,24 @@
 ---
 
 # Databázová integrita
-- Databáze vyhovuje zadaným pravidlům – **_integritním omezením (IO)_**. Tato integritní omezení bývají nejčastěji součástí definice databáze  a za jejich splnění zodpovídá **systém řízení báze dat (SŘBD)**
+- Databáze vyhovuje zadaným pravidlům – **integritním omezením** (IO). Tato integritní omezení bývají nejčastěji součástí definice databáze  a za jejich splnění zodpovídá _systém řízení báze dat_ (SŘBD)
 - Mohou být zadána výrazem (_deklarativně_) nebo programem (_procedurálně_)
-- Integritní omezení se mohou týkat _jednotlivých hodnot_ vkládaných do polí databáze (například známka z předmětu musí být v rozsahu 1 až 5) 
+- Integritní omezení se mohou týkat **jednotlivých hodnot** vkládaných do polí databáze (například známka z předmětu musí být v rozsahu 1 až 5) 
 
 ---
 
 # Databázová integrita
-- Může jít o podmínku na _kombinaci hodnot_ v některých polích jednoho záznamu (například datum narození nesmí být pozdější než datum úmrtí). 
-- Může se týkat _i celé množiny záznamů daného typu_ 
-- Může jít o požadavek na _unikátnost hodnot daného pole či kombinace polí_ v rámci celé množiny záznamů daného typu, které se v databázi vyskytují (například číslo průkazu v záznamech o osobách).
+- Může jít o podmínku na **kombinaci hodnot** v některých polích jednoho záznamu (například datum narození nesmí být pozdější než datum úmrtí). 
+- Může se týkat i **celé množiny záznamů** daného typu 
+- Může jít o požadavek na **unikátnost hodnot** daného pole či kombinace polí v rámci celé množiny záznamů daného typu, které se v databázi vyskytují (například číslo průkazu v záznamech o osobách).
 
 ---
 
 # Integrita datovým typem
-- _Datový typ_ je množina hodnot spolu s operacemi, které je možné nad těmito hodnotami provádět.
+- **Datový typ** je množina hodnot spolu s operacemi, které je možné nad těmito hodnotami provádět.
 - Je vlastností jisté části modelu (proměnné, části jiného datového typu apod.) a _omezuje_ její použití (jde vlastně o _integritní omezení_ části modelu). Omezuje je tak, že tato část modelu může:
-	- _nabývat pouze jisté množiny hodnot_ a
-	- _může s ní být prováděna pouze jistá omezená množina operací_.
+	- nabývat pouze jisté množiny hodnot a
+	- může s ní být prováděna pouze jistá omezená množina operací.
 - Výhodou zavedení datového typu pro jistou část modelu je zejména možnost kontrolovat (a to nejčastěji předem), zda se s touto částí zachází korektně (zda ukládaná hodnota je správná a použitá operace správně použita). 
 
 ---
@@ -37,8 +37,8 @@
 ---
 
 # Primární klíč
-- Pole nebo kombinace polí, jednoznačně identifikující každý záznam v relaci. Žádné pole, které je součástí primárního klíče, nesmí obsahovat  nedefinovanou hodnotu. Každá tabulka má mít definovaný právě jeden primární klíč (_entitní integrita_).
-- _Primární klíč_ má dvě základní vlastnosti: _jedinečnost_ v rámci tabulky a _definovanou hodnotu_.
+- Pole nebo kombinace polí, jednoznačně identifikující každý záznam v relaci. Žádné pole, které je součástí primárního klíče, nesmí obsahovat  nedefinovanou hodnotu. Každá tabulka má mít definovaný právě jeden primární klíč (**entitní integrita**).
+- Primární klíč má dvě základní vlastnosti: **jedinečnost** v rámci tabulky a **definovanou hodnotu**.
 
 ---
 
@@ -49,24 +49,24 @@
 ---
 
 # Referenční integrita
-- Častou v relačních databázích je tzv. _referenční integrita_. 
+- Častou v relačních databázích je tzv. **referenční integrita**. 
 - Jedná se o požadavek, aby pro pole záznamu, jež má obsahovat odkaz na jiný záznam někde v databázi, takový odkazovaný záznam skutečně existoval, tedy aby takový odkaz nevedl _do prázdna_ a nejednalo se o tzv. _databázového sirotka_.
-- Další integritní omezení lze definovat za pomocí tzv. _triggerů_. Jde o komplexnější (programově definované) definice kontrol, jež se budou provádět při každém pokusu o zápis záznamu do databáze.
+- Další integritní omezení lze definovat za pomocí tzv. **triggerů**. Jde o komplexnější (programově definované) definice kontrol, jež se budou provádět při každém pokusu o zápis záznamu do databáze.
 
 ---
 
 # Referenční integrita
-- Referenční integrita se definuje _cizím klíčem_, a to pro dvojici tabulek nebo nad jednou tabulkou, která obsahuje na sobě závislá data (například stromové struktury).
+- Referenční integrita se definuje **cizím klíčem**, a to pro dvojici tabulek nebo nad jednou tabulkou, která obsahuje na sobě závislá data (například stromové struktury).
 - Tabulka, v níž je pravidlo uvedeno, se nazývá podřízená tabulka (používá se také anglický termín _slave_). Tabulka, jejíž jméno je v omezení uvedeno, je nadřízená tabulka (_master_).
 
 ---
 
 # Konzistence
-- DB musí splňovat všechna _integritní omezení_ (IO)
-- Udržování _interní konzistence_ (redundantních, vícenásobně uložených/replikovaných dat v distribuovaných systémech)
+- DB musí splňovat všechna **integritní omezení** (IO)
+- Udržování **interní konzistence** (redundantních, vícenásobně uložených/replikovaných dat v distribuovaných systémech)
 	- Máme více lokálních kopií dat (replikace)
 	- Jak zajistíme, že jsou kopie vzájemně konzistentní?
-- Dodržování _pravidel daných modelovaným systémem_
+- Dodržování **pravidel daných modelovaným systémem**
 
 ---
 
@@ -93,61 +93,61 @@
 - Které operace prováděné nad daty systém stihl před poruchou skutečně provést a které ne? 
 - Co se stane, když více uživatelů současně bude modifikovat tentýž údaj?
 - Budou údaje v databázi stále smysluplné ?
-- Hledáním odpovědí a jejich aplikací při zajištění spolehlivosti se zabývají **_transakční modely_** a celý obor **_transakčního zpracování_**.
+- Hledáním odpovědí a jejich aplikací při zajištění spolehlivosti se zabývají _transakční modely_ a celý obor _transakčního zpracování_.
 
 ---
 
 # Pojem transakce
-- **_Transakce_** představuje jednotku práce vykonávanou **_souvislým a bezpečným způsobem nezávisle na jiných transakcích_**.
-	- *Databázové transakce* -- omezeno pouze na DB vrstvu (zajišťuje DB server)
-	- *Business transakce* -- jednotka business logiky, nutno řešit na business vrstvě
+- **Transakce** představuje jednotku práce vykonávanou souvislým a bezpečným způsobem nezávisle na jiných transakcích.
+	- **Databázové transakce** -- omezeno pouze na DB vrstvu (zajišťuje DB server)
+	- **Business transakce** -- jednotka business logiky, nutno řešit na business vrstvě
 		- Podpora na pokročilejších platformách pro implementaci IS, např. Java (ne PHP, Python)
 - Transakce má dva základní účely:
 
 ---
 
 # Pojem transakce
-1. Poskytnout bezpečnou jednotku práce, která dovoluje správné **_zotavení z poruch_** a udržuje systém v konzistentním stavu i v případě poruchy systému, když je zastaveno provádění (úplně nebo částečně) a některé operace zůstávají nedokončené nebo v nejistém stavu 
-2. Poskytnout **_izolaci souběžně prováděných operací_**. Pokud tato izolace není poskytnuta, výstupy jsou potenciálně chybové (souběh).
+1. Poskytnout bezpečnou jednotku práce, která dovoluje správné **zotavení z poruch** a udržuje systém v konzistentním stavu i v případě poruchy systému, když je zastaveno provádění (úplně nebo částečně) a některé operace zůstávají nedokončené nebo v nejistém stavu 
+2. Poskytnout **izolaci** souběžně prováděných operací. Pokud tato izolace není poskytnuta, výstupy jsou potenciálně chybové (souběh).
 
 ---
 
 # Pojem transakce
-- **_Skupina operací_** (akcí) prováděných jako celek (buď celá dávka nebo nic)
+- **Skupina operací** (akcí) prováděných jako celek (buď celá dávka nebo nic)
 - Modelování stavu popisovaného výseku reálného světa
 	- popis a provádění nerozlučných příkazů
 	- první historické zmínky – 60. léta
 	- důležitý pojem v oblasti databází
-- **_Transakce_** je speciální druh programu, který je spouštěn v aplikaci **_OLTP_** (On Line Transaction Processing)
+- Transakce je speciální druh programu, který je spouštěn v aplikaci OLTP (_On Line Transaction Processing_)
 
 ---
 
 # Systém pro zpracování transakcí - TPS
-- Systém (platforma, databázový systém) **_podporující provádění transakcí_** – transakční systém
-- Zajišťuje speciální **_vlastnosti transakcí_** (atomičnost, nezávislost, trvanlivost)
+- Systém (platforma, databázový systém) podporující provádění transakcí – **transakční systém**
+- Zajišťuje speciální vlastnosti transakcí (atomičnost, nezávislost, trvanlivost)
 
-- Angl. **_Transactional_** **_Processing_** **_System_** (zkratka **TPS**)
+- Angl. _Transactional Processing System_ (zkratka **TPS**)
 
 ---
 
 # Základní vlastnosti transakce
 - Žádoucí vlastnosti transakcí jsou:
-	- **_Atomičnost_** (**A**tomicity) – každá transakce je dokončena zcela nebo vůbec
-	- **_Konzistence_** (**C**onsistence) – databázová konzistence (správná reflexe stavu reálného světa a dodržování omezujících pravidel pro hodnoty)
-	- **_Izolovanost_** (**I**solation, **I**ndependence) – souběžné provádění má totožný efekt jako sekvenční
-	- **_Trvanlivost_** (**D**urability) – odolnost proti ztrátě již dokončených změn
-- V databázové praxi se pro tyto vlastnosti užívá akronym **_ACID_**.
+	- **Atomičnost** (**A**tomicity) – každá transakce je dokončena zcela nebo vůbec
+	- **Konzistence** (**C**onsistence) – databázová konzistence (správná reflexe stavu reálného světa a dodržování omezujících pravidel pro hodnoty)
+	- **Izolovanost** (**I**solation, **I**ndependence) – souběžné provádění má totožný efekt jako sekvenční
+	- **Trvanlivost** (**D**urability) – odolnost proti ztrátě již dokončených změn
+- V databázové praxi se pro tyto vlastnosti užívá akronym **ACID**.
 
 ---
 
 # Kdo co zajišťuje
 - Programátor je zodpovědný za vytváření konzistentních transakcí.  TPS považuje
-	- **_konzistenci_** za zajištěnou programátorem (případně částečně systémem pro kontrolu integritních omezení)
+	- _konzistenci_ za zajištěnou programátorem (případně částečně systémem pro kontrolu integritních omezení)
 - a zaopatřuje 
-	- **_atomičnost_**, 
-	- **_izolovanost_** a 
-	- **_trvanlivost_**, 
-- což jsou vlastnosti nutné pro zajištění **_souběžného spouštění konzistentních transakcí_** a případného **_zotavení z chyb či poruch_**.
+	- _atomičnost_, 
+	- _izolovanost_ a 
+	- _trvanlivost_, 
+- což jsou vlastnosti nutné pro zajištění souběžného spouštění konzistentních transakcí a případného zotavení z chyb či poruch.
 
 ---
 

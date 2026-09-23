@@ -73,7 +73,7 @@
 
 # Server
 
--   Implementuje _busines logiku_ (operace)
+-   Implementuje _business logiku_ (operace)
     -   Každá operace má obvykle svoje URL (případně parametrizovatelné)
 -   Poskytuje REST API pro jednotlivé operace
 -   Libovolná serverová platforma

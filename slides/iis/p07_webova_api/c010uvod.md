@@ -18,9 +18,9 @@
 	- Definuje jednoduchý formát dokumentů pro popis volání a odpovědi
 		- Jméno volané funkce, jména parametrů
 		- Výsledek volání (návratové hodnoty)
-- **SOAP** (Simple Object Access Protocol, 2000) -- _**Web Services**_
+- **SOAP** (Simple Object Access Protocol, 2000) -- _Web Services_
 	- Rozšíření formátu zpráv
-	- WSDL (*Web Service Description Language*)
+	- WSDL (_Web Service Description Language_)
 		- Umožňuje popsat a sdílet rozhraní služby v XML
 		- Možnost automatického generování klienta na implementační platformě
 

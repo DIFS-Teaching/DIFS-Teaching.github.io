@@ -25,7 +25,7 @@
 	- `.htaccess`
 - Konfigurační soubory aplikace
 - Dočasné soubory
-	- *Adresáře s právem zápisu*
+	- Adresáře s právem zápisu
 	- `/var/*`, `/temp`, `/log` apod.
 
 ---

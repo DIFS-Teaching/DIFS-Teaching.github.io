@@ -53,7 +53,7 @@ Demo: https://github.com/DIFS-Teaching/basic-demos/tree/master/php-rest-db
 
 # Využití PHP frameworku
 
-- Webový framework zajistí routing a zavolání *controlleru*
+- Webový framework zajistí routing a zavolání _controlleru_
 - Controller volá aplikační logiku a definuje odpověď
 - Dekódování JSON:
 	- Podpora deserializace. Např. `$request->json()->all()` v Laravel.
