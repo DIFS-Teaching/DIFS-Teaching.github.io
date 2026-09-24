@@ -172,3 +172,10 @@ Datový model (objektový, relační, ...)
 - Nasazují se odděleně
 - \+ Technologická nezávislost, rychlé aktualizace
 - \- Testovatelnost, režie komunikace, konzistence dat (distribuované transakce), riziko nekompatibility, řetězové selhání, …
+
+---
+
+# Monolit ⨉ modulární monolit ⨉ mikroslužby
+<!-- .slide: class="normal centered fullspace" -->
+
+![Srovnání monolitu, modulárního monolitu a mikroslužeb](assets/monolit-mikrosluzby.svg) <!-- .element: style="height:760px;margin-top:30px;" -->
