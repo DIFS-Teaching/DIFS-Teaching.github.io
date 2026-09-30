@@ -1,0 +1,37 @@
+{
+    "id": "p03_php",
+    "title": "IIS Dynamické stránky v PHP",
+    "author": "Jiří Hynek <hynek@vut.cz>, Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "cs",
+    "template": {
+        "name": "fit",
+        "properties": {
+            "footer": "IIS &ndash; Dynamické stránky v PHP"
+        }
+    },
+    "contents": [
+        "c000title.md",
+        "c010uvod.md",
+        "c020html.md",
+        "c030php.md",
+        "c040hlavicky.md",
+        "c050cookies.md",
+        "c060formulare.md",
+        "c070session.md",
+        "c999final.md"
+    ],
+    "reveal": {
+        "mathjax2": {
+            "tex2jax": {
+                "skipTags": [
+                    "script",
+                    "noscript",
+                    "style",
+                    "textarea",
+                    "pre",
+                    "code"
+                ]
+            }
+        }
+    }
+}
