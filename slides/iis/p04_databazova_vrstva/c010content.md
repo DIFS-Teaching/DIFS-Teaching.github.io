@@ -40,8 +40,8 @@
 	- Praktické problémy – vše se může změnit
 - Umělý primární klíč
 	- Je nutné zajistit unikátnost v rámci tabulky
-	- Generované cizí klíče – různá podpora v db systémech
-	- MySQL: volba auto_increment u primárního klíče
+	- Generované primární klíče – různá podpora v db systémech
+	- MySQL: volba `AUTO_INCREMENT` u primárního klíče
 
 ---
 
@@ -61,7 +61,7 @@
 
 ```sql
 CREATE DATABASE demo;
-CREATE USER 'demo2'@'localhost' IDENTIFIED WITH 'password';
+CREATE USER 'demo2'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON `demo`.* TO 'demo2'@'localhost';
 ```
 
@@ -70,7 +70,7 @@ GRANT ALL PRIVILEGES ON `demo`.* TO 'demo2'@'localhost';
 
 ```sql
 CREATE TABLE `users`(
-	`id` INT NOT NULL,
+	`id` INT NOT NULL AUTO_INCREMENT,
 	`name` VARCHAR(255) NOT NULL,
 	`surname` VARCHAR(255) NOT NULL,
 	 PRIMARY KEY (`id`))
@@ -102,11 +102,12 @@ ENGINE = InnoDB;
 # Relační databáze v PHP
 - Historicky vlastní API pro každý databázový systém
 	- Typicky sada funkcí v PHP
-	- Např. `mysql_xxxx()`
+	- Např. `mysql_xxxx()` – odstraněno v PHP 7.0
+	- Dodnes např. `mysqli` (pouze MySQL/MariaDB), `pgsql`
 - Snaha o sjednocení
 	- Abstraktní vrstva s ovladači pro různé systémy
 	- PHP Data Objects (PDO) – standard v PHP od verze 5.1
-	- Existují různé další alternativy třetích stran
+	- Další abstrakce třetích stran, např. Doctrine DBAL, Nette Database, Laravel Query Builder (viz frameworky)
 
 ---
 
@@ -115,48 +116,51 @@ ENGINE = InnoDB;
 - Poskytuje **standardní rozhraní** pro základní operace
 	- Objektově orientované rozhraní
 - Toto rozhraní implementují **ovladače** (_drivers_) pro jednotlivé konkrétní systémy
-	- Např. MS SQL, Firebird, IBM, Informix, MySQL, Oracle, DB2, PostgreSQL, SQLite, …
-	- Viz [dokumentace k PDO](http://php.net/manual/en/book.pdo.php)
+	- Součástí PHP: MySQL/MariaDB, PostgreSQL, SQLite, Firebird, ODBC, MS SQL/Sybase (dblib)
+	- Samostatně instalované (PECL, výrobce): Oracle (od PHP 8.4), IBM DB2, Informix, MS SQL Server (`pdo_sqlsrv`)
+	- Viz [dokumentace k PDO](https://www.php.net/manual/en/book.pdo.php)
 
 ---
 
 # Připojení k databázi
 - Vytvoření instance třídy PDO
 - Specifikace spojení pomocí DSN (data source name)
-
+	- Včetně kódování spojení – `utf8mb4` (`utf8` je v MySQL jen 3bajtový `utf8mb3`)
 
 ```php
 <?php
-$dsn = 'mysql:host=localhost;dbname=testdb';
-$username = 'username';
-$password = 'password';
-$options = array(
-    PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8',
-); 
+$dsn = 'mysql:host=localhost;dbname=testdb;charset=utf8mb4';
+$username = 'username';
+$password = 'password';
+$options = [
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,      // výchozí od PHP 8.0
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, // výchozí je FETCH_BOTH
+];
 
-$pdo = new PDO($dsn, $username, $password, $options);
+$pdo = new PDO($dsn, $username, $password, $options);
 ```
 
 ---
 
 # Zaslání SQL dotazu
-- Jednorázový dotaz: PDO::query
+- Dotaz bez parametrů: `PDO::query()`
 
 ```php
 $stmt = $pdo->query("SELECT name, surname FROM users");
 ```
 
-- Opakovaný dotaz: PDO::prepare a PDO::execute
+- Dotaz s parametry: `PDO::prepare()` a `PDOStatement::execute()`
+	- Připravený dotaz lze vykonat i opakovaně s jinými parametry
 
 ```php
 // Připravení dotazu
 $stmt = $pdo->prepare("SELECT name, surname 
 	FROM users WHERE id = ?");
 // Vykonání dotazu
-$stmt->execute(array($userId));
+$stmt->execute([$userId]);
 ```
 
-- Získáme tzv. _statement_ ($result)
+- Získáme objekt _statement_ (`PDOStatement`)
 - **Parametry:** prevence SQL injection, viz dále
 
 ---
@@ -166,15 +170,15 @@ $stmt->execute(array($userId));
 - Sloupce výsledné tabulky odpovídají projekci v příkazu SELECT.
 
 ```php
-while ($row = $stmt->fetch())
+while ($row = $stmt->fetch())
 {
-    echo $row['name'] . "\n";
+    echo $row['name'] . "\n";
 
-    echo $row['surname'] . "\n";
+    echo $row['surname'] . "\n";
 }
 ```
 
-- Alternativně přístup ke sloupcům přes indexy.
+- Režim lze zvolit i pro jednotlivé volání: `fetch(PDO::FETCH_NUM)` – indexy sloupců, `PDO::FETCH_ASSOC` – jména sloupců, `PDO::FETCH_BOTH` – obojí
 
 ---
 
@@ -183,9 +187,8 @@ while ($row = $stmt->fetch())
 - Opatrně: počet řádků je nutno omezit, např. pomocí `WHERE` (na rovnost), `LIMIT` apod.
 
 ```php
-$stmt = $pdo->prepare("SELECT name, surname
+$stmt = $pdo->query("SELECT name, surname
 	FROM users LIMIT 100");
-$stmt->execute();
 $data = $stmt->fetchAll();
 foreach ($data as $row) {
 	echo $row["name"] . "\n";
@@ -199,19 +202,19 @@ foreach ($data as $row) {
 - Naivní (starý) přístup – <span style="color:red">NEBEZPEČNÉ</span>
 
 ```php
-$sql = "SELECT * FROM users WHERE name='$name'";
+$sql = "SELECT * FROM users WHERE name='$name'";
 ```
 
 - Pokud (např. uživatelský vstup) 
 ```php
-$name = "franta';DROP TABLE users; -- ";
+$name = "franta';DROP TABLE users; -- ";
 ```
 
 - Dostaneme
 
 ```sql
-SELECT * FROM users
-	WHERE name = 'franta'; DROP TABLE users; -- '
+SELECT * FROM users
+	WHERE name = 'franta'; DROP TABLE users; -- '
 ```
 
 ---
@@ -219,19 +222,35 @@ SELECT * FROM users
 # Parametrizované dotazy v PDO
 
 ```php
-$stmt = $pdo->prepare('SELECT * FROM users
-				WHERE email = ? AND status = ?');
-$stmt->execute([$email, $status]);
-$user = $stmt->fetch();
+$stmt = $pdo->prepare('SELECT * FROM users
+				WHERE email = ? AND status = ?');
+$stmt->execute([$email, $status]);
+$user = $stmt->fetch();
 ```
 
 nebo
 
 ```php
-$stmt = $pdo->prepare('SELECT * FROM users
-				WHERE email = :email AND status = :status');
-$stmt->execute(['email' => $email, 'status' => $status]);
-$user = $stmt->fetch();
+$stmt = $pdo->prepare('SELECT * FROM users
+				WHERE email = :email AND status = :status');
+$stmt->execute(['email' => $email, 'status' => $status]);
+$user = $stmt->fetch();
+```
+
+---
+
+# Omezení parametrů
+- Parametr může nahradit pouze **hodnotu** v dotazu
+- Nelze jej použít pro názvy tabulek a sloupců, směr řazení (`ASC`/`DESC`), klíčová slova SQL
+- Pokud tyto části závisí na vstupu: **whitelist** povolených hodnot
+
+```php
+$allowed = ['name', 'surname'];
+$sort = $_GET['sort'] ?? 'name';
+if (!in_array($sort, $allowed, true)) {
+	$sort = 'name';
+}
+$stmt = $pdo->query("SELECT * FROM users ORDER BY $sort");
 ```
 
 ---
@@ -241,8 +260,8 @@ $user = $stmt->fetch();
 
 ```php
 $stmt = $pdo->prepare("
-	INSERT INTO uzivatel (name, surname) VALUES(?, ?)");
-$stmt->execute([$jmeno, $prijmeni]);
+	INSERT INTO users (name, surname) VALUES (?, ?)");
+$stmt->execute([$name, $surname]);
 ```
 
 - Generované ID: `$pdo->lastInsertId()`
@@ -251,18 +270,60 @@ $stmt->execute([$jmeno, $prijmeni]);
 
 ```php
 $stmt = $pdo->prepare("
-	UPDATE uzivatele SET name = ?, surname = ?
+	UPDATE users SET name = ?, surname = ?
 	WHERE id = ?");
-$stmt->execute([$jmeno, $prijmeni, $idUzivatele]);
+$stmt->execute([$name, $surname, $userId]);
+```
+
+---
+
+# Ošetření chyb
+- Chyba databáze vyvolá výjimku `PDOException` (výchozí od PHP 8.0)
+	- `$e->getCode()` – kód SQLSTATE, např. `23000` porušení integrity
+- Podrobnosti chyby **nevypisovat uživateli** – prozrazují strukturu databáze
+
+```php
+try {
+	$stmt = $pdo->prepare("INSERT INTO users (name, surname)
+		VALUES (?, ?)");
+	$stmt->execute([$name, $surname]);
+} catch (PDOException $e) {
+	error_log($e->getMessage());    // podrobnosti do logu
+	echo "Uložení se nezdařilo.";   // uživateli obecná zpráva
+}
+```
+
+---
+
+# Transakce
+- Skupina operací, které se provedou buď všechny, nebo žádná
+- `beginTransaction()`, `commit()`, `rollBack()`
+
+```php
+try {
+	$pdo->beginTransaction();
+	$stmt = $pdo->prepare("UPDATE accounts
+		SET balance = balance + ? WHERE id = ?");
+	$stmt->execute([-$amount, $fromId]);
+	$stmt->execute([$amount, $toId]);
+	$pdo->commit();
+} catch (Exception $e) {
+	$pdo->rollBack();   // zrušení všech změn od beginTransaction()
+	throw $e;
+}
 ```
 
 ---
 
 # Uživatelské účty v databázi
-- Tabulka uživatelů se sloupci login a password
+- Tabulka uživatelů se sloupci login a hash hesla
 - Hesla se nesmí ukládat v otevřené podobě
-	- Nutno použít hashovací funkci
-	- V PHP např. `password_hash()` a `password_verify()`
+	- **Pomalá** hashovací funkce se solí (bcrypt, Argon2id), ne MD5 či SHA
+- `password_hash($password, PASSWORD_DEFAULT)`
+	- Výsledek obsahuje algoritmus, parametry i sůl; nyní bcrypt
+	- Sloupec pro hash: `VARCHAR(255)` – délka se může změnit
+- `password_verify($password, $hash)` – ověření hesla
+- `password_needs_rehash()` – přepočet po změně algoritmu nebo parametrů
 - [Demo aplikace](https://github.com/DIFS-Teaching/basic-demos/tree/master/php-login-db)
 
 ---
@@ -271,5 +332,5 @@ $stmt->execute([$jmeno, $prijmeni, $idUzivatele]);
 - Složitější schéma databáze
 	- Vztahy, kolekce
 	- Integrita a konzistence databáze
-- Složitější operace nad databází
-	- Transakce
+- Abstrakce databázové vrstvy ve frameworcích
+	- Query builder, objektově relační mapování (ORM)
