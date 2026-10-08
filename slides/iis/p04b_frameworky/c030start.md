@@ -44,7 +44,7 @@
 # Laravel
 
 - Instalace a první aplikace \
-	https://laravel.com/docs/8.x/installation
+	https://laravel.com/docs/installation
 - Vlastní nástroj `laravel` nebo `composer`
 - Demo aplikace
 	- Jednoduchá https://github.com/laravel/quickstart-basic
@@ -65,8 +65,8 @@
 # Nette
 
 - Instalace a první aplikace \
-	https://doc.nette.org/cs/3.0/quickstart/getting-started
+	https://doc.nette.org/cs/quickstart
 - Používá `composer`
 - Demo aplikace
-	- https://github.com/nette/tutorial-quickstart/tree/v3.0
+	- https://github.com/nette-examples/quickstart
 

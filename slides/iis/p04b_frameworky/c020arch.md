@@ -275,8 +275,12 @@ class HomepagePresenter extends Nette\Application\UI\Presenter
 # Databázová vrstva
 
 - Jednoduché abstrakce nad SQL
-	- [Fluent query builder](https://laravel.com/docs/8.x/queries) (Laravel)
-	- [Nette database](https://doc.nette.org/cs/3.0/database-core)
+	- [Fluent query builder](https://laravel.com/docs/queries) (Laravel)
+	- [Nette Database](https://doc.nette.org/cs/database)
 - Objektově relační mapování
-	- [Doctrine ORM](https://www.doctrine-project.org/) ([preferované v Symfony](https://symfony.com/doc/current/doctrine.html#configuring-the-database))
-	- [Eloquent](https://laravel.com/docs/8.x/eloquent) (Laravel)
+	- [Doctrine ORM](https://www.doctrine-project.org/projects/orm.html) ([preferované v Symfony](https://symfony.com/doc/current/doctrine.html#configuring-the-database))
+	- [Eloquent](https://laravel.com/docs/eloquent) (Laravel)
+- Migrace databáze
+	- [Laravel Migrations](https://laravel.com/docs/migrations) (`php artisan migrate`)
+	- [Doctrine Migrations](https://www.doctrine-project.org/projects/migrations.html) ([v Symfony](https://symfony.com/doc/current/doctrine.html#migrations-creating-the-database-tables-schema))
+	- [Nextras Migrations](https://nextras.org/migrations/) (Nette)

@@ -79,6 +79,58 @@ ENGINE = InnoDB;
 
 ---
 
+# Vývoj schématu databáze
+- Schéma se během vývoje mění spolu s kódem aplikace
+	- Nové tabulky a sloupce, změny typů, indexy
+- Databáze existuje v několika **prostředích**
+	- Lokálně u každého vývojáře, testovací server, produkční server
+	- Kód verzujeme v gitu, ale co databáze?
+- Ruční změny (konzole, phpMyAdmin) jsou problematické
+	- Nejsou nikde zaznamenány, nelze je spolehlivě zopakovat
+	- Nevíme, které změny už v daném prostředí proběhly
+	- Kód a schéma databáze se rozejdou
+
+---
+
+# Migrace databáze
+- Každá změna schématu je samostatný **skript** uložený v gitu spolu s kódem
+	- Číslované (časové razítko) – pevné pořadí provádění
+
+```
+migrations/
+	001_create_users.sql
+	002_add_email_to_users.sql
+	003_create_orders.sql
+```
+
+- V databázi je **tabulka provedených migrací**
+	- Při nasazení se provedou pouze nové migrace
+- Provedenou migraci **neměníme** – opravu řešíme novou migrací
+- Případně i zpětný krok (`up` / `down`)
+- Odlišit od tzv. *seed* dat – výchozí nebo testovací obsah databáze
+
+---
+
+# Jednoduchá implementace migrací
+- Spouštíme z příkazové řádky (`php migrate.php`), ne přes web
+
+```php
+$pdo->exec("CREATE TABLE IF NOT EXISTS migrations
+	(name VARCHAR(255) PRIMARY KEY)");
+$done = $pdo->query("SELECT name FROM migrations")
+	->fetchAll(PDO::FETCH_COLUMN);
+foreach (glob(__DIR__ . '/migrations/*.sql') as $file) { // seřazeno
+	$name = basename($file);
+	if (in_array($name, $done, true)) continue;
+	$pdo->exec(file_get_contents($file));
+	$pdo->prepare("INSERT INTO migrations VALUES (?)")->execute([$name]);
+}
+```
+
+- Hotové nástroje: Phinx, Doctrine Migrations, migrace ve frameworcích
+
+---
+
 # Spolupráce s databázovým serverem
 - Aplikace v PHP běží na serveru dávkově
 - Celou komunikaci s databází je třeba řešit v rámci zpracování jednoho HTTP požadavku.
