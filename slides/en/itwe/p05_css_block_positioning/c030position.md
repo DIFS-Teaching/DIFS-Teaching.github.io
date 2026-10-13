@@ -84,7 +84,7 @@ This is <span class="word">bold</span> text.
   - `position: absolute`
   - The object is **removed** from the normal flow
     - Doesn't influence the text in the original position
-  - It is placed to a particular poisition on the page
+  - It is placed to a particular position on the page
     - It can overlap the content being already on that place
     - It might be necessary to „make space"
   - The distance from the top left corner of the **containing block**
