@@ -30,14 +30,18 @@
 
 ---
 
-# Spolupráce s HTTP serverem Apache
+# Spolupráce s HTTP serverem
 
-- Apache musí mít přístup jen do adresáře s webovými soubory! 
-- Konfigurace v souboru `.htaccess`
-- Nejčastěji přepisování URL pomocí `mod_rewrite`
-	- Přesměrování na front controller `index.php`
-	- Ošetření výjimek
-- Nastavení viditelnosti adresářů apod.
+- Document root musí směřovat do `/www` či `/public`; ostatní soubory nesmějí být přímo dostupné přes HTTP!
+- Apache
+	- Konfigurace v souboru `.htaccess`
+	- Nejčastěji přepisování URL pomocí `mod_rewrite`
+		- Přesměrování na front controller `index.php`
+		- Ošetření výjimek
+	- Nastavení viditelnosti adresářů apod.
+- nginx
+	- Nepoužívá `.htaccess`, vše v konfiguraci serveru (`try_files`)
+	- PHP spouští přes PHP-FPM (FastCGI)
 
 ---
 
@@ -47,8 +51,8 @@
 	https://laravel.com/docs/installation
 - Vlastní nástroj `laravel` nebo `composer`
 - Demo aplikace
-	- Jednoduchá https://github.com/laravel/quickstart-basic
-	- RealWorld https://github.com/gothinkster/laravel-realworld-example-app/tree/master/app
+	- Oficiální kurz https://laravel.com/learn/getting-started-with-laravel
+	- Starter kity https://laravel.com/starter-kits
 
 ---
 

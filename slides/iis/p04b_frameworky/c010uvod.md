@@ -17,11 +17,11 @@
 
 # Vrstvy aplikace
 
-![Vrstvy aplikace](assets/vrstvy.svg) <!-- .element: style="height: 750px"; text-align: center" -->
+![Vrstvy aplikace](assets/vrstvy.svg) <!-- .element: style="height: 750px; text-align: center" -->
 
 ---
 
- # Nejdůležitější úlohy frameworku
+# Nejdůležitější úlohy frameworku
 
 - Zpracování HTTP požadavků
 	- Dekódování požadavku a parametrů
@@ -55,8 +55,8 @@ Populární v ČR:
 
 Širší přehled:
 
-- např. [10 Popular PHP frameworks in 2020](https://raygun.com/blog/top-php-frameworks/) 
-- (ale podobných žebříčků je mnoho)
+- např. [Wikipedia: Comparison of server-side web frameworks](https://en.wikipedia.org/wiki/Comparison_of_server-side_web_frameworks#PHP)
+- (ale podobných přehledů a žebříčků je mnoho)
 
 ---
 

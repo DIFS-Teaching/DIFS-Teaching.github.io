@@ -8,22 +8,26 @@
 ---
 # Specifika PHP
 
-- PHP využívá dávkové zpracování
-	- Nic z aplikace na serveru trvale neběží
-- Celý framework se ``startuje'' znovu při příchodu každého HTTP požadavku
+- Klasický model obsluhy požadavků (např. PHP-FPM, mod_php)
+	- Dávkové zpracování, nic z aplikace na serveru trvale neběží
+	- Celý framework se ``startuje'' znovu při příchodu každého HTTP požadavku
 	- Lze optimalizovat vyrovnávacími paměťmi apod.
-- Na druhou stranu poměrně přímočará implementace
+	- Výhoda: jednoduchý model -- každý požadavek začíná s čistým stavem
+- Alternativa: worker režim (FrankenPHP, RoadRunner, Laravel Octane)
+	- Aplikace se nastartuje jednou a obsluhuje mnoho požadavků
+	- Výhoda: odpadá opakovaný bootstrapping, rychlejší odezva
+	- Nevýhoda: stav (statické proměnné, služby) přetrvává mezi požadavky, riziko úniků paměti
 
 ---
 
-# Bootstraping
+# Bootstrapping
 
 -- viz [definice na Wikipedii](https://en.wikipedia.org/wiki/Bootstrapping)
 
 - Aktivace funkcionality frameworku při příchodu HTTP požadavku
 - Všechny požadavky se směrují na jeden vstupní skript
 	- `index.php`, `bootstrap.php`, ...
-	- Zařízeno nejčasteji konfigurací HTTP serveru (apache, nginx, ...)
+	- Zařízeno nejčastěji konfigurací HTTP serveru (apache, nginx, ...)
 - Vstupní skript
 	- Nastartuje framework (vlastní _bootstrapping_)
 		- Přečte konfiguraci, vytvoří instance služeb, spojení s databází, atd.
@@ -35,7 +39,20 @@
 
 ([Symfony: The Symfony Application Flow](https://symfony.com/doc/current/introduction/http_fundamentals.html#the-symfony-application-flow))
 
-![Symfony request lifecycle](assets/symfony_request.svg) <!-- .element: style="width: 905%"; -->
+![Symfony request lifecycle](assets/symfony_request.svg) <!-- .element: style="width: 90%" -->
+
+---
+
+# Routing
+
+- Mapování URL na controller, který se bude volat
+- Konfigurace
+	- Atributy u controllerů, speciální konfigurační soubory, nebo PHP \
+	  např. [Konfigurace Symfony](https://symfony.com/doc/current/routing.html) \
+	  nebo [Nette Router](https://doc.nette.org/cs/application/routing)
+- Konvence
+	- Pevně definovaný způsob pojmenování controllerů a mapování URL \
+	  např. Nette [SimpleRouter](https://doc.nette.org/cs/application/routing#toc-simplerouter)
 
 ---
 
@@ -45,24 +62,11 @@
 - **Model**
 	- Třídy implementující business logiku (operace, zahrnuje práci s databází)
 - **View**
-	- Generované HTML, šablona naplněné daty
+	- Generované HTML, šablona naplněná daty
 - **Controller**
 	- Přiřazený k HTTP požadavku (routing)
 	- Volá metody modelu
 	- Na základě výsledku vytváří View
-
----
-
-# Routing
-
-- Mapování URL na controller, který se bude volat
-- Konfigurace
-	- Anotace u controllerů, speciální konfigurační soubory, nebo PHP \
-	  např. [Konfigurace Symfony](https://symfony.com/doc/current/routing.html) \
-	  nebo [Nette Router](https://doc.nette.org/cs/application/routing)
-- Konvence
-	- Pevně definovaný způsob pojmenování controllerů a mapování URL \
-	  např. Nette [SimpleRouter](https://doc.nette.org/cs/application/routing#toc-simplerouter)
 
 ---
 
@@ -183,10 +187,10 @@ use Nette;
 
 class HomepagePresenter extends Nette\Application\UI\Presenter
 {
-	/** @var Nette\Database\Context */
+	/** @var Nette\Database\Explorer */
 	private $database;
 
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(Nette\Database\Explorer $database)
 	{
 		$this->database = $database;
 	}
@@ -214,10 +218,10 @@ class ArticleManager
 {
 	use Nette\SmartObject;
 
-	/** @var Nette\Database\Context */
+	/** @var Nette\Database\Explorer */
 	private $database;
 
-	public function __construct(Nette\Database\Context $database)
+	public function __construct(Nette\Database\Explorer $database)
 	{
 		$this->database = $database;
 	}
@@ -238,7 +242,7 @@ class ArticleManager
 - Framework zabezpečuje vytváření instancí objektů
 	- DI container
 - Každá část specifikuje požadované služby (objekty)
-	- Nejčastěji jako parametru konstruktoru
+	- Nejčastěji jako parametr konstruktoru
 - Framework vytvoří a dodá instanci
 	- Způsob vytvoření je definován v konfiguraci aplikace
 
