@@ -1,7 +1,7 @@
 # Layout
 
   - **Layout** = visual and logical organization of a page
-  - Division of the page to logical units and their positioning
+  - Division of the page into logical units and their positioning
   - Goals 
     - Clarity of the content
     - Ease of use
@@ -24,7 +24,7 @@
   - Disadvantages 
     - Page layout is defined directly in HTML
     - Long and obscure code (`<tr><td><tr><td>`)
-    - The table is displayed after being read completely (slow)
+    - Poor accessibility and no responsiveness
 
 <span class="note">See examples below</span>
 

@@ -39,12 +39,12 @@
 - Parent element is the **grid container**
   - By setting `display: grid`
   - We set the number of grid rows and columns 
-    - Explicit (template) nebo implicit (auto)
+    - Explicit (template) or implicit (auto)
     - The `fr` (fraction) length unit
   - Named areas may be created (multiple grid cells)
 - Grid position is set for child elements 
   - `grid-row-start`, `grid-row-end` (`grid-row`)
   - `grid-column-start`, `grid-column-end` (`grid-column`)
   - or `grid-area` ([demo](https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/grid.html))
-- [Description and demo on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout)
-- [Detailed description](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout)
+- [Description and demo on MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout)
+- [Detailed description](https://developer.mozilla.org/en-US/docs/Web/CSS/Guides/Grid_layout/Basic_concepts)

@@ -11,8 +11,8 @@
   - Multiple style sheets may be used
   
 ```html
-<link rel="stylesheet" src="common.css" type="text/css"/>
-<link rel="stylesheet" src="section.css" type="text/css"/>
+<link rel="stylesheet" href="common.css">
+<link rel="stylesheet" href="section.css">
 ```
 
 ---
@@ -21,7 +21,7 @@
 
   - `id` attribute 
     - For unique elements
-    - Easier to use (more specific selector)
+    - Higher specificity – harder to override
     - Clearer style sheet
   - `class` attribute 
     - For repeating elements
@@ -31,7 +31,7 @@
 # Class and id names
 
   - Use descriptive class and id names 
-    - Should describe the **meaning** , not the appearance
+    - Should describe the **meaning**, not the appearance
     - Bad: `rightcolumn`, `redtext`
     - Correct: `menu`, `important`
   - Use a small set of class names 
@@ -96,7 +96,7 @@ li.first {...} /* first list item */
 </ul>
 ```
 
-```html
+```css
 .menu { ... }
 ```
 
@@ -123,13 +123,13 @@ ul.menu li { ... }
 
 # Combine Classes
 
-  - Use more classes for one element
+  - Use multiple classes for one element
     - `class="importantmessage"` vs. `class="message important"`
   - Cascade the rules
   
-```html
+```css
 h1, h2 {
-   font-family: "Arial CE", Arial, sans-serif;
+   font-family: Arial, sans-serif;
    font-weight: bold;
 }
 h1 {
@@ -150,6 +150,6 @@ h2 {
     - Or according to the page organization
   - Choose some property specification order 
     - E.g. sizes, margins, position, colors and borders
-  - Write rules to separate lines 
+  - Write declarations on separate lines 
     - Easy to copy
   - Use comments `/* comment */`

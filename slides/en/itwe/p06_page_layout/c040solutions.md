@@ -14,7 +14,7 @@
 a {
     background: #eeeeff url('newwin32.png') top right no-repeat;
     padding-right: 35px;
-    padding-top: 35px;
+    padding-top: 30px;
 }
 ``` 
 
@@ -51,10 +51,10 @@ body {
 # Horizontal list
 
 ```css
-ul.vertlist1 li { display: inline; }
+ul.hlist li { display: inline; }
 ```
 ```html
-<ul class="vertlist">
+<ul class="hlist">
   <li><a href="#">Item 1</a></li>
   <li><a href="#">Item 2</a></li>
   <li><a href="#">Item 3</a></li>
@@ -65,9 +65,9 @@ ul.vertlist1 li { display: inline; }
 body {
    font-family: sans-serif;
 }
-ul.vertlist li { display: inline; }
+ul.hlist li { display: inline; }
 " resizable="false" style="padding: 0; height: 5em">
-<ul class="vertlist">
+<ul class="hlist">
   <li><a href="#">Item 1</a></li>
   <li><a href="#">Item 2</a></li>
   <li><a href="#">Item 3</a></li>
@@ -79,10 +79,10 @@ ul.vertlist li { display: inline; }
 # Horizontal list
 
 ```css
-ul.vertlist1 li { display: inline-block; }
+ul.hlist li { display: inline-block; }
 ```
 ```html
-<ul class="vertlist">
+<ul class="hlist">
   <li><a href="#">Item 1</a></li>
   <li><a href="#">Item 2</a></li>
   <li><a href="#">Item 3</a></li>
@@ -93,9 +93,9 @@ ul.vertlist1 li { display: inline-block; }
 body {
    font-family: sans-serif;
 }
-ul.vertlist li { display: inline; }
+ul.hlist li { display: inline-block; }
 " resizable="false" style="padding: 0; height: 5em">
-<ul class="vertlist">
+<ul class="hlist">
   <li><a href="#">Item 1</a></li>
   <li><a href="#">Item 2</a></li>
   <li><a href="#">Item 3</a></li>
@@ -106,9 +106,9 @@ ul.vertlist li { display: inline; }
 
 # Image sprites
 
-- More images in one larger image
+- Multiple images in one larger image
 - The individual images are extracted using the background positioning
-- More efficient and smooth user experience
+- Fewer HTTP requests (less relevant with HTTP/2)
 - [Image sprite 1](https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/imageSprite.png)
 - [Image sprite 2](https://difs-teaching.github.io/slides/en/itwe/p06_page_layout/assets/examples/imageSprite2.png)
 

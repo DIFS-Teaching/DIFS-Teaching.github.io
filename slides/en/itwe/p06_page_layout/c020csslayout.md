@@ -21,7 +21,7 @@
       - Desktop even 2560px, mobile phone 320px
     - It's inconvenient to read long text lines 
       - Use narrow lines
-      - Greater font
+      - Larger font
       - More columns
   - Currently, we prefer flexible width
 
@@ -34,7 +34,7 @@
 ```html
 <body>
     <div id="page">
-        ... page content ....
+        ... page content ...
     </div>
 </body>
 ```
@@ -101,7 +101,7 @@ body {
 # Absolute positioning
 
   - Left element has absolute position
-  - Right element has a right margin
+  - Right element has a left margin
 
 <div class="col">
 
@@ -443,7 +443,7 @@ body {
 
 # Floating Blocks -- Container
 
-- The enclosing block `.columns` remains empty
+- The enclosing block `.columns` collapses (floats are out of the normal flow)
 
 <div class="col">
 
@@ -517,7 +517,7 @@ body {
 
 # Floating Blocks -- Container with overflow
 
-- With `overflow: hidden`, the block `.columns` encloses all floating blocks
+- With `overflow: hidden` (or `display: flow-root`), the block `.columns` encloses all floating blocks
 
 <div class="col">
 
