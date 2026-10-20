@@ -65,7 +65,7 @@
            x="0 35.319901 70.639801 88.236221 123.55612 155.31862 187.08112 204.67754 222.27397 254.03647 289.35635 306.95279 338.7153 352.81784 388.13773 419.90024 437.49667 472.81656 508.13644 539.89899 557.49536"
            y="0"
            sodipodi:role="line"
-           id="tspan24">datový typ vlastností</tspan></text>
+           id="tspan24">datový typ prvku</tspan></text>
 <path
          d="m 2061.523,422.773 h -458.699 v -186.75 h 917.324 v 186.75 z"
          style="fill:#002060;fill-opacity:0.11000001;fill-rule:evenodd;stroke:none"
@@ -81,15 +81,15 @@
            style="fill:none;stroke:#000000;stroke-width:2.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="path36"
            inkscape:connector-curvature="0" /></g><text
-         transform="translate(1808.8499,302.77515)"
+         transform="translate(1856.6,302.77515)"
          style="font-variant:normal;font-weight:normal;font-size:63.52499771px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text40"><tspan
            x="0 35.319901 70.639801 105.95969 141.2796 176.59949 194.19592 229.51582 247.11224 278.87476 292.97729 328.29718 360.05969 377.65613 412.97601 448.2959 480.05841 497.65485"
            y="0"
            sodipodi:role="line"
-           id="tspan38">hodnota vlastnosti</tspan></text>
+           id="tspan38">hodnota prvku</tspan></text>
 <text
-         transform="translate(2320.3499,318.67529)"
+         transform="translate(2251.6,318.67529)"
          style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text44"><tspan
            x="0"
@@ -110,15 +110,15 @@
            style="fill:none;stroke:#000000;stroke-width:2.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="path54"
            inkscape:connector-curvature="0" /></g><text
-         transform="translate(1808.8499,518.77515)"
+         transform="translate(1856.6,518.77515)"
          style="font-variant:normal;font-weight:normal;font-size:63.52499771px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text58"><tspan
            x="0 35.319901 70.639801 105.95969 141.2796 176.59949 194.19592 229.51582 247.11224 278.87476 292.97729 328.29718 360.05969 377.65613 412.97601 448.2959 480.05841 497.65485"
            y="0"
            sodipodi:role="line"
-           id="tspan56">hodnota vlastnosti</tspan></text>
+           id="tspan56">hodnota prvku</tspan></text>
 <text
-         transform="translate(2320.3499,534.67529)"
+         transform="translate(2251.6,534.67529)"
          style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text62"><tspan
            x="0"
@@ -139,15 +139,15 @@
            style="fill:none;stroke:#000000;stroke-width:2.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="path72"
            inkscape:connector-curvature="0" /></g><text
-         transform="translate(1808.8499,733.42529)"
+         transform="translate(1856.6,733.42529)"
          style="font-variant:normal;font-weight:normal;font-size:63.52499771px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text76"><tspan
            x="0 35.319901 70.639801 105.95969 141.2796 176.59949 194.19592 229.51582 247.11224 278.87476 292.97729 328.29718 360.05969 377.65613 412.97601 448.2959 480.05841 497.65485"
            y="0"
            sodipodi:role="line"
-           id="tspan74">hodnota vlastnosti</tspan></text>
+           id="tspan74">hodnota prvku</tspan></text>
 <text
-         transform="translate(2320.3499,749.32471)"
+         transform="translate(2251.6,749.32471)"
          style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text80"><tspan
            x="0"
@@ -417,15 +417,15 @@
            style="fill:none;stroke:#000000;stroke-width:2.625;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
            id="path250"
            inkscape:connector-curvature="0" /></g><text
-         transform="translate(1808.8499,1182.75)"
+         transform="translate(1856.6,1182.75)"
          style="font-variant:normal;font-weight:normal;font-size:63.52499771px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text254"><tspan
            x="0 35.319901 70.639801 105.95969 141.2796 176.59949 194.19592 229.51582 247.11224 278.87476 292.97729 328.29718 360.05969 377.65613 412.97601 448.2959 480.05841 497.65485"
            y="0"
            sodipodi:role="line"
-           id="tspan252">hodnota vlastnosti</tspan></text>
+           id="tspan252">hodnota prvku</tspan></text>
 <text
-         transform="translate(2320.3499,1198.6501)"
+         transform="translate(2251.6,1198.6501)"
          style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text258"><tspan
            x="0"

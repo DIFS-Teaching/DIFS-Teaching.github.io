@@ -2,13 +2,13 @@
 
 <header>
 	<h1>Strukturovaná data</h1>
-	<p>Jak vyrobit z jednoduchých údajů složitý?</p>
+	<p>Jak vyrobit z jednoduchých údajů složité?</p>
 </header>
 
 ---
 <!-- .slide: class="normal centered" -->
 
-# Kartézský součin A1 x A2
+# Kartézský součin $A_1 \times A_2$
 
 ![Kartézský součin](assets/kart_souc.svg) <!-- .element: style="height:550px" -->
 
@@ -19,7 +19,7 @@ Výsledkem je **množina dvojic** -- celkem $4 \times 3=12$ dvojic.
 # Kartézský součin
 - **Uspořádaná n-tice** $(a_1, a_2, \dots, a_n)$
 - **Kartézský součin množin** $A_1 \times A_2 \times \dots \times A_n$ je množina všech uspořádaných n-tic takových, že $a_1 \in A_1, a_2 \in A_2, \dots, a_n \in A_n$
-- Podstatné je, že v uspořádané n-tici je každá hodnota prvkem jediné z množin v kartézském součinu a to té, která jí indexem odpovídá
+- Podstatné je, že $i$-tá složka uspořádané n-tice je prvkem množiny $A_i$, tj. té, která jí indexem odpovídá -- na pořadí složek záleží
 
 ---
 
@@ -60,6 +60,7 @@ Výsledkem je **množina dvojic** -- celkem $4 \times 3=12$ dvojic.
 	- **Pevným počtem** dílčích hodnot obecně **různých** typů
 	- Tedy uspořádané n-tice, které jsou prvky kartézského součinu množin dílčích datových typů
 	- Hodnoty jsou pojmenované, tzn. přistupuje se k nim přes jejich unikátní jméno
+	- Pojmenování složek tak nahrazuje jejich pořadí v n-tici
 - Jako synonymum pro uspořádanou n-tici (tedy hodnotu) je velmi často užíván termín _struktura_ nebo _záznam_. Jako synonymum pro kartézský součin (tedy datový typ) budeme často používat _typ struktura_ nebo _typ záznam_.
 
 ---
@@ -78,11 +79,11 @@ Výsledkem je **množina dvojic** -- celkem $4 \times 3=12$ dvojic.
 ```
 structure FyzOsoba
    properties
-      UplneJmeno: 	string
-	  Jmeno:      	string
-	  Prijmeni:   	string
-	  DatumNaroz: 	date
-   end structure
+      UplneJmeno: string
+      Jmeno:      string
+      Prijmeni:   string
+      DatumNaroz: date
+end structure
 ```
 Definujeme _metadata_.
 
@@ -97,8 +98,8 @@ Definujeme _metadata_.
 ---
 
 # Kolekce
-- **Kolekce** (synonyma jsou _řetězec_, _posloupnost_, _seznam_, _soubor_) je, na rozdíl od struktur, tvořena
-	- **Předem neomezeným počtem** hodnot **stejných** datových typů.
+- **Kolekce** (synonyma jsou _posloupnost_, _seznam_) je, na rozdíl od struktur, tvořena
+	- **Předem neomezeným počtem** hodnot **stejného** datového typu.
 
 ---
 
@@ -110,7 +111,7 @@ Definujeme _metadata_.
 
 ---
 
-# Operace nad množinou
+# Operace nad kolekcí
 - Vkládání prvku do kolekce (_add_),
 - Získání prvku z kolekce (_item_),
 - Určení počtu prvků kolekce (_count_) a
@@ -122,8 +123,8 @@ případně
 ---
 
 # Vlastnosti kolekce
-- **Kurzor** (_iterator_), což je ukazovátko do kolekce, kterým lze posunovat oběma směry a nastavovat je do různých pozic v kolekci podle různých kriterií. 
-- Protože v průběhu práce s kurzorem se může kolekce měnit co do obsahu i počtu prvků, dělíme kurzory na _stabilní_, které na tuto skutečnost neberou zřetel a _nestabilní_, které reflektují změny
+- **Kurzor** (_iterator_), což je ukazovátko do kolekce, kterým lze posunovat (často i oběma směry) a nastavovat ho do různých pozic v kolekci podle různých kritérií. 
+- Protože v průběhu práce s kurzorem se může kolekce měnit co do obsahu i počtu prvků, dělíme kurzory na _stabilní_ (_insensitive_, _static_), které na tuto skutečnost neberou zřetel a _nestabilní_ (_sensitive_, _dynamic_), které reflektují změny
 - Nad kolekcí může existovat jedno nebo více definovaných **uspořádání** jejich prvků podle různých klíčů. 
 
 ---
@@ -140,13 +141,13 @@ případně
 
 ```
 collection FyzickeOsoby of
-	structure FyzOsoba
-   	properties
-		UplneJmeno: string
-	   	Jmeno:      string
-	   	Prijmeni:   string
-	   	DatumNaroz: date
-	end structure 
+   structure FyzOsoba
+      properties
+         UplneJmeno: string
+         Jmeno:      string
+         Prijmeni:   string
+         DatumNaroz: date
+   end structure
 ```
 
 ---
@@ -186,7 +187,7 @@ collection FyzickeOsoby of
 ---
 
 # Zanořené kolekce a struktury
-- Obecně lze struktury a kolekce libovolně vzájemné vnořovat
+- Obecně lze struktury a kolekce libovolně vzájemně vnořovat
 
 ```
 structure ZANORENA
@@ -196,9 +197,8 @@ structure ZANORENA
             properties
                C: integer
                D: structure
-               …
+                     …
                   end structure
-
          end structure
 end structure
 ```

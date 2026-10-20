@@ -775,7 +775,7 @@
          transform="translate(945.70602,1182.75)"
          style="font-variant:normal;font-weight:normal;font-size:63.52499771px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
          id="text464"><tspan
-           x="0 17.596424"
+           x="20.7 38.3"
            y="0"
            sodipodi:role="line"
            id="tspan460">: </tspan><tspan
@@ -783,6 +783,20 @@
            y="86.699677"
            sodipodi:role="line"
            id="tspan462">datový typ vlastnosti</tspan></text>
+<text
+         transform="translate(935.6,1198.65)"
+         style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="subn1"><tspan
+           x="0"
+           y="0"
+           id="subn1s">n</tspan></text>
+<text
+         transform="translate(1016.4,1285.35)"
+         style="font-variant:normal;font-weight:normal;font-size:36.82500076px;font-family:Arimo;-inkscape-font-specification:Arimo;writing-mode:lr-tb;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none"
+         id="subn2"><tspan
+           x="0"
+           y="0"
+           id="subn2s">n</tspan></text>
 <g
          id="g466"><path
            d="M 88.051,1135.352 H 45.375 v -76.278 h 85.273 v 76.278 z"
