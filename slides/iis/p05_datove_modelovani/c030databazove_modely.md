@@ -40,6 +40,7 @@
 - Vytvořit popis pomocí prostředků příslušného datového modelu
 	- Vytvořit metadata -- implementace
 	- Různé prostředky podle způsobu použití
+- Podklad pro implementaci **všech vrstev** IS
 
 ---
 
@@ -171,7 +172,7 @@ collection of
 structure VLASTNIK
    properties
       A: integer
-      B: collection of CLEN
+      B: CLEN
 end structure
 
 object CLEN
@@ -193,6 +194,27 @@ end object
 
 ---
 
+# Transformace modelů
+
+- Mezi modely mohou existovat transformace, zejména, pokud jsou si _sémanticky blízké_
+- Velmi častou je transformace E-R diagramu na relační datový model
+	- viz postup z IDS
+
+---
+
+# Jiné transformace
+
+- Diagram tříd lze transformovat na relační model obdobně jako E-R diagram
+	- Je nutno řešit **dědičnost**
+		- různé strategie, podrobně v Pokročilých informačních systémech
+- Pro objektový databázový model lze přímo použít diagram tříd
+	- V modelu se přímo definují třídy a jejich vlastnosti
+	- Vztahy jsou reprezentovány vlastnostmi tříd
+	- Odkazy na jiné objekty
+		- např. `zbozi.vyrobce`
+
+---
+
 # Objektově-relační mapování (ORM)
 
 - Čistě objektové databáze se v praxi vyskytují minimálně
@@ -210,37 +232,8 @@ end object
 - Java
 	- Standard Jakarta Persistence (JPA), implementace např. Hibernate
 - PHP
-	- Např. knihovna Doctrine
+	- Např. Doctrine (Symfony), Eloquent (Laravel)
 	- Použití do značné míry shodné s JPA
 - Obdobně na dalších platformách
 	- .NET, Python, JavaScript, …
 - Více v předmětu Pokročilé informační systémy
-
----
-
-# Transformace modelů
-
-- Mezi modely mohou existovat transformace, zejména, pokud jsou si _sémanticky blízké_
-- Velmi častou je transformace E-R diagramu na relační datový model
-	- viz postup z IDS
-
----
-
-# Jiné transformace
-
-- Diagram tříd lze transformovat na relační model obdobně jako E-R diagram
-	- Je nutno řešit dědičnost – různé strategie
-- Pro objektový databázový model lze přímo použít diagram tříd
-	- V modelu se přímo definují třídy a jejich vlastnosti
-	- Vztahy jsou reprezentovány vlastnostmi tříd
-	- Odkazy na jiné objekty
-		- např. `zbozi.vyrobna`
-
----
-
-# Závěr
-- Ze struktur, kolekcí a základních typů můžeme vytvořit známé produkční i konceptuální modely
-- Reprezentace kolekcí a struktur:
-	- Textová reprezentace ve formálních jazycích -- **serializace** (1D) -- komunikace mezi složkami systému
-	- Grafická reprezentace - **vizualizace** (2D) -- vstup a výstup systému
-

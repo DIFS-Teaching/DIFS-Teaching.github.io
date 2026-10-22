@@ -34,6 +34,9 @@ Výsledkem je **množina dvojic** -- celkem $4 \times 3=12$ dvojic.
 
 ![Základní typ](assets/type_simple.svg) <!-- .element: style="float: right; height: 100px" -->
 
+- **Datový typ** je _množina_ všech přípustných hodnot (doména)
+- **Hodnota** je _prvek_ této množiny, např. $42 \in \textit{integer}$, $\texttt{"Novák"} \in \textit{string}$
+- Složitější typy pak vytváříme operacemi nad těmito množinami (např. kartézským součinem)
 - Základní nestrukturované datové typy:
 	- Celočíselné
 	- Reálná čísla
@@ -60,7 +63,7 @@ Výsledkem je **množina dvojic** -- celkem $4 \times 3=12$ dvojic.
 	- **Pevným počtem** dílčích hodnot obecně **různých** typů
 	- Tedy uspořádané n-tice, které jsou prvky kartézského součinu množin dílčích datových typů
 	- Hodnoty jsou pojmenované, tzn. přistupuje se k nim přes jejich unikátní jméno
-	- Pojmenování složek tak nahrazuje jejich pořadí v n-tici
+	- Pojmenování složek tak nahrazuje jejich pořadí v n-tici, **není součástí dat**
 - Jako synonymum pro uspořádanou n-tici (tedy hodnotu) je velmi často užíván termín _struktura_ nebo _záznam_. Jako synonymum pro kartézský součin (tedy datový typ) budeme často používat _typ struktura_ nebo _typ záznam_.
 
 ---
@@ -85,15 +88,26 @@ structure FyzOsoba
       DatumNaroz: date
 end structure
 ```
-Definujeme _metadata_.
+
+Zápis ve formě kartézského součinu:
+
+$\textit{FyzOsoba} = \textit{string} \times \textit{string} \times \textit{string} \times \textit{date}$
 
 ---
 
 # Hodnota struktury
 
-<!-- .slide: class="normal centered" -->
+Uspořádaná čtveřice:
 
-![Struktura](assets/type_struct.svg) <!-- .element: style="height:700px" -->
+<div class="small">
+
+$(\texttt{"Prof. Ing. Jan Novák, CSc."}, \texttt{"Jan"}, \texttt{"Novák"}, \texttt{24.5.1954}) \in \textit{FyzOsoba}$
+
+</div>
+
+![Struktura](assets/type_struct.svg) <!-- .element: style="height:500px" -->
+
+
 
 ---
 
@@ -108,24 +122,6 @@ Definujeme _metadata_.
 - Tradiční seznam je _uspořádanou multimnožinou_
 - Obecně lze vytvářet kolekce s prvky libovolných datových typů. 
 - Časté omezení je vytvářet pouze kolekce s prvky datového typu struktura 
-
----
-
-# Operace nad kolekcí
-- Vkládání prvku do kolekce (_add_),
-- Získání prvku z kolekce (_item_),
-- Určení počtu prvků kolekce (_count_) a
-- Rušení prvku kolekce (_remove_)
-
-případně
-- Provádění operací nad všemi prvky (_forall_)
-
----
-
-# Vlastnosti kolekce
-- **Kurzor** (_iterator_), což je ukazovátko do kolekce, kterým lze posunovat (často i oběma směry) a nastavovat ho do různých pozic v kolekci podle různých kritérií. 
-- Protože v průběhu práce s kurzorem se může kolekce měnit co do obsahu i počtu prvků, dělíme kurzory na _stabilní_ (_insensitive_, _static_), které na tuto skutečnost neberou zřetel a _nestabilní_ (_sensitive_, _dynamic_), které reflektují změny
-- Nad kolekcí může existovat jedno nebo více definovaných **uspořádání** jejich prvků podle různých klíčů. 
 
 ---
 
@@ -150,11 +146,19 @@ collection FyzickeOsoby of
    end structure
 ```
 
+Datový typ: množina všech podmnožin (potenční množina)
+
+$\textit{FyzickeOsoby} = \\{ M \mid M \subseteq \textit{FyzOsoba} \\} = \mathcal{P}(FyzOsoba)$
+
 ---
 
-<!-- .slide: class="normal centered" -->
-
 # Hodnota kolekce
+
+<div class="small">
+
+$\\{o_1, o_2, \dots, o_n\\} \in \textit{FyzickeOsoby}$, kde $o_i \in \textit{FyzOsoba}$
+
+</div>
 
 ![Struktura](assets/type_collection.svg) <!-- .element: style="height:700px" -->
 

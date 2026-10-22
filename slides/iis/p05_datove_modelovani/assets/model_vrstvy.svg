@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 1000 520"
+   width="1000"
+   height="520"
+   font-family="sans-serif"
+   font-size="15"
+   fill="#1f2937"
+   version="1.1"
+   xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563" />
+    </marker>
+  </defs>
+
+  <!-- ── Doménový model ──────────────────────────────────────── -->
+  <rect x="10" y="10" width="310" height="500" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" rx="8" />
+  <text x="165" y="40" text-anchor="middle" font-weight="bold" fill="#0c4a6e" font-size="18">Doménový model</text>
+  <text x="165" y="60" text-anchor="middle" fill="#0369a1" font-size="13">(diagram tříd)</text>
+  <line x1="28" y1="72" x2="302" y2="72" stroke="#0284c7" stroke-width="1" />
+
+  <!-- mini diagram tříd -->
+  <rect x="30" y="110" width="110" height="36" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" />
+  <text x="85" y="133" text-anchor="middle" font-weight="bold">Student</text>
+  <rect x="190" y="110" width="110" height="36" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" />
+  <text x="245" y="133" text-anchor="middle" font-weight="bold">Kurz</text>
+  <rect x="190" y="230" width="110" height="36" fill="#ffffff" stroke="#0284c7" stroke-width="1.5" />
+  <text x="245" y="253" text-anchor="middle" font-weight="bold">Profesor</text>
+
+  <line x1="140" y1="128" x2="190" y2="128" stroke="#0c4a6e" stroke-width="1.5" />
+  <text x="146" y="122" font-size="13">*</text>
+  <text x="178" y="122" font-size="13">*</text>
+  <text x="165" y="163" text-anchor="middle" font-size="12" font-style="italic" fill="#0369a1">je zapsán</text>
+
+  <line x1="245" y1="146" x2="245" y2="230" stroke="#0c4a6e" stroke-width="1.5" />
+  <text x="251" y="162" font-size="13">*</text>
+  <text x="251" y="224" font-size="13">1</text>
+  <text x="236" y="205" text-anchor="end" font-size="12" font-style="italic" fill="#0369a1">vyučuje</text>
+
+  <!-- dynamická analýza -->
+  <line x1="28" y1="300" x2="302" y2="300" stroke="#0284c7" stroke-width="1" stroke-dasharray="4 3" />
+  <text x="165" y="330" text-anchor="middle" fill="#0369a1" font-size="13">+ z dynamické analýzy</text>
+  <text x="165" y="360" text-anchor="middle">operace: zapsat(student, kurz)</text>
+  <text x="165" y="385" text-anchor="middle">stavy, pravidla, omezení</text>
+
+  <text x="165" y="470" text-anchor="middle" font-weight="bold" fill="#0c4a6e">jeden zdroj pravdy</text>
+
+  <!-- ── Šipky ───────────────────────────────────────────────── -->
+  <line x1="322" y1="85" x2="478" y2="85" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="400" y="76" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">vizualizace</text>
+  <text x="400" y="106" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">serializace</text>
+
+  <line x1="322" y1="260" x2="478" y2="260" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="400" y="251" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">entity</text>
+  <text x="400" y="281" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">operace</text>
+
+  <line x1="322" y1="435" x2="478" y2="435" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)" />
+  <text x="400" y="426" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">transformace</text>
+  <text x="400" y="456" text-anchor="middle" fill="#6b7280" font-size="13" font-style="italic">ORM</text>
+
+  <!-- ── Prezentační vrstva ──────────────────────────────────── -->
+  <rect x="480" y="10" width="510" height="150" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="8" />
+  <text x="735" y="40" text-anchor="middle" font-weight="bold" fill="#78350f" font-size="18">Prezentační vrstva</text>
+  <line x1="498" y1="52" x2="972" y2="52" stroke="#d97706" stroke-width="1" />
+  <text x="500" y="80">UI: struktura → formulář, detail</text>
+  <text x="530" y="104">kolekce → tabulka, seznam; vztah → výběr, odkaz</text>
+  <text x="500" y="134">API: struktura → objekt JSON, kolekce → pole</text>
+
+  <!-- ── Business vrstva ─────────────────────────────────────── -->
+  <rect x="480" y="185" width="510" height="150" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" rx="8" />
+  <text x="735" y="215" text-anchor="middle" font-weight="bold" fill="#1e3a8a" font-size="18">Business vrstva</text>
+  <line x1="498" y1="227" x2="972" y2="227" stroke="#3b82f6" stroke-width="1" />
+  <text x="500" y="255">entity: Student, Kurz, Profesor</text>
+  <text x="500" y="280">vztahy jako odkazy a kolekce ($kurz-&gt;studenti)</text>
+  <text x="500" y="305">operace: zapsat() + kontrola pravidel, transakce</text>
+
+  <!-- ── Databázová vrstva ───────────────────────────────────── -->
+  <rect x="480" y="360" width="510" height="150" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8" />
+  <text x="735" y="390" text-anchor="middle" font-weight="bold" fill="#14532d" font-size="18">Databázová vrstva</text>
+  <line x1="498" y1="402" x2="972" y2="402" stroke="#16a34a" stroke-width="1" />
+  <text x="500" y="430">tabulky: student, kurz, profesor</text>
+  <text x="500" y="455">zapis(student_id, kurz_id), kurz.profesor_id</text>
+  <text x="500" y="480">PRIMARY KEY, FOREIGN KEY, NOT NULL, UNIQUE</text>
+</svg>
