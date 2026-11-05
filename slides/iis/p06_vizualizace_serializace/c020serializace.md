@@ -302,7 +302,7 @@ comments: >
 # JSON nebo XML?
 
 - **JSON**
-	- Dominantní formát webových API (REST, GraphQL) a komunikace s klientem v JS
+	- Dominantní formát webových API (REST, GraphQL)
 	- Snadné čtení i zápis, přímé mapování na objekty a pole jazyka
 - **XML**
 	- Dokumentově orientovaná data (text proložený značkami)
@@ -379,12 +379,16 @@ Jmeno=Hru%C5%A1ka&Chut=Vanilkova&Posyp%5B%5D=orechy&Posyp%5B%5D=cokolada
 </form>
 ```
 
+<div class="small">
+
 - PHP automaticky převezme uploadovaný soubor a uloží do dočasného souboru na serveru
 - Údaje jsou v `$_FILES['fileToUpload'][…]`
 	- `name` – jméno originálního souboru, `tmp_name` – jméno dočasného souboru
 	- `size`, `error` – velikost, kód chyby
 	- `type` – MIME typ **zadaný klientem – nelze mu věřit**
 - Uložení `move_uploaded_file()`, typ ověřit podle obsahu (např. `finfo_file()`)
+
+</div>
 
 ---
 
@@ -410,7 +414,12 @@ Content-Type: image/jpeg
 
 # Formuláře vs. JSON
 
+<div class="small">
+
 - Klientské aplikace v JavaScriptu často odesílají data jako JSON
+
+</div>
+
 
 ```js
 fetch('/api/osoby', {
@@ -420,13 +429,20 @@ fetch('/api/osoby', {
 });
 ```
 
+<div class="small">
+
 - PHP plní `$_POST` **pouze** pro `application/x-www-form-urlencoded` a `multipart/form-data`
 - Tělo s JSON je nutné načíst a dekódovat ručně:
+
+</div>
 
 ```php
 $body = file_get_contents('php://input');
 $data = json_decode($body, true, flags: JSON_THROW_ON_ERROR);
 ```
 
+<div class="small">
+
 - Frameworky to obvykle řeší automaticky
 
+</div>

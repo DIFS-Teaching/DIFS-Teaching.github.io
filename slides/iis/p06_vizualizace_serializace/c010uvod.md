@@ -118,6 +118,11 @@
 - Vhodné pro rychlý návrh aplikace
 	- Avšak značná část specifikace vzhledu se přesouvá do HTML, což úplně nechceme
 	- Možnost kombinovat s vlastními CSS předpisy a problém alespoň částečně eliminovat
+
+---
+
+# CSS Frameworky (II)
+
 - **Komponentové** frameworky – hotové prvky (tlačítka, karty, navigace, …)
 	- Např. _Bootstrap_, _Bulma_
 - **Utility-first** frameworky – jedna třída = jedna vlastnost
