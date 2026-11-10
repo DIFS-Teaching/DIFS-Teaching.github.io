@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 700" width="1560" height="700" font-family="'Open Sans', sans-serif" fill="#1f2937">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6f7a86"/>
+    </marker>
+    <style>
+      .doc  { fill: #ffffff; stroke: #6f7a86; stroke-width: 2.5; }
+      .ear  { fill: #e5e9ee; stroke: #6f7a86; stroke-width: 2.5; stroke-linejoin: round; }
+      .ln   { stroke: #d0d6dd; stroke-width: 7; stroke-linecap: round; }
+      .e    { stroke: #6f7a86; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+      .t    { font-size: 21px; font-weight: bold; text-anchor: middle; }
+      .u    { font-size: 15px; font-family: monospace; fill: #1676d0; text-anchor: middle; }
+      .lbl  { font-size: 18px; font-family: monospace; fill: #9aa3ad; }
+    </style>
+    <!-- a page icon centred at 0,0 (240 x 150) -->
+    <g id="page">
+      <path class="doc" d="M-120,-75 H90 L120,-45 V75 H-120 Z"/>
+      <path class="ear" d="M90,-75 V-45 H120"/>
+      <line class="ln" x1="-95" y1="18" x2="85" y2="18"/>
+      <line class="ln" x1="-95" y1="38" x2="95" y2="38"/>
+      <line class="ln" x1="-95" y1="58" x2="40" y2="58"/>
+    </g>
+  </defs>
+
+  <!-- links (drawn first) -->
+  <line class="e" x1="350" y1="200" x2="634" y2="200"/>
+  <line class="e" x1="880" y1="200" x2="1194" y2="200"/>
+  <line class="e" x1="740" y1="275" x2="740" y2="479"/>
+  <line class="e" x1="790" y1="485" x2="790" y2="281"/>
+  <line class="e" x1="880" y1="560" x2="1194" y2="560"/>
+  <line class="e" x1="1320" y1="485" x2="1320" y2="281"/>
+  <line class="e" x1="330" y1="275" x2="634" y2="505"/>
+
+  <!-- every link looks the same -->
+  <text class="lbl" x="440" y="188">&lt;a href&gt;</text>
+  <text class="lbl" x="985" y="188">&lt;a href&gt;</text>
+  <text class="lbl" x="620" y="385">&lt;a href&gt;</text>
+  <text class="lbl" x="800" y="385">&lt;a href&gt;</text>
+  <text class="lbl" x="985" y="548">&lt;a href&gt;</text>
+  <text class="lbl" x="1330" y="385">&lt;a href&gt;</text>
+  <text class="lbl" x="380" y="420">&lt;a href&gt;</text>
+
+  <!-- pages -->
+  <use href="#page" x="230" y="200"/>
+  <text class="t" x="230" y="165">HMU – Home</text>
+  <text class="u" x="230" y="192">hmu.gr</text>
+
+  <use href="#page" x="760" y="200"/>
+  <text class="t" x="760" y="165">Heraklion</text>
+  <text class="u" x="760" y="192">en.wikipedia.org/…</text>
+
+  <use href="#page" x="1320" y="200"/>
+  <text class="t" x="1320" y="165">Greece</text>
+  <text class="u" x="1320" y="192">en.wikipedia.org/…</text>
+
+  <use href="#page" x="760" y="560"/>
+  <text class="t" x="760" y="525">Visit Knossos</text>
+  <text class="u" x="760" y="552">odysseus.culture.gr</text>
+
+  <use href="#page" x="1320" y="560"/>
+  <text class="t" x="1320" y="525">Arthur Evans</text>
+  <text class="u" x="1320" y="552">en.wikipedia.org/…</text>
+</svg>

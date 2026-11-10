@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 620" width="1400" height="620" font-family="'Open Sans', sans-serif" fill="#1f2937">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6f7a86"/>
+    </marker>
+    <style>
+      .res { fill: #e8f2fb; stroke: #1676d0; stroke-width: 2.5; }
+      .lit { fill: #f3f7f6; stroke: #6f7a86; stroke-width: 2; }
+      .e   { stroke: #6f7a86; stroke-width: 2.5; fill: none; marker-end: url(#a); }
+      .lbl { font-size: 19px; font-family: monospace; fill: #1676d0; }
+      .n   { font-size: 21px; text-anchor: middle; }
+      .s   { font-size: 16px; text-anchor: middle; fill: #6f7a86; font-family: monospace; }
+    </style>
+  </defs>
+
+  <!-- edges (drawn first) -->
+  <!-- HMU -> Heraklion : headquarters -->
+  <line class="e" x1="290" y1="150" x2="560" y2="285"/>
+  <text class="lbl" x="330" y="245">headquarters</text>
+  <!-- HMU -> university : type -->
+  <line class="e" x1="120" y1="180" x2="120" y2="430"/>
+  <text class="lbl" x="130" y="300">instance of</text>
+  <!-- HMU -> inception literal -->
+  <line class="e" x1="300" y1="100" x2="520" y2="70"/>
+  <text class="lbl" x="350" y="68">inception</text>
+  <!-- Heraklion -> Greece -->
+  <line class="e" x1="770" y1="300" x2="1085" y2="300"/>
+  <text class="lbl" x="880" y="288">country</text>
+  <!-- Heraklion -> municipality -->
+  <line class="e" x1="680" y1="345" x2="760" y2="478"/>
+  <text class="lbl" x="735" y="410">located in</text>
+  <!-- Heraklion -> population -->
+  <line class="e" x1="720" y1="258" x2="900" y2="135"/>
+  <text class="lbl" x="815" y="185">population</text>
+  <!-- Heraklion -> official name -->
+  <line class="e" x1="640" y1="255" x2="640" y2="150"/>
+  <text class="lbl" x="455" y="200">official name</text>
+  <!-- Knossos -> municipality -->
+  <line class="e" x1="1120" y1="530" x2="985" y2="530"/>
+  <text class="lbl" x="1000" y="515">located in</text>
+  <!-- Knossos -> Greece -->
+  <line class="e" x1="1220" y1="490" x2="1200" y2="345"/>
+  <text class="lbl" x="1220" y="425">country</text>
+
+  <!-- resources -->
+  <ellipse class="res" cx="185" cy="128" rx="140" ry="56"/>
+  <text class="n" x="185" y="112">Hellenic Mediterr.</text>
+  <text class="n" x="185" y="136">University</text>
+  <text class="s" x="185" y="160">wd:Q63479721</text>
+
+  <ellipse class="res" cx="660" cy="300" rx="115" ry="48"/>
+  <text class="n" x="660" y="298">Heraklion</text>
+  <text class="s" x="660" y="322">wd:Q160544</text>
+
+  <ellipse class="res" cx="1190" cy="300" rx="105" ry="44"/>
+  <text class="n" x="1190" y="298">Greece</text>
+  <text class="s" x="1190" y="320">wd:Q41</text>
+
+  <ellipse class="res" cx="865" cy="530" rx="120" ry="54"/>
+  <text class="n" x="865" y="516">Heraklion</text>
+  <text class="n" x="865" y="540">Municipality</text>
+  <text class="s" x="865" y="564">wd:Q12875662</text>
+
+  <ellipse class="res" cx="1230" cy="530" rx="105" ry="44"/>
+  <text class="n" x="1230" y="528">Knossos</text>
+  <text class="s" x="1230" y="550">wd:Q173527</text>
+
+  <ellipse class="res" cx="120" cy="475" rx="105" ry="44"/>
+  <text class="n" x="120" y="473">university</text>
+  <text class="s" x="120" y="495">wd:Q3918</text>
+
+  <!-- literals -->
+  <rect class="lit" x="505" y="40" width="310" height="56" rx="4"/>
+  <text class="n" x="660" y="76" font-family="monospace" font-size="18">"2019-04-25"^^xsd:date</text>
+
+  <rect class="lit" x="550" y="105" width="180" height="45" rx="4"/>
+  <text class="n" x="640" y="135" font-family="monospace" font-size="18">"Ηράκλειο"@el</text>
+
+  <rect class="lit" x="870" y="90" width="140" height="45" rx="4"/>
+  <text class="n" x="940" y="120" font-family="monospace" font-size="18">145440</text>
+
+  <!-- legend -->
+  <ellipse class="res" cx="330" cy="580" rx="22" ry="14"/>
+  <text x="362" y="587" font-size="18">thing (IRI)</text>
+  <rect class="lit" x="500" y="566" width="44" height="28" rx="4"/>
+  <text x="556" y="587" font-size="18">value (literal)</text>
+</svg>

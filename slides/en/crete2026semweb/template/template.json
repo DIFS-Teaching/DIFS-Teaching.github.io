@@ -1,0 +1,75 @@
+{
+    "id": "fit_study",
+    "description": "FIT BUT template for internal academic presentations — calm report style for study statistics & committee decks",
+    "properties": {
+        "footer": {
+            "description": "Footer text (report title, body, or date)",
+            "default": ""
+        }
+    },
+    "slideClasses": [ "normal", "title", "section", "quote" ],
+    "defaultClass": "normal",
+    "slideModifiers": [ "centered", "fullspace" ],
+    "contentClasses": [ "col", "col3", "img-right", "box", "card", "note", "kicker", "large", "small", "muted", "grey", "accent", "blue", "cyan", "orange", "amber", "gold", "red", "plus", "positive", "minus", "negative", "neutral", "alert", "callout", "warning", "success", "danger", "promo", "cite", "result", "r-ref", "r-refs", "shadow", "metric", "metric-label", "tag", "status-ok", "status-warn", "status-error", "bars", "bar", "bar-label", "bar-track", "bar-fill", "num" ],
+    "baseTheme": "white",
+    "styles": [ "fit_v4.css", "fit_v4-code.css" ],
+    "usePlugins": [ "mathjax2", "rewrite", "layout" ],
+    "reveal": {
+        "width": 1920,
+        "height": 1080,
+        "margin": 0,
+        "hash": true,
+        "center": false,
+        "transition": "fade",
+        "transitionSpeed": "fast",
+        "autoAnimateDuration": 0.7,
+        "autoAnimateEasing": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "pdfMaxPagesPerSlide": 1,
+        "pdfSeparateFragments": false,
+        "layout": {
+            "footer": {
+                "numbering": true,
+                "label": "${footer}"
+            }
+        },
+        "rewrite": {
+            "rules": [
+                {
+                    "pattern": " -- ",
+                    "result": " &ndash; ",
+                    "flags": "g"
+                },
+                {
+                    "pattern": "\\.\\.\\.",
+                    "result": "&hellip;",
+                    "flags": "g"
+                },
+                {
+                    "pattern": "``",
+                    "result": "&bdquo;",
+                    "flags": "g"
+                },
+                {
+                    "pattern": "''",
+                    "result": "&ldquo;",
+                    "flags": "g"
+                },
+                {
+                    "pattern": "@@([^@]+)@@",
+                    "result": "<$1>",
+                    "flags": "g"
+                },
+                {
+                    "pattern": ">\\?\\?",
+                    "result": " class=\"fragment\">",
+                    "flags": "g"
+                },
+                {
+                    "pattern": "\\|\\|([^\\|]+)\\|\\|",
+                    "result": "<span class=\"fragment\">$1</span>",
+                    "flags": "g"
+                }
+            ]
+        }
+    }
+}

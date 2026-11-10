@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1560 700" width="1560" height="700" font-family="'Open Sans', sans-serif" fill="#1f2937">
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#1676d0"/>
+    </marker>
+    <style>
+      .res { fill: #e8f2fb; stroke: #1676d0; stroke-width: 2.5; }
+      .e   { stroke: #1676d0; stroke-width: 3; fill: none; marker-end: url(#a); }
+      .lbl { font-size: 21px; font-family: monospace; fill: #1676d0; font-weight: bold; }
+      .n   { font-size: 23px; font-weight: bold; text-anchor: middle; }
+      .s   { font-size: 17px; text-anchor: middle; fill: #6f7a86; font-style: italic; }
+    </style>
+  </defs>
+
+  <!-- typed edges (drawn first) -->
+  <line class="e" x1="360" y1="200" x2="624" y2="200"/>
+  <text class="lbl" x="400" y="186">headquarters</text>
+
+  <line class="e" x1="890" y1="200" x2="1184" y2="200"/>
+  <text class="lbl" x="985" y="186">country</text>
+
+  <line class="e" x1="760" y1="505" x2="760" y2="261"/>
+  <text class="lbl" x="610" y="390">located in</text>
+
+  <line class="e" x1="890" y1="560" x2="1184" y2="560"/>
+  <text class="lbl" x="950" y="546">excavated by</text>
+
+  <line class="e" x1="865" y1="520" x2="1222" y2="244"/>
+  <text class="lbl" x="1060" y="400">country</text>
+
+  <!-- things -->
+  <ellipse class="res" cx="230" cy="200" rx="130" ry="55"/>
+  <text class="n" x="230" y="198">HMU</text>
+  <text class="s" x="230" y="226">a university</text>
+
+  <ellipse class="res" cx="760" cy="200" rx="130" ry="55"/>
+  <text class="n" x="760" y="198">Heraklion</text>
+  <text class="s" x="760" y="226">a city</text>
+
+  <ellipse class="res" cx="1320" cy="200" rx="130" ry="55"/>
+  <text class="n" x="1320" y="198">Greece</text>
+  <text class="s" x="1320" y="226">a country</text>
+
+  <ellipse class="res" cx="760" cy="560" rx="130" ry="55"/>
+  <text class="n" x="760" y="558">Knossos</text>
+  <text class="s" x="760" y="586">an archaeological site</text>
+
+  <ellipse class="res" cx="1320" cy="560" rx="130" ry="55"/>
+  <text class="n" x="1320" y="558">Arthur Evans</text>
+  <text class="s" x="1320" y="586">a person</text>
+</svg>

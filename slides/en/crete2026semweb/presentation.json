@@ -1,0 +1,22 @@
+{
+    "id": "crete2026semweb",
+    "title": "Knowledge Graphs: Teaching the Web What Things Mean",
+    "author": "Radek Burget <burgetr@fit.vut.cz>",
+    "lang": "en",
+    "template": {
+        "name": "fit_study",
+        "properties": {
+            "footer": "Knowledge Graphs · Hellenic Mediterranean University · Heraklion 2026"
+        }
+    },
+    "contents": [
+        "00title.md",
+        "10intro.md",
+        "20graphs.md",
+        "30sparql.md",
+        "40web.md",
+        "50fitlayout.md",
+        "60conclusions.md",
+        "99final.md"
+    ]
+}

@@ -1,0 +1,849 @@
+/*
+ * fit_v4.css — FIT BUT template for internal academic presentations
+ *
+ * Aesthetic: "Faculty report" — calm, institutional, web-like. A clean white
+ *            canvas with generous whitespace, title-case Archivo headings, a
+ *            brand-cyan ribbon for eyebrows, light-gray surface cards, and
+ *            simple bar charts — tuned for study statistics and committee
+ *            decks rather than the high-tech spec-sheet look of fit_v3.
+ * Brand:     Faculty of Information Technology, Brno University of Technology.
+ * Fonts:     Archivo (display headings) · Open Sans (body, labels, figures).
+ * Palette:   #ffffff canvas · #16202b ink · #1676d0 primary blue · #00a9e0 cyan
+ *            · #e4002b brand red (logo + rare anchor) · #f3f7f6 card surface.
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+
+/* ============================================================
+   DESIGN TOKENS
+   ============================================================ */
+
+:root {
+  --fit-bg:        #ffffff;   /* slide canvas — brand white */
+  --fit-bg-alt:    #f3f7f6;   /* card / panel / zebra surface (cool light) */
+  --fit-surface:   #ffffff;
+  --fit-surface-2: #fafafa;
+  --fit-viewport:  #e8eaea;   /* area around slides */
+
+  --fit-ink:       #16202b;   /* headings */
+  --fit-ink-2:     #243140;
+  --fit-text:      #2a3640;   /* body text */
+  --fit-muted:     #6f7a86;   /* secondary gray (brand) */
+  --fit-faint:     #9aa6b2;
+
+  --fit-blue:      #1676d0;   /* primary blue — headings / links / bars */
+  --fit-blue-dk:   #125ea6;   /* hover / active */
+  --fit-blue-soft: #e6f0fa;
+  --fit-cyan:      #00a9e0;   /* brand cyan — ribbon / labels / secondary bars */
+  --fit-cyan-dk:   #0098ca;
+  --fit-cyan-soft: #d7f1fb;
+  --fit-red:       #e4002b;   /* brand anchor — use sparingly */
+
+  --fit-positive:  #1e9e57;
+  --fit-negative:  #d8232a;
+  --fit-warning:   #d9810a;
+  --fit-neutral:   #6f7a86;
+
+  --fit-border:    #e3e8ea;
+  --fit-border-2:  #d3dade;
+
+  --fit-display: 'Archivo', system-ui, sans-serif;
+  --fit-body:    'Open Sans', system-ui, sans-serif;
+  --fit-mono:    ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  --fit-font-base:        0.95em;
+  --fit-font-h1:          1.5em;
+  --fit-font-h2:          0.98em;
+  --fit-font-h3:          0.82em;
+  --fit-font-title-h1:    2.3em;
+  --fit-font-section-h1:  2.5em;
+  --fit-font-footer:      52%;
+  --fit-font-code:        1.25em;
+}
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+.reveal-viewport {
+  background:
+    radial-gradient(circle at 50% 0%, #f6f9f9 0%, var(--fit-viewport) 80%);
+}
+
+html.print-pdf .reveal .slides section .fragment {
+  opacity: 1;
+  visibility: visible;
+}
+
+.reveal {
+  font-family: var(--fit-body);
+  color: var(--fit-text);
+  font-weight: 400;
+}
+
+.reveal .slides section {
+  height: 100%;
+  text-align: left;
+  border: none;
+  padding: 0;
+  background: var(--fit-bg);
+}
+
+.reveal .progress {
+  height: 3px;
+  color: var(--fit-blue);
+}
+
+.reveal .controls {
+  color: var(--fit-blue);
+}
+
+/* numeric figures align in stat tables / metrics */
+.reveal table, .reveal .metric, .reveal .bar-fill, .reveal .bar-val {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   SLIDE HEADER  (clean white bar · title-case ink heading · cyan rule)
+   ============================================================ */
+
+.reveal .slides section header {
+  background: var(--fit-surface);
+  padding: 0.66em 2.6em 0.58em 2.6em;
+  position: relative;
+  border-bottom: 1px solid var(--fit-border);
+}
+
+/* cyan accent rule riding the header baseline */
+.reveal .slides section header::after {
+  content: '';
+  position: absolute;
+  left: 2.6em;
+  bottom: -2px;
+  width: 3.2em;
+  height: 3px;
+  background: var(--fit-cyan);
+}
+
+.reveal .slides section h1 {
+  font-family: var(--fit-display);
+  font-weight: 700;
+  font-size: var(--fit-font-h1);
+  text-transform: none;
+  color: var(--fit-ink);
+  margin: 0;
+  line-height: 1.16;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   CONTENT AREA
+   ============================================================ */
+
+.reveal .slides section .content {
+  padding: 1.4em 2.75em 3.4em 2.75em;
+  line-height: 1.5;
+  font-size: var(--fit-font-base);
+  overflow-wrap: break-word;
+}
+
+/* small uppercase kicker label above a block — web-style section label */
+.reveal .kicker {
+  font-family: var(--fit-body);
+  font-weight: 700;
+  font-size: 0.62em;
+  color: var(--fit-blue);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  display: block;
+  margin: 0.2em 0 0.5em 0;
+}
+
+/* ============================================================
+   FOOTER  (FIT mark · talk label · slide number)
+   ============================================================ */
+
+.reveal .slides section footer {
+  background: transparent;
+  color: var(--fit-muted);
+  border-top: 1px solid var(--fit-border);
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 0 2.6em;
+  height: 40px;
+  line-height: 40px;
+  font-family: var(--fit-body);
+  font-size: var(--fit-font-footer);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+}
+
+.reveal .slides section footer::before {
+  content: '';
+  width: 1.5em;
+  height: 1.5em;
+  margin-right: 0.9em;
+  background: url('logo-mark.svg') no-repeat left center;
+  background-size: contain;
+  flex: none;
+}
+
+.reveal .slides section footer .label {
+  text-transform: none;
+  font-weight: 600;
+}
+
+.reveal .slides section footer .label:empty { display: none; }
+.reveal .slides section footer .notes { display: none; }
+
+.reveal .slides section footer .slideno {
+  margin-left: auto;
+  color: var(--fit-blue);
+  font-weight: 700;
+}
+
+.reveal .slides section > header:empty { display: none; }
+
+/* ============================================================
+   HEADINGS INSIDE CONTENT
+   ============================================================ */
+
+.reveal h2 {
+  font-family: var(--fit-display);
+  font-weight: 700;
+  font-size: var(--fit-font-h2);
+  color: var(--fit-blue);
+  text-transform: none;
+  letter-spacing: -0.005em;
+  margin: 0.7em 0 0.35em 0;
+}
+
+.reveal h3 {
+  font-family: var(--fit-display);
+  font-weight: 600;
+  font-size: var(--fit-font-h3);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--fit-muted);
+  margin: 0.6em 0 0.2em 0;
+}
+
+/* ============================================================
+   TEXT, EMPHASIS, LINKS
+   ============================================================ */
+
+.reveal strong { font-weight: 700; color: var(--fit-ink); }
+
+.reveal em {
+  color: var(--fit-blue);
+  font-style: inherit;
+  font-weight: 600;
+}
+
+.reveal i { font-style: italic; }
+
+.reveal .slides a {
+  color: var(--fit-blue);
+  text-decoration: none;
+  border-bottom: 1px solid var(--fit-blue-soft);
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.reveal .slides a:hover { color: var(--fit-blue-dk); border-bottom-color: var(--fit-blue); }
+
+.reveal blockquote {
+  box-shadow: none;
+  border-left: 3px solid var(--fit-cyan);
+  background: var(--fit-bg-alt);
+  font-style: italic;
+  color: var(--fit-ink-2);
+  padding: 0.5em 1em;
+  border-radius: 0 5px 5px 0;
+}
+
+/* ============================================================
+   LISTS
+   ============================================================ */
+
+.reveal ol, .reveal dl, .reveal ul {
+  display: block;
+  margin-left: 1.2em;
+}
+
+.reveal ul li, .reveal ol li { margin-bottom: 0.3em; }
+
+.reveal ul { list-style: none; margin-left: 1.4em; }
+
+.reveal ul li::before {
+  content: '';
+  display: inline-block;
+  width: 0.46em;
+  height: 0.46em;
+  margin-right: 0.7em;
+  margin-left: -1.1em;
+  background: var(--fit-cyan);
+  border-radius: 1px;          /* small brand-square bullet */
+  vertical-align: middle;
+}
+
+.reveal ul ul { margin-left: 1.5em; }
+.reveal ul ul li::before { background: var(--fit-faint); }
+
+.reveal ol li::marker {
+  color: var(--fit-blue);
+  font-weight: 700;
+}
+
+/* ============================================================
+   TABLES  (clean academic / report style)
+   ============================================================ */
+
+.reveal table {
+  font-family: var(--fit-body);
+  font-size: 0.84em;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 0.6em 0;
+}
+
+.reveal table th {
+  background: var(--fit-bg-alt);
+  color: var(--fit-blue);
+  font-family: var(--fit-display);
+  font-weight: 700;
+  font-size: 0.86em;
+  text-transform: none;
+  letter-spacing: 0;
+  padding: 0.55em 0.9em;
+  text-align: left;
+  border: none;
+  border-bottom: 2px solid var(--fit-blue);
+}
+
+.reveal table td {
+  padding: 0.46em 0.9em;
+  border-bottom: 1px solid var(--fit-border);
+  color: var(--fit-text);
+  vertical-align: top;
+}
+
+.reveal table tr:nth-child(even) td { background: var(--fit-bg-alt); }
+.reveal table tr:last-child td { border-bottom: 2px solid var(--fit-border-2); }
+
+/* numeric columns: right-align via a helper class on cells if needed */
+.reveal table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* ============================================================
+   CODE  (rare in this template; kept light & quiet)
+   ============================================================ */
+
+.reveal code {
+  font-family: var(--fit-mono);
+  color: var(--fit-blue-dk);
+  font-size: 0.82em;
+  background: var(--fit-bg-alt);
+  border-radius: 3px;
+  padding: 0.05em 0.3em;
+}
+
+.reveal pre {
+  box-shadow: 0 4px 16px rgba(13, 17, 23, 0.08);
+  border: 1px solid var(--fit-border);
+  border-radius: 6px;
+  background: var(--fit-surface);
+  margin: 0.7em 0;
+}
+
+.reveal pre code {
+  font-family: var(--fit-mono);
+  font-size: var(--fit-font-code);
+  max-height: 720px;
+  line-height: 1.45;
+  background: transparent;
+  color: var(--fit-text);
+  padding: 1em 1.2em;
+  border-radius: 0;
+}
+
+/* code inside columns / small blocks: slightly smaller */
+.reveal .small pre code,
+.reveal .col pre code { font-size: 1.1em; }
+
+/* ============================================================
+   UTILITY COLOUR / TYPE CLASSES
+   ============================================================ */
+
+.reveal .accent   { color: var(--fit-blue); }
+.reveal .blue     { color: var(--fit-blue); }
+.reveal .cyan     { color: var(--fit-cyan-dk); }
+.reveal .orange,
+.reveal .amber,
+.reveal .gold     { color: var(--fit-warning); }
+.reveal .red      { color: var(--fit-red); }
+.reveal .muted,
+.reveal .grey     { color: var(--fit-muted); }
+.reveal .small    { font-size: 82%; }
+.reveal .large    { font-size: 220%; line-height: 1.1; }
+.reveal .plus,
+.reveal .positive { color: var(--fit-positive); font-weight: 700; }
+.reveal .minus,
+.reveal .negative { color: var(--fit-negative); font-weight: 700; }
+.reveal .neutral  { color: var(--fit-neutral); }
+.reveal .alert    { color: var(--fit-warning); font-weight: 700; }
+
+.reveal .note {
+  font-size: 72%;
+  color: var(--fit-faint);
+}
+
+/* ============================================================
+   METRICS / KPI NUMBERS  (the workhorse of a statistics deck)
+   ============================================================ */
+
+.reveal .metric {
+  font-family: var(--fit-display);
+  font-size: 3.1em;
+  font-weight: 800;
+  color: var(--fit-blue);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  display: block;
+}
+.reveal .metric.ink { color: var(--fit-ink); }
+.reveal .metric .unit { font-size: 0.4em; color: var(--fit-muted); font-weight: 700; }
+
+.reveal .metric-label {
+  font-family: var(--fit-body);
+  font-size: 0.66em;
+  font-weight: 600;
+  color: var(--fit-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: block;
+  margin-top: 0.35em;
+}
+
+/* light pill label (web-style), not the dark hightech tag */
+.reveal .tag {
+  display: inline-block;
+  font-family: var(--fit-body);
+  font-size: 0.66em;
+  font-weight: 700;
+  background: var(--fit-blue-soft);
+  color: var(--fit-blue-dk);
+  border-radius: 999px;
+  padding: 0.18em 0.7em;
+  margin: 0.12em 0.12em;
+  letter-spacing: 0.02em;
+  vertical-align: middle;
+}
+.reveal .tag.cyan { background: var(--fit-cyan-soft); color: var(--fit-cyan-dk); }
+.reveal .tag.grey { background: var(--fit-bg-alt); color: var(--fit-muted); }
+
+/* status dots */
+.reveal .status-ok,
+.reveal .status-warn,
+.reveal .status-error { font-weight: 600; }
+.reveal .status-ok    { color: var(--fit-positive); }
+.reveal .status-warn  { color: var(--fit-warning); }
+.reveal .status-error { color: var(--fit-negative); }
+.reveal .status-ok::before,
+.reveal .status-warn::before,
+.reveal .status-error::before { content: '● '; }
+
+/* ============================================================
+   BAR CHART  (simple horizontal bars for study statistics)
+   <div class="bars">
+     <div class="bar"><span class="bar-label">2023</span>
+       <span class="bar-track"><span class="bar-fill" style="width:72%">1 240</span></span></div>
+   </div>
+   ============================================================ */
+
+.reveal .bars { margin: 0.9em 0; }
+
+.reveal .bar {
+  display: flex;
+  align-items: center;
+  gap: 0.9em;
+  margin: 0.4em 0;
+}
+
+.reveal .bar-label {
+  width: 7em;
+  flex: none;
+  text-align: right;
+  font-size: 0.8em;
+  font-weight: 600;
+  color: var(--fit-muted);
+}
+
+.reveal .bar-track {
+  flex: 1;
+  background: var(--fit-bg-alt);
+  border-radius: 5px;
+  height: 1.85em;
+  display: flex;
+  align-items: center;
+}
+
+.reveal .bar-fill {
+  background: var(--fit-blue);
+  color: #ffffff;
+  height: 100%;
+  min-width: 2.2em;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.7em;
+  font-size: 0.76em;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.reveal .bar-fill.cyan { background: var(--fit-cyan); }
+.reveal .bar-fill.muted { background: var(--fit-neutral); }
+
+/* ============================================================
+   CARDS / CALLOUTS / PANELS
+   ============================================================ */
+
+.reveal .card,
+.reveal .box {
+  background: var(--fit-bg-alt);
+  border: 1px solid var(--fit-border);
+  border-radius: 8px;
+  padding: 0.9em 1.1em;
+}
+.reveal .card { box-shadow: 0 2px 10px rgba(13, 17, 23, 0.04); }
+
+.reveal .callout,
+.reveal .warning,
+.reveal .success,
+.reveal .danger {
+  padding: 0.6em 1em;
+  margin: 0.6em 0;
+  border-radius: 0 6px 6px 0;
+  border-left: 4px solid var(--fit-blue);
+  background: rgba(22, 118, 208, 0.06);
+}
+.reveal .warning { border-left-color: var(--fit-warning); background: rgba(217, 129, 10, 0.07); }
+.reveal .success { border-left-color: var(--fit-positive); background: rgba(30, 158, 87, 0.07); }
+.reveal .danger  { border-left-color: var(--fit-negative); background: rgba(216, 35, 42, 0.06); }
+
+/* magenta promo block — brand "special offer" style; promotions only, sparingly */
+.reveal .promo {
+  padding: 0.7em 1.1em;
+  margin: 0.6em 0;
+  border-radius: 6px;
+  background: linear-gradient(100deg, #d6006a, #00a9e0);
+  color: #ffffff;
+  font-weight: 600;
+}
+.reveal .promo strong { color: #ffffff; }
+
+.reveal .cite {
+  border: 1px solid var(--fit-border);
+  border-radius: 4px;
+  background: var(--fit-bg-alt);
+  padding: 0.4em 0.9em;
+  margin: 0.6em 0;
+  font-size: 72%;
+  color: var(--fit-muted);
+}
+
+/* academic reference helpers */
+.reveal .result {
+  border-left: 4px solid var(--fit-cyan);
+  background: var(--fit-cyan-soft);
+  padding: 0.6em 1em;
+  margin: 0.6em 0;
+  border-radius: 0 6px 6px 0;
+}
+.reveal .r-ref {
+  font-size: 0.6em;
+  vertical-align: super;
+  color: var(--fit-blue);
+}
+.reveal .r-refs {
+  font-size: 64%;
+  color: var(--fit-muted);
+  border-top: 1px solid var(--fit-border);
+  margin-top: 0.8em;
+  padding-top: 0.5em;
+}
+
+.reveal .shadow {
+  border: 1px solid var(--fit-border);
+  border-radius: 8px;
+  box-shadow: 0 6px 22px rgba(13, 17, 23, 0.1);
+}
+
+/* ============================================================
+   COLUMNS & FLOATS
+   ============================================================ */
+
+.reveal .col {
+  width: 46%;
+  float: left;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.reveal .col3 { width: 29.33%; float: left; margin-left: 2%; margin-right: 2%; }
+
+.reveal .img-right {
+  float: right;
+  margin: 0.4em 0 1em 1.4em;
+  max-width: 42%;
+}
+
+/* ============================================================
+   TITLE SLIDE
+   ============================================================ */
+
+.reveal .slides section.title {
+  background: var(--fit-bg);
+  display: flex !important;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.reveal .slides section.title > header {
+  background: transparent;
+  border: none;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 2.6em 2.8em 0 2.8em;
+}
+.reveal .slides section.title > header::after { display: none; }
+
+.reveal .slides section.title .topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.reveal .slides section.title .logo {
+  display: inline-block;
+  background: url('logo-full.svg') no-repeat left center;
+  background-size: contain;
+  height: 2.9em;
+  width: 12em;
+}
+
+.reveal .slides section.title .coords {
+  font-family: var(--fit-body);
+  font-size: 0.58em;
+  font-weight: 600;
+  color: var(--fit-faint);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* brand-cyan ribbon eyebrow (mirrors the FIT web hero label block) */
+.reveal .slides section.title .eyebrow {
+  font-family: var(--fit-body);
+  font-size: 0.62em;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--fit-cyan);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin: auto 0 0.85em 0;
+  padding: 0.4em 0.9em;
+  align-self: flex-start;
+}
+
+.reveal .slides section.title h1 {
+  font-family: var(--fit-display);
+  font-weight: 800;
+  font-size: var(--fit-font-title-h1);
+  text-transform: none;
+  color: var(--fit-ink);
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin: 0;
+}
+
+.reveal .slides section.title .subtitle {
+  font-family: var(--fit-body);
+  font-size: 0.92em;
+  color: var(--fit-muted);
+  margin-top: 0.6em;
+  font-weight: 400;
+}
+
+.reveal .slides section.title .content {
+  flex: none;
+  padding: 1.1em 2.8em 2.6em 2.8em;
+}
+
+.reveal .slides section.title .authors {
+  font-size: 0.82em;
+  border-top: 2px solid var(--fit-blue);
+  padding-top: 1em;
+  display: flex;
+  gap: 2.4em;
+}
+.reveal .slides section.title .authors .who { font-weight: 700; color: var(--fit-ink); }
+.reveal .slides section.title .authors .role {
+  font-size: 0.78em;
+  color: var(--fit-muted);
+  display: block;
+  margin-top: 0.15em;
+}
+
+.reveal .slides section.title footer { display: none; }
+
+/* ============================================================
+   SECTION SLIDE  (calm light-gray divider with a cyan ribbon eyebrow)
+   ============================================================ */
+
+.reveal .slides section.section {
+  background: var(--fit-bg-alt);
+  overflow: hidden;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* decorative brand squares motif, top-right, very subtle */
+.reveal .slides section.section::before {
+  content: '';
+  position: absolute;
+  top: 2.4em; right: 2.6em;
+  width: 4.5em; height: 4.5em;
+  background:
+    linear-gradient(var(--fit-cyan), var(--fit-cyan)) 0 0 / 2em 2em no-repeat,
+    linear-gradient(var(--fit-blue), var(--fit-blue)) 2.5em 2.5em / 2em 2em no-repeat,
+    linear-gradient(var(--fit-red), var(--fit-red)) 2.5em 0 / 0.9em 0.9em no-repeat;
+  opacity: 0.85;
+  pointer-events: none;
+}
+
+.reveal .slides section.section header {
+  background: transparent;
+  border: none;
+  padding: 0 2.8em;
+  position: relative;
+  z-index: 1;
+}
+.reveal .slides section.section header::after { display: none; }
+
+/* cyan ribbon eyebrow */
+.reveal .slides section.section .eyebrow {
+  font-family: var(--fit-body);
+  font-size: 0.6em;
+  font-weight: 700;
+  color: #ffffff;
+  background: var(--fit-cyan);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.35em 0.8em;
+  display: inline-block;
+  margin-bottom: 0.9em;
+}
+
+.reveal .slides section.section header h1 {
+  font-family: var(--fit-display);
+  font-weight: 800;
+  font-size: var(--fit-font-section-h1);
+  text-transform: none;
+  color: var(--fit-ink);
+  letter-spacing: -0.02em;
+  line-height: 1.04;
+}
+
+.reveal .slides section.section header p {
+  color: var(--fit-muted);
+  margin: 1em 0 0 0;
+  font-size: 0.78em;
+  max-width: 64%;
+}
+
+.reveal .slides section.section footer {
+  border-top-color: var(--fit-border-2);
+}
+
+.reveal .slides section.section > .content { padding: 0; }
+
+/* ============================================================
+   QUOTE SLIDE
+   ============================================================ */
+
+.reveal .slides section.quote {
+  display: flex !important;
+  flex-direction: column;
+}
+.reveal .slides section.quote > header { display: none; }
+.reveal .slides section.quote .content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.6em;
+}
+.reveal .slides section.quote blockquote {
+  border: none;
+  background: transparent;
+  font-style: normal;
+  font-weight: 700;
+  font-family: var(--fit-display);
+  color: var(--fit-ink);
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  max-width: 82%;
+  margin: 0 auto;
+  padding: 0;
+}
+.reveal .slides section.quote blockquote::before {
+  content: '“';
+  display: block;
+  font-family: var(--fit-display);
+  font-size: 2.4em;
+  color: var(--fit-cyan);
+  line-height: 0.4;
+  margin-bottom: 0.2em;
+}
+.reveal .slides section.quote .attrib {
+  font-family: var(--fit-body);
+  font-size: 0.5em;
+  font-weight: 600;
+  color: var(--fit-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 1.4em;
+}
+.reveal .slides section.quote footer { position: relative; }
+
+/* ============================================================
+   MODIFIERS
+   ============================================================ */
+
+.reveal .slides section.centered .content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+.reveal .slides section.fullspace .content { padding: 0; }
+
+.reveal .slides section.stack > section:first-of-type footer .slideno::after {
+  content: ' ▾';
+  color: var(--fit-faint);
+}
+
+/* ============================================================
+   PDF EXPORT
+   ============================================================ */
+
+/* Reveal's print stylesheet forces `display: block !important` on every
+   <section>, which breaks the flex-based slide layouts above. Re-assert them
+   with a higher-specificity selector so `?print-pdf` matches the screen. */
+html.print-pdf .reveal .slides section.title,
+html.print-pdf .reveal .slides section.section,
+html.print-pdf .reveal .slides section.quote {
+  display: flex !important;
+}
