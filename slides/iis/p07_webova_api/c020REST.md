@@ -49,7 +49,7 @@
 # Metody HTTP -- Volání funkcí
 
 - **GET** i **POST**
-	- Vykoná operaci vrátí výsledek (serializovaná data)
+	- Vykoná operaci a vrátí výsledek (serializovaná data)
 - Pokud je výsledkem operace nový zdroj, jeho URL se vrátí v hlavičce `Location`.
 
 ---
@@ -58,7 +58,7 @@
 
 - Stavový kód odpovědi HTTP může odpovídat výsledku operace
 - Typicky například:
-	- 200 Ok
+	- 200 OK
 	- 201 Created
 	- 400 Bad request
 	- 403 Forbidden

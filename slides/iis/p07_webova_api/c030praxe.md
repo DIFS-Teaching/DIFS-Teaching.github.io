@@ -16,7 +16,7 @@
 3. Vykonání příslušné operace
 	- Aplikační logika
 4. Zakódování a odeslání výsledku
-	- Vytvoření JSON, a odeslání ➜ **serializace**
+	- Vytvoření JSON a odeslání ➜ **serializace**
 
 ---
 
@@ -40,7 +40,7 @@
 
 - Vyhodnocení metody a cesty požadavku
 	- `$_SERVER['REQUEST_METHOD']` a `$_SERVER['PATH_INFO']`
-- Přečtení těla požadavku (pokd je)
+- Přečtení těla požadavku (pokud je)
 	- `file_get_contents('php://input')`
 - Nastavení stavového kódu a hlaviček odpovědi
 	- `http_response_code()`, `header()`
@@ -59,8 +59,8 @@ Demo: https://github.com/DIFS-Teaching/basic-demos/tree/master/php-rest-db
 	- Podpora deserializace. Např. `$request->json()->all()` v Laravel.
 - Odeslání JSON:
 	- [Symfony](https://symfony.com/doc/current/components/http_foundation.html#creating-a-json-response)
-	- [Laravel](https://laravel.com/docs/8.x/responses#json-responses)
-	- [Nette](https://doc.nette.org/cs/3.0/presenters#toc-odeslani-odpovedi)
+	- [Laravel](https://laravel.com/docs/responses#json-responses)
+	- [Nette](https://doc.nette.org/cs/application/presenters#toc-odeslani-json)
 
 ---
 

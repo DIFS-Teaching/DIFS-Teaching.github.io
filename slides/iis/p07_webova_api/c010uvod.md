@@ -1,6 +1,6 @@
 # Webová API
 
-- Na HTTP požadavek můžeme chápat jako na **volání vzdálené funkce na serveru**
+- HTTP požadavek můžeme chápat jako **volání vzdálené funkce na serveru**
 	- Předáme jméno a parametry
 	- Server vykoná nějaké operace
 	- Vrátí výsledek (tradičně v HTML)
@@ -53,7 +53,8 @@
 
 # REST
 
-- XML-RPC a SOAP jsou (teoreticky) nezávislé na HTTP
+- XML-RPC a SOAP využívají HTTP pouze jako nosič zpráv
+	- SOAP je na HTTP nezávislý
 - Vše se popisuje v XML dokumentech
 	- Rozsáhlý standard, značná složitost dokumentů
 	- Obtížná implementace
