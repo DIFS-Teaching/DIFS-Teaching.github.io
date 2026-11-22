@@ -13,11 +13,11 @@
     -   implementace a design stránky
 -   DOM
     -   změny v dokumentu
--   XML, JSON, ...
+-   JSON (případně XML, ...)
     -   výměna dat
 -   JavaScript
     -   logika UI
--   `XMLHttpRequest` nebo `fetch()`
+-   `fetch()` (dříve `XMLHttpRequest`)
     -   JS API v prohlížeči pro odesílání požadavků
 
 ---
@@ -27,7 +27,7 @@
 -   Strukturovaná data přes HTTP
     -   Je třeba _serializace_
     -   XML (původně)
-    -   JSON (odlehčené řešení)
+    -   JSON (dnes převažuje)
 -   Části stránky
     -   Obvykle přímo útržky HTML
 
@@ -35,47 +35,55 @@
 
 # Odesílání dat
 
+<div class="small">
+
 -   V rámci GET požadavku lze odesílat hodnoty parametrů
     -   Standardně klíč-hodnota  
-        `http://www.news.com/articles/?cat=business&id=4827`
-    -   Někajá konvence zakódování do URL, server musí dekódovat  
-        `http://www.news.com/articles/business/4827`
--   V rámci POST, PUT, DELETE lze odeslat libovolná data, je nutno specifikovat MIME typ (hlavička `Content-type` v požadavku
-    -   `application/x-www-form-urlencoded` nebo `multipart/form-data` – lze odesílat jen dvojice klíč-hodnota
+        `https://example.com/articles/?cat=business&id=4827`
+    -   Nějaká konvence zakódování do URL, server musí dekódovat  
+        `https://example.com/articles/business/4827`
+-   V rámci POST, PUT, PATCH lze v těle odeslat libovolná data, je nutno specifikovat MIME typ (hlavička `Content-Type` v požadavku)
+    -   `application/x-www-form-urlencoded` – jen dvojice klíč-hodnota
+    -   `multipart/form-data` – dvojice klíč-hodnota a soubory
     -   `application/json`, `application/xml`, apod. – přímo serializované strukturované hodnoty
+-   GET a DELETE obvykle tělo nemají (jeho význam není definován)
+
+</div>
 
 ---
 
 # Příjem dat
 
 -   Výsledkem požadavku je obvykle odpověď obsahující _serializovaná data_
--   Formát serializace je indikován hlavičkou `Content-type` v odpovědi
+-   Formát serializace je indikován hlavičkou `Content-Type` v odpovědi
     -   Obvykle opět `application/json` nebo `application/xml`
 -   Je zvykem, že klient uvede preferovaný formát (i více) pomocí hlavičky `Accept` v požadavku
     -   Např. `Accept: application/json`
--   Server v rámci svých možností vyhoví nebo vrátí chybu
+-   Server v rámci svých možností vyhoví, případně vrátí chybu `406 Not Acceptable`
 
 ---
 
-# Stavové kódy
+# Stavové kódy z pohledu klienta
 
--   Stavový kód indikuje výsledek operace
--   Provedeno v pořádku
-    -   `200 OK`
-    -   `201 Created`
--   Chyba
-    -   `400 Bad request`
-    -   `401 Unauthorized`
-    -   `404 Not found`
-    -   Tělo odpovědi stále může obsahovat data (např. podrobnosti o chybě)
+-   Stavový kód indikuje výsledek operace (viz _webová API_)
+-   `2xx` – úspěch: zobrazit výsledek
+    -   `200 OK`, `201 Created`, `204 No Content` (žádná data)
+-   `4xx` – chyba klienta: informovat uživatele
+    -   `400 Bad Request`, `422 Unprocessable Content` – chybná data (zvýraznit ve formuláři)
+    -   `401 Unauthorized` – chybí přihlášení (přesměrovat na přihlášení)
+    -   `403 Forbidden` – přihlášen, ale nemá oprávnění
+    -   `404 Not Found`, `409 Conflict`
+-   `5xx` – chyba serveru: obecné chybové hlášení, případně opakovat později
+-   Tělo odpovědi stále může obsahovat data (např. podrobnosti o chybě)
 
 ---
 
 # Server
 
 -   Implementuje _business logiku_ (operace)
-    -   Každá operace má obvykle svoje URL (případně parametrizovatelné)
--   Poskytuje REST API pro jednotlivé operace
+-   Poskytuje REST API
+    -   Každý **zdroj** (_resource_) má svoje URL (případně parametrizovatelné)
+    -   Operace se zdrojem je určena HTTP metodou
 -   Libovolná serverová platforma
     -   Java, .NET, PHP, Python, Node.js, ...
     -   Typicky podporováno v různých frameworcích
@@ -92,12 +100,13 @@
 -   Volá metody API
     -   Vysílá příslušné HTTP požadavky na endpoint URL
 -   Zobrazuje výsledky volání
+    -   Včetně chybových stavů
 
 ---
 
 # Klient v JavaScriptu (starý)
 
--   Rozhraní `XMLHTTPRequest`
+-   Rozhraní `XMLHttpRequest`
 
 ```JavaScript
 var xhr = new XMLHttpRequest();
@@ -107,7 +116,7 @@ xhr.onreadystatechange = function() {
     }
 }
 xhr.open("POST", "post-handler.php", true);
-xhr.setRequestHeader("Content-type", "application/json");
+xhr.setRequestHeader("Content-Type", "application/json");
 xhr.send(JSON.stringify(data));
 ```
 
@@ -117,86 +126,97 @@ xhr.send(JSON.stringify(data));
 
 ```JavaScript
 fetch('https://example.com/profile', {
-	method: 'POST',
-	headers: {
-		'Content-Type': 'application/json',
-	},
-	body: JSON.stringify(data),
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(data),
 })
 .then(response => response.json())
-.then(data => {
-	console.log('Success:', data);
-})
-.catch((error) => {
-	console.error('Error:', error);
-});
+.then(result => console.log('Success:', result))
+.catch(error => console.error('Error:', error));
 ```
+
+-   Funkce `fetch()` vrací `Promise`, výsledek se zpracuje asynchronně
 
 ---
 
 # Klient pomocí fetch() a await
 
 ```JavaScript
-async function doPost() {
-	try {
-		var response = await fetch('https://example.com/profile', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json',
-			},
-			body: JSON.stringify(data),
-		})
-		var data = await response.json();
-		console.log(data);
-	} catch (e) {
-		console.error(e);
-	}
+async function saveProfile(data) {
+    const response = await fetch('https://example.com/profile', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    });
+    if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+    }
+    return await response.json();
 }
 ```
 
-- viz též asynchronní zpracování, `await` apod.
+-   Volající ošetří případnou výjimku pomocí `try` / `catch`
 -   [Příklad klienta](https://github.com/DIFS-Teaching/basic-demos/blob/master/php-rest-db/client.html)
 
 ---
 
-# Jednoduchý klient v jQuery
+# Pozor na chyby
 
--   `jQuery.ajax(settings)` – asynchronní HTTP požadavek
-    
-```JavaScript
-    $.ajax({   
-      url: "test.html",   
-      cache: false   
-    }).done(function( html ) {   
-      $( "#results" ).append( html );   
-	});
-```
-    
--   `jQuery.getJSON(url)` – Načte JSON data ze serveru
+-   `fetch()` selže (vyhodí výjimku) **pouze při síťové chybě**
+    -   Nedostupný server, chyba DNS, zablokování politikou CORS, ...
+-   Odpověď s chybovým stavovým kódem (`4xx`, `5xx`) je z pohledu `fetch()` úspěch
+    -   Je nutné testovat `response.ok` nebo `response.status`
+-   Odpověď nemusí být JSON (např. chybová HTML stránka serveru)
+    -   `response.json()` pak vyhodí výjimku
+-   Uživatel by měl vždy dostat srozumitelnou informaci o chybě
 
 ---
 
-# Klient v jQuery
+# Zobrazení dat v DOM
 
--   jQuery zjednodušuje související úlohy
--   Spouštění REST volání (AJAX)
-    -   Funkce `jQuery.getJSON()`
--   Zobrazení dat ve stránce
-    -   Mnoho možností, např. funkce `append()`
--   [Příklad klienta](https://github.com/DIFS-Teaching/basic-demos/blob/master/php-rest-db/clientjq.html)
+```JavaScript
+const persons = await response.json();
+const list = document.querySelector('#persons');
+list.replaceChildren();                  // odstranit původní obsah
+for (const p of persons) {
+    const li = document.createElement('li');
+    li.textContent = `${p.name} ${p.surname}`;
+    list.append(li);
+}
+```
+
+-   `textContent` vkládá data jako text – bezpečné
+-   `innerHTML` s daty ze serveru = riziko **XSS**
+    -   Data mohou obsahovat HTML značky včetně `<script>`, apod.
+-   Dříve se pro tyto úlohy používala knihovna _jQuery_ – dnes nahrazena standardními API
 
 ---
 
 # Same-origin policy
 
 -   Bezpečnostní omezení v prohlížečích
--   Skript může posílat požadavky jen na zdroje se stejným _origin_
-    -   Cíl požadavku má stejné **schéma**, **hostname** a **port**, jako má URL skriptu
--   Je možno rozvolnit toto omezení na cílovém serveru
-    -   Cross-origin resource sharing (CORS)
-    -   Server posílá hlavičku `Access-Control-Allow-Origin`, případně další.
-    -   Např. `Access-Control-Allow-Origin: *`
-    -   Vhodné pro veřejná API, používat opatrně
+-   Skript smí číst odpovědi jen ze zdrojů se stejným _origin_, jako má **stránka**, ve které běží
+    -   Origin = schéma + hostname + port
+    -   Rozhoduje origin dokumentu, ne URL, odkud byl skript načten
+-   Pozor: omezení se týká **čtení odpovědi**
+    -   Jednoduché požadavky (např. odeslání formuláře) prohlížeč odešle i na jiný origin
+    -   Proto existuje útok _CSRF_
+-   Jde o ochranu uživatele v prohlížeči, ne o ochranu API
+    -   Jiní klienti (`curl`, mobilní aplikace, ...) omezení nemají
+
+---
+
+# Cross-Origin Resource Sharing (CORS)
+
+-   Server může omezení pro své zdroje rozvolnit pomocí hlaviček odpovědi
+    -   `Access-Control-Allow-Origin: https://app.example.com`
+    -   `Access-Control-Allow-Origin: *` – vhodné jen pro veřejná API
+-   **Preflight** požadavek
+    -   U „nejednoduchých“ požadavků (např. `PUT`, `DELETE`, JSON tělo, vlastní hlavičky)
+    -   Prohlížeč nejprve pošle `OPTIONS`, server musí povolit metody a hlavičky
+-   Posílání cookies na jiný origin
+    -   Klient: `fetch(url, { credentials: 'include' })`
+    -   Server: `Access-Control-Allow-Credentials: true` (nelze s `*`)
 
 ---
 
@@ -204,14 +224,14 @@ async function doPost() {
 
 -   Protokol REST je definován jako _bezstavový_
     -   Požadavek musí obsahovat vše, žádné ukládání stavu na serveru
--   To teoreticky vylučuje možnost použití sessions pro autentizaci
-    -   Technicky to ale možné je
-    -   Sessions s cookies jsou ale použitelné jen v rámci jednoho hostitele
-        -   Problém např. pro mobilní klienty
+-   To teoreticky vylučuje použití sessions pro autentizaci
+    -   Pro webového klienta na stejné doméně to ale technicky možné je
+    -   Cookies jsou vázané na doménu a prohlížeč – komplikace pro API na jiné doméně a pro klienty mimo prohlížeč
 -   Alternativy pro autentizaci:
     -   HTTP Basic autentizace (nutné HTTPS)
-    -   Použití tokenu validovatelného na serveru – např. JWT
-    -   Složitější mechanismus, např. OAuth
+    -   API klíč – pro komunikaci mezi servery
+    -   Token validovatelný na serveru – např. JWT
+    -   Delegovaný přístup a externí přihlášení – OAuth 2, OIDC
 
 ---
 
@@ -219,12 +239,11 @@ async function doPost() {
 
 -   Standardní mechanismus HTTP, využívá speciální hlavičky
 -   Požadavek musí obsahovat hlavičku `Authorization`
-    -   Obsahuje jméno a heslo; nešifrované pouze kódované (base64)
+    -   `Authorization: Basic dXNlcjpoZXNsbw==`
+    -   Obsahuje jméno a heslo; nešifrované, pouze kódované (base64)
         -   **Je nutné použít HTTPS**
-    -   PHP dekóduje a zpřístupní v `$_SERVER['PHP_AUTH_USER']` a `$_SERVER['PHP_AUTH_PW']`
--   Pro nesprávnou nebo chybějící autentizaci server vrací `401 Auhtorization Required`
-    -   V hlavičce `WWW-Autenticate` je identifikace oblasti přihlášení
-    -   Klient tedy zjistí, že je nutná autentizace pro tuto oblast
+-   Pro nesprávnou nebo chybějící autentizaci server vrací `401 Unauthorized`
+-   Heslo se posílá s každým požadavkem – vhodné spíš pro jednoduchá a interní API
 
 ---
 
@@ -233,85 +252,83 @@ async function doPost() {
 ```php
 if (!isset($_SERVER['PHP_AUTH_USER'])) {
     header('WWW-Authenticate: Basic realm="My Realm"');
-    header('HTTP/1.0 401 Unauthorized');
-    echo 'Text to send if user hits Cancel button';
+    http_response_code(401);
+    echo 'Authentication required';
     exit;
-} else {
-    echo "<p>Hello {$_SERVER['PHP_AUTH_USER']}.</p>";
-    echo "<p>You entered {$_SERVER['PHP_AUTH_PW']} as your password.</p>";
 }
+$user = $_SERVER['PHP_AUTH_USER'];
+$password = $_SERVER['PHP_AUTH_PW'];
+// ověření jména a hesla (např. password_verify() proti DB) ...
 ```
+
+-   Při provozu přes PHP-FPM / CGI je nutné, aby HTTP server hlavičku `Authorization` předal PHP
+    -   Např. Apache: `CGIPassAuth On`
 
 ---
 
 # JSON Web Token (JWT)
 
 -   Řetězec složený ze 3 částí
-    1.  Header (hlavička) – účel, použité algoritmy (JSON)
+    1.  Header (hlavička) – typ tokenu, použitý algoritmus podpisu (JSON)
     2.  Payload (obsah) – JSON data obsahující id uživatele, jeho práva, expiraci apod.
-    3.  Signature (podpis) – pro ověření, že token nebyl podvržen nebo změněn cestou
--   Tyto tři části se kódují (base64) a spojí do jednoho řetězce
+    3.  Signature (podpis) – pro ověření, že token nebyl podvržen nebo změněn
+-   Tyto tři části se kódují (base64url) a spojí do jednoho řetězce
     -   `xxxxx.yyyyy.zzzzz`
+-   Obsah je pouze podepsaný, **není šifrovaný** – může ho přečíst kdokoliv
+    -   Nevkládat citlivé údaje
+-   Podpis: sdílený klíč (HMAC, `HS256`) nebo asymetrický (`RS256`, `ES256`)
 
 ---
 
 # Použití JWT pro autentizaci
 
 1.  Klient kontaktuje _autentizační server_ a dodá autentizační údaje
-    -   Stejný server, jaký poskytuje API, nebo i úplně jiný (např. Twitter)
+    -   Stejný server, jaký poskytuje API, nebo i úplně jiný (např. Google, Microsoft, Keycloak, univerzitní SSO)
 2.  Autentizační server vygeneruje podepsaný JWT a vrátí klientovi
 3.  Klient předá JWT při každém volání API
     -   Nejčastěji opět v hlavičce:  
         `Authorization: Bearer xxxxx.yyyyy.zzzzz`
-    -   API ověří platnost, role uživatele může být přímo v JWT
+    -   API ověří podpis a expiraci, role uživatele může být přímo v JWT
+-   Platný token nelze snadno odvolat
+    -   Krátká platnost (minuty) + _refresh token_ pro získání nového
 
 ---
 
-# OAuth
+# Kam uložit token v prohlížeči?
 
--   Požadavek:
-    -   **Uživatel** má účet na nějaké **službě** (která má API)
-    -   Chce nějaké **aplikaci** umožit přístup ke službě přes API
-    -   Ale nechce své přístupové údaje sdělovat aplikaci
--   Protokol OAuth existuje ve dvou verzích:
-    -   OAuth 1.0 – Složitější, protokolově nezávislý
-    -   OAuth 2.0 – Zjednodušeno, závisí na HTTPs
-
----
-
-# OAuth 2 – Postup
-
--   Aplikace musí být předem registrována u Služby
-    -   Má přidělenou nějakou identifikaci
--   Aplikace přesměruje prohlížeč uživatele na autorizační stránku Služby
-    -   Uživatel provede přihlášení a autorizuje aplikaci
-    -   Služba přesměruje zpět na aplikaci a předá jí autorizační kód (authorization grant)
--   Aplikace pošle POST požadavek obsahující kód na API služby
-    -   Služba vrátí přístupový token (např. JWT nebo jiný tajný kód)
--   Aplikace posílá token s každým požadavkem v hlavičce `Authorization`
+-   `localStorage` / `sessionStorage`
+    -   Jednoduché, token se přidává do hlavičky `Authorization` ručně
+    -   Při **XSS** může útočník token přečíst a odcizit
+-   Cookie s atributy `HttpOnly`, `Secure`, `SameSite`
+    -   JavaScript k ní nemá přístup, prohlížeč ji posílá automaticky
+    -   Je nutné řešit _CSRF_ (`SameSite`, CSRF token)
 
 ---
 
-# OAuth – password grant
+# OAuth 2 a OpenID Connect
 
--   Pokud uživatel může dát přístupové údaje aplikaci
-    -   Např. aplikace je přímo klient dané služby, mají stejného poskytovatele
-    -   Aplikace pošle POST požadavek na API obsahující přihlašovací údaje
-    -   API vrátí přístupový token
+-   **OAuth 2** – delegovaný přístup aplikace k API cizí služby
+    -   Uživatel aplikaci povolí přístup ke svým datům, aniž by jí sdělil heslo
+    -   Např. tiskárna fotografií získá přístup k fotkám uživatele v cloudové službě
+    -   Aplikace dostane přístupový token (často JWT) a posílá ho v hlavičce `Authorization`
+-   **OpenID Connect** (OIDC) – přihlášení uživatele pomocí externího poskytovatele identity
+    -   Nadstavba OAuth 2, aplikace se dozví, kdo je uživatel
+    -   Např. „Přihlásit přes Google“, jednotné přihlášení (SSO) v organizaci
+-   Podrobněji viz předmět _PIS_
 
 ---
 
 # Implementace klienta – alternativy
 
--   jQuery je velmi jednoduché, řeší pouze základní úlohy.
--   Angular (neplést s Angular.js)
-    -   Moderní komplexní framework
-    -   Primárně využívá TypeScript, náročnější nastavení projektu
--   React.js
-    -   Moderní framework, virtuální DOM, vlastní rozšíření JS (JSX)
--   Vue.js, ...
-
-Viz např. [SimpleRest@GitHub](https://github.com/DIFS-Teaching/SimpleRest/)
+-   Čistý JavaScript (`fetch()` + DOM) – pro jednoduché aplikace
+-   _jQuery_ – dříve velmi rozšířené, dnes již pro nové projekty spíše nevhodné
+-   React
+    -   Knihovna pro tvorbu UI, komponenty, virtuální DOM, rozšíření syntaxe (JSX)
+    -   Obvykle s frameworkem, např. _Next.js_
+-   Vue.js, Svelte
+    -   Jednodušší začátek, Svelte bez virtuálního DOM (kompilátor)
+-   Angular
+    -   Komplexní framework, TypeScript, vhodný pro rozsáhlé aplikace
 
 ---
 
@@ -319,5 +336,7 @@ Viz např. [SimpleRest@GitHub](https://github.com/DIFS-Teaching/SimpleRest/)
 
 -   JavaScript umožňuje tvorbu komplexních klientských aplikací s robustním GUI
 -   Umožňuje oddělit business logiku (na serveru) od prezentační logiky (na klientovi)
--   jQuery usnadňuje nejběžnější úlohy
--   Existuje mnoho složitějších frameworků pro rozsáhlé aplikace
+-   Základem je `fetch()` + práce s DOM, pozor na ošetření chyb a XSS
+-   Prohlížeč omezuje přístup k jiným originům, server může povolit pomocí CORS
+-   Autentizace: session cookie, tokeny (JWT), OAuth 2 / OpenID Connect
+-   Pro rozsáhlé aplikace existuje řada frameworků
