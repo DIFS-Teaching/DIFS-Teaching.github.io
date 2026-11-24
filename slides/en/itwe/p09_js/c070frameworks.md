@@ -2,7 +2,7 @@
  
 <header>
   <h1>Libraries & Frameworks</h1>
-  <p>CDN, npm, JQuery, Lodash, D3.js, React, TypeScript</p>
+  <p>CDN, npm, jQuery, Lodash, D3.js, React, TypeScript</p>
 </header>
 
 ---
@@ -22,7 +22,7 @@
 <br>
 
 - ***frameworks***: provide a structured approach to building applications
-  - e.g., [React](https://reactjs.org/), [Angular](https://angular.io/), [Vue.js](https://vuejs.org/)
+  - e.g., [React](https://react.dev/), [Angular](https://angular.dev/), [Vue.js](https://vuejs.org/)
   - often include features like component-based architecture, state management, routing, etc.
 
 ---
@@ -34,8 +34,8 @@
 - [jsDelivr](https://www.jsdelivr.com/), [CDNJS](https://cdnjs.com/), [Google Hosted Libraries](https://developers.google.com/speed/libraries), etc.
 
 ```html
-<script src="https://code.jquery.com/jquery-3.6.1.min.js"
-        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+<script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
         crossorigin="anonymous">
 </script>
 ```
@@ -75,13 +75,13 @@ npm install react
 
 ---
 
-# JQuery
+# jQuery
 
 - [jQuery](http://jquery.com/), [jQuery UI](https://jqueryui.com/), MIT license
 - older popular JavaScript library for DOM manipulation, event handling, and AJAX
 - simplifies common tasks and provides cross-browser compatibility
 
-<img src="assets/jquery.png" alt="JQuery" class="img-right box" style="width: 25%;">
+<img src="assets/jquery.png" alt="jQuery" class="img-right box" style="width: 25%;">
 
 ```html
 <script>
@@ -201,14 +201,14 @@ d3.select("body")
 
 # React
 
-- [React](https://reactjs.org/), MIT license, developed by Facebook
-- JavaScript framework for building user interfaces, particularly single-page applications
+- [React](https://react.dev/), MIT license, developed by Facebook
+- JavaScript UI library, often used as a framework for single-page applications
 - uses a *component-based architecture*, reusable UI components written in JSX (JavaScript XML)
 - virtual DOM for efficient updates and rendering
 
 ```jsx
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import Counter from './Counter'; // another component in a separate file
 
 function App() {
@@ -221,7 +221,7 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById('root'));
+createRoot(document.getElementById('root')).render(<App />);
 ```
 
 ---
@@ -245,7 +245,7 @@ function Counter({ initialCount = 0 }) {
 }
 ```
 
-- alternative frameworks: [Angular](https://angular.io/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), etc.
+- alternative frameworks: [Angular](https://angular.dev/), [Vue.js](https://vuejs.org/), [Svelte](https://svelte.dev/), etc.
 
 ---
 
@@ -265,7 +265,7 @@ function add(a: number, b: number): number {
 let result: number = add(5, 3);
 console.log(result);
 
- // compile-time error
+// compile-time error
 let result2: number = add("5", "3");
 ```
 
@@ -281,4 +281,5 @@ let result2: number = add("5", "3");
   <img src="assets/ts.png" alt="TypeScript" class="box" style="width: 55%;">
 </div>
 
-<span class="note">See the <a href="https://www.fit.vut.cz/study/course/PIS/.en">[Angular Lecture](https://video1.fit.vutbr.cz/av/records.php?id=75716&categ_id=2218), [2026](https://www.youtube.com/watch?v=PZlnc311MEg)</a></span>
+<span class="note">See the <a href="https://www.fit.vut.cz/study/course/PIS/.en">Advanced Information Systems course</a>:
+<a href="https://video1.fit.vutbr.cz/av/records.php?id=88130&categ_id=2482">Angular Lecture</a></span>

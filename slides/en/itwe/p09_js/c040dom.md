@@ -23,7 +23,8 @@ Node
  │   │   ├─ HTMLButtonElement
  │   │   └─ HTMLInputElement
  │   └─ SVGElement
- └─ Text
+ └─ CharacterData
+     └─ Text
 ```
 
 MDN: [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document), [Element](https://developer.mozilla.org/en-US/docs/Web/API/Element), [HTMLElement](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement)
@@ -45,13 +46,13 @@ MDN: [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document), [Ele
 
   const itemsByClass = document.getElementsByClassName("item");
 
-  const paragraphs = document.getElementsByTagName("p");
+  const itemsByTag = document.getElementsByTagName("li");
 
   const firstItem = document.querySelector(".item");
 
   const allItems = document.querySelectorAll(".item");
 
-  console.log(header, itemsByClass, paragraphs, firstItem, allItems);
+  console.log(header, itemsByClass, itemsByTag, firstItem, allItems);
 </script>
 ```
 
@@ -98,16 +99,16 @@ MDN: [Document](https://developer.mozilla.org/en-US/docs/Web/API/Document), [Ele
 <script>
   const box = document.getElementById("box");
   const para = box.querySelector(".text");
-  const btn = document.getElementById("btn");
 
   para.textContent = "Brace yourselves!"; // Change text content
-  box.innerHTML += "<p>The North remembers.</p>"; // Change HTML
 
   box.style.backgroundColor = "lightblue"; // Change style
   para.style.color = "darkred";
 
   box.classList.add("highlight"); // Change classes
   para.classList.remove("text");
+
+  box.innerHTML += "<p>The North remembers.</p>"; // Change HTML
 </script>
 ```
 

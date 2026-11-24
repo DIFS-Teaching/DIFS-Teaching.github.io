@@ -17,7 +17,7 @@
 - **language characteristics:**
   - *dynamic* – types are determined at runtime
   - *weakly typed* -- automatic type conversions
-  - *scripting language* -- executed directly without compilation
+  - *scripting language* -- no separate compilation step
   - *interpreted / JIT compiled* -- runs immediately in the browser
   - *multi-paradigm* -- supports *procedural*, *object-oriented* and *functional styles*
   - *prototype-based* -- objects inherit from other objects
@@ -171,7 +171,7 @@ greetAlive(characters);
 
 🟢 **Variables & Constants:** [`let`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let), [`const`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const), [`var`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var)
 
-🔢 **[Data Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures):** number, string, boolean, null, undefined, object, array, function
+🔢 **[Data Types](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures):** number, bigint, string, boolean, null, undefined, symbol, object (incl. array, function)
 
 ➕➖ **[Operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators):** arithmetic, comparison, logical, assignment
 

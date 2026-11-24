@@ -44,13 +44,13 @@
     btn.addEventListener("click", () => {
       para.textContent = "Brace yourselves!"; // Change text content
 
-      box.innerHTML += "<p>The North remembers.</p>"; // Change HTML
-
       box.style.backgroundColor = "lightblue"; // Change style
       para.style.color = "darkred";
 
       box.classList.add("highlight"); // Change classes
       para.classList.remove("text");
+
+      box.innerHTML += "<p>The North remembers.</p>"; // Change HTML
     });
   </script>
 </body>

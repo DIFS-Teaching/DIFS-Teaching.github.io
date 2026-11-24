@@ -30,7 +30,7 @@ fetch(url, options)
 
 ```
 
-<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">MDN</a><span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API">MDN</a></span>
 
 ---
 
@@ -48,7 +48,7 @@ fetch("/api/users", {
     },
     body: JSON.stringify({
       name: "Jon Snow",
-      role: "Knights Watch"
+      role: "Night's Watch"
     }),
     credentials: "include"
 });
@@ -106,22 +106,22 @@ async function query() {
 query().then(() => { ... });
 ```
 
-<span class="note"><a href="https://restcountries.com/v3.1/all?fields=name&fields=cca3">restcountries.com API</a></span>
+<span class="note"><a href="https://countriesnow.space/api/v0.1/countries/iso">countriesnow.space API</a></span>
 
 ---
 
 # Example: then()
 
 ```js
-fetch("https://restcountries.com/v3.1/all?fields=name&fields=cca3")
+fetch("https://countriesnow.space/api/v0.1/countries/iso")
   .then(response => {
     if (!response.ok) {
       throw new Error("HTTP error");
     }
     return response.json();
   })
-  .then(countries => {
-    console.log(countries);
+  .then(result => {
+    console.log(result.data);
   })
   .catch(error => {
     console.error(error);
@@ -145,14 +145,14 @@ fetch("https://restcountries.com/v3.1/all?fields=name&fields=cca3")
 ```js
 async function fetchCountries() {
   try {
-    const response = await fetch("https://restcountries.com/v3.1/all?fields=name&fields=cca3");
+    const response = await fetch("https://countriesnow.space/api/v0.1/countries/iso");
     
     if (!response.ok) {
       throw new Error("HTTP error");
     }
     
-    const countries = await response.json();
-    console.log(countries);
+    const result = await response.json();
+    console.log(result.data);
   
   } catch (error) {
     console.error(error);
@@ -162,7 +162,7 @@ async function fetchCountries() {
 fetchCountries();
 ```
 
-<span class="note"><a href="https://restcountries.com/v3.1/all?fields=name&fields=cca3">restcountries.com API</a></span>
+<span class="note"><a href="https://countriesnow.space/api/v0.1/countries/iso">countriesnow.space API</a></span>
 
 =--
 

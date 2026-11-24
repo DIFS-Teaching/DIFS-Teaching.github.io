@@ -11,6 +11,6 @@
     - navigate browser history
     - open windows/tabs
     - communicate with the browser environment
-  - ***data fetching a sending***
+  - ***data fetching and sending***
     - dynamic data fetch, update content
 

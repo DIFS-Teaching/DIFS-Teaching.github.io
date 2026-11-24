@@ -18,7 +18,8 @@
   - [location](https://developer.mozilla.org/en-US/docs/Web/API/Location) -- URL info and navigation
   - [history](https://developer.mozilla.org/en-US/docs/Web/API/History) -- browser history manipulation
   - [screen](https://developer.mozilla.org/en-US/docs/Web/API/Screen) -- screen resolution and display info
-  - [alert()](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert), [confirm()](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm), [prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt), [setTimeout()](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout) -- simple dialog boxes
+  - [alert()](https://developer.mozilla.org/en-US/docs/Web/API/Window/alert), [confirm()](https://developer.mozilla.org/en-US/docs/Web/API/Window/confirm), [prompt()](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) -- simple dialog boxes
+  - [setTimeout()](https://developer.mozilla.org/en-US/docs/Web/API/Window/setTimeout), [setInterval()](https://developer.mozilla.org/en-US/docs/Web/API/Window/setInterval) -- timers
   - ...
 
 <span class="note">[MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window)</span>
@@ -42,7 +43,7 @@
   document.write("Hello, World!");
 ```
 
-- vypíše se "Hello, World!" do konzole a do dokumentu (na stránku)
+- prints "Hello, World!" to the console and to the document (page)
 
 <pre class="code-render" default-style="
 
@@ -83,7 +84,7 @@ document.write(navigator.onLine);     // boolean indicating if the browser is on
 
 </pre>
 
-<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">MDN</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Navigator">MDN</a></span>
 
 ---
 
@@ -113,7 +114,7 @@ document.write(window.location.hash);     // "#section1"
 
 </pre>
 
-<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">MDN</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Location">MDN</a></span>
 
 ---
 
@@ -152,8 +153,8 @@ button {
 ```js
 window.history.back();    // go back one page
 window.history.forward(); // go forward one page
-window.history.go(-2);   // go back two pages
-window.history.go(1);    // go forward one page
+window.history.go(-2);    // go back two pages
+window.history.go(1);     // go forward one page
 ```
 
 <pre class="code-render" default-style="
@@ -168,8 +169,9 @@ button {
 
 
 <button
-  onclick="window.location.href=window.location.origin +
-          '/assets/examples/js/back.html'">Redirect to back.html
+  onclick="window.location.href=
+    'https://difs-teaching.github.io/slides/en/itwe/p09_js/assets/examples/js/back.html'">
+  Redirect to back.html
 </button>
 <button onclick="window.history.forward()">forward()</button>
 
@@ -177,7 +179,7 @@ button {
 
 - example: [back.html](assets/examples/js/back.html) and [forward.html](assets/examples/js/forward.html)
 
-<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/History">MDN</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/History">MDN</a></span>
 
 ---
 
@@ -205,7 +207,7 @@ document.write(screen.pixelDepth);   // pixel depth in bits
 </script>
 </pre>
 
-<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Screen">MDN</span>
+<span class="note"><a href="https://developer.mozilla.org/en-US/docs/Web/API/Screen">MDN</a></span>
 
 ---
 

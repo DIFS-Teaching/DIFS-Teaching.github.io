@@ -32,11 +32,11 @@
     document.getElementById("btn").addEventListener("click", () => {
       const header = document.getElementById("mainTitle");
       const itemsByClass = document.getElementsByClassName("item");
-      const paragraphs = document.getElementsByTagName("p");
+      const itemsByTag = document.getElementsByTagName("li");
       const firstItem = document.querySelector(".item");
       const allItems = document.querySelectorAll(".item");
 
-      console.log(header, itemsByClass, paragraphs, firstItem, allItems);
+      console.log(header, itemsByClass, itemsByTag, firstItem, allItems);
 
       document.body.appendChild(document.createElement("p")).textContent = "See the console for results!";
     });
